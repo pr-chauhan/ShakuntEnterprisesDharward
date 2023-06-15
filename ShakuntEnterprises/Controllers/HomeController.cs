@@ -17,7 +17,6 @@ namespace ShakuntEnterprises.Controllers
 
         public IActionResult Index()
         {
-
             OdbcConnection DbConnection = new OdbcConnection("DSN=TallyODBC64_9000");
             //OdbcConnection DbConnection = new OdbcConnection();
             //DbConnection.ConnectionString = @"D:\TallyODBC64_9000.dsn";
