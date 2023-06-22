@@ -1,6 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿
+@{
+    ViewData["Title"] = "Tally Data";
+    Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
+ 
+<div class="text-center">
+    <h1 class="display-4">Tally Data Testing</h1>
+    <h3>Stock items from tally</h3>
+    <table width="100%" class="text-center">
+        @foreach (var item in ViewBag.stockItems)
+        {
+            <tr class="text-center">
+                <td class="text-center">
+                    @item
+                </td>
 
-<p>Use this page to detail your site's privacy policy.</p>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    @ViewBag.Error;
+</div>
