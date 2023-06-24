@@ -6,16 +6,23 @@ using System.Data.Common;
 using TallyConnector.Core.Models;
 using TallyConnector;
 using System.Data;
+using ShakuntEnterprises.Models;
+using Microsoft.EntityFrameworkCore;
+using ShakuntEnterprises.Comman;
 
 namespace ShakuntEnterprises.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-      
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ShakuntEnterprisesContext _context;
+        private CommanClass commanClass;
+        public HomeController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext)
         {
             _logger = logger;
+            _context = enterprisesContext;
+            commanClass = new CommanClass(enterprisesContext);
+
         }
         public async Task<string> TallyConnection()
         {
@@ -45,11 +52,68 @@ namespace ShakuntEnterprises.Controllers
         {
             return View();
         }
-        public IActionResult IndexHome()
+        public IActionResult Login()
         {
-
             return View();
         }
+        [HttpPost]
+        public IActionResult IndexHome(UserMaster userMaster)
+        {
+            try
+            {
+                if (!UserMasterExists(userMaster.UserId, userMaster.UserPassword))
+                {
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("lid", userMaster.UserId);
+                    var userData = _context.UserMasters.Where(x => x.UserId.Equals(userMaster.UserId)).FirstOrDefault();
+                    if (userData != null)
+                    {
+                        HttpContext.Session.SetString("ldept", userData.Department);
+                        HttpContext.Session.SetString("lrole", userData.UserRole);
+                    }
+                    ViewBag.Modules = commanClass.getModlueList(userMaster.UserId);
+                    ViewBag.Menus = commanClass.getModlueMenuList(userMaster.UserId);
+                    string current_date = DateTime.Now.ToShortDateString();
+                   
+                    return View();
+                }
+            }
+            catch
+            {
+                ModelState.AddModelError(nameof(UserMaster.UserPassword), "Invalid login. Please try again..!!");
+                return Login();
+            }
+        }
+
+        private bool UserMasterExists(string id, string password)
+        {
+            try
+            {
+                if (commanClass.CheckLicenseDate())
+                    return false;
+                var s = _context.UserMasters.ToList();
+                var pass = _context.UserMasters.Where(x => x.UserId == id && x.UserPassword == password).ToList();
+                if (pass.Count > 0)
+                {
+                    return _context.UserMasters.Any(e => e.UserId == id);
+                }
+                else
+                {
+                    return false;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
         public IActionResult Privacy()
         {
             try
