@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ShakuntEnterprises.Models.UserMaster>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_Views.cshtml";
+}
+<h3>User Master List </h3>
+<p>
+    <a  class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<div style="overflow-x:auto;">
+    <table id="Dynamic-data-table" width="100%" class="display expandable-table dataTable no-footer" cellpadding="1" cellspacing="1">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    SR.No.
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserRight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserRole)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th>Action/Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int rNumber = 1;
+                    @foreach (var item in Model)
+                    {
+                    <tr class="d-table-row">
+                        <td>
+                            @rNumber
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserRight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserRole)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Department)
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.UserId">Edit</a> &nbsp;
+                            <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.UserId">Details</a> &nbsp;
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                        </td>
+                    </tr>
+                    rNumber += 1;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts
+{
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            $('#Dynamic-data-table').DataTable();
+        });
+    </script>
+}

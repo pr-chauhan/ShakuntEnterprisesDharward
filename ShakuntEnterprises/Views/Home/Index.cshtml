@@ -1,4 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] -  Shakunt Enterprises Pvt. Ltd.</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<!-- endinject -->
+<link rel="shortcut icon" href="~/images/favicon.png" />
+<div class="text-center" style="margin:auto;padding-top:10%;">
+    @*<h1 class="display-1" style="font-size:10em;color:#0a1e8f;">crm</h1>*@
+
+    <a id="btnlogin" asp-controller="Home" asp-action="Login">
+        <img src="~/images/crm-icon.jpg">
+    </a>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

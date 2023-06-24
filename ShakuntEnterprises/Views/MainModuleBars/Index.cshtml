@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ShakuntEnterprises.Models.MainModuleBar>
+
+@{
+    ViewData["Title"] = "Index";
+      Layout = "~/Views/Shared/_Layout_Views.cshtml";
+}
+<h2> List </h2>
+<p>
+    <a class=" btn btn-success" asp-action="Create">Create New</a>
+</p>
+<table id="Dynamic-data-table" width="100%"  class="display expandable-table dataTable no-footer" cellpadding="1" cellspacing="1">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModuleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>Action / Command</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+           <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+               @*  <a asp-action="Details" asp-route-id="@item.ModuleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ModuleId">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+{
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            $('#Dynamic-data-table').DataTable();
+        });
+    </script>
+}

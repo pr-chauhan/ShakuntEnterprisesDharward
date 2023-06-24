@@ -9,6 +9,7 @@ using System.Data;
 using ShakuntEnterprises.Models;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -22,6 +23,12 @@ namespace ShakuntEnterprises.Controllers
             _logger = logger;
             _context = enterprisesContext;
             commanClass = new CommanClass(enterprisesContext);
+
+        }
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            ViewBag.Modules = commanClass.getModlueList(HttpContext.Session.GetString("lid"));
+            ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
 
         }
         public async Task<string> TallyConnection()
@@ -53,6 +60,11 @@ namespace ShakuntEnterprises.Controllers
             return View();
         }
         public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult IndexHome()
         {
             return View();
         }

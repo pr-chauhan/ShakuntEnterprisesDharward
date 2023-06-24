@@ -257,7 +257,7 @@
             </a>
           </li>
              
-       @* @{
+        @{
             foreach (var item in ViewBag.Modules)
             {
                     <li class="nav-item">
@@ -272,37 +272,14 @@
                                 {
                                             if (@item.ModuleId == @menu.ModuleId)
                                             {
-                                                //if (ViewBag.SubMenus.Count > 0)
-                                                //{
-                                                //    <li class="nav-item">
-                                                //        <a class="nav-link" data-toggle="collapse" href="#@menu.MenuName" aria-expanded="false" aria-controls="@menu.MenuName">
-                                                //            <i class="icon-layout menu-icon"></i>
-                                                //            <span class="menu-title">@menu.MenuName</span>
-                                                //            <i class="menu-arrow"></i>
-                                                //        </a>
-                                                //        <div class="collapse" id="@menu.MenuName">
-                                                //            <ul class="nav flex-column sub-menu">
-                                                //                @foreach (var sub in ViewBag.SubMenus)
-                                                //                {
-                                                //                    <li class="nav-item"> <a class="nav-link" href=@Url.Action((string)@sub.ActionName,(string)@sub.ContollerName)>@sub.SubMenuName</a> </li>
-                                                //                }
-                                                //            </ul>
-                                                //        </div>
-                                                //    </li>
-                                                     
-                                                //}
-                                                //else
-                                                //{
-                                                    <li class="nav-item"> <a class="nav-link" href=@Url.Action((string)@menu.ActionName,(string)@menu.ContollerName)>@menu.MenuName</a> </li>
-                                                 //}
-                                                               
+                                                 <li class="nav-item"> <a class="nav-link" href=@Url.Action((string)@menu.ActionName,(string)@menu.ContollerName)>@menu.MenuName</a> </li>
                                             }
                                 }    
                             </ul>
                         </div>
                         </li>
             }
-         }*@
+         }
          
         </ul>
       </nav>
