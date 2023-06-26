@@ -42,9 +42,19 @@ namespace ShakuntEnterprises.Controllers
         }
 
         // GET: TestCertificateRecordController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            if (id == null || _context.TestCertificateRecords == null)
+            {
+                return NotFound();
+            }
+
+            var TestCertificateRecords = await _context.TestCertificateRecords.FindAsync(id);
+            if (TestCertificateRecords == null)
+            {
+                return NotFound();
+            }
+            return View(TestCertificateRecords);
         }
 
         // GET: TestCertificateRecordController/Create
