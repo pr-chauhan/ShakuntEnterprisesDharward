@@ -63,7 +63,12 @@ namespace ShakuntEnterprises.Controllers
         {
             return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
 
+        }
         public IActionResult IndexHome()
         {
             return View();
