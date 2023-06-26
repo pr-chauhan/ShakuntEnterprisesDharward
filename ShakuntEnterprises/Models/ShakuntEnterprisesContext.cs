@@ -86,7 +86,7 @@ namespace ShakuntEnterprises.Models
             modelBuilder.Entity<ModuleList>(entity =>
             {
                 entity.HasKey(e => e.ModuleId)
-                    .HasName("PK__ModuleLi__2B7477A7E4333CEB");
+                    .HasName("PK__ModuleLi__2B7477A71D37FAE1");
 
                 entity.ToTable("ModuleList");
 
@@ -138,8 +138,6 @@ namespace ShakuntEnterprises.Models
             modelBuilder.Entity<TestCertificateRecord>(entity =>
             {
                 entity.ToTable("TestCertificateRecord");
-
-                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Apms)
                     .HasMaxLength(50)

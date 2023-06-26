@@ -1,0 +1,49 @@
+﻿@model ShakuntEnterprises.Models.TestCertificateRecord
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_Views.cshtml";
+}
+
+<h4>Add Manual Test Certificate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="CertificateNo" class="control-label"></label>
+                <input asp-for="CertificateNo" class="form-control" />
+                <span asp-validation-for="CertificateNo" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" type="datetime" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="display:none;">
+                <label asp-for="ModifiedDate" class="control-label"></label>
+                <input asp-for="ModifiedDate" class="form-control" type="datetime" readonly value=@ViewBag.CDT />
+                <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="ModifiedBy" class="control-label"></label>
+                <input asp-for="ModifiedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
+                <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
