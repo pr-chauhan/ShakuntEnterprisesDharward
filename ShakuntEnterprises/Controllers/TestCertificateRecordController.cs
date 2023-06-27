@@ -7,6 +7,7 @@ using TallyConnector.Core.Models;
 using TallyConnector;
 using System.Data;
 using ShakuntEnterprises.Models;
+using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -48,13 +49,68 @@ namespace ShakuntEnterprises.Controllers
             {
                 return NotFound();
             }
-
-            var TestCertificateRecords = await _context.TestCertificateRecords.FindAsync(id);
-            if (TestCertificateRecords == null)
+            var Data = new TestCertificateRecordModel();
+            var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
+            if (testCertificateRecord != null)
+            {
+                Data.CertificateNo = testCertificateRecord.CertificateNo;
+                Data.CustomerName = testCertificateRecord.CustomerName;
+                Data.IssueDate = testCertificateRecord.IssueDate;
+                Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                Data.Size = testCertificateRecord.Size;
+                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
+                Data.Specification = testCertificateRecord.Specification;
+                Data.WeldingProcess = testCertificateRecord.WeldingProcess;
+                Data.ShieldingGas = testCertificateRecord.ShieldingGas;
+                Data.PreHeatInerpassTemp = testCertificateRecord.PreHeatInerpassTemp;
+                Data.Type = testCertificateRecord.Type;
+                Data.Apms = testCertificateRecord.Apms;
+                Data.FlowRate = testCertificateRecord.FlowRate;
+                Data.CurrentPolarity = testCertificateRecord.CurrentPolarity;
+                Data.Volts = testCertificateRecord.Volts;
+                Data.TravelSpeed = testCertificateRecord.TravelSpeed;
+                Data.BaseMetal = testCertificateRecord.BaseMetal;
+                Data.ElementMinC = testCertificateRecord.ElementMinC;
+                Data.ElementMinSi = testCertificateRecord.ElementMinSi;
+                Data.ElementMinMn = testCertificateRecord.ElementMinMn;
+                Data.ElementMinP = testCertificateRecord.ElementMinP;
+                Data.ElementMinS = testCertificateRecord.ElementMinS;
+                Data.ElementMinNi = testCertificateRecord.ElementMinNi;
+                Data.ElementMinCr = testCertificateRecord.ElementMinCr;
+                Data.ElementMinMo = testCertificateRecord.ElementMinMo;
+                Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                Data.ElementMaxC = testCertificateRecord.ElementMaxC;
+                Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
+                Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
+                Data.ElementMaxP = testCertificateRecord.ElementMaxP;
+                Data.ElementMaxS = testCertificateRecord.ElementMaxS;
+                Data.ElementMaxNi = testCertificateRecord.ElementMaxNi;
+                Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
+                Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
+                Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                Data.TestMinUts = testCertificateRecord.TestMinUts;
+                Data.TestMinYs = testCertificateRecord.TestMinYs;
+                Data.TestMinElongation = testCertificateRecord.TestMinElongation;
+                Data.TestMaxUts = testCertificateRecord.TestMaxUts;
+                Data.TestMaxYs = testCertificateRecord.TestMaxYs;
+                Data.TestMaxElongation = testCertificateRecord.TestMaxElongation;
+                Data.TestTemp = testCertificateRecord.TestTemp;
+                Data.TestImpectValue = testCertificateRecord.TestImpectValue;
+                Data.TestCondition = testCertificateRecord.TestCondition;
+                Data.Remarks = testCertificateRecord.Remarks;
+                Data.CreatedDate = testCertificateRecord.CreatedDate;
+                Data.CreatedBy = testCertificateRecord.CreatedBy;
+                Data.ModifiedDate = testCertificateRecord.ModifiedDate;
+                Data.ModifiedBy = testCertificateRecord.ModifiedBy;
+            }
+            if (Data == null)
             {
                 return NotFound();
             }
-            return View(TestCertificateRecords);
+            return View(Data);
         }
 
         // GET: TestCertificateRecordController/Create
@@ -66,13 +122,66 @@ namespace ShakuntEnterprises.Controllers
         // POST: TestCertificateRecordController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(TestCertificateRecord testCertificateRecord)
+        public async Task<IActionResult> Create(TestCertificateRecordModel testCertificateRecord)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(testCertificateRecord);
+                    var Data = new TestCertificateRecord();
+                    Data.CertificateNo = testCertificateRecord.CertificateNo;
+                    Data.CustomerName = testCertificateRecord.CustomerName;
+                    Data.IssueDate = testCertificateRecord.IssueDate;
+                    Data.Quanity = testCertificateRecord.Quanity;
+                    Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                    Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                    Data.Size = testCertificateRecord.Size;
+                    Data.BarchNo = testCertificateRecord.BarchNo;
+                    Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
+                    Data.Specification = testCertificateRecord.Specification;
+                    Data.WeldingProcess = testCertificateRecord.WeldingProcess;
+                    Data.ShieldingGas = testCertificateRecord.ShieldingGas;
+                    Data.PreHeatInerpassTemp = testCertificateRecord.PreHeatInerpassTemp;
+                    Data.Type = testCertificateRecord.Type;
+                    Data.Apms = testCertificateRecord.Apms;
+                    Data.FlowRate = testCertificateRecord.FlowRate;
+                    Data.CurrentPolarity = testCertificateRecord.CurrentPolarity;
+                    Data.Volts = testCertificateRecord.Volts;
+                    Data.TravelSpeed = testCertificateRecord.TravelSpeed;
+                    Data.BaseMetal = testCertificateRecord.BaseMetal;
+                    Data.ElementMinC = testCertificateRecord.ElementMinC;
+                    Data.ElementMinSi = testCertificateRecord.ElementMinSi;
+                    Data.ElementMinMn = testCertificateRecord.ElementMinMn;
+                    Data.ElementMinP = testCertificateRecord.ElementMinP;
+                    Data.ElementMinS = testCertificateRecord.ElementMinS;
+                    Data.ElementMinNi = testCertificateRecord.ElementMinNi;
+                    Data.ElementMinCr = testCertificateRecord.ElementMinCr;
+                    Data.ElementMinMo = testCertificateRecord.ElementMinMo;
+                    Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                    Data.ElementMaxC = testCertificateRecord.ElementMaxC;
+                    Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
+                    Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
+                    Data.ElementMaxP = testCertificateRecord.ElementMaxP;
+                    Data.ElementMaxS = testCertificateRecord.ElementMaxS;
+                    Data.ElementMaxNi = testCertificateRecord.ElementMaxNi;
+                    Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
+                    Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
+                    Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                    Data.TestMinUts = testCertificateRecord.TestMinUts;
+                    Data.TestMinYs = testCertificateRecord.TestMinYs;
+                    Data.TestMinElongation = testCertificateRecord.TestMinElongation;
+                    Data.TestMaxUts = testCertificateRecord.TestMaxUts;
+                    Data.TestMaxYs = testCertificateRecord.TestMaxYs;
+                    Data.TestMaxElongation = testCertificateRecord.TestMaxElongation;
+                    Data.TestTemp = testCertificateRecord.TestTemp;
+                    Data.TestImpectValue = testCertificateRecord.TestImpectValue;
+                    Data.TestCondition = testCertificateRecord.TestCondition;
+                    Data.Remarks = testCertificateRecord.Remarks;
+                    Data.CreatedDate = testCertificateRecord.CreatedDate;
+                    Data.CreatedBy = testCertificateRecord.CreatedBy;
+                    Data.ModifiedDate = testCertificateRecord.ModifiedDate;
+                    Data.ModifiedBy = testCertificateRecord.ModifiedBy;
+                    _context.Add(Data);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -91,20 +200,75 @@ namespace ShakuntEnterprises.Controllers
             {
                 return NotFound();
             }
-
-            var TestCertificateRecords = await _context.TestCertificateRecords.FindAsync(id);
-            if (TestCertificateRecords == null)
+            var Data = new TestCertificateRecordModel();
+            var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
+            if (testCertificateRecord != null)
+            {
+                Data.CertificateNo = testCertificateRecord.CertificateNo;
+                Data.CustomerName = testCertificateRecord.CustomerName;
+                Data.IssueDate = testCertificateRecord.IssueDate;
+                Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                Data.Size = testCertificateRecord.Size;
+                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
+                Data.Specification = testCertificateRecord.Specification;
+                Data.WeldingProcess = testCertificateRecord.WeldingProcess;
+                Data.ShieldingGas = testCertificateRecord.ShieldingGas;
+                Data.PreHeatInerpassTemp = testCertificateRecord.PreHeatInerpassTemp;
+                Data.Type = testCertificateRecord.Type;
+                Data.Apms = testCertificateRecord.Apms;
+                Data.FlowRate = testCertificateRecord.FlowRate;
+                Data.CurrentPolarity = testCertificateRecord.CurrentPolarity;
+                Data.Volts = testCertificateRecord.Volts;
+                Data.TravelSpeed = testCertificateRecord.TravelSpeed;
+                Data.BaseMetal = testCertificateRecord.BaseMetal;
+                Data.ElementMinC = testCertificateRecord.ElementMinC;
+                Data.ElementMinSi = testCertificateRecord.ElementMinSi;
+                Data.ElementMinMn = testCertificateRecord.ElementMinMn;
+                Data.ElementMinP = testCertificateRecord.ElementMinP;
+                Data.ElementMinS = testCertificateRecord.ElementMinS;
+                Data.ElementMinNi = testCertificateRecord.ElementMinNi;
+                Data.ElementMinCr = testCertificateRecord.ElementMinCr;
+                Data.ElementMinMo = testCertificateRecord.ElementMinMo;
+                Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                Data.ElementMaxC = testCertificateRecord.ElementMaxC;
+                Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
+                Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
+                Data.ElementMaxP = testCertificateRecord.ElementMaxP;
+                Data.ElementMaxS = testCertificateRecord.ElementMaxS;
+                Data.ElementMaxNi = testCertificateRecord.ElementMaxNi;
+                Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
+                Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
+                Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                Data.TestMinUts = testCertificateRecord.TestMinUts;
+                Data.TestMinYs = testCertificateRecord.TestMinYs;
+                Data.TestMinElongation = testCertificateRecord.TestMinElongation;
+                Data.TestMaxUts = testCertificateRecord.TestMaxUts;
+                Data.TestMaxYs = testCertificateRecord.TestMaxYs;
+                Data.TestMaxElongation = testCertificateRecord.TestMaxElongation;
+                Data.TestTemp = testCertificateRecord.TestTemp;
+                Data.TestImpectValue = testCertificateRecord.TestImpectValue;
+                Data.TestCondition = testCertificateRecord.TestCondition;
+                Data.Remarks = testCertificateRecord.Remarks;
+                Data.CreatedDate = testCertificateRecord.CreatedDate;
+                Data.CreatedBy = testCertificateRecord.CreatedBy;
+                Data.ModifiedDate = testCertificateRecord.ModifiedDate;
+                Data.ModifiedBy = testCertificateRecord.ModifiedBy;
+            }
+            if (Data == null)
             {
                 return NotFound();
             }
-            return View(TestCertificateRecords);
+            return View(Data);
         }
 
         // POST: TestCertificateRecordController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(int id, TestCertificateRecord testCertificateRecord )
+        public async Task<IActionResult> Edit(int id, TestCertificateRecordModel testCertificateRecord )
         {
             if (id != testCertificateRecord.Id)
             {
@@ -115,7 +279,63 @@ namespace ShakuntEnterprises.Controllers
             {
                 try
                 {
-                    _context.Update(testCertificateRecord);
+                    var Data = await _context.TestCertificateRecords.FindAsync(id);
+                    if(Data != null)
+                    {
+                        Data.CertificateNo = testCertificateRecord.CertificateNo;
+                        Data.CustomerName = testCertificateRecord.CustomerName;
+                        Data.IssueDate = testCertificateRecord.IssueDate;
+                        Data.Quanity = testCertificateRecord.Quanity;
+                        Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                        Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                        Data.Size = testCertificateRecord.Size;
+                        Data.BarchNo = testCertificateRecord.BarchNo;
+                        Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
+                        Data.Specification = testCertificateRecord.Specification;
+                        Data.WeldingProcess = testCertificateRecord.WeldingProcess;
+                        Data.ShieldingGas = testCertificateRecord.ShieldingGas;
+                        Data.PreHeatInerpassTemp = testCertificateRecord.PreHeatInerpassTemp;
+                        Data.Type = testCertificateRecord.Type;
+                        Data.Apms = testCertificateRecord.Apms;
+                        Data.FlowRate = testCertificateRecord.FlowRate;
+                        Data.CurrentPolarity = testCertificateRecord.CurrentPolarity;
+                        Data.Volts = testCertificateRecord.Volts;
+                        Data.TravelSpeed = testCertificateRecord.TravelSpeed;
+                        Data.BaseMetal = testCertificateRecord.BaseMetal;
+                        Data.ElementMinC = testCertificateRecord.ElementMinC;
+                        Data.ElementMinSi = testCertificateRecord.ElementMinSi;
+                        Data.ElementMinMn = testCertificateRecord.ElementMinMn;
+                        Data.ElementMinP = testCertificateRecord.ElementMinP;
+                        Data.ElementMinS = testCertificateRecord.ElementMinS;
+                        Data.ElementMinNi = testCertificateRecord.ElementMinNi;
+                        Data.ElementMinCr = testCertificateRecord.ElementMinCr;
+                        Data.ElementMinMo = testCertificateRecord.ElementMinMo;
+                        Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                        Data.ElementMaxC = testCertificateRecord.ElementMaxC;
+                        Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
+                        Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
+                        Data.ElementMaxP = testCertificateRecord.ElementMaxP;
+                        Data.ElementMaxS = testCertificateRecord.ElementMaxS;
+                        Data.ElementMaxNi = testCertificateRecord.ElementMaxNi;
+                        Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
+                        Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
+                        Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                        Data.TestMinUts = testCertificateRecord.TestMinUts;
+                        Data.TestMinYs = testCertificateRecord.TestMinYs;
+                        Data.TestMinElongation = testCertificateRecord.TestMinElongation;
+                        Data.TestMaxUts = testCertificateRecord.TestMaxUts;
+                        Data.TestMaxYs = testCertificateRecord.TestMaxYs;
+                        Data.TestMaxElongation = testCertificateRecord.TestMaxElongation;
+                        Data.TestTemp = testCertificateRecord.TestTemp;
+                        Data.TestImpectValue = testCertificateRecord.TestImpectValue;
+                        Data.TestCondition = testCertificateRecord.TestCondition;
+                        Data.Remarks = testCertificateRecord.Remarks;
+                        Data.CreatedDate = testCertificateRecord.CreatedDate;
+                        Data.CreatedBy = testCertificateRecord.CreatedBy;
+                        Data.ModifiedDate = testCertificateRecord.ModifiedDate;
+                        Data.ModifiedBy = testCertificateRecord.ModifiedBy;
+                    }
+                    _context.Update(Data);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

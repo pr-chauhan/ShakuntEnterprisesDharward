@@ -162,75 +162,75 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.CustomerName).HasMaxLength(150);
 
                 entity.Property(e => e.ElementMaxC)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_C");
 
                 entity.Property(e => e.ElementMaxCr)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_CR");
 
                 entity.Property(e => e.ElementMaxCu)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_CU");
 
                 entity.Property(e => e.ElementMaxMn)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_MN");
 
                 entity.Property(e => e.ElementMaxMo)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_MO");
 
                 entity.Property(e => e.ElementMaxNi)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_NI");
 
                 entity.Property(e => e.ElementMaxP)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_P");
 
                 entity.Property(e => e.ElementMaxS)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_S");
 
                 entity.Property(e => e.ElementMaxSi)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MAX_SI");
 
                 entity.Property(e => e.ElementMinC)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_C");
 
                 entity.Property(e => e.ElementMinCr)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_CR");
 
                 entity.Property(e => e.ElementMinCu)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_CU");
 
                 entity.Property(e => e.ElementMinMn)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_MN");
 
                 entity.Property(e => e.ElementMinMo)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_MO");
 
                 entity.Property(e => e.ElementMinNi)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_NI");
 
                 entity.Property(e => e.ElementMinP)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_P");
 
                 entity.Property(e => e.ElementMinS)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_S");
 
                 entity.Property(e => e.ElementMinSi)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Element_MIN_SI");
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
@@ -270,27 +270,27 @@ namespace ShakuntEnterprises.Models
                     .HasColumnName("Test_ImpectValue");
 
                 entity.Property(e => e.TestMaxElongation)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MAX_Elongation");
 
                 entity.Property(e => e.TestMaxUts)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MAX_UTS");
 
                 entity.Property(e => e.TestMaxYs)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MAX_YS");
 
                 entity.Property(e => e.TestMinElongation)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MIN_Elongation");
 
                 entity.Property(e => e.TestMinUts)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MIN_UTS");
 
                 entity.Property(e => e.TestMinYs)
-                    .HasMaxLength(50)
+                    .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_MIN_YS");
 
                 entity.Property(e => e.TestTemp)
