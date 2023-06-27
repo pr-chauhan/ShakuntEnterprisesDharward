@@ -3,17 +3,45 @@
     ViewData["Title"] = "Login";
     Layout = null;
 }
+@* <meta charset="utf-8" />*@
+@*<meta name="viewport" content="width=device-width, initial-scale=1.0" />*@
+<title>@ViewData["Title"] - Shakunt Enterprises Pvt. Ltd.</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/DataTables/css/dataTables.bootstrap.css" />
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- plugins:css -->
+<link rel="stylesheet" href="~/vendors/feather/feather.css">
+<link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="~/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="~/vendors/font-awesome/css/font-awesome.min.css">
+<!-- endinject -->
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="~/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="~/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" type="text/css" href="~/js/select.dataTables.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="~/css/vertical-layout-light/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="~/images/favicon.png" />
+@*
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>@ViewData["Title"] -  Shakunt Enterprises Pvt. Ltd.</title>
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" />
   <!-- endinject -->
-<link rel="shortcut icon" href="~/images/favicon.png" />
+<link rel="shortcut icon" href="~/images/favicon.png" />*@
+ 
+
 <div>
     <div class="text-center" style="width:30%;margin:auto;padding-top:10%;float:left;height:auto;">
         <img src="~/images/ses-logo-medium.png" width="100px" />
-        <p>
+        <div class="card-people mt-auto">
             <div class="row">
                 <div class="col-md-8" style="margin:auto;">
                     <form asp-action="IndexHome">
@@ -35,7 +63,7 @@
                 </div>
             </div>
 
-        </p>
+        </div>
     </div>
     <div class="text-center" style="width:70%;margin:auto;float:right;height:auto;">
         <img src="~/images/dwd-plant-pic-03-rotated.jpeg" width="100%" />
