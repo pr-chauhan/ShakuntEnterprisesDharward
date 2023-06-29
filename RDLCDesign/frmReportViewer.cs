@@ -22,11 +22,11 @@ namespace RDLCDesign
             this.reportViewer1.LocalReport.ReportPath = AppDomain.CurrentDomain.BaseDirectory + @"\Reports\TestCertificate.rdlc";
             var certificateData = db.TestCertificateRecords.Where(x => x.Id == 1).ToList();
             
-            ReportDataSource testCertificate = new ReportDataSource();
-            testCertificate.Name = "TestCertificate";
-            testCertificate.Value = "certificateData";
+            ReportDataSource TestCertificate = new ReportDataSource();
+            TestCertificate.Name = "TestCertificate";
+            TestCertificate.Value = certificateData;
              
-            reportViewer1.LocalReport.DataSources.Add(testCertificate);
+            reportViewer1.LocalReport.DataSources.Add(TestCertificate);
             this.reportViewer1.Dock = DockStyle.Fill;
             this.reportViewer1.RefreshReport();
         }

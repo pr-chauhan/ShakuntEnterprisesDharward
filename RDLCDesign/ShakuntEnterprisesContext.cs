@@ -8,7 +8,7 @@ namespace RDLCDesign
     public partial class ShakuntEnterprisesContext : DbContext
     {
         public ShakuntEnterprisesContext()
-             : base("name=ShakuntEnterprisesContext")
+             : base("name=ShakuntEnterprisesEntities")
         {
         }
         public virtual DbSet<TestCertificateRecord> TestCertificateRecords { get; set; } 
