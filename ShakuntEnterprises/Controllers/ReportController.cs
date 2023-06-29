@@ -60,7 +60,7 @@ namespace ShakuntEnterprises.Controllers
                 localReport.AddDataSource("TestCertificate", certificateRecords);
                 
                 var result = localReport.Execute(RenderType.Pdf, extension, null, mimtype);
-                return File(result.MainStream, "application/pdf", "Id" + Id + ".pdf");
+                return File(result.MainStream, "application/pdf", Id.ToString() + "certificateRecords" + ".pdf");
 
             }
             catch (Exception ex)
