@@ -16,6 +16,8 @@
     using System.Security.Cryptography.Xml;
     using MessagePack;
     using System.Data.SqlClient;
+    using Microsoft.Net.Http.Headers;
+
     public class CommanClass
     {
         private readonly  ShakuntEnterprisesContext _context;
@@ -23,20 +25,24 @@
         private SqlConnection sqlConnection;
         private SqlConnection sqlConnectionerp;
         private SqlDataAdapter sqlDataAdapter;
+        private readonly IConfiguration configuration;
 
-        public CommanClass(ShakuntEnterprisesContext context)
+        public CommanClass(ShakuntEnterprisesContext context, IConfiguration _configuration)
         {
             _context = context;
-
+            this.configuration = _configuration;
             sqlConnectionerp = new SqlConnection(SQLConnection());
             if (sqlConnectionerp.State == ConnectionState.Closed)
             {
                 sqlConnectionerp.Open();
             }
+
+           
         }
         public string SQLConnection()
         {
-            return "Server=ISHAN\\SQLEXPRESS;Database=ShakuntEnterprises;Trusted_Connection=True;MultipleActiveResultSets=true;User Id=sa;Password=chauhan@123;Integrated Security=False";
+            var conString = configuration.GetSection("ConnectionStrings").GetChildren().ToList();
+            return conString[0].Value;
         }
         public List<ModuleList> getModlueList(string? userId)
         {

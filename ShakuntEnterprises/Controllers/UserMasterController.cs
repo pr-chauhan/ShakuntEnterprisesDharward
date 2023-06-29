@@ -13,12 +13,13 @@ namespace ShakuntEnterprises.Controllers
     public class UserMasterController : Controller
     {
         private readonly ShakuntEnterprisesContext _context;
-
+        private IConfiguration configuration;
         private CommanClass commanClass;
-        public UserMasterController(ShakuntEnterprisesContext context)
+        public UserMasterController(ShakuntEnterprisesContext context, IConfiguration _configuration)
         {
             _context = context;
-            commanClass = new CommanClass(context);
+            configuration = _configuration;
+            commanClass = new CommanClass(context, configuration);
         }
         public override void OnActionExecuting(ActionExecutingContext context)
         {

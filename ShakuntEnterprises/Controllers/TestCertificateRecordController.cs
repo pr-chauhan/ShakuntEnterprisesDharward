@@ -19,12 +19,14 @@ namespace ShakuntEnterprises.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
-        public TestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext)
+        private IConfiguration configuration;
+
+        public TestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
         {
             _logger = logger;
             _context = enterprisesContext;
-            commanClass = new CommanClass(enterprisesContext);
-
+            configuration = _configuration;
+            commanClass = new CommanClass(enterprisesContext,configuration);
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)

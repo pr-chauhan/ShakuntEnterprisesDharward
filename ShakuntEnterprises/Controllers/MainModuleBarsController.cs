@@ -14,10 +14,12 @@ namespace ShakuntEnterprises.Controllers
     {
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
-        public MainModuleBarsController(ShakuntEnterprisesContext context)
+        private IConfiguration configuration;
+        public MainModuleBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration)
         {
             _context = context;
-            commanClass = new CommanClass(context);
+            configuration = _configuration;
+            commanClass = new CommanClass(context,configuration);
         }
         public override void OnActionExecuting(ActionExecutingContext context)
         {
