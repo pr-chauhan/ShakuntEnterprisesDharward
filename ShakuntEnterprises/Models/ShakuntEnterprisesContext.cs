@@ -16,11 +16,15 @@ namespace ShakuntEnterprises.Models
         {
         }
 
+        public virtual DbSet<BatchMaster> BatchMasters { get; set; } = null!;
         public virtual DbSet<MainModuleBar> MainModuleBars { get; set; } = null!;
         public virtual DbSet<MainNavigationBar> MainNavigationBars { get; set; } = null!;
+        public virtual DbSet<MigrationHistory> MigrationHistories { get; set; } = null!;
         public virtual DbSet<ModuleList> ModuleLists { get; set; } = null!;
         public virtual DbSet<NumberSeries> NumberSeries { get; set; } = null!;
+        public virtual DbSet<SizeMaster> SizeMasters { get; set; } = null!;
         public virtual DbSet<TestCertificateRecord> TestCertificateRecords { get; set; } = null!;
+        public virtual DbSet<TradeDesignationMaster> TradeDesignationMasters { get; set; } = null!;
         public virtual DbSet<UserMaster> UserMasters { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -33,6 +37,137 @@ namespace ShakuntEnterprises.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BatchMaster>(entity =>
+            {
+                entity.ToTable("BatchMaster");
+
+                entity.Property(e => e.BarchNo).HasMaxLength(50);
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Created_By");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Created_Date");
+
+                entity.Property(e => e.ElementMaxC)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_C");
+
+                entity.Property(e => e.ElementMaxCr)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_CR");
+
+                entity.Property(e => e.ElementMaxCu)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_CU");
+
+                entity.Property(e => e.ElementMaxMn)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_MN");
+
+                entity.Property(e => e.ElementMaxMo)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_MO");
+
+                entity.Property(e => e.ElementMaxNi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_NI");
+
+                entity.Property(e => e.ElementMaxP)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_P");
+
+                entity.Property(e => e.ElementMaxS)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_S");
+
+                entity.Property(e => e.ElementMaxSi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_SI");
+
+                entity.Property(e => e.ElementMinC)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_C");
+
+                entity.Property(e => e.ElementMinCr)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_CR");
+
+                entity.Property(e => e.ElementMinCu)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_CU");
+
+                entity.Property(e => e.ElementMinMn)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_MN");
+
+                entity.Property(e => e.ElementMinMo)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_MO");
+
+                entity.Property(e => e.ElementMinNi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_NI");
+
+                entity.Property(e => e.ElementMinP)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_P");
+
+                entity.Property(e => e.ElementMinS)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_S");
+
+                entity.Property(e => e.ElementMinSi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_SI");
+
+                entity.Property(e => e.ModifiedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Modified_By");
+
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Modified_Date");
+
+                entity.Property(e => e.TestCondition)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Condition");
+
+                entity.Property(e => e.TestImpectValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_ImpectValue");
+
+                entity.Property(e => e.TestMaxElongation)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_Elongation");
+
+                entity.Property(e => e.TestMaxUts)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_UTS");
+
+                entity.Property(e => e.TestMaxYs)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_YS");
+
+                entity.Property(e => e.TestMinElongation)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_Elongation");
+
+                entity.Property(e => e.TestMinUts)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_UTS");
+
+                entity.Property(e => e.TestMinYs)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_YS");
+
+                entity.Property(e => e.TestTemp)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Temp");
+            });
+
             modelBuilder.Entity<MainModuleBar>(entity =>
             {
                 entity.ToTable("MainModuleBar");
@@ -81,6 +216,20 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.UserId).HasMaxLength(20);
 
                 entity.Property(e => e.UserRight).HasMaxLength(10);
+            });
+
+            modelBuilder.Entity<MigrationHistory>(entity =>
+            {
+                entity.HasKey(e => new { e.MigrationId, e.ContextKey })
+                    .HasName("PK_dbo.__MigrationHistory");
+
+                entity.ToTable("__MigrationHistory");
+
+                entity.Property(e => e.MigrationId).HasMaxLength(150);
+
+                entity.Property(e => e.ContextKey).HasMaxLength(300);
+
+                entity.Property(e => e.ProductVersion).HasMaxLength(32);
             });
 
             modelBuilder.Entity<ModuleList>(entity =>
@@ -133,6 +282,37 @@ namespace ShakuntEnterprises.Models
                     .HasColumnName("Modified_Date");
 
                 entity.Property(e => e.SeriesDescription).HasMaxLength(250);
+            });
+
+            modelBuilder.Entity<SizeMaster>(entity =>
+            {
+                entity.ToTable("SizeMaster");
+
+                entity.Property(e => e.Apms)
+                    .HasMaxLength(50)
+                    .HasColumnName("APMS");
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Created_By");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Created_Date");
+
+                entity.Property(e => e.ModifiedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Modified_By");
+
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Modified_Date");
+
+                entity.Property(e => e.Size).HasMaxLength(50);
+
+                entity.Property(e => e.TravelSpeed).HasMaxLength(50);
+
+                entity.Property(e => e.Volts).HasMaxLength(50);
             });
 
             modelBuilder.Entity<TestCertificateRecord>(entity =>
@@ -304,6 +484,153 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.Type).HasMaxLength(50);
 
                 entity.Property(e => e.Volts).HasMaxLength(50);
+
+                entity.Property(e => e.WeldingProcess).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<TradeDesignationMaster>(entity =>
+            {
+                entity.ToTable("TradeDesignationMaster");
+
+                entity.Property(e => e.BaseMetal).HasMaxLength(50);
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Created_By");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Created_Date");
+
+                entity.Property(e => e.CurrentPolarity).HasMaxLength(50);
+
+                entity.Property(e => e.ElementMaxC)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_C");
+
+                entity.Property(e => e.ElementMaxCr)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_CR");
+
+                entity.Property(e => e.ElementMaxCu)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_CU");
+
+                entity.Property(e => e.ElementMaxMn)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_MN");
+
+                entity.Property(e => e.ElementMaxMo)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_MO");
+
+                entity.Property(e => e.ElementMaxNi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_NI");
+
+                entity.Property(e => e.ElementMaxP)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_P");
+
+                entity.Property(e => e.ElementMaxS)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_S");
+
+                entity.Property(e => e.ElementMaxSi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MAX_SI");
+
+                entity.Property(e => e.ElementMinC)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_C");
+
+                entity.Property(e => e.ElementMinCr)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_CR");
+
+                entity.Property(e => e.ElementMinCu)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_CU");
+
+                entity.Property(e => e.ElementMinMn)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_MN");
+
+                entity.Property(e => e.ElementMinMo)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_MO");
+
+                entity.Property(e => e.ElementMinNi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_NI");
+
+                entity.Property(e => e.ElementMinP)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_P");
+
+                entity.Property(e => e.ElementMinS)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_S");
+
+                entity.Property(e => e.ElementMinSi)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Element_MIN_SI");
+
+                entity.Property(e => e.FlowRate).HasMaxLength(50);
+
+                entity.Property(e => e.ModifiedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Modified_By");
+
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Modified_Date");
+
+                entity.Property(e => e.PreHeatInerpassTemp).HasMaxLength(50);
+
+                entity.Property(e => e.ShieldingGas).HasMaxLength(50);
+
+                entity.Property(e => e.Size).HasMaxLength(50);
+
+                entity.Property(e => e.TestCondition)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Condition");
+
+                entity.Property(e => e.TestImpectValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_ImpectValue");
+
+                entity.Property(e => e.TestMaxElongation)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_Elongation");
+
+                entity.Property(e => e.TestMaxUts)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_UTS");
+
+                entity.Property(e => e.TestMaxYs)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MAX_YS");
+
+                entity.Property(e => e.TestMinElongation)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_Elongation");
+
+                entity.Property(e => e.TestMinUts)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_UTS");
+
+                entity.Property(e => e.TestMinYs)
+                    .HasColumnType("numeric(10, 3)")
+                    .HasColumnName("Test_MIN_YS");
+
+                entity.Property(e => e.TestTemp)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Temp");
+
+                entity.Property(e => e.TradeDesignation).HasMaxLength(100);
+
+                entity.Property(e => e.Type).HasMaxLength(50);
 
                 entity.Property(e => e.WeldingProcess).HasMaxLength(50);
             });

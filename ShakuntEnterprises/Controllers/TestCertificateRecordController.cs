@@ -39,9 +39,14 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController
         public async Task<IActionResult> Index()
         {
-            return _context.TestCertificateRecords != null ?
-                        View(await _context.TestCertificateRecords.ToListAsync()) :
-                        Problem("Entity set 'ShakuntEnterprisesContext.TestCertificateRecords'  is null.");
+            var  testCertificateRecordModel = new TestCertificateRecordModel();
+            var lstTestCertificateRecord = await _context.TestCertificateRecords.ToListAsync();
+            //foreach (var lst in lstTestCertificateRecord)
+            //{
+            //    testCertificateRecordModel.Id = lst.Id;
+            //    testCertificateRecordModel.CertificateNo = lst.CertificateNo;
+            //}
+            return View(lstTestCertificateRecord);
         }
 
         // GET: TestCertificateRecordController/Details/5

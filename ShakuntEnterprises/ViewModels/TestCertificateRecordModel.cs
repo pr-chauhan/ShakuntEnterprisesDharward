@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace ShakuntEnterprises.ViewModels
 {
-    public partial class TestCertificateRecordModel
+    public class TestCertificateRecordModel
     {
         public int Id { get; set; }
         [DisplayName("Certificate No.")]

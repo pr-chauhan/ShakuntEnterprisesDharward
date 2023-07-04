@@ -1,126 +1,26 @@
-﻿@model ShakuntEnterprises.ViewModels.TestCertificateRecordModel
+﻿@model ShakuntEnterprises.ViewModels.BatchMasterModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
 <hr />
-<h3>Test Certificate Details </h3>
+<h3>Edit BatchMaster</h3>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <fieldset asp-action="Details" disabled="disabled">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="CertificateNo" class="control-label"></label>
-                    <input asp-for="CertificateNo" class="form-control" />
-                    <span asp-validation-for="CertificateNo" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:35%;display: inline-block;">
-                    <label asp-for="CustomerName" class="control-label"></label>
-                    <input asp-for="CustomerName" class="form-control" />
-                    <span asp-validation-for="CustomerName" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="IssueDate" class="control-label"></label>
-                    <input asp-for="IssueDate" class="form-control" />
-                    <span asp-validation-for="IssueDate" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="Quanity" class="control-label"></label>
-                    <input asp-for="Quanity" class="form-control" />
-                    <span asp-validation-for="Quanity" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="InvoiceNo" class="control-label"></label>
-                    <input asp-for="InvoiceNo" class="form-control" />
-                    <span asp-validation-for="InvoiceNo" class="text-danger"></span>
-                </div>
-            </div>
+           
             <h4>Welding Material</h4>
             <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="TradeDesignation" class="control-label"></label>
-                    <input asp-for="TradeDesignation" class="form-control" />
-                    <span asp-validation-for="TradeDesignation" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="Size" class="control-label"></label>
-                    <input asp-for="Size" class="form-control" />
-                    <span asp-validation-for="Size" class="text-danger"></span>
-                </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="BarchNo" class="control-label"></label>
                     <input asp-for="BarchNo" class="form-control" />
                     <span asp-validation-for="BarchNo" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="ManufecturingDate" class="control-label"></label>
-                    <input asp-for="ManufecturingDate" class="form-control" />
-                    <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="Specification" class="control-label"></label>
-                    <input asp-for="Specification" class="form-control" />
-                    <span asp-validation-for="Specification" class="text-danger"></span>
-                </div>
-
             </div>
-            <h4>Welding Condition</h4>
-            <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="WeldingProcess" class="control-label"></label>
-                    <input asp-for="WeldingProcess" class="form-control" />
-                    <span asp-validation-for="WeldingProcess" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="ShieldingGas" class="control-label"></label>
-                    <input asp-for="ShieldingGas" class="form-control" />
-                    <span asp-validation-for="ShieldingGas" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="PreHeatInerpassTemp" class="control-label"></label>
-                    <input asp-for="PreHeatInerpassTemp" class="form-control" />
-                    <span asp-validation-for="PreHeatInerpassTemp" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="Type" class="control-label"></label>
-                    <input asp-for="Type" class="form-control" />
-                    <span asp-validation-for="Type" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="Apms" class="control-label"></label>
-                    <input asp-for="Apms" class="form-control" />
-                    <span asp-validation-for="Apms" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="FlowRate" class="control-label"></label>
-                    <input asp-for="FlowRate" class="form-control" />
-                    <span asp-validation-for="FlowRate" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="CurrentPolarity" class="control-label"></label>
-                    <input asp-for="CurrentPolarity" class="form-control" />
-                    <span asp-validation-for="CurrentPolarity" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="Volts" class="control-label"></label>
-                    <input asp-for="Volts" class="form-control" />
-                    <span asp-validation-for="Volts" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="TravelSpeed" class="control-label"></label>
-                    <input asp-for="TravelSpeed" class="form-control" />
-                    <span asp-validation-for="TravelSpeed" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="BaseMetal" class="control-label"></label>
-                    <input asp-for="BaseMetal" class="form-control" />
-                    <span asp-validation-for="BaseMetal" class="text-danger"></span>
-                </div>
-
-            </div>
+            
             <h4>Chemical Composition (Wire)</h4>
             <div class="row">
                 <div class="form-group" style="width:10%;display: inline-block;">
@@ -264,14 +164,6 @@
                     <span asp-validation-for="TestCondition" class="text-danger"></span>
                 </div>
             </div>
-            <div>
-                <div class="form-group">
-                    <label asp-for="Remarks" class="control-label"></label>
-                    <input asp-for="Remarks" class="form-control" />
-                    <span asp-validation-for="Remarks" class="text-danger"></span>
-                </div>
-            </div>
-
             <div class="form-group" style="display:none;">
                 <label asp-for="CreatedDate" class="control-label"></label>
                 <input asp-for="CreatedDate" class="form-control" type="datetime" readonly value=@ViewBag.CDT />
@@ -282,6 +174,10 @@
                 <input asp-for="CreatedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
                 <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
-        </fieldset>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
