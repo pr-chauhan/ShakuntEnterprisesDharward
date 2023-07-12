@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Reports\TestCertificate.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
@@ -99,6 +103,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\SizeMaster\Delete.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Reports\TestCertificate.rdlc" />
   </ItemGroup>
 
 </Project>
