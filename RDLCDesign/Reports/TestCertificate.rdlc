@@ -265,10 +265,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.52444in</Top>
-        <Left>0.18in</Left>
+        <Top>1.50278in</Top>
+        <Left>0.16333in</Left>
         <Height>0.375in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -300,10 +300,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.91333in</Top>
-        <Left>0.18397in</Left>
+        <Top>1.905in</Top>
+        <Left>0.16333in</Left>
         <Height>0.29605in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -639,10 +639,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.87493in</Top>
-        <Left>0.18397in</Left>
+        <Top>2.8666in</Top>
+        <Left>0.16333in</Left>
         <Height>0.29605in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -674,10 +674,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>3.88926in</Top>
-        <Left>0.14162in</Left>
+        <Top>3.87259in</Top>
+        <Left>0.16333in</Left>
         <Height>0.29605in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -709,10 +709,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>5.47917in</Top>
-        <Left>0.14162in</Left>
+        <Top>5.4625in</Top>
+        <Left>0.16333in</Left>
         <Height>0.29605in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -744,10 +744,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.01426in</Top>
-        <Left>0.18in</Left>
+        <Top>6.99759in</Top>
+        <Left>0.16333in</Left>
         <Height>0.29605in</Height>
-        <Width>7.6904in</Width>
+        <Width>7.75369in</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -2750,7 +2750,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_C.Value - Fields!Element_MIN_C.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2782,7 +2782,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_SI.Value - Fields!Element_MIN_SI.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2814,7 +2814,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_MN.Value - Fields!Element_MIN_MN.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2846,7 +2846,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_P.Value-Fields!Element_MIN_P.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2878,7 +2878,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_S.Value-Fields!Element_MIN_S.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2910,7 +2910,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_NI.Value-Fields!Element_MIN_NI.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2942,7 +2942,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_CR.Value-Fields!Element_MIN_CR.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2974,7 +2974,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_MO.Value-Fields!Element_MIN_MO.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3006,7 +3006,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Element_MAX_CU.Value-Fields!Element_MIN_CU.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -3903,7 +3903,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Test_MAX_UTS.Value-Fields!Test_MIN_UTS.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -4308,36 +4308,12 @@
           </Border>
         </Style>
       </Line>
-      <Line Name="Line17">
-        <Top>0.07583in</Top>
-        <Left>3.94667in</Left>
-        <Height>1.45in</Height>
-        <Width>0.01667in</Width>
-        <ZIndex>70</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Line Name="Line20">
-        <Top>2.2425in</Top>
-        <Left>0.15917in</Left>
-        <Height>0.58667in</Height>
-        <Width>0in</Width>
-        <ZIndex>71</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Line Name="Line21">
         <Top>2.24in</Top>
         <Left>1.20851in</Left>
         <Height>0.58667in</Height>
         <Width>0in</Width>
-        <ZIndex>72</ZIndex>
+        <ZIndex>70</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4349,7 +4325,7 @@
         <Left>3.43351in</Left>
         <Height>0.58667in</Height>
         <Width>0in</Width>
-        <ZIndex>73</ZIndex>
+        <ZIndex>71</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4361,7 +4337,7 @@
         <Left>4.65851in</Left>
         <Height>0.58667in</Height>
         <Width>0in</Width>
-        <ZIndex>74</ZIndex>
+        <ZIndex>72</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4373,7 +4349,7 @@
         <Left>2.45851in</Left>
         <Height>0.63083in</Height>
         <Width>0in</Width>
-        <ZIndex>75</ZIndex>
+        <ZIndex>73</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4385,7 +4361,7 @@
         <Left>3.55851in</Left>
         <Height>0.63083in</Height>
         <Width>0in</Width>
-        <ZIndex>76</ZIndex>
+        <ZIndex>74</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4397,7 +4373,7 @@
         <Left>4.58351in</Left>
         <Height>0.63083in</Height>
         <Width>0in</Width>
-        <ZIndex>77</ZIndex>
+        <ZIndex>75</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4409,7 +4385,7 @@
         <Left>5.70851in</Left>
         <Height>0.63083in</Height>
         <Width>0in</Width>
-        <ZIndex>78</ZIndex>
+        <ZIndex>76</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4421,7 +4397,7 @@
         <Left>2.98351in</Left>
         <Height>1.00583in</Height>
         <Width>0in</Width>
-        <ZIndex>79</ZIndex>
+        <ZIndex>77</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4433,7 +4409,7 @@
         <Left>5.58351in</Left>
         <Height>1.25583in</Height>
         <Width>0in</Width>
-        <ZIndex>80</ZIndex>
+        <ZIndex>78</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4442,10 +4418,10 @@
       </Line>
       <Line Name="Line18">
         <Top>8.53333in</Top>
-        <Left>0.08146in</Left>
+        <Left>0.15646in</Left>
         <Height>0in</Height>
         <Width>7.75411in</Width>
-        <ZIndex>81</ZIndex>
+        <ZIndex>79</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -4470,11 +4446,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.73833in</Top>
+        <Top>8.60083in</Top>
         <Left>0.18in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>82</ZIndex>
+        <ZIndex>80</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4500,11 +4476,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remarks</rd:DefaultName>
-        <Top>8.73833in</Top>
+        <Top>8.60083in</Top>
         <Left>1.24944in</Left>
         <Height>0.25in</Height>
         <Width>6.568in</Width>
-        <ZIndex>83</ZIndex>
+        <ZIndex>81</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4549,11 +4525,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>9.25833in</Top>
+        <Top>8.92084in</Top>
         <Left>0.15917in</Left>
         <Height>0.48333in</Height>
         <Width>7.65828in</Width>
-        <ZIndex>84</ZIndex>
+        <ZIndex>82</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4584,11 +4560,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>10.58333in</Top>
+        <Top>10.15834in</Top>
         <Left>6.33351in</Left>
         <Height>0.25in</Height>
         <Width>1.5in</Width>
-        <ZIndex>85</ZIndex>
+        <ZIndex>83</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4608,7 +4584,7 @@
               <TextRun>
                 <Value>CE</Value>
                 <Style>
-                  <FontSize>72pt</FontSize>
+                  <FontSize>48pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -4616,11 +4592,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox121</rd:DefaultName>
-        <Top>9.82583in</Top>
+        <Top>9.48833in</Top>
         <Left>0.18417in</Left>
         <Height>0.97in</Height>
         <Width>1.49578in</Width>
-        <ZIndex>86</ZIndex>
+        <ZIndex>84</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -4631,6 +4607,66 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line35">
+        <Top>0.055in</Top>
+        <Left>0.105in</Left>
+        <Height>0in</Height>
+        <Width>7.81203in</Width>
+        <ZIndex>85</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line36">
+        <Top>0.04667in</Top>
+        <Left>0.12167in</Left>
+        <Height>10.66167in</Height>
+        <Width>0in</Width>
+        <ZIndex>86</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line37">
+        <Top>10.49584in</Top>
+        <Left>0.11917in</Left>
+        <Height>0in</Height>
+        <Width>7.81203in</Width>
+        <ZIndex>87</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line38">
+        <Top>0.0525in</Top>
+        <Left>7.91268in</Left>
+        <Height>10.66167in</Height>
+        <Width>0in</Width>
+        <ZIndex>88</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line39">
+        <Top>0.0425in</Top>
+        <Left>3.98in</Left>
+        <Height>1.57834in</Height>
+        <Width>0in</Width>
+        <ZIndex>89</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>10.91667in</Height>
     <Style>
@@ -4639,7 +4675,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.91703in</Width>
+  <Width>7.97518in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
