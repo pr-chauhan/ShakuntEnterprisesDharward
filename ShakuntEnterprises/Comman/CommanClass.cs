@@ -117,7 +117,13 @@
 
             return result;
         }
-       
+        public DataTable getTestCertificateRecordList(string Id)
+        {
+            //var result = _context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
+            var result = GetDataTable("SELECT *  FROM  [TestCertificateRecord] Where Id='"+Id+"'");//)_context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
+
+            return result;
+        }
         public  DataTable GetDataTable(string sqlstring)
         {
             dataTable = new DataTable();

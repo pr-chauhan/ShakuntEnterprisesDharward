@@ -53,8 +53,9 @@ namespace ShakuntEnterprises.Controllers
                 string mimtype = string.Empty;
                 int extension = 1;
                 var path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\TestCertificate.rdlc";
-                
-                var certificateRecords = _context.TestCertificateRecords.Where(x => x.Id == OrderN).ToList();
+
+                //var certificateRecords = _context.TestCertificateRecords.Where(x => x.Id == OrderN).ToList();
+                var certificateRecords = commanClass.getTestCertificateRecordList(Id);
                 
                 LocalReport localReport = new LocalReport(path);
                 localReport.AddDataSource("TestCertificate", certificateRecords);
