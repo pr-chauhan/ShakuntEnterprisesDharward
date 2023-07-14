@@ -389,5 +389,15 @@ namespace ShakuntEnterprises.Controllers
         {
             return (_context.TestCertificateRecords?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+
+        //=====================
+        public JsonResult GetTradeDesignationDataMaster( string  TradeDesignation)
+        {
+
+
+            return Json("");
+        }
+
     }
 }

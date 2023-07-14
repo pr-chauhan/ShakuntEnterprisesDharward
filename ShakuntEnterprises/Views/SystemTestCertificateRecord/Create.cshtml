@@ -4,6 +4,27 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
+
+<script type="text/javascript" src="~/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        $("#TradeDesignation").change(function(){
+            alert("hhhhh");
+
+            var TradeDesignation = $("#TradeDesignation  option:selected").val();
+            $.getJSON("/MainNavigationBars/GetMenulistofMenu", { TradeDesignation: TradeDesignation }, function (data) {
+                $("#MenuId").empty();
+                $("#MenuId").append('<option>select-menu</option>');
+                var jData = JSON.parse(data);
+                $.each(jData, function (key, value) {
+                    $("#MenuId").append('<option value=' + value.MenuId + '>' + value.MenuName + '</option>');
+                });
+
+        })
+    
+
+})    
+</script>
 <hr />
 <h3>Add System Test Certificate</h3>
 <hr />
