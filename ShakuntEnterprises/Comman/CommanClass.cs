@@ -124,6 +124,13 @@
 
             return result;
         }
+
+        public List<SizeMaster> getAllSizeList()
+        {
+            List<SizeMaster> result = _context.SizeMasters.ToList();
+
+            return result;
+        }
         public  DataTable GetDataTable(string sqlstring)
         {
             dataTable = new DataTable();

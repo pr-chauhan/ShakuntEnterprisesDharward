@@ -35,6 +35,7 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.Modules = commanClass.getModlueList(HttpContext.Session.GetString("lid"));
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
             ViewBag.CDT = DateTime.Now.ToString();
+            ViewBag.SIZE = commanClass.getAllSizeList();
 
         }
         public async Task<IActionResult> Index()
