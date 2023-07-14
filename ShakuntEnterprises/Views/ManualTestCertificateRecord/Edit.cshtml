@@ -1,15 +1,15 @@
 ﻿@model ShakuntEnterprises.ViewModels.TestCertificateRecordModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
 <hr />
-<h3>Test Certificate Details </h3>
+<h3>Edit Manual Test Certificate</h3>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <fieldset asp-action="Details" disabled="disabled">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
@@ -42,12 +42,16 @@
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
-                    <input asp-for="TradeDesignation" class="form-control" />
+                     <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignation"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-TradeDesignation</option>
+                    </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
-                    <input asp-for="Size" class="form-control" />
+                    <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-Size</option>
+                    </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
@@ -282,6 +286,11 @@
                 <input asp-for="CreatedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
                 <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
-        </fieldset>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-info" asp-action="Index">Back to List</a>
+            </div>
+        </form>
     </div>
 </div>

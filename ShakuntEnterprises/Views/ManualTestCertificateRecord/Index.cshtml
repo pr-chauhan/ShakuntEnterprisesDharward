@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ShakuntEnterprises.Models.TestCertificateRecord>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_Views.cshtml";
+}
+
+
+<h3>Manual Certificate List </h3>
+<p>
+    <a class=" btn btn-success" asp-action="Create">Create New</a>
+</p>
+<table id="Dynamic-data-table" width="100%" class="display expandable-table dataTable no-footer" cellpadding="1" cellspacing="1">
+    <thead class="thead-dark">
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.CertificateNo)
+            </th>
+            
+            
+            <th>Action / Command</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CertificateNo)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> &nbsp;
+                    <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a> &nbsp;
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    @Html.ActionLink("Print", "PrintCertificate","Report" ,new { Id=item.Id.ToString()   },new { @class = "btn btn-secondary"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#Dynamic-data-table').DataTable();
+        });
+    </script>
+}

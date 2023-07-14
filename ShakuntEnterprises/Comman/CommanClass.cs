@@ -131,6 +131,12 @@
 
             return result;
         }
+        public List<TradeDesignationMaster> getAllTradeDesignationMasterList()
+        {
+            List<TradeDesignationMaster> result = _context.TradeDesignationMasters.ToList();
+
+            return result;
+        }
         public  DataTable GetDataTable(string sqlstring)
         {
             dataTable = new DataTable();

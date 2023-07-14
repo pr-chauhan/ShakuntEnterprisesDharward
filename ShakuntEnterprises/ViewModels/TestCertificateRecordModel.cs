@@ -99,6 +99,8 @@ namespace ShakuntEnterprises.ViewModels
         [DisplayName("Test Condition")]
         public string? TestCondition { get; set; }
         public string? Remarks { get; set; }
+
+        public string? CertificateType { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }

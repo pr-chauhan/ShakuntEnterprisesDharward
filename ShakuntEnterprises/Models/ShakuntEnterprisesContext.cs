@@ -329,6 +329,10 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.CertificateNo).HasMaxLength(50);
 
+                entity.Property(e => e.CertificateType)
+                    .HasMaxLength(50)
+                    .HasColumnName("Certificate_Type");
+
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)
                     .HasColumnName("Created_By");

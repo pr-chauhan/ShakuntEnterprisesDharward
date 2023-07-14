@@ -14,14 +14,14 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace ShakuntEnterprises.Controllers
 {
-    public class TestCertificateRecordController : Controller
+    public class ManualTestCertificateRecordController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
 
-        public TestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
+        public ManualTestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
         {
             _logger = logger;
             _context = enterprisesContext;
@@ -34,6 +34,8 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.Modules = commanClass.getModlueList(HttpContext.Session.GetString("lid"));
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
             ViewBag.CDT = DateTime.Now.ToString();
+            ViewBag.SIZE = commanClass.getAllSizeList();
+            ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x=> new { TradeDesignation = x.TradeDesignation } ).Distinct();
 
         }
         // GET: TestCertificateRecordController
@@ -108,6 +110,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestImpectValue = testCertificateRecord.TestImpectValue;
                 Data.TestCondition = testCertificateRecord.TestCondition;
                 Data.Remarks = testCertificateRecord.Remarks;
+                Data.CertificateType = "Manual";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
                 Data.ModifiedDate = testCertificateRecord.ModifiedDate;
@@ -184,6 +187,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.TestImpectValue = testCertificateRecord.TestImpectValue;
                     Data.TestCondition = testCertificateRecord.TestCondition;
                     Data.Remarks = testCertificateRecord.Remarks;
+                    Data.CertificateType = "Manual";
                     Data.CreatedDate = testCertificateRecord.CreatedDate;
                     Data.CreatedBy = testCertificateRecord.CreatedBy;
                     Data.ModifiedDate = testCertificateRecord.ModifiedDate;
@@ -259,6 +263,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestImpectValue = testCertificateRecord.TestImpectValue;
                 Data.TestCondition = testCertificateRecord.TestCondition;
                 Data.Remarks = testCertificateRecord.Remarks;
+                Data.CertificateType = "Manual";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
                 Data.ModifiedDate = testCertificateRecord.ModifiedDate;
@@ -337,6 +342,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.TestImpectValue = testCertificateRecord.TestImpectValue;
                         Data.TestCondition = testCertificateRecord.TestCondition;
                         Data.Remarks = testCertificateRecord.Remarks;
+                        Data.CertificateType = "Manual";
                         Data.CreatedDate = testCertificateRecord.CreatedDate;
                         Data.CreatedBy = testCertificateRecord.CreatedBy;
                         Data.ModifiedDate = testCertificateRecord.ModifiedDate;

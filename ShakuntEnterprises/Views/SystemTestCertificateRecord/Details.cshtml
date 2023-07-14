@@ -1,0 +1,288 @@
+﻿@model ShakuntEnterprises.ViewModels.TestCertificateRecordModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_Views.cshtml";
+}
+<hr />
+<h3>Test Certificate Details </h3>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <fieldset asp-action="Details" disabled="disabled">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="CertificateNo" class="control-label"></label>
+                    <input asp-for="CertificateNo" class="form-control" />
+                    <span asp-validation-for="CertificateNo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:35%;display: inline-block;">
+                    <label asp-for="CustomerName" class="control-label"></label>
+                    <input asp-for="CustomerName" class="form-control" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="IssueDate" class="control-label"></label>
+                    <input asp-for="IssueDate" class="form-control" />
+                    <span asp-validation-for="IssueDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="Quanity" class="control-label"></label>
+                    <input asp-for="Quanity" class="form-control" />
+                    <span asp-validation-for="Quanity" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="InvoiceNo" class="control-label"></label>
+                    <input asp-for="InvoiceNo" class="form-control" />
+                    <span asp-validation-for="InvoiceNo" class="text-danger"></span>
+                </div>
+            </div>
+            <h4>Welding Material</h4>
+            <div class="row">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="TradeDesignation" class="control-label"></label>
+                    <input asp-for="TradeDesignation" class="form-control" />
+                    <span asp-validation-for="TradeDesignation" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Size" class="control-label"></label>
+                    <input asp-for="Size" class="form-control" />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="BarchNo" class="control-label"></label>
+                    <input asp-for="BarchNo" class="form-control" />
+                    <span asp-validation-for="BarchNo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="ManufecturingDate" class="control-label"></label>
+                    <input asp-for="ManufecturingDate" class="form-control" />
+                    <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Specification" class="control-label"></label>
+                    <input asp-for="Specification" class="form-control" />
+                    <span asp-validation-for="Specification" class="text-danger"></span>
+                </div>
+
+            </div>
+            <h4>Welding Condition</h4>
+            <div class="row">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="WeldingProcess" class="control-label"></label>
+                    <input asp-for="WeldingProcess" class="form-control" />
+                    <span asp-validation-for="WeldingProcess" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="ShieldingGas" class="control-label"></label>
+                    <input asp-for="ShieldingGas" class="form-control" />
+                    <span asp-validation-for="ShieldingGas" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="PreHeatInerpassTemp" class="control-label"></label>
+                    <input asp-for="PreHeatInerpassTemp" class="form-control" />
+                    <span asp-validation-for="PreHeatInerpassTemp" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Type" class="control-label"></label>
+                    <input asp-for="Type" class="form-control" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Apms" class="control-label"></label>
+                    <input asp-for="Apms" class="form-control" />
+                    <span asp-validation-for="Apms" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="FlowRate" class="control-label"></label>
+                    <input asp-for="FlowRate" class="form-control" />
+                    <span asp-validation-for="FlowRate" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="CurrentPolarity" class="control-label"></label>
+                    <input asp-for="CurrentPolarity" class="form-control" />
+                    <span asp-validation-for="CurrentPolarity" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Volts" class="control-label"></label>
+                    <input asp-for="Volts" class="form-control" />
+                    <span asp-validation-for="Volts" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="TravelSpeed" class="control-label"></label>
+                    <input asp-for="TravelSpeed" class="form-control" />
+                    <span asp-validation-for="TravelSpeed" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="BaseMetal" class="control-label"></label>
+                    <input asp-for="BaseMetal" class="form-control" />
+                    <span asp-validation-for="BaseMetal" class="text-danger"></span>
+                </div>
+
+            </div>
+            <h4>Chemical Composition (Wire)</h4>
+            <div class="row">
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinC" class="control-label"></label>
+                    <input asp-for="ElementMinC" class="form-control" />
+                    <span asp-validation-for="ElementMinC" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinSi" class="control-label"></label>
+                    <input asp-for="ElementMinSi" class="form-control" />
+                    <span asp-validation-for="ElementMinSi" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinMn" class="control-label"></label>
+                    <input asp-for="ElementMinMn" class="form-control" />
+                    <span asp-validation-for="ElementMinMn" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinP" class="control-label"></label>
+                    <input asp-for="ElementMinP" class="form-control" />
+                    <span asp-validation-for="ElementMinP" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinS" class="control-label"></label>
+                    <input asp-for="ElementMinS" class="form-control" />
+                    <span asp-validation-for="ElementMinS" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinNi" class="control-label"></label>
+                    <input asp-for="ElementMinNi" class="form-control" />
+                    <span asp-validation-for="ElementMinNi" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinCr" class="control-label"></label>
+                    <input asp-for="ElementMinCr" class="form-control" />
+                    <span asp-validation-for="ElementMinCr" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinMo" class="control-label"></label>
+                    <input asp-for="ElementMinMo" class="form-control" />
+                    <span asp-validation-for="ElementMinMo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMinCu" class="control-label"></label>
+                    <input asp-for="ElementMinCu" class="form-control" />
+                    <span asp-validation-for="ElementMinCu" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxC" class="control-label"></label>
+                    <input asp-for="ElementMaxC" class="form-control" />
+                    <span asp-validation-for="ElementMaxC" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxSi" class="control-label"></label>
+                    <input asp-for="ElementMaxSi" class="form-control" />
+                    <span asp-validation-for="ElementMaxSi" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxMn" class="control-label"></label>
+                    <input asp-for="ElementMaxMn" class="form-control" />
+                    <span asp-validation-for="ElementMaxMn" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxP" class="control-label"></label>
+                    <input asp-for="ElementMaxP" class="form-control" />
+                    <span asp-validation-for="ElementMaxP" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxS" class="control-label"></label>
+                    <input asp-for="ElementMaxS" class="form-control" />
+                    <span asp-validation-for="ElementMaxS" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxNi" class="control-label"></label>
+                    <input asp-for="ElementMaxNi" class="form-control" />
+                    <span asp-validation-for="ElementMaxNi" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxCr" class="control-label"></label>
+                    <input asp-for="ElementMaxCr" class="form-control" />
+                    <span asp-validation-for="ElementMaxCr" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxMo" class="control-label"></label>
+                    <input asp-for="ElementMaxMo" class="form-control" />
+                    <span asp-validation-for="ElementMaxMo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="ElementMaxCu" class="control-label"></label>
+                    <input asp-for="ElementMaxCu" class="form-control" />
+                    <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
+                </div>
+            </div>
+            <h4>Mechanical Test (All Weld Metal)</h4>
+            <div class="row">
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMinUts" class="control-label"></label>
+                    <input asp-for="TestMinUts" class="form-control" />
+                    <span asp-validation-for="TestMinUts" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMinYs" class="control-label"></label>
+                    <input asp-for="TestMinYs" class="form-control" />
+                    <span asp-validation-for="TestMinYs" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMinElongation" class="control-label"></label>
+                    <input asp-for="TestMinElongation" class="form-control" />
+                    <span asp-validation-for="TestMinElongation" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMaxUts" class="control-label"></label>
+                    <input asp-for="TestMaxUts" class="form-control" />
+                    <span asp-validation-for="TestMaxUts" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMaxYs" class="control-label"></label>
+                    <input asp-for="TestMaxYs" class="form-control" />
+                    <span asp-validation-for="TestMaxYs" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestMaxElongation" class="control-label"></label>
+                    <input asp-for="TestMaxElongation" class="form-control" />
+                    <span asp-validation-for="TestMaxElongation" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestTemp" class="control-label"></label>
+                    <input asp-for="TestTemp" class="form-control" />
+                    <span asp-validation-for="TestTemp" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestImpectValue" class="control-label"></label>
+                    <input asp-for="TestImpectValue" class="form-control" />
+                    <span asp-validation-for="TestImpectValue" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:10%;display: inline-block;">
+                    <label asp-for="TestCondition" class="control-label"></label>
+                    <input asp-for="TestCondition" class="form-control" />
+                    <span asp-validation-for="TestCondition" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label asp-for="Remarks" class="control-label"></label>
+                    <input asp-for="Remarks" class="form-control" />
+                    <span asp-validation-for="Remarks" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" type="datetime" readonly value=@ViewBag.CDT />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+        </fieldset>
+    </div>
+    <a class="btn btn-info" asp-action="Index">Back to List</a>
+</div>

@@ -1,53 +1,57 @@
 ﻿@model ShakuntEnterprises.ViewModels.TestCertificateRecordModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
 <hr />
-<h3>Edit Manual Test Certificate</h3>
+<h3>Add System Test Certificate</h3>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="CertificateNo" class="control-label"></label>
-                    <input asp-for="CertificateNo" class="form-control" />
-                    <span asp-validation-for="CertificateNo" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:35%;display: inline-block;">
-                    <label asp-for="CustomerName" class="control-label"></label>
-                    <input asp-for="CustomerName" class="form-control" />
-                    <span asp-validation-for="CustomerName" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
-                    <label asp-for="IssueDate" class="control-label"></label>
-                    <input asp-for="IssueDate" class="form-control" />
-                    <span asp-validation-for="IssueDate" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="Quanity" class="control-label"></label>
-                    <input asp-for="Quanity" class="form-control" />
-                    <span asp-validation-for="Quanity" class="text-danger"></span>
-                </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="InvoiceNo" class="control-label"></label>
-                    <input asp-for="InvoiceNo" class="form-control" />
-                    <span asp-validation-for="InvoiceNo" class="text-danger"></span>
-                </div>
+                    <div class="form-group" style="width:20%;display: inline-block;">
+                        <label asp-for="CertificateNo" class="control-label"></label>
+                        <input asp-for="CertificateNo" class="form-control"  />
+                        <span asp-validation-for="CertificateNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width:35%;display: inline-block;">
+                        <label asp-for="CustomerName" class="control-label"></label>
+                        <input asp-for="CustomerName" class="form-control" />
+                        <span asp-validation-for="CustomerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width:20%;display: inline-block;">
+                        <label asp-for="IssueDate" class="control-label"></label>
+                        <input asp-for="IssueDate" class="form-control" />
+                        <span asp-validation-for="IssueDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width:10%;display: inline-block;">
+                        <label asp-for="Quanity" class="control-label"></label>
+                        <input asp-for="Quanity" class="form-control" />
+                        <span asp-validation-for="Quanity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width:10%;display: inline-block;">
+                        <label asp-for="InvoiceNo" class="control-label"></label>
+                        <input asp-for="InvoiceNo" class="form-control" />
+                        <span asp-validation-for="InvoiceNo" class="text-danger"></span>
+                    </div>
             </div>
             <h4>Welding Material</h4>
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
-                    <input asp-for="TradeDesignation" class="form-control" />
+                    <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignation"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-TradeDesignation</option>
+                    </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
-                    <input asp-for="Size" class="form-control" />
+                   <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-Size</option>
+                    </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
@@ -65,7 +69,7 @@
                     <input asp-for="Specification" class="form-control" />
                     <span asp-validation-for="Specification" class="text-danger"></span>
                 </div>
-
+            
             </div>
             <h4>Welding Condition</h4>
             <div class="row">
@@ -282,9 +286,10 @@
                 <input asp-for="CreatedBy" class="form-control" readonly="readonly" value=@Context.Session.GetString("lid") />
                 <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
-
+            
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-info" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
