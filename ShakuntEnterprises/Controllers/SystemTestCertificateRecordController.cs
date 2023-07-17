@@ -394,9 +394,16 @@ namespace ShakuntEnterprises.Controllers
         //=====================
         public JsonResult GetTradeDesignationDataMaster( string  TradeDesignation)
         {
+            var data = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).ToList();
 
+            return Json(data);
+        }
 
-            return Json("");
+        public JsonResult GetSizeDataMaster(string Size)
+        {
+            var data = _context.SizeMasters.Where(x => x.Size == Size).ToList();
+
+            return Json(data);
         }
 
     }

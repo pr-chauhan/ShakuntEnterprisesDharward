@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
+
 <hr />
 <h3>Create BatchMaster</h3>
 <hr />
@@ -182,3 +183,22 @@
         </form>
     </div>
 </div>
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#BarchNo").change(function () {
+                var batchNo = $("#BarchNo").val();
+                var d = new Date();
+                //var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+                var strDate =  d.getDate() +'' + (d.getMonth() + 1) +''+ d.getFullYear() ;
+                debugger;
+                $("#BarchNo").val(strDate + batchNo);
+            })
+         // alert("Hiii");
+        });
+    </script>
+}

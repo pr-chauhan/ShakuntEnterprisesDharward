@@ -4,27 +4,7 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
-
-<script type="text/javascript" src="~/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-        $("#TradeDesignation").change(function(){
-            alert("hhhhh");
-
-            var TradeDesignation = $("#TradeDesignation  option:selected").val();
-            $.getJSON("/MainNavigationBars/GetMenulistofMenu", { TradeDesignation: TradeDesignation }, function (data) {
-                $("#MenuId").empty();
-                $("#MenuId").append('<option>select-menu</option>');
-                var jData = JSON.parse(data);
-                $.each(jData, function (key, value) {
-                    $("#MenuId").append('<option value=' + value.MenuId + '>' + value.MenuName + '</option>');
-                });
-
-        })
-    
-
-})    
-</script>
+ 
 <hr />
 <h3>Add System Test Certificate</h3>
 <hr />
@@ -315,3 +295,67 @@ $(document).ready(function(){
         </form>
     </div>
 </div>
+
+@section Scripts
+    {
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#TradeDesignation").change(function () {
+            
+            var TradeDesignation = $("#TradeDesignation  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster", 
+                { TradeDesignation: TradeDesignation }, function (data) {
+                    debugger
+                        $("#WeldingProcess").val(data[0].weldingProcess);
+                        $("#ShieldingGas").val(data[0].shieldingGas);
+                        $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
+                        $("#Type").val(data[0].type);
+                        $("#FlowRate").val(data[0].flowRate);
+                        $("#CurrentPolarity").val(data[0].currentPolarity);
+                        $("#BaseMetal").val(data[0].baseMetal);
+                        $("#ElementMinC").val(data[0].elementMinC);
+                        $("#ElementMinSi").val(data[0].elementMinSi);
+                        $("#ElementMinMn").val(data[0].elementMinMn);
+                        $("#ElementMinP").val(data[0].elementMinP);
+                        $("#ElementMinS").val(data[0].elementMinS);
+                        $("#ElementMinNi").val(data[0].elementMinNi);
+                        $("#ElementMinCr").val(data[0].elementMinCr);
+                        $("#ElementMinMo").val(data[0].elementMinMo);
+                        $("#ElementMinCu").val(data[0].elementMinCu);
+                        $("#ElementMaxC").val(data[0].elementMaxC);
+                        $("#ElementMaxSi").val(data[0].elementMaxSi);
+                        $("#ElementMaxMn").val(data[0].elementMaxMn);
+                        $("#ElementMaxP").val(data[0].elementMaxP);
+                        $("#ElementMaxS").val(data[0].elementMaxS);
+                        $("#ElementMaxNi").val(data[0].elementMaxNi);
+                        $("#ElementMaxCr").val(data[0].elementMaxCr);
+                        $("#ElementMaxMo").val(data[0].elementMaxMo);
+                        $("#ElementMaxCu").val(data[0].elementMaxCu);
+                        $("#TestMinUts").val(data[0].testMinUts);
+                        $("#TestMinYs").val(data[0].testMinYs);
+                        $("#TestMinElongation").val(data[0].testMinElongation);
+                        $("#TestMaxUts").val(data[0].testMaxUts);
+                        $("#TestMaxYs").val(data[0].testMaxYs);
+                        $("#TestMaxElongation").val(data[0].testMaxElongation);
+                        $("#TestTemp").val(data[0].testTemp);
+                        $("#TestImpectValue").val(data[0].testImpectValue);
+                        $("#TestCondition").val(data[0].testCondition);
+            })
+        })
+
+            $("#Size").change(function () {
+
+                var Size = $("#Size  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetSizeDataMaster",
+                    { Size: Size }, function (data) {
+                        debugger
+                        $("#Size").val(data[0].size);
+                        $("#Apms").val(data[0].apms);
+                        $("#Volts").val(data[0].volts);
+                        $("#TravelSpeed").val(data[0].travelSpeed);
+                         
+                    })
+            })
+    })
+</script>
+}
