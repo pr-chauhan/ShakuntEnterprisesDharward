@@ -60,6 +60,8 @@
                             <input type="submit" style="width:100%" value="Login" class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="IndexHome" />
                         </div>
                     </form>
+                    <span class="text-danger">@Html.ValidationMessage("LoginFailed")</span>
+
                 </div>
             </div>
 

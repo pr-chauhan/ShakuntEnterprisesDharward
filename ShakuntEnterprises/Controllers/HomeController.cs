@@ -62,6 +62,10 @@ namespace ShakuntEnterprises.Controllers
         }
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("LoginFailed") != null)
+            {
+                ModelState.AddModelError("LoginFailed", "Invalid login. Please try again..!!");
+            }
             return View();
         }
         public IActionResult Logout()
@@ -79,8 +83,10 @@ namespace ShakuntEnterprises.Controllers
         {
             try
             {
+                HttpContext.Session.SetString("LoginFailed", "");
                 if (!UserMasterExists(userMaster.UserId, userMaster.UserPassword))
                 {
+                    HttpContext.Session.SetString("LoginFailed", "LoginFailed");
                     return RedirectToAction("Login");
                 }
                 else
@@ -101,7 +107,7 @@ namespace ShakuntEnterprises.Controllers
             }
             catch
             {
-                ModelState.AddModelError(nameof(UserMaster.UserPassword), "Invalid login. Please try again..!!");
+                HttpContext.Session.SetString("LoginFailed", "LoginFailed");
                 return Login();
             }
         }
