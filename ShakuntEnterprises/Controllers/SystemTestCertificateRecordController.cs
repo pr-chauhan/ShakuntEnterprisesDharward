@@ -41,7 +41,7 @@ namespace ShakuntEnterprises.Controllers
         public async Task<IActionResult> Index()
         {
             var  testCertificateRecordModel = new TestCertificateRecordModel();
-            var lstTestCertificateRecord = await _context.TestCertificateRecords.ToListAsync();
+            var lstTestCertificateRecord = await _context.TestCertificateRecords.Where(x => x.CertificateType.Equals("System")).ToListAsync();
             //foreach (var lst in lstTestCertificateRecord)
             //{
             //    testCertificateRecordModel.Id = lst.Id;
