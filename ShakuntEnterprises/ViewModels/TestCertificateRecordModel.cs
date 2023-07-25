@@ -98,6 +98,35 @@ namespace ShakuntEnterprises.ViewModels
         public string? TestImpectValue { get; set; }
         [DisplayName("Test Condition")]
         public string? TestCondition { get; set; }
+
+        [DisplayName("Size Standard Value")]
+        public string? SizeStandardValue { get; set; }
+        [DisplayName("Size Actual Value")]
+        public string? SizeActualValue { get; set; }
+        [DisplayName("Coating Standard Value")]
+        public string? CoatingStandardValue { get; set; }
+        [DisplayName("Coating Actual Value")]
+        public string? CoatingActualValue { get; set; }
+        [DisplayName("Uts Wire Standard Value")]
+        public string? UtswireStandardValue { get; set; }
+        [DisplayName("Uts Wire Actual Value")]
+        public string? UtswireActualValue { get; set; }
+        [DisplayName("Cast Dia Standard Value")]
+        public string? CastDiaStandardValue { get; set; }
+        [DisplayName("Cast Dia Actual Value")]
+        public string? CastDiaActualValue { get; set; }
+        [DisplayName("Helix Standard Value")]
+        public string? HelixStandardValue { get; set; }
+        [DisplayName("Helix Actual Value")]
+        public string? HelixActualValue { get; set; }
+        [DisplayName("Other Test Radio Specs ")]
+        public string? OtherTestRadioSpecs { get; set; }
+        [DisplayName("Other Test Face Bend Specs")]
+        public string? OtherTestFaceBendSpecs { get; set; }
+        [DisplayName("Other Test Fillet Specs")]
+        public string? OtherTestFilletSpecs { get; set; }
+
+
         public string? Remarks { get; set; }
 
         public string? CertificateType { get; set; }

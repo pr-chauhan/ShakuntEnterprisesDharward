@@ -53,6 +53,19 @@ namespace ShakuntEnterprises.Models
         public string? TestTemp { get; set; }
         public string? TestImpectValue { get; set; }
         public string? TestCondition { get; set; }
+        public string? SizeStandardValue { get; set; }
+        public string? SizeActualValue { get; set; }
+        public string? CoatingStandardValue { get; set; }
+        public string? CoatingActualValue { get; set; }
+        public string? UtswireStandardValue { get; set; }
+        public string? UtswireActualValue { get; set; }
+        public string? CastDiaStandardValue { get; set; }
+        public string? CastDiaActualValue { get; set; }
+        public string? HelixStandardValue { get; set; }
+        public string? HelixActualValue { get; set; }
+        public string? OtherTestRadioSpecs { get; set; }
+        public string? OtherTestFaceBendSpecs { get; set; }
+        public string? OtherTestFilletSpecs { get; set; }
         public string? Remarks { get; set; }
         public string? CertificateType { get; set; }
         public DateTime? CreatedDate { get; set; }

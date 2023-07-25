@@ -19,7 +19,6 @@ namespace ShakuntEnterprises.Models
         public virtual DbSet<BatchMaster> BatchMasters { get; set; } = null!;
         public virtual DbSet<MainModuleBar> MainModuleBars { get; set; } = null!;
         public virtual DbSet<MainNavigationBar> MainNavigationBars { get; set; } = null!;
-        public virtual DbSet<MigrationHistory> MigrationHistories { get; set; } = null!;
         public virtual DbSet<ModuleList> ModuleLists { get; set; } = null!;
         public virtual DbSet<NumberSeries> NumberSeries { get; set; } = null!;
         public virtual DbSet<SizeMaster> SizeMasters { get; set; } = null!;
@@ -218,20 +217,6 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.UserRight).HasMaxLength(10);
             });
 
-            modelBuilder.Entity<MigrationHistory>(entity =>
-            {
-                entity.HasKey(e => new { e.MigrationId, e.ContextKey })
-                    .HasName("PK_dbo.__MigrationHistory");
-
-                entity.ToTable("__MigrationHistory");
-
-                entity.Property(e => e.MigrationId).HasMaxLength(150);
-
-                entity.Property(e => e.ContextKey).HasMaxLength(300);
-
-                entity.Property(e => e.ProductVersion).HasMaxLength(32);
-            });
-
             modelBuilder.Entity<ModuleList>(entity =>
             {
                 entity.HasKey(e => e.ModuleId)
@@ -327,11 +312,27 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
+                entity.Property(e => e.CastDiaActualValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("CastDia_ActualValue");
+
+                entity.Property(e => e.CastDiaStandardValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("CastDia_StandardValue");
+
                 entity.Property(e => e.CertificateNo).HasMaxLength(50);
 
                 entity.Property(e => e.CertificateType)
                     .HasMaxLength(50)
                     .HasColumnName("Certificate_Type");
+
+                entity.Property(e => e.CoatingActualValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Coating_ActualValue");
+
+                entity.Property(e => e.CoatingStandardValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Coating_StandardValue");
 
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)
@@ -419,6 +420,14 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
 
+                entity.Property(e => e.HelixActualValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Helix_ActualValue");
+
+                entity.Property(e => e.HelixStandardValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Helix_StandardValue");
+
                 entity.Property(e => e.InvoiceNo).HasMaxLength(50);
 
                 entity.Property(e => e.IssueDate).HasColumnType("datetime");
@@ -433,6 +442,18 @@ namespace ShakuntEnterprises.Models
                     .HasColumnType("datetime")
                     .HasColumnName("Modified_Date");
 
+                entity.Property(e => e.OtherTestFaceBendSpecs)
+                    .HasMaxLength(50)
+                    .HasColumnName("OtherTest_FaceBend_Specs");
+
+                entity.Property(e => e.OtherTestFilletSpecs)
+                    .HasMaxLength(50)
+                    .HasColumnName("OtherTest_Fillet_Specs");
+
+                entity.Property(e => e.OtherTestRadioSpecs)
+                    .HasMaxLength(50)
+                    .HasColumnName("OtherTest_Radio_Specs");
+
                 entity.Property(e => e.PreHeatInerpassTemp).HasMaxLength(50);
 
                 entity.Property(e => e.Quanity).HasColumnType("numeric(10, 3)");
@@ -442,6 +463,14 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.ShieldingGas).HasMaxLength(50);
 
                 entity.Property(e => e.Size).HasMaxLength(50);
+
+                entity.Property(e => e.SizeActualValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Size_ActualValue");
+
+                entity.Property(e => e.SizeStandardValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Size_StandardValue");
 
                 entity.Property(e => e.Specification).HasMaxLength(50);
 
@@ -486,6 +515,14 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.TravelSpeed).HasMaxLength(50);
 
                 entity.Property(e => e.Type).HasMaxLength(50);
+
+                entity.Property(e => e.UtswireActualValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("UTSWire_ActualValue");
+
+                entity.Property(e => e.UtswireStandardValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("UTSWire_StandardValue");
 
                 entity.Property(e => e.Volts).HasMaxLength(50);
 
