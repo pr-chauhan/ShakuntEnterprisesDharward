@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ShakuntEnterprisesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ShakuntEnterprisesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TestCertificateRecord">
           <Key>
             <PropertyRef Name="Id" />
@@ -57,7 +57,21 @@
           <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Condition" Type="nvarchar" MaxLength="50" />
+          <Property Name="Size_StandardValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Size_ActualValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Coating_StandardValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Coating_ActualValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="UTSWire_StandardValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="UTSWire_ActualValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="CastDia_StandardValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="CastDia_ActualValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Helix_StandardValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Helix_ActualValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_Radio_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_FaceBend_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_Fillet_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Certificate_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Created_Date" Type="datetime" />
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Modified_Date" Type="datetime" />
@@ -66,8 +80,7 @@
         <EntityContainer Name="ShakuntEnterprisesModelStoreContainer">
           <EntitySet Name="TestCertificateRecord" EntityType="Self.TestCertificateRecord" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShakuntEnterprisesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -128,6 +141,20 @@
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Size_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Coating_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Coating_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UTSWire_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UTSWire_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CastDia_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CastDia_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Helix_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Helix_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Fillet_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Certificate_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="ShakuntEnterprisesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TestCertificateRecords" EntityType="Self.TestCertificateRecord" />
@@ -141,6 +168,20 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="Certificate_Type" ColumnName="Certificate_Type" />
+                <ScalarProperty Name="OtherTest_Fillet_Specs" ColumnName="OtherTest_Fillet_Specs" />
+                <ScalarProperty Name="OtherTest_FaceBend_Specs" ColumnName="OtherTest_FaceBend_Specs" />
+                <ScalarProperty Name="OtherTest_Radio_Specs" ColumnName="OtherTest_Radio_Specs" />
+                <ScalarProperty Name="Helix_ActualValue" ColumnName="Helix_ActualValue" />
+                <ScalarProperty Name="Helix_StandardValue" ColumnName="Helix_StandardValue" />
+                <ScalarProperty Name="CastDia_ActualValue" ColumnName="CastDia_ActualValue" />
+                <ScalarProperty Name="CastDia_StandardValue" ColumnName="CastDia_StandardValue" />
+                <ScalarProperty Name="UTSWire_ActualValue" ColumnName="UTSWire_ActualValue" />
+                <ScalarProperty Name="UTSWire_StandardValue" ColumnName="UTSWire_StandardValue" />
+                <ScalarProperty Name="Coating_ActualValue" ColumnName="Coating_ActualValue" />
+                <ScalarProperty Name="Coating_StandardValue" ColumnName="Coating_StandardValue" />
+                <ScalarProperty Name="Size_ActualValue" ColumnName="Size_ActualValue" />
+                <ScalarProperty Name="Size_StandardValue" ColumnName="Size_StandardValue" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />

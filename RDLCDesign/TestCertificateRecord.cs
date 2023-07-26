@@ -67,5 +67,19 @@ namespace RDLCDesign
         public string Created_By { get; set; }
         public Nullable<System.DateTime> Modified_Date { get; set; }
         public string Modified_By { get; set; }
+        public string Size_StandardValue { get; set; }
+        public string Size_ActualValue { get; set; }
+        public string Coating_StandardValue { get; set; }
+        public string Coating_ActualValue { get; set; }
+        public string UTSWire_StandardValue { get; set; }
+        public string UTSWire_ActualValue { get; set; }
+        public string CastDia_StandardValue { get; set; }
+        public string CastDia_ActualValue { get; set; }
+        public string Helix_StandardValue { get; set; }
+        public string Helix_ActualValue { get; set; }
+        public string OtherTest_Radio_Specs { get; set; }
+        public string OtherTest_FaceBend_Specs { get; set; }
+        public string OtherTest_Fillet_Specs { get; set; }
+        public string Certificate_Type { get; set; }
     }
 }
