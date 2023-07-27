@@ -13,12 +13,24 @@
 <table id="Dynamic-data-table" width="100%" class="display expandable-table dataTable no-footer" cellpadding="1" cellspacing="1">
     <thead class="thead-dark">
         <tr>
-           
+
             <th>
                 @Html.DisplayNameFor(model => model.CertificateNo)
             </th>
-            
-            
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quanity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceNo)
+            </th>
+
+
             <th>Action / Command</th>
         </tr>
     </thead>
@@ -29,6 +41,19 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.CertificateNo)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quanity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InvoiceNo)
+                </td>
+
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> &nbsp;
                     <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a> &nbsp;

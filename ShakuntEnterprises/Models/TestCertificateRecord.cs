@@ -13,6 +13,7 @@ namespace ShakuntEnterprises.Models
         public string? InvoiceNo { get; set; }
         public string? TradeDesignation { get; set; }
         public string? Size { get; set; }
+        public string? BatchDate { get; set; }
         public string? BarchNo { get; set; }
         public DateTime? ManufecturingDate { get; set; }
         public string? Specification { get; set; }

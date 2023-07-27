@@ -68,6 +68,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
+                Data.BatchDate = testCertificateRecord.BatchDate;
                 Data.BarchNo = testCertificateRecord.BarchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
@@ -158,6 +159,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                     Data.Size = testCertificateRecord.Size;
+                    Data.BatchDate = testCertificateRecord.BatchDate;
                     Data.BarchNo = testCertificateRecord.BarchNo;
                     Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                     Data.Specification = testCertificateRecord.Specification;
@@ -247,6 +249,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
+                Data.BatchDate = testCertificateRecord.BatchDate;
                 Data.BarchNo = testCertificateRecord.BarchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
@@ -339,6 +342,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                         Data.Size = testCertificateRecord.Size;
+                        Data.BatchDate = testCertificateRecord.BatchDate;
                         Data.BarchNo = testCertificateRecord.BarchNo;
                         Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                         Data.Specification = testCertificateRecord.Specification;

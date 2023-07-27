@@ -276,6 +276,8 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
+                entity.Property(e => e.BatchDate).HasMaxLength(50);
+
                 entity.Property(e => e.CastDiaActualValue)
                     .HasMaxLength(50)
                     .HasColumnName("CastDia_ActualValue");
