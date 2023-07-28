@@ -827,7 +827,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox30</rd:DefaultName>
         <Top>2.62097in</Top>
-        <Left>2.55738in</Left>
+        <Left>2.49488in</Left>
         <Height>0.25in</Height>
         <Width>0.82514in</Width>
         <ZIndex>23</ZIndex>
@@ -860,9 +860,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox30</rd:DefaultName>
         <Top>2.62097in</Top>
-        <Left>3.65826in</Left>
+        <Left>3.40826in</Left>
         <Height>0.25in</Height>
-        <Width>0.85146in</Width>
+        <Width>1.10146in</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -990,7 +990,7 @@
         </Paragraphs>
         <rd:DefaultName>Size</rd:DefaultName>
         <Top>2.84035in</Top>
-        <Left>2.55738in</Left>
+        <Left>2.49488in</Left>
         <Height>0.25in</Height>
         <Width>0.82514in</Width>
         <ZIndex>28</ZIndex>
@@ -1011,7 +1011,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!BarchNo.Value, "TestCertificate")</Value>
+                <Value>=First(Fields!BatchDate.Value, "TestCertificate") + First(Fields!BarchNo.Value, "TestCertificate")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -1022,9 +1022,9 @@
         </Paragraphs>
         <rd:DefaultName>BarchNo</rd:DefaultName>
         <Top>2.85745in</Top>
-        <Left>3.65826in</Left>
+        <Left>3.40826in</Left>
         <Height>0.25in</Height>
-        <Width>0.85146in</Width>
+        <Width>1.10146in</Width>
         <ZIndex>29</ZIndex>
         <Style>
           <Border>
@@ -4538,7 +4538,7 @@
       </Line>
       <Line Name="Line25">
         <Top>2.60959in</Top>
-        <Left>3.55851in</Left>
+        <Left>3.35851in</Left>
         <Height>0.50583in</Height>
         <Width>0in</Width>
         <ZIndex>73</ZIndex>
@@ -6150,6 +6150,10 @@
           <DataField>BaseMetal</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="BatchDate">
+          <DataField>BatchDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="CastDia_ActualValue">
           <DataField>CastDia_ActualValue</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -6262,6 +6266,42 @@
           <DataField>Element_MIN_SI</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="Element_Result_C">
+          <DataField>Element_Result_C</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_CR">
+          <DataField>Element_Result_CR</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_CU">
+          <DataField>Element_Result_CU</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_MN">
+          <DataField>Element_Result_MN</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_MO">
+          <DataField>Element_Result_MO</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_NI">
+          <DataField>Element_Result_NI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_P">
+          <DataField>Element_Result_P</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_S">
+          <DataField>Element_Result_S</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_SI">
+          <DataField>Element_Result_SI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="FlowRate">
           <DataField>FlowRate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -6308,6 +6348,18 @@
         </Field>
         <Field Name="OtherTest_Radio_Specs">
           <DataField>OtherTest_Radio_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherTestResult_FaceBend_Specs">
+          <DataField>OtherTestResult_FaceBend_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherTestResult_Fillet_Specs">
+          <DataField>OtherTestResult_Fillet_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherTestResult_Radio_Specs">
+          <DataField>OtherTestResult_Radio_Specs</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="PreHeatInerpassTemp">
@@ -6372,6 +6424,18 @@
         </Field>
         <Field Name="Test_MIN_YS">
           <DataField>Test_MIN_YS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_Result_Elongation">
+          <DataField>Test_Result_Elongation</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_Result_UTS">
+          <DataField>Test_Result_UTS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_Result_YS">
+          <DataField>Test_Result_YS</DataField>
           <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="Test_Temp">
