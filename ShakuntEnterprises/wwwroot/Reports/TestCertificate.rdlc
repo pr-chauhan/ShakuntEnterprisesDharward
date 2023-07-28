@@ -4594,7 +4594,7 @@
         </Style>
       </Line>
       <Line Name="Line18">
-        <Top>8.49583in</Top>
+        <Top>8.37083in</Top>
         <Left>0.15646in</Left>
         <Height>0in</Height>
         <Width>7.75411in</Width>
@@ -4614,7 +4614,7 @@
               <TextRun>
                 <Value>Remarks :-</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -4623,7 +4623,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>9.20083in</Top>
+        <Top>9.02583in</Top>
         <Left>0.18in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
@@ -4646,14 +4646,16 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!Remarks.Value, "TestCertificate")</Value>
-                <Style />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remarks</rd:DefaultName>
-        <Top>9.20083in</Top>
+        <Top>9.02583in</Top>
         <Left>1.24944in</Left>
         <Height>0.25in</Height>
         <Width>6.568in</Width>
@@ -4682,12 +4684,12 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>9.45083in</Top>
+        <Top>9.28555in</Top>
         <Left>0.15917in</Left>
         <Height>0.21445in</Height>
         <Width>7.65828in</Width>
@@ -4722,7 +4724,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>9.97501in</Top>
+        <Top>9.92501in</Top>
         <Left>6.33351in</Left>
         <Height>0.25in</Height>
         <Width>1.5in</Width>
@@ -4746,7 +4748,7 @@
               <TextRun>
                 <Value>CE</Value>
                 <Style>
-                  <FontSize>24pt</FontSize>
+                  <FontSize>36pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -4754,9 +4756,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox121</rd:DefaultName>
-        <Top>9.69306in</Top>
+        <Top>9.53056in</Top>
         <Left>0.18417in</Left>
-        <Height>0.52639in</Height>
+        <Height>0.65139in</Height>
         <Width>1.21647in</Width>
         <ZIndex>83</ZIndex>
         <Style>
@@ -4903,7 +4905,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>8.24155in</Top>
+        <Top>8.11655in</Top>
         <Left>0.11074in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -4934,7 +4936,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -4947,6 +4949,7 @@
                             <TextRun>
                               <Value>Parameters</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -4981,6 +4984,7 @@
                             <TextRun>
                               <Value>Standard Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5015,6 +5019,7 @@
                             <TextRun>
                               <Value>Actual Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5041,7 +5046,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.19167in</Height>
+              <Height>0.18334in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5053,7 +5058,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Size</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5085,7 +5092,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Size_StandardValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5117,7 +5126,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Size_ActualValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5142,7 +5153,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.2in</Height>
+              <Height>0.18333in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5154,7 +5165,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Coating</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5186,7 +5199,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Coating_StandardValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5218,7 +5233,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Coating_ActualValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5243,7 +5260,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.19167in</Height>
+              <Height>0.175in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5255,7 +5272,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>UTS (Wire)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5287,7 +5306,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!UTSWire_StandardValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5319,7 +5340,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!UTSWire_ActualValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5344,7 +5367,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.19167in</Height>
+              <Height>0.18334in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5356,7 +5379,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Cast Dia</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5388,7 +5413,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CastDia_StandardValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5420,7 +5447,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CastDia_ActualValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5445,7 +5474,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.2in</Height>
+              <Height>0.18333in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5457,7 +5486,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Helix</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5489,7 +5520,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Helix_StandardValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5521,7 +5554,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Helix_ActualValue.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5574,7 +5609,7 @@
         <DataSetName>TestCertificate</DataSetName>
         <Top>6.99455in</Top>
         <Left>0.16333in</Left>
-        <Height>1.225in</Height>
+        <Height>1.10834in</Height>
         <Width>7.67322in</Width>
         <ZIndex>91</ZIndex>
         <Style>
@@ -5601,7 +5636,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.21667in</Height>
+              <Height>0.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5614,6 +5649,7 @@
                             <TextRun>
                               <Value>Tests</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5646,6 +5682,7 @@
                             <TextRun>
                               <Value>Radiographic Examination</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5680,6 +5717,7 @@
                             <TextRun>
                               <Value>Face Bend Test</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5714,6 +5752,7 @@
                             <TextRun>
                               <Value>Filled Weld Test</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -5740,7 +5779,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.20833in</Height>
+              <Height>0.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5752,7 +5791,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Specs</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -5782,7 +5823,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!OtherTest_Radio_Specs.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5814,7 +5857,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!OtherTest_FaceBend_Specs.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5846,7 +5891,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!OtherTest_Fillet_Specs.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5871,7 +5918,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.20833in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -5883,7 +5930,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Results</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -5913,7 +5962,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5945,7 +5996,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -5977,7 +6030,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -6026,9 +6081,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>8.50705in</Top>
+        <Top>8.38205in</Top>
         <Left>0.18in</Left>
-        <Height>0.675in</Height>
+        <Height>0.60833in</Height>
         <Width>7.63744in</Width>
         <ZIndex>92</ZIndex>
         <Style>
