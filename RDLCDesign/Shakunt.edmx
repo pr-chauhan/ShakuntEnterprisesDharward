@@ -17,6 +17,7 @@
           <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
           <Property Name="TradeDesignation" Type="nvarchar" MaxLength="100" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="BatchDate" Type="nvarchar" MaxLength="50" />
           <Property Name="BarchNo" Type="nvarchar" MaxLength="50" />
           <Property Name="ManufecturingDate" Type="datetime" />
           <Property Name="Specification" Type="nvarchar" MaxLength="50" />
@@ -48,12 +49,24 @@
           <Property Name="Element_MAX_CR" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Element_MAX_MO" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Element_MAX_CU" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_C" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_SI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_MN" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_P" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_S" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_NI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_CR" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_MO" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_CU" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MIN_UTS" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MIN_YS" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MIN_Elongation" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MAX_UTS" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MAX_YS" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_MAX_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_Result_UTS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_Result_YS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_Result_Elongation" Type="numeric" Precision="10" Scale="3" />
           <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Condition" Type="nvarchar" MaxLength="50" />
@@ -70,6 +83,9 @@
           <Property Name="OtherTest_Radio_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="OtherTest_FaceBend_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="OtherTest_Fillet_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTestResult_Radio_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTestResult_FaceBend_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTestResult_Fillet_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
           <Property Name="Certificate_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Created_Date" Type="datetime" />
@@ -155,6 +171,22 @@
           <Property Name="OtherTest_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OtherTest_Fillet_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Certificate_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BatchDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_C" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_SI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_MN" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_P" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_S" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_NI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_CR" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_MO" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_CU" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_Result_UTS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_Result_YS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_Result_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="OtherTestResult_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTestResult_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTestResult_Fillet_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="ShakuntEnterprisesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TestCertificateRecords" EntityType="Self.TestCertificateRecord" />
@@ -168,6 +200,22 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="OtherTestResult_Fillet_Specs" ColumnName="OtherTestResult_Fillet_Specs" />
+                <ScalarProperty Name="OtherTestResult_FaceBend_Specs" ColumnName="OtherTestResult_FaceBend_Specs" />
+                <ScalarProperty Name="OtherTestResult_Radio_Specs" ColumnName="OtherTestResult_Radio_Specs" />
+                <ScalarProperty Name="Test_Result_Elongation" ColumnName="Test_Result_Elongation" />
+                <ScalarProperty Name="Test_Result_YS" ColumnName="Test_Result_YS" />
+                <ScalarProperty Name="Test_Result_UTS" ColumnName="Test_Result_UTS" />
+                <ScalarProperty Name="Element_Result_CU" ColumnName="Element_Result_CU" />
+                <ScalarProperty Name="Element_Result_MO" ColumnName="Element_Result_MO" />
+                <ScalarProperty Name="Element_Result_CR" ColumnName="Element_Result_CR" />
+                <ScalarProperty Name="Element_Result_NI" ColumnName="Element_Result_NI" />
+                <ScalarProperty Name="Element_Result_S" ColumnName="Element_Result_S" />
+                <ScalarProperty Name="Element_Result_P" ColumnName="Element_Result_P" />
+                <ScalarProperty Name="Element_Result_MN" ColumnName="Element_Result_MN" />
+                <ScalarProperty Name="Element_Result_SI" ColumnName="Element_Result_SI" />
+                <ScalarProperty Name="Element_Result_C" ColumnName="Element_Result_C" />
+                <ScalarProperty Name="BatchDate" ColumnName="BatchDate" />
                 <ScalarProperty Name="Certificate_Type" ColumnName="Certificate_Type" />
                 <ScalarProperty Name="OtherTest_Fillet_Specs" ColumnName="OtherTest_Fillet_Specs" />
                 <ScalarProperty Name="OtherTest_FaceBend_Specs" ColumnName="OtherTest_FaceBend_Specs" />
