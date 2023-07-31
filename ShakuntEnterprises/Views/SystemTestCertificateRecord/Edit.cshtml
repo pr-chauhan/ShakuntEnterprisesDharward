@@ -455,3 +455,199 @@
         </form>
     </div>
 </div>
+
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#TradeDesignation").change(function () {
+
+                var TradeDesignation = $("#TradeDesignation  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
+                    { TradeDesignation: TradeDesignation }, function (data) {
+                        debugger
+                        $("#WeldingProcess").val(data[0].weldingProcess);
+                        $("#ShieldingGas").val(data[0].shieldingGas);
+                        $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
+                        $("#Type").val(data[0].type);
+                        $("#FlowRate").val(data[0].flowRate);
+                        $("#CurrentPolarity").val(data[0].currentPolarity);
+                        $("#BaseMetal").val(data[0].baseMetal);
+                        $("#ElementMinC").val(data[0].elementMinC);
+                        $("#ElementMinSi").val(data[0].elementMinSi);
+                        $("#ElementMinMn").val(data[0].elementMinMn);
+                        $("#ElementMinP").val(data[0].elementMinP);
+                        $("#ElementMinS").val(data[0].elementMinS);
+                        $("#ElementMinNi").val(data[0].elementMinNi);
+                        $("#ElementMinCr").val(data[0].elementMinCr);
+                        $("#ElementMinMo").val(data[0].elementMinMo);
+                        $("#ElementMinCu").val(data[0].elementMinCu);
+                        $("#ElementMaxC").val(data[0].elementMaxC);
+                        $("#ElementMaxSi").val(data[0].elementMaxSi);
+                        $("#ElementMaxMn").val(data[0].elementMaxMn);
+                        $("#ElementMaxP").val(data[0].elementMaxP);
+                        $("#ElementMaxS").val(data[0].elementMaxS);
+                        $("#ElementMaxNi").val(data[0].elementMaxNi);
+                        $("#ElementMaxCr").val(data[0].elementMaxCr);
+                        $("#ElementMaxMo").val(data[0].elementMaxMo);
+                        $("#ElementMaxCu").val(data[0].elementMaxCu);
+                        $("#TestMinUts").val(data[0].testMinUts);
+                        $("#TestMinYs").val(data[0].testMinYs);
+                        $("#TestMinElongation").val(data[0].testMinElongation);
+                        $("#TestMaxUts").val(data[0].testMaxUts);
+                        $("#TestMaxYs").val(data[0].testMaxYs);
+                        $("#TestMaxElongation").val(data[0].testMaxElongation);
+                        $("#TestTemp").val(data[0].testTemp);
+                        $("#TestImpectValue").val(data[0].testImpectValue);
+                        $("#TestCondition").val(data[0].testCondition);
+                    })
+            })
+
+            $("#Size").change(function () {
+
+                var Size = $("#Size  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetSizeDataMaster",
+                    { Size: Size }, function (data) {
+                        debugger
+                        $("#Size").val(data[0].size);
+                        $("#Apms").val(data[0].apms);
+                        $("#Volts").val(data[0].volts);
+                        $("#TravelSpeed").val(data[0].travelSpeed);
+
+                    })
+            })
+
+            $("#BarchNo").change(function () {
+
+                var BarchNo = $("#BarchNo").val();
+                $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
+                    { BarchNo: BarchNo }, function (data) {
+                        $("#ElementResultC").val(data[0].elementResultC);
+                        $("#ElementResultSi").val(data[0].elementResultSi);
+                        $("#ElementResultMn").val(data[0].elementResultMn);
+                        $("#ElementResultP").val(data[0].elementResultP);
+                        $("#ElementResultS").val(data[0].elementResultS);
+                        $("#ElementResultNi").val(data[0].elementResultNi);
+                        $("#ElementResultCr").val(data[0].elementResultCr);
+                        $("#ElementResultMo").val(data[0].elementResultMo);
+                        $("#ElementResultCu").val(data[0].elementResultCu);
+                        $("#TestResultUts").val(data[0].testResultUts);
+                        $("#TestResultYs").val(data[0].testResultYs);
+                        $("#TestResultElongation").val(data[0].testResultElongation);
+                        $("#OtherTestResultRadioSpecs").val(data[0].otherTestResultRadioSpecs);
+                        $("#OtherTestResultFaceBendSpecs").val(data[0].otherTestResultFaceBendSpecs);
+                        $("#OtherTestResultFilletSpecs").val(data[0].otherTestResultFilletSpecs);
+
+                        if($("#ElementResultC").val() > 0){
+                            if ($("#ElementMinC").val() > $("#ElementResultC").val() || $("#ElementMaxC").val() < $("#ElementResultC").val()) {
+                                $("#submit").hide();
+                                alert("Element Result C% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if($("#ElementResultSi").val()>0){
+                            if ($("#ElementMinSi").val() > $("#ElementResultSi").val() || $("#ElementMaxSi").val() < $("#ElementResultSi").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Si% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                       if( $("#ElementResultMn").val() > 0){
+                            if ($("#ElementMinMn").val() > $("#ElementResultMn").val() || $("#ElementMaxMn").val() < $("#ElementResultMn").val()) {
+                                $("#submit").hide();
+                                alert("Element  Result Mn% is not under result conditons..!!");
+                                return;
+                            }
+                       }
+                       if($("#ElementResultP").val() > 0 ){
+                            if ($("#ElementMinP").val() > $("#ElementResultP").val() || $("#ElementMaxP").val() < $("#ElementResultP").val()) {
+                                $("#submit").hide();
+                                alert("Element Result P% is not under result conditons..!!");
+                                return;
+                            }
+                       }
+                        if($("#ElementResultS").val() > 0){
+                            if ($("#ElementMinS").val() > $("#ElementResultS").val() || $("#ElementMaxS").val() < $("#ElementResultS").val()) {
+                                $("#submit").hide();
+                                alert("Element Result S% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if($("#ElementResultNi").val() > 0){
+                            if($("#ElementMinNi").val() > $("#ElementResultNi").val() || $("#ElementMaxNi").val() < $("#ElementResultNi").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Ni% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultCr").val() > 0){
+                            if ($("#ElementMinCr").val() > $("#ElementResultCr").val() || $("#ElementMaxCr").val() < $("#ElementResultCr").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Cr% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+
+                        if ($("#ElementResultMo").val() > 0){
+                            if ($("#ElementMinMo").val() > $("#ElementResultMo").val() || $("#ElementMaxMo").val() < $("#ElementResultMo").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Mo% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if($("#ElementResultCu").val() > 0){
+                             if($("#ElementMinCu").val() > $("#ElementResultCu").val() || $("#ElementMaxCu").val() < $("#ElementResultCu").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Cu% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if($("#TestResultUts").val() > 0){
+                             if ($("#TestMinUts").val() > $("#TestResultUts").val() || $("#TestMaxUts").val() < $("#TestResultUts").val()) {
+                                $("#submit").hide();
+                                alert("Test Result Uts is not under result conditons..!!");
+                                return;
+                             }
+                        }
+
+                        if($("#TestResultYs").val() > 0)
+                        {
+                            if ($("#TestMinYs").val() > $("#TestResultYs").val() || $("#TestMaxYs").val() < $("#TestResultYs").val()) {
+                                    $("#submit").hide();
+                                    alert("Test Result Ys is not under result conditons..!!");
+                                    return;
+                             }
+                        }
+                        if($("#TestResultElongation").val() > 0){
+                            if ($("#TestMinElongation").val() > $("#TestResultElongation").val() || $("#TestMaxElongation").val() < $("#TestResultElongation").val()) {
+                                $("#submit").hide();
+                                alert("Test Result Ys is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                       
+                        //if ($("#OtherTestMinRadioSpecs").val() > $("#OtherTestResultRadioSpecs").val() || $("#OtherTestMaxRadioSpecs").val() < $("#OtherTestResultRadioSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result RadioSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                        //if ($("#OtherTestMinFaceBendSpecs").val() > $("#OtherTestResultFaceBendSpecs").val() || $("#OtherTestMaxFaceBendSpecs").val() < $("#OtherTestResultFaceBendSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result FaceBendSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                        //if ($("#OtherTestMintFilletSpecs").val() > $("#OtherTestResultFilletSpecs").val() || $("#OtherTestMaxFilletSpecs").val() < $("#OtherTestResultFilletSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result FilletSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                    })
+            })
+
+
+
+        })
+    </script>
+}
