@@ -83,6 +83,7 @@ namespace ShakuntEnterprises.Models
         public string? OtherTestResultFaceBendSpecs { get; set; }
         public string? OtherTestResultFilletSpecs { get; set; }
         public string? Remarks { get; set; }
+        public int? IsApproved { get; set; }
         public string? CertificateType { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
