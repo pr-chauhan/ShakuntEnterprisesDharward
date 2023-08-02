@@ -30,6 +30,11 @@ namespace ShakuntEnterprises.Controllers
         {
             ViewBag.Modules = commanClass.getModlueList(HttpContext.Session.GetString("lid"));
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
+            ViewBag.TotalCertificate = commanClass.TotalCertificate();
+            ViewBag.TotalPassCertificate = commanClass.TotalPassCertificate();
+            ViewBag.TotalFailedCertificate = commanClass.TotalFailedCertificate();
+            ViewBag.TotalManualCertificate = commanClass.TotalManualCertificate();
+            ViewBag.TotalSystemCertificate = commanClass.TotalSystemCertificate();
 
         }
         public async Task<string> TallyConnection()

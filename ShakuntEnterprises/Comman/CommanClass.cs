@@ -125,6 +125,37 @@
             return result;
         }
 
+        public string TotalCertificate()
+        {
+            var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord]");
+
+            return result.Rows[0][0].ToString();
+        }
+        public string TotalPassCertificate()
+        {
+            var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord] Where IsApproved=1");
+
+            return result.Rows[0][0].ToString();
+        }
+        public string TotalFailedCertificate()
+        {
+            var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord] Where IsApproved!=1");
+
+            return result.Rows[0][0].ToString();
+        }
+        public string TotalManualCertificate()
+        {
+            var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord] Where Certificate_Type='Manual'");
+
+            return result.Rows[0][0].ToString();
+        }
+        public string TotalSystemCertificate()
+        {
+            var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord] Where Certificate_Type='System'");
+
+            return result.Rows[0][0].ToString();
+        }
+
         public List<SizeMaster> getAllSizeList()
         {
             List<SizeMaster> result = _context.SizeMasters.ToList();
