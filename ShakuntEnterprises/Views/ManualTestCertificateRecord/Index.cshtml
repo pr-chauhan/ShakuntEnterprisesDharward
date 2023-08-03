@@ -58,12 +58,13 @@
                     @if (item.IsApproved!=1)
                     {
                         <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>  
+                       
                         <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     }
                     @if (item.IsApproved==1)
                     {
-                        @Html.ActionLink("Print", "PrintCertificate","Report" ,new { Id=item.Id.ToString()   },new { @class = "btn btn-secondary"})
+                        <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        @Html.ActionLink("Print", "PrintCertificate","Report" ,new { Id=item.Id.ToString()   },new { @class = "btn btn-info"})
                     }
                 </td>
             </tr>
