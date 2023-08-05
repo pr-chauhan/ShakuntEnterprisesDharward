@@ -7,6 +7,7 @@ namespace ShakuntEnterprises.ViewModels
     {
         public int Id { get; set; }
         public string? BarchNo { get; set; }
+        public string? Size { get; set; }
         public decimal? ElementResultC { get; set; }
         public decimal? ElementResultSi { get; set; }
         public decimal? ElementResultMn { get; set; }

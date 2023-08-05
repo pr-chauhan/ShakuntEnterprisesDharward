@@ -78,10 +78,10 @@ namespace ShakuntEnterprises.Models
         public string? HelixActualValue { get; set; }
         public string? OtherTestRadioSpecs { get; set; }
         public string? OtherTestFaceBendSpecs { get; set; }
-        public string? OtherTestFilletSpecs { get; set; }
+        public string? OtherTestFilledSpecs { get; set; }
         public string? OtherTestResultRadioSpecs { get; set; }
         public string? OtherTestResultFaceBendSpecs { get; set; }
-        public string? OtherTestResultFilletSpecs { get; set; }
+        public string? OtherTestResultFilledSpecs { get; set; }
         public string? Remarks { get; set; }
         public int? IsApproved { get; set; }
         public string? CertificateType { get; set; }

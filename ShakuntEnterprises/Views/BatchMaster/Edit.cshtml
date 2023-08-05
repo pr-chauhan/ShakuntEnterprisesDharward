@@ -19,6 +19,14 @@
                     <input asp-for="BarchNo" class="form-control" />
                     <span asp-validation-for="BarchNo" class="text-danger"></span>
                 </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Size" class="control-label"></label>
+                    @*<input asp-for="Size" class="form-control" />*@
+                    <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-Size</option>
+                    </select>
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
             </div>
             
              <h4>Chemical Composition (Wire)</h4>

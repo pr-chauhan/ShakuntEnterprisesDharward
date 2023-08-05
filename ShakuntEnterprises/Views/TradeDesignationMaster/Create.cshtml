@@ -13,7 +13,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <h4>Welding Material</h4>
             <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:40%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
                     <input asp-for="TradeDesignation" class="form-control" />
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
@@ -163,50 +163,78 @@
             </div>
             <h4>Mechanical Test (All Weld Metal)</h4>
             <div class="row">
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMinUts" class="control-label"></label>
                     <input asp-for="TestMinUts" class="form-control" />
                     <span asp-validation-for="TestMinUts" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMinYs" class="control-label"></label>
                     <input asp-for="TestMinYs" class="form-control" />
                     <span asp-validation-for="TestMinYs" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMinElongation" class="control-label"></label>
                     <input asp-for="TestMinElongation" class="form-control" />
                     <span asp-validation-for="TestMinElongation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMaxUts" class="control-label"></label>
                     <input asp-for="TestMaxUts" class="form-control" />
                     <span asp-validation-for="TestMaxUts" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMaxYs" class="control-label"></label>
                     <input asp-for="TestMaxYs" class="form-control" />
                     <span asp-validation-for="TestMaxYs" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestMaxElongation" class="control-label"></label>
                     <input asp-for="TestMaxElongation" class="form-control" />
                     <span asp-validation-for="TestMaxElongation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestTemp" class="control-label"></label>
                     <input asp-for="TestTemp" class="form-control" />
                     <span asp-validation-for="TestTemp" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                  <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="TestImpectDegree" class="control-label"></label>
+                    <input asp-for="TestImpectDegree" class="form-control" />
+                    <span asp-validation-for="TestImpectDegree" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestImpectValue" class="control-label"></label>
                     <input asp-for="TestImpectValue" class="form-control" />
                     <span asp-validation-for="TestImpectValue" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TestCondition" class="control-label"></label>
                     <input asp-for="TestCondition" class="form-control" />
                     <span asp-validation-for="TestCondition" class="text-danger"></span>
+                </div>
+            </div>
+            <h4>Other Test (Weld Metal)</h4>
+              <div class="row">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="CompositionHeading" class="control-label"></label>
+                    <input asp-for="CompositionHeading" class="form-control" />
+                    <span asp-validation-for="CompositionHeading" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="OtherTestRadioSpecs" class="control-label"></label>
+                    <input asp-for="OtherTestRadioSpecs" class="form-control" />
+                    <span asp-validation-for="OtherTestRadioSpecs" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="OtherTestFaceBendSpecs" class="control-label"></label>
+                    <input asp-for="OtherTestFaceBendSpecs" class="form-control" />
+                    <span asp-validation-for="OtherTestFaceBendSpecs" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="OtherTestFilledSpecs" class="control-label"></label>
+                    <input asp-for="OtherTestFilledSpecs" class="form-control" />
+                    <span asp-validation-for="OtherTestFilledSpecs" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group" style="display:none;">

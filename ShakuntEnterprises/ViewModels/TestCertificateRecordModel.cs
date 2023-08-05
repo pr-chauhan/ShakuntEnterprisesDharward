@@ -152,15 +152,15 @@ namespace ShakuntEnterprises.ViewModels
         public string? OtherTestRadioSpecs { get; set; }
         [DisplayName("Other Test Face Bend Specs")]
         public string? OtherTestFaceBendSpecs { get; set; }
-        [DisplayName("Other Test Fillet Specs")]
-        public string? OtherTestFilletSpecs { get; set; }
+        [DisplayName("Other Test Filled Specs")]
+        public string? OtherTestFilledSpecs { get; set; }
 
         [DisplayName("Other Result Radio Specs ")]
         public string? OtherTestResultRadioSpecs { get; set; }
         [DisplayName("Other Result Face Bend Specs")]
         public string? OtherTestResultFaceBendSpecs { get; set; }
-        [DisplayName("Other Result Fillet Specs")]
-        public string? OtherTestResultFilletSpecs { get; set; }
+        [DisplayName("Other Result Filled Specs")]
+        public string? OtherTestResultFilledSpecs { get; set; }
         public string? Remarks { get; set; }
 
         public int? IsApproved { get; set; }

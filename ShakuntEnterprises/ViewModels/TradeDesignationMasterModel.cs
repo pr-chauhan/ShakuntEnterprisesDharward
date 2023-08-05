@@ -8,6 +8,7 @@ namespace ShakuntEnterprises.ViewModels
         public int Id { get; set; }
         public string? Size { get; set; }
         public string? TradeDesignation { get; set; }
+        public string? Specification { get; set; }
         public string? WeldingProcess { get; set; }
         public string? ShieldingGas { get; set; }
         public string? PreHeatInerpassTemp { get; set; }
@@ -40,8 +41,13 @@ namespace ShakuntEnterprises.ViewModels
         public decimal? TestMaxYs { get; set; }
         public decimal? TestMaxElongation { get; set; }
         public string? TestTemp { get; set; }
+        public string? TestImpectDegree { get; set; }
         public string? TestImpectValue { get; set; }
         public string? TestCondition { get; set; }
+        public string? CompositionHeading { get; set; }
+        public string? OtherTestRadioSpecs { get; set; }
+        public string? OtherTestFaceBendSpecs { get; set; }
+        public string? OtherTestFilledSpecs { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
