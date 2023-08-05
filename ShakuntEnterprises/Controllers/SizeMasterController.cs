@@ -64,6 +64,16 @@ namespace ShakuntEnterprises.Controllers
                 Data.Apms = sizeMaster.Apms;
                 Data.Volts = sizeMaster.Volts;
                 Data.TravelSpeed = sizeMaster.TravelSpeed;
+                Data.SizeStandardValue = sizeMaster.SizeStandardValue;
+                Data.SizeActualValue = sizeMaster.SizeActualValue;
+                Data.CoatingStandardValue = sizeMaster.CoatingStandardValue;
+                Data.CoatingActualValue = sizeMaster.CoatingActualValue;
+                Data.UtswireStandardValue = sizeMaster.UtswireStandardValue;
+                Data.UtswireActualValue = sizeMaster.UtswireActualValue;
+                Data.CastDiaStandardValue = sizeMaster.CastDiaStandardValue;
+                Data.CastDiaActualValue = sizeMaster.CastDiaActualValue;
+                Data.HelixStandardValue = sizeMaster.HelixStandardValue;
+                Data.HelixActualValue = sizeMaster.HelixActualValue;
                 Data.CreatedDate = sizeMaster.CreatedDate;
                 Data.CreatedBy = sizeMaster.CreatedBy;
                 Data.ModifiedDate = sizeMaster.ModifiedDate;
@@ -96,6 +106,16 @@ namespace ShakuntEnterprises.Controllers
                     Data.Apms = sizeMaster.Apms;
                     Data.Volts = sizeMaster.Volts;
                     Data.TravelSpeed = sizeMaster.TravelSpeed;
+                    Data.SizeStandardValue = sizeMaster.SizeStandardValue;
+                    Data.SizeActualValue = sizeMaster.SizeActualValue;
+                    Data.CoatingStandardValue = sizeMaster.CoatingStandardValue;
+                    Data.CoatingActualValue = sizeMaster.CoatingActualValue;
+                    Data.UtswireStandardValue = sizeMaster.UtswireStandardValue;
+                    Data.UtswireActualValue = sizeMaster.UtswireActualValue;
+                    Data.CastDiaStandardValue = sizeMaster.CastDiaStandardValue;
+                    Data.CastDiaActualValue = sizeMaster.CastDiaActualValue;
+                    Data.HelixStandardValue = sizeMaster.HelixStandardValue;
+                    Data.HelixActualValue = sizeMaster.HelixActualValue;
                     Data.CreatedDate = sizeMaster.CreatedDate;
                     Data.CreatedBy = sizeMaster.CreatedBy;
                     Data.ModifiedDate = sizeMaster.ModifiedDate;
@@ -128,6 +148,16 @@ namespace ShakuntEnterprises.Controllers
                 Data.Apms = sizeMaster.Apms;
                 Data.Volts = sizeMaster.Volts;
                 Data.TravelSpeed = sizeMaster.TravelSpeed;
+                Data.SizeStandardValue = sizeMaster.SizeStandardValue;
+                Data.SizeActualValue = sizeMaster.SizeActualValue;
+                Data.CoatingStandardValue = sizeMaster.CoatingStandardValue;
+                Data.CoatingActualValue = sizeMaster.CoatingActualValue;
+                Data.UtswireStandardValue = sizeMaster.UtswireStandardValue;
+                Data.UtswireActualValue = sizeMaster.UtswireActualValue;
+                Data.CastDiaStandardValue = sizeMaster.CastDiaStandardValue;
+                Data.CastDiaActualValue = sizeMaster.CastDiaActualValue;
+                Data.HelixStandardValue = sizeMaster.HelixStandardValue;
+                Data.HelixActualValue = sizeMaster.HelixActualValue;
                 Data.CreatedDate = sizeMaster.CreatedDate;
                 Data.CreatedBy = sizeMaster.CreatedBy;
                 Data.ModifiedDate = sizeMaster.ModifiedDate;
@@ -163,6 +193,16 @@ namespace ShakuntEnterprises.Controllers
                         Data.Apms = sizeMaster.Apms;
                         Data.Volts = sizeMaster.Volts;
                         Data.TravelSpeed = sizeMaster.TravelSpeed;
+                        Data.SizeStandardValue = sizeMaster.SizeStandardValue;
+                        Data.SizeActualValue = sizeMaster.SizeActualValue;
+                        Data.CoatingStandardValue = sizeMaster.CoatingStandardValue;
+                        Data.CoatingActualValue = sizeMaster.CoatingActualValue;
+                        Data.UtswireStandardValue = sizeMaster.UtswireStandardValue;
+                        Data.UtswireActualValue = sizeMaster.UtswireActualValue;
+                        Data.CastDiaStandardValue = sizeMaster.CastDiaStandardValue;
+                        Data.CastDiaActualValue = sizeMaster.CastDiaActualValue;
+                        Data.HelixStandardValue = sizeMaster.HelixStandardValue;
+                        Data.HelixActualValue = sizeMaster.HelixActualValue;
                         Data.CreatedDate = sizeMaster.CreatedDate;
                         Data.CreatedBy = sizeMaster.CreatedBy;
                         Data.ModifiedDate = sizeMaster.ModifiedDate;
@@ -215,3 +255,4 @@ namespace ShakuntEnterprises.Controllers
         }
     }
 }
+

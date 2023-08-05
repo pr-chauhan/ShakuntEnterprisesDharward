@@ -68,6 +68,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                 Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
                 Data.PreHeatInerpassTemp = tradeDesignationMaster.PreHeatInerpassTemp;
+                Data.Specification = tradeDesignationMaster.Specification;
                 Data.Type = tradeDesignationMaster.Type;
                 Data.FlowRate = tradeDesignationMaster.FlowRate;
                 Data.CurrentPolarity = tradeDesignationMaster.CurrentPolarity;
@@ -99,6 +100,10 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestTemp = tradeDesignationMaster.TestTemp;
                 Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
                 Data.TestCondition = tradeDesignationMaster.TestCondition;
+                Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
+                Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
+                Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs;
+                Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs;
                 Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                 Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                 Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -132,6 +137,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                     Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
                     Data.PreHeatInerpassTemp = tradeDesignationMaster.PreHeatInerpassTemp;
+                    Data.Specification = tradeDesignationMaster.Specification;
                     Data.Type = tradeDesignationMaster.Type;
                     Data.FlowRate = tradeDesignationMaster.FlowRate;
                     Data.CurrentPolarity = tradeDesignationMaster.CurrentPolarity;
@@ -163,6 +169,10 @@ namespace ShakuntEnterprises.Controllers
                     Data.TestTemp = tradeDesignationMaster.TestTemp;
                     Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
                     Data.TestCondition = tradeDesignationMaster.TestCondition;
+                    Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
+                    Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
+                    Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs;
+                    Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs;
                     Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                     Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                     Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -196,6 +206,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                 Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
                 Data.PreHeatInerpassTemp = tradeDesignationMaster.PreHeatInerpassTemp;
+                Data.Specification = tradeDesignationMaster.Specification;
                 Data.Type = tradeDesignationMaster.Type;
                 Data.FlowRate = tradeDesignationMaster.FlowRate;
                 Data.CurrentPolarity = tradeDesignationMaster.CurrentPolarity;
@@ -227,6 +238,10 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestTemp = tradeDesignationMaster.TestTemp;
                 Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
                 Data.TestCondition = tradeDesignationMaster.TestCondition;
+                Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
+                Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
+                Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs;
+                Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs;
                 Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                 Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                 Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -263,6 +278,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                         Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
                         Data.PreHeatInerpassTemp = tradeDesignationMaster.PreHeatInerpassTemp;
+                        Data.Specification = tradeDesignationMaster.Specification;
                         Data.Type = tradeDesignationMaster.Type;
                         Data.FlowRate = tradeDesignationMaster.FlowRate;
                         Data.CurrentPolarity = tradeDesignationMaster.CurrentPolarity;
@@ -294,6 +310,10 @@ namespace ShakuntEnterprises.Controllers
                         Data.TestTemp = tradeDesignationMaster.TestTemp;
                         Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
                         Data.TestCondition = tradeDesignationMaster.TestCondition;
+                        Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
+                        Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
+                        Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs;
+                        Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs;
                         Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                         Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                         Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;

@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group" style="width:20%;display: inline-block;">
                         <label asp-for="IssueDate" class="control-label"></label>
-                        <input asp-for="IssueDate" class="form-control" />
+                        <input asp-for="IssueDate" class="form-control" type="date" />
                         <span asp-validation-for="IssueDate" class="text-danger"></span>
                     </div>
                     <div class="form-group" style="width:10%;display: inline-block;">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="ManufecturingDate" class="control-label"></label>
-                    <input asp-for="ManufecturingDate" class="form-control" />
+                    <input asp-for="ManufecturingDate" class="form-control" type="date" />
                     <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
@@ -470,6 +470,7 @@
                         $("#WeldingProcess").val(data[0].weldingProcess);
                         $("#ShieldingGas").val(data[0].shieldingGas);
                         $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
+                        $("#Specification").val(data[0].specification);
                         $("#Type").val(data[0].type);
                         $("#FlowRate").val(data[0].flowRate);
                         $("#CurrentPolarity").val(data[0].currentPolarity);
@@ -501,6 +502,10 @@
                         $("#TestTemp").val(data[0].testTemp);
                         $("#TestImpectValue").val(data[0].testImpectValue);
                         $("#TestCondition").val(data[0].testCondition);
+                        $("#OtherTestRadioSpecs").val(data[0].otherTestRadioSpecs);
+                        $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
+                        $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
+
                     })
             })
 
@@ -514,6 +519,16 @@
                         $("#Apms").val(data[0].apms);
                         $("#Volts").val(data[0].volts);
                         $("#TravelSpeed").val(data[0].travelSpeed);
+                        $("#SizeStandardValue").val(data[0].sizeStandardValue);
+                        $("#SizeActualValue").val(data[0].sizeActualValue);
+                        $("#CoatingStandardValue").val(data[0].coatingStandardValue);
+                        $("#CoatingActualValue").val(data[0].coatingActualValue);
+                        $("#UtswireStandardValue").val(data[0].utswireStandardValue);
+                        $("#UtswireActualValue").val(data[0].utswireActualValue);
+                        $("#CastDiaStandardValue").val(data[0].castDiaStandardValue);
+                        $("#CastDiaActualValue").val(data[0].castDiaActualValue);
+                        $("#HelixStandardValue").val(data[0].helixStandardValue);
+                        $("#HelixActualValue").val(data[0].helixActualValue);
 
                     })
             })
@@ -621,7 +636,7 @@
                         if ($("#TestResultElongation").val() > 0) {
                             if ($("#TestMinElongation").val() > $("#TestResultElongation").val() || $("#TestMaxElongation").val() < $("#TestResultElongation").val()) {
                                 $("#submit").hide();
-                                alert("Test Result Ys is not under result conditons..!!");
+                                alert("Test Result Elongation is not under result conditons..!!");
                                 return;
                             }
                         }
