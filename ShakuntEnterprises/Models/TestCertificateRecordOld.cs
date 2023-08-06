@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ShakuntEnterprises.Models
 {
-    public partial class TestCertificateRecord
+    public partial class TestCertificateRecordOld
     {
         public int Id { get; set; }
         public string? CertificateNo { get; set; }
@@ -45,12 +45,24 @@ namespace ShakuntEnterprises.Models
         public decimal? ElementMaxCr { get; set; }
         public decimal? ElementMaxMo { get; set; }
         public decimal? ElementMaxCu { get; set; }
+        public decimal? ElementResultC { get; set; }
+        public decimal? ElementResultSi { get; set; }
+        public decimal? ElementResultMn { get; set; }
+        public decimal? ElementResultP { get; set; }
+        public decimal? ElementResultS { get; set; }
+        public decimal? ElementResultNi { get; set; }
+        public decimal? ElementResultCr { get; set; }
+        public decimal? ElementResultMo { get; set; }
+        public decimal? ElementResultCu { get; set; }
         public decimal? TestMinUts { get; set; }
         public decimal? TestMinYs { get; set; }
         public decimal? TestMinElongation { get; set; }
         public decimal? TestMaxUts { get; set; }
         public decimal? TestMaxYs { get; set; }
         public decimal? TestMaxElongation { get; set; }
+        public decimal? TestResultUts { get; set; }
+        public decimal? TestResultYs { get; set; }
+        public decimal? TestResultElongation { get; set; }
         public string? TestTemp { get; set; }
         public string? TestImpectValue { get; set; }
         public string? TestCondition { get; set; }
@@ -67,6 +79,9 @@ namespace ShakuntEnterprises.Models
         public string? OtherTestRadioSpecs { get; set; }
         public string? OtherTestFaceBendSpecs { get; set; }
         public string? OtherTestFilledSpecs { get; set; }
+        public string? OtherTestResultRadioSpecs { get; set; }
+        public string? OtherTestResultFaceBendSpecs { get; set; }
+        public string? OtherTestResultFilledSpecs { get; set; }
         public string? Remarks { get; set; }
         public int? IsApproved { get; set; }
         public string? CertificateType { get; set; }

@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace ShakuntEnterprises.ViewModels
 {
-    public class TestCertificateRecordModel
+    public class TestCertificateRecordModelOld
     {
         public int Id { get; set; }
         [DisplayName("Certificate No.")]
@@ -82,6 +82,24 @@ namespace ShakuntEnterprises.ViewModels
         public decimal? ElementMaxMo { get; set; }
         [DisplayName("MAX (Cu%)")]
         public decimal? ElementMaxCu { get; set; }
+        [DisplayName("Result (C%)")]
+        public decimal? ElementResultC { get; set; }
+        [DisplayName("Result (Si%)")]
+        public decimal? ElementResultSi { get; set; }
+        [DisplayName("Result (Mn%)")]
+        public decimal? ElementResultMn { get; set; }
+        [DisplayName("Result (P%)")]
+        public decimal? ElementResultP { get; set; }
+        [DisplayName("Result (S%)")]
+        public decimal? ElementResultS { get; set; }
+        [DisplayName("Result (Ni%)")]
+        public decimal? ElementResultNi { get; set; }
+        [DisplayName("Result (Cr%)")]
+        public decimal? ElementResultCr { get; set; }
+        [DisplayName("Result (Mo%)")]
+        public decimal? ElementResultMo { get; set; }
+        [DisplayName("Result (Cu%)")]
+        public decimal? ElementResultCu { get; set; }
 
         [DisplayName("MIN UTS (Mpa)")]
         public decimal? TestMinUts { get; set; }
@@ -95,6 +113,13 @@ namespace ShakuntEnterprises.ViewModels
         public decimal? TestMaxYs { get; set; }
         [DisplayName("MAX Elongation")]
         public decimal? TestMaxElongation { get; set; }
+        [DisplayName("Result UTS (Mpa)")]
+        public decimal? TestResultUts { get; set; }
+        [DisplayName("Result Y.S. (Mpa)")]
+        public decimal? TestResultYs { get; set; }
+        [DisplayName("Result Elongation")]
+        public decimal? TestResultElongation { get; set; }
+
 
         [DisplayName("Test Temp. (C$)")]
         public string? TestTemp { get; set; }
@@ -130,6 +155,12 @@ namespace ShakuntEnterprises.ViewModels
         [DisplayName("Other Test Filled Specs")]
         public string? OtherTestFilledSpecs { get; set; }
 
+        [DisplayName("Other Result Radio Specs ")]
+        public string? OtherTestResultRadioSpecs { get; set; }
+        [DisplayName("Other Result Face Bend Specs")]
+        public string? OtherTestResultFaceBendSpecs { get; set; }
+        [DisplayName("Other Result Filled Specs")]
+        public string? OtherTestResultFilledSpecs { get; set; }
         public string? Remarks { get; set; }
 
         public int? IsApproved { get; set; }
