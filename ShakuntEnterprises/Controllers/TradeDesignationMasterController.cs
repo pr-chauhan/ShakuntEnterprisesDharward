@@ -99,6 +99,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestMaxElongation = tradeDesignationMaster.TestMaxElongation;
                 Data.TestTemp = tradeDesignationMaster.TestTemp;
                 Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
+                Data.TestImpectDegree = tradeDesignationMaster.TestImpectDegree;
                 Data.TestCondition = tradeDesignationMaster.TestCondition;
                 Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
                 Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
@@ -168,6 +169,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.TestMaxElongation = tradeDesignationMaster.TestMaxElongation;
                     Data.TestTemp = tradeDesignationMaster.TestTemp;
                     Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
+                    Data.TestImpectDegree = tradeDesignationMaster.TestImpectDegree;
                     Data.TestCondition = tradeDesignationMaster.TestCondition;
                     Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
                     Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
@@ -237,6 +239,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestMaxElongation = tradeDesignationMaster.TestMaxElongation;
                 Data.TestTemp = tradeDesignationMaster.TestTemp;
                 Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
+                Data.TestImpectDegree = tradeDesignationMaster.TestImpectDegree;
                 Data.TestCondition = tradeDesignationMaster.TestCondition;
                 Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
                 Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
@@ -309,6 +312,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.TestMaxElongation = tradeDesignationMaster.TestMaxElongation;
                         Data.TestTemp = tradeDesignationMaster.TestTemp;
                         Data.TestImpectValue = tradeDesignationMaster.TestImpectValue;
+                        Data.TestImpectDegree = tradeDesignationMaster.TestImpectDegree;
                         Data.TestCondition = tradeDesignationMaster.TestCondition;
                         Data.CompositionHeading = tradeDesignationMaster.CompositionHeading;
                         Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;

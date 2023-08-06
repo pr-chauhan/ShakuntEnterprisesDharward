@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Details" disabled="disabled">
+        <fieldset asp-action="Details" disabled="disabled">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <h4>Welding Material</h4>
@@ -18,6 +18,14 @@
                     <label asp-for="BarchNo" class="control-label"></label>
                     <input asp-for="BarchNo" class="form-control" />
                     <span asp-validation-for="BarchNo" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Size" class="control-label"></label>
+                    @*<input asp-for="Size" class="form-control" />*@
+                    <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-Size</option>
+                    </select>
+                    <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
             </div>
 
@@ -132,9 +140,8 @@
                 <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <a class="btn btn-info" asp-action="Index">Back to List</a>
-            </div>
-        </form>
+           
+        </fieldset>
     </div>
+    <a class="btn btn-info" asp-action="Index">Back to List</a>
 </div>

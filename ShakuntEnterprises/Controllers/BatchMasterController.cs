@@ -64,6 +64,7 @@ namespace ShakuntEnterprises.Controllers
             if (batchMaster != null)
             {
                 Data.BarchNo = batchMaster.BarchNo;
+                Data.Size = batchMaster.Size;
                 Data.ElementResultC = batchMaster.ElementResultC;
                 Data.ElementResultSi = batchMaster.ElementResultSi;
                 Data.ElementResultMn = batchMaster.ElementResultMn;
@@ -111,6 +112,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     var Data = new BatchMaster();
                     Data.BarchNo = batchMaster.BarchNo;
+                    Data.Size = batchMaster.Size;
                     Data.ElementResultC = batchMaster.ElementResultC;
                     Data.ElementResultSi = batchMaster.ElementResultSi;
                     Data.ElementResultMn = batchMaster.ElementResultMn;
@@ -158,6 +160,7 @@ namespace ShakuntEnterprises.Controllers
             if (batchMaster != null)
             {
                 Data.BarchNo = batchMaster.BarchNo;
+                Data.Size = batchMaster.Size;
                 Data.ElementResultC = batchMaster.ElementResultC;
                 Data.ElementResultSi = batchMaster.ElementResultSi;
                 Data.ElementResultMn = batchMaster.ElementResultMn;
@@ -208,6 +211,7 @@ namespace ShakuntEnterprises.Controllers
                     if (Data != null)
                     {
                         Data.BarchNo = batchMaster.BarchNo;
+                        Data.Size = batchMaster.Size;
                         Data.ElementResultC = batchMaster.ElementResultC;
                         Data.ElementResultSi = batchMaster.ElementResultSi;
                         Data.ElementResultMn = batchMaster.ElementResultMn;

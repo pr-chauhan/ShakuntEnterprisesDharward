@@ -155,6 +155,8 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController/Create
         public ActionResult Create()
         {
+            ViewBag.CERTINO = commanClass.GenerateNumberSeries("CERTIFICATE");
+            return View();
             return View();
         }
 
