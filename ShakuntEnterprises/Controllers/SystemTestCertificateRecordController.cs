@@ -11,6 +11,7 @@ using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Drawing;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -587,6 +588,49 @@ namespace ShakuntEnterprises.Controllers
             }
             return View(Data);
         }
+
+        [HttpPost]
+        public JsonResult SaveCertificateResultData(string BarchNo, string Size, string CertificateNo, 
+            decimal ElementResultC, decimal ElementResultSi, decimal ElementResultMn, decimal ElementResultP, 
+            decimal ElementResultS,decimal ElementResultNi,decimal ElementResultCr,decimal ElementResultMo,
+            decimal ElementResultCu,decimal TestResultUts,decimal TestResultYs,decimal TestResultElongation,
+            string TestTemp,string TestImpectValue,string TestCondition,string OtherTestResultRadioSpecs,
+            string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs)
+        {
+            
+            TestCertificateResultRecord testCertificateResultRecord  = new TestCertificateResultRecord()
+            {
+                 
+                BarchNo = BarchNo,
+                Size = Size,
+                CertificateNo = CertificateNo,
+                ElementResultC = ElementResultC,
+                ElementResultSi = ElementResultSi,
+                ElementResultMn = ElementResultMn,
+                ElementResultP = ElementResultP,
+                ElementResultS = ElementResultS,
+                ElementResultNi = ElementResultNi,
+                ElementResultCr = ElementResultCr,
+                ElementResultMo = ElementResultMo,
+                ElementResultCu = ElementResultCu,
+                TestResultUts = TestResultUts,
+                TestResultYs = TestResultYs,
+                TestResultElongation = TestResultElongation,
+                TestTemp = TestTemp,
+                TestImpectValue = TestImpectValue,
+                TestCondition = TestCondition,
+                OtherTestResultRadioSpecs = OtherTestResultRadioSpecs,
+                OtherTestResultFaceBendSpecs = OtherTestResultFaceBendSpecs,
+                OtherTestResultFilledSpecs = OtherTestResultFilledSpecs,
+                CreatedBy = HttpContext.Session.GetString("lid"),
+                CreatedDate = DateTime.Now,
+
+            };
+            _context.TestCertificateResultRecords.Add(testCertificateResultRecord);
+            _context.SaveChanges();
+            return Json(CertificateNo);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ApproveCertificate(int id, TestCertificateRecordModel testCertificateRecord1)

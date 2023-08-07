@@ -79,7 +79,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestResultElongation = batchMaster.TestResultElongation;
                 Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                 Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
-                Data.OtherTestResultFilletSpecs = batchMaster.OtherTestResultFilletSpecs;
+                Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
                 Data.TestTemp = batchMaster.TestTemp;
                 Data.TestImpectValue = batchMaster.TestImpectValue;
                 Data.TestCondition = batchMaster.TestCondition;
@@ -127,7 +127,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.TestResultElongation = batchMaster.TestResultElongation;
                     Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                     Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
-                    Data.OtherTestResultFilletSpecs = batchMaster.OtherTestResultFilletSpecs;
+                    Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
                     Data.TestTemp = batchMaster.TestTemp;
                     Data.TestImpectValue = batchMaster.TestImpectValue;
                     Data.TestCondition = batchMaster.TestCondition;
@@ -175,7 +175,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TestResultElongation = batchMaster.TestResultElongation;
                 Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                 Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
-                Data.OtherTestResultFilletSpecs = batchMaster.OtherTestResultFilletSpecs;
+                Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
                 Data.TestTemp = batchMaster.TestTemp;
                 Data.TestImpectValue = batchMaster.TestImpectValue;
                 Data.TestCondition = batchMaster.TestCondition;
@@ -226,7 +226,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.TestResultElongation = batchMaster.TestResultElongation;
                         Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                         Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
-                        Data.OtherTestResultFilletSpecs = batchMaster.OtherTestResultFilletSpecs;
+                        Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
                         Data.TestTemp = batchMaster.TestTemp;
                         Data.TestImpectValue = batchMaster.TestImpectValue;
                         Data.TestCondition = batchMaster.TestCondition;

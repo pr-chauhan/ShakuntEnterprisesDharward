@@ -100,9 +100,9 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("OtherTestResult_FaceBend_Specs");
 
-                entity.Property(e => e.OtherTestResultFilletSpecs)
+                entity.Property(e => e.OtherTestResultFilledSpecs)
                     .HasMaxLength(50)
-                    .HasColumnName("OtherTestResult_Fillet_Specs");
+                    .HasColumnName("OtherTestResult_Filled_Specs");
 
                 entity.Property(e => e.OtherTestResultRadioSpecs)
                     .HasMaxLength(50)
@@ -892,9 +892,9 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("OtherTestResult_FaceBend_Specs");
 
-                entity.Property(e => e.OtherTestResultFilletSpecs)
+                entity.Property(e => e.OtherTestResultFilledSpecs)
                     .HasMaxLength(50)
-                    .HasColumnName("OtherTestResult_Fillet_Specs");
+                    .HasColumnName("OtherTestResult_Filled_Specs");
 
                 entity.Property(e => e.OtherTestResultRadioSpecs)
                     .HasMaxLength(50)

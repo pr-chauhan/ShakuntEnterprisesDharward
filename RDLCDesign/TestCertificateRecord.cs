@@ -96,6 +96,6 @@ namespace RDLCDesign
         public Nullable<decimal> Test_Result_Elongation { get; set; }
         public string OtherTestResult_Radio_Specs { get; set; }
         public string OtherTestResult_FaceBend_Specs { get; set; }
-        public string OtherTestResult_Fillet_Specs { get; set; }
+        public string OtherTestResultFilledSpecs { get; set; }
     }
 }

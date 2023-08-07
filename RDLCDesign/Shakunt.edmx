@@ -85,7 +85,7 @@
           <Property Name="OtherTest_Fillet_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="OtherTestResult_Radio_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="OtherTestResult_FaceBend_Specs" Type="nvarchar" MaxLength="50" />
-          <Property Name="OtherTestResult_Fillet_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTestResultFilledSpecs" Type="nvarchar" MaxLength="50" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
           <Property Name="Certificate_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Created_Date" Type="datetime" />
@@ -186,7 +186,7 @@
           <Property Name="Test_Result_Elongation" Type="Decimal" Precision="10" Scale="3" />
           <Property Name="OtherTestResult_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OtherTestResult_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OtherTestResult_Fillet_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTestResultFilledSpecs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="ShakuntEnterprisesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TestCertificateRecords" EntityType="Self.TestCertificateRecord" />
@@ -200,7 +200,7 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
-                <ScalarProperty Name="OtherTestResult_Fillet_Specs" ColumnName="OtherTestResult_Fillet_Specs" />
+                <ScalarProperty Name="OtherTestResultFilledSpecs" ColumnName="OtherTestResultFilledSpecs" />
                 <ScalarProperty Name="OtherTestResult_FaceBend_Specs" ColumnName="OtherTestResult_FaceBend_Specs" />
                 <ScalarProperty Name="OtherTestResult_Radio_Specs" ColumnName="OtherTestResult_Radio_Specs" />
                 <ScalarProperty Name="Test_Result_Elongation" ColumnName="Test_Result_Elongation" />

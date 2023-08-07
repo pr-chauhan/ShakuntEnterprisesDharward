@@ -492,7 +492,93 @@
                 var BarchNo = $("#BarchNo").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
                     { BarchNo: BarchNo }, function (data) {
-                        
+
+                        if (data[0].elementResultC > 0) {
+                            if ($("#ElementMinC").val() > data[0].elementResultC || $("#ElementMaxC").val() < data[0].elementResultC) {
+                                $("#submit").hide();
+                                alert("Element Result C% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultSi > 0) {
+                            if ($("#ElementMinSi").val() > data[0].elementResultSi || $("#ElementMaxSi").val() < data[0].elementResultSi) {
+                                $("#submit").hide();
+                                alert("Element Result Si% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultMn > 0) {
+                            if ($("#ElementMinMn").val() > data[0].elementResultMn || $("#ElementMaxMn").val() < data[0].elementResultMn) {
+                                $("#submit").hide();
+                                alert("Element  Result Mn% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultP > 0) {
+                            if ($("#ElementMinP").val() > data[0].elementResultP || $("#ElementMaxP").val() < data[0].elementResultP) {
+                                $("#submit").hide();
+                                alert("Element Result P% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultS > 0) {
+                            if ($("#ElementMinS").val() > data[0].elementResultS || $("#ElementMaxS").val() < data[0].elementResultS) {
+                                $("#submit").hide();
+                                alert("Element Result S% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultNi > 0) {
+                            if ($("#ElementMinNi").val() > data[0].elementResultNi || $("#ElementMaxNi").val() < data[0].elementResultNi) {
+                                $("#submit").hide();
+                                alert("Element Result Ni% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultCr > 0) {
+                            if ($("#ElementMinCr").val() > data[0].elementResultCr || $("#ElementMaxCr").val() < data[0].elementResultCr) {
+                                $("#submit").hide();
+                                alert("Element Result Cr% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+
+                        if (data[0].elementResultMo > 0) {
+                            if ($("#ElementMinMo").val() > data[0].elementResultMo || $("#ElementMaxMo").val() < data[0].elementResultMo) {
+                                $("#submit").hide();
+                                alert("Element Result Mo% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].elementResultCu > 0) {
+                            if ($("#ElementMinCu").val() > data[0].elementResultCu || $("#ElementMaxCu").val() < data[0].elementResultCu) {
+                                $("#submit").hide();
+                                alert("Element Result Cu% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].testResultUts > 0) {
+                            if ($("#TestMinUts").val() > data[0].testResultUts || $("#TestMaxUts").val() < data[0].testResultUts) {
+                                $("#submit").hide();
+                                alert("Test Result Uts is not under result conditons..!!");
+                                return;
+                            }
+                        }
+
+                        if (data[0].testResultYs > 0) {
+                            if ($("#TestMinYs").val() > data[0].testResultYs || $("#TestMaxYs").val() < data[0].testResultYs) {
+                                $("#submit").hide();
+                                alert("Test Result Ys is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if (data[0].testResultElongation > 0) {
+                            if ($("#TestMinElongation").val() > data[0].testResultElongation || $("#TestMaxElongation").val() < data[0].testResultElongation) {
+                                $("#submit").hide();
+                                alert("Test Result Elongation is not under result conditons..!!");
+                                return;
+                            }
+                        }
 
                     $('<tr id="tablerow' + counter + '"><td>' +
 
@@ -539,7 +625,7 @@
                             '<input type="text" class="form-control" id="otherTestResultFaceBendSpecs[' + counter + ']" value="' + data[0].otherTestResultFaceBendSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
                             '</td>' +
                               '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultFilletSpecs[' + counter + ']" value="' + data[0].otherTestResultFilletSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="otherTestResultFilledSpecs[' + counter + ']" value="' + data[0].otherTestResultFilledSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
                             '</td>' +
 
                             '<td>' +

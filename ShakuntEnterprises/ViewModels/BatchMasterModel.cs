@@ -25,7 +25,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? TestCondition { get; set; }
         public string? OtherTestResultRadioSpecs { get; set; }
         public string? OtherTestResultFaceBendSpecs { get; set; }
-        public string? OtherTestResultFilletSpecs { get; set; }
+        public string? OtherTestResultFilledSpecs { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
