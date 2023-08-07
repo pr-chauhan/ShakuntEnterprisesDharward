@@ -63,6 +63,7 @@
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="BarchNo" class="control-label"></label>
                     <input asp-for="BarchNo" class="form-control" />
+                    <button id="addBatch" type="button" class="btn btn-primary" style="float:right;margin-top:3px;">Add</button>
                     <span asp-validation-for="BarchNo" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
@@ -226,26 +227,22 @@
                     <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-md-12" style="height:200px;overflow: scroll;">
-                <h4>Batch Result Table</h4>
+            <div class="row">
+
+                <hr />
                 <table id="BatchDetailsTable" class="display expandable-table dataTable no-footer">
                     <thead style="border:dotted">
                         <tr>
-                            <th width="20%">ResultC</th>
-                            <th width="20%">ResultSi</th>
-                            <th width="20%">ResultMn</th>
-                            <th width="20%">ResultP</th>
-                            <th width="20%">ResultS</th>
-                            <th width="20%">ResultNi</th>
-                            <th width="20%">ResultCr</th>
-                            <th width="20%">ResultMo</th>
-                            <th width="20%">ResultCu</th>
-                            <th width="20%">ResultUts</th>
-                            <th width="20%">ResultYs</th>
-                            <th width="20%">ResultElongation</th>
-                            <th width="20%">ResultRadioSpecs</th>
-                            <th width="20%">ResultFaceBendSpecs</th>
-                            <th width="20%">ResultFilledSpecs</th>
+                            <th width="10%">ElementResultC</th>
+                            <th width="10%">ElementResultSi</th>
+                            <th width="10%">ElementResultMn</th>
+                            <th width="10%">ElementResultP</th>
+                            <th width="10%">ElementResultS</th>
+                            <th width="10%">ElementResultNi</th>
+                            <th width="10%">ElementResultCr</th>
+                            <th width="10%">ElementResultMo</th>
+                            <th width="10%">ElementResultCu</th>
+                            <th width="10%">ElementResultNi</th>
                             <th width="10%">Delete</th>
                         </tr>
                     </thead>
@@ -413,6 +410,54 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var counter = 0;
+            $("#addBatch").click(function () {
+                alert("batch");
+                //var BarchNo = $("#BarchNo").val();
+                //$.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
+                //    { BarchNo: BarchNo }, function (data) {
+                //        $("#ElementResultC").val(data[0].elementResultC);
+                //        $("#ElementResultSi").val(data[0].elementResultSi);
+                //        $("#ElementResultMn").val(data[0].elementResultMn);
+                //        $("#ElementResultP").val(data[0].elementResultP);
+                //        $("#ElementResultS").val(data[0].elementResultS);
+                //        $("#ElementResultNi").val(data[0].elementResultNi);
+                //        $("#ElementResultCr").val(data[0].elementResultCr);
+                //        $("#ElementResultMo").val(data[0].elementResultMo);
+                //        $("#ElementResultCu").val(data[0].elementResultCu);
+                //        $("#TestResultUts").val(data[0].testResultUts);
+                //        $("#TestResultYs").val(data[0].testResultYs);
+                //        $("#TestResultElongation").val(data[0].testResultElongation);
+                //        $("#OtherTestResultRadioSpecs").val(data[0].otherTestResultRadioSpecs);
+                //        $("#OtherTestResultFaceBendSpecs").val(data[0].otherTestResultFaceBendSpecs);
+                //        $("#OtherTestResultFilledSpecs").val(data[0].otherTestResultFilletSpecs);
+
+                //    $('<tr id="tablerow' + counter + '"><td>' +
+                //    '<input type="text" class="form-control" id="elementResultC[' + counter + ']" value="' + data[0].elementResultC + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;" />' +
+                //    '</td>' +
+                //    '<td>' +
+                //    '<input type="text" class="form-control" id="elementResultSi[' + counter + ']" value="' + data[0].elementResultSi + '" required="required"  readonly=readonly   style = "background-color:#ffeb504d"/>' +
+                //    '</td>' +
+                //    '<td>' +
+                //    '<input type="text" class="form-control" id="elementResultMn[' + counter + ']" value="' + data[0].elementResultMn + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d"/>' +
+                //    '</td>' +
+                //    '<td>' +
+                //            '<input type="text" class="form-control" id="elementResultP[' + counter + ']" value="' + data[0].elementResultP + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d"/>' +
+                //    '</td>' +
+
+                //    '<td>' +
+                //    '<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
+                //    '</td>' +
+                //    '</tr>').appendTo('#BatchDetailsTable');
+
+                //counter++;
+
+
+                //return false;
+                //})
+
+               
+            })
+
 
 
             $("#TradeDesignation").change(function () {
@@ -488,76 +533,135 @@
             })
 
             $("#BarchNo").change(function () {
-              debugger
+
                 var BarchNo = $("#BarchNo").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
                     { BarchNo: BarchNo }, function (data) {
-                        
+                        $("#ElementResultC").val(data[0].elementResultC);
+                        $("#ElementResultSi").val(data[0].elementResultSi);
+                        $("#ElementResultMn").val(data[0].elementResultMn);
+                        $("#ElementResultP").val(data[0].elementResultP);
+                        $("#ElementResultS").val(data[0].elementResultS);
+                        $("#ElementResultNi").val(data[0].elementResultNi);
+                        $("#ElementResultCr").val(data[0].elementResultCr);
+                        $("#ElementResultMo").val(data[0].elementResultMo);
+                        $("#ElementResultCu").val(data[0].elementResultCu);
+                        $("#TestResultUts").val(data[0].testResultUts);
+                        $("#TestResultYs").val(data[0].testResultYs);
+                        $("#TestResultElongation").val(data[0].testResultElongation);
+                        $("#OtherTestResultRadioSpecs").val(data[0].otherTestResultRadioSpecs);
+                        $("#OtherTestResultFaceBendSpecs").val(data[0].otherTestResultFaceBendSpecs);
+                        $("#OtherTestResultFilledSpecs").val(data[0].otherTestResultFilledSpecs);
 
-                    $('<tr id="tablerow' + counter + '"><td>' +
+                        if ($("#ElementResultC").val() > 0) {
+                            if ($("#ElementMinC").val() > $("#ElementResultC").val() || $("#ElementMaxC").val() < $("#ElementResultC").val()) {
+                                $("#submit").hide();
+                                alert("Element Result C% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultSi").val() > 0) {
+                            if ($("#ElementMinSi").val() > $("#ElementResultSi").val() || $("#ElementMaxSi").val() < $("#ElementResultSi").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Si% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultMn").val() > 0) {
+                            if ($("#ElementMinMn").val() > $("#ElementResultMn").val() || $("#ElementMaxMn").val() < $("#ElementResultMn").val()) {
+                                $("#submit").hide();
+                                alert("Element  Result Mn% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultP").val() > 0) {
+                            if ($("#ElementMinP").val() > $("#ElementResultP").val() || $("#ElementMaxP").val() < $("#ElementResultP").val()) {
+                                $("#submit").hide();
+                                alert("Element Result P% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultS").val() > 0) {
+                            if ($("#ElementMinS").val() > $("#ElementResultS").val() || $("#ElementMaxS").val() < $("#ElementResultS").val()) {
+                                $("#submit").hide();
+                                alert("Element Result S% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultNi").val() > 0) {
+                            if ($("#ElementMinNi").val() > $("#ElementResultNi").val() || $("#ElementMaxNi").val() < $("#ElementResultNi").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Ni% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultCr").val() > 0) {
+                            if ($("#ElementMinCr").val() > $("#ElementResultCr").val() || $("#ElementMaxCr").val() < $("#ElementResultCr").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Cr% is not under result conditons..!!");
+                                return;
+                            }
+                        }
 
-                            '<input type="text" class="form-control" id="elementResultC[' + counter + ']" value="' + data[0].elementResultC + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;" />' +
-                            '</td>' +
-                            '<td>' +
-                            '<input type="text" class="form-control" id="elementResultSi[' + counter + ']" value="' + data[0].elementResultSi + '" required="required"  readonly=readonly   style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                            '<td>' +
-                            '<input type="text" class="form-control" id="elementResultMn[' + counter + ']" value="' + data[0].elementResultMn + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                            '<td>' +
-                                    '<input type="text" class="form-control" id="elementResultP[' + counter + ']" value="' + data[0].elementResultP + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultS[' + counter + ']" value="' + data[0].elementResultS + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultNi[' + counter + ']" value="' + data[0].elementResultNi + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultCr[' + counter + ']" value="' + data[0].elementResultCr + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                             '<td>' +
-                                    '<input type="text" class="form-control" id="elementResultMo[' + counter + ']" value="' + data[0].elementResultMo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                            '<td>' +
-                            '<input type="text" class="form-control" id="elementResultCu[' + counter + ']" value="' + data[0].elementResultCu + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
+                        if ($("#ElementResultMo").val() > 0) {
+                            if ($("#ElementMinMo").val() > $("#ElementResultMo").val() || $("#ElementMaxMo").val() < $("#ElementResultMo").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Mo% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#ElementResultCu").val() > 0) {
+                            if ($("#ElementMinCu").val() > $("#ElementResultCu").val() || $("#ElementMaxCu").val() < $("#ElementResultCu").val()) {
+                                $("#submit").hide();
+                                alert("Element Result Cu% is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#TestResultUts").val() > 0) {
+                            if ($("#TestMinUts").val() > $("#TestResultUts").val() || $("#TestMaxUts").val() < $("#TestResultUts").val()) {
+                                $("#submit").hide();
+                                alert("Test Result Uts is not under result conditons..!!");
+                                return;
+                            }
+                        }
 
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultUts[' + counter + ']" value="' + data[0].testResultUts + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultYs[' + counter + ']" value="' + data[0].testResultYs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultElongation[' + counter + ']" value="' + data[0].testResultElongation + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultRadioSpecs[' + counter + ']" value="' + data[0].otherTestResultRadioSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultFaceBendSpecs[' + counter + ']" value="' + data[0].otherTestResultFaceBendSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultFilletSpecs[' + counter + ']" value="' + data[0].otherTestResultFilletSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
+                        if ($("#TestResultYs").val() > 0) {
+                            if ($("#TestMinYs").val() > $("#TestResultYs").val() || $("#TestMaxYs").val() < $("#TestResultYs").val()) {
+                                $("#submit").hide();
+                                alert("Test Result Ys is not under result conditons..!!");
+                                return;
+                            }
+                        }
+                        if ($("#TestResultElongation").val() > 0) {
+                            if ($("#TestMinElongation").val() > $("#TestResultElongation").val() || $("#TestMaxElongation").val() < $("#TestResultElongation").val()) {
+                                $("#submit").hide();
+                                alert("Test Result Elongation is not under result conditons..!!");
+                                return;
+                            }
+                        }
 
-                            '<td>' +
-                            '<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
-                            '</td>' +
-                    '</tr>').appendTo('#BatchDetailsTable');
-
-                    counter++;
-
-
-                    return false;
-                })
-
-               
+                        //if ($("#OtherTestMinRadioSpecs").val() > $("#OtherTestResultRadioSpecs").val() || $("#OtherTestMaxRadioSpecs").val() < $("#OtherTestResultRadioSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result RadioSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                        //if ($("#OtherTestMinFaceBendSpecs").val() > $("#OtherTestResultFaceBendSpecs").val() || $("#OtherTestMaxFaceBendSpecs").val() < $("#OtherTestResultFaceBendSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result FaceBendSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                        //if ($("#OtherTestMintFilletSpecs").val() > $("#OtherTestResultFilledSpecs").val() || $("#OtherTestMaxFilletSpecs").val() < $("#OtherTestResultFilledSpecs").val()) {
+                        //    $("#submit").hide();
+                        //    alert("OtherTest Result FilletSpecs is not under result conditons..!!");
+                        //    return;
+                        //}
+                    })
             })
 
-        })
 
+
+        })
+  
         function removeTr(index) {
             if (confirm('Are you sure to delete this row ?')) {
                 if (counter => 1) {
@@ -566,6 +670,5 @@
                 }
                 return false;
             }
-        }
     </script>
 }

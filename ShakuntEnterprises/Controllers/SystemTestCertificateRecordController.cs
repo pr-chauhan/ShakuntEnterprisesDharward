@@ -654,7 +654,7 @@ namespace ShakuntEnterprises.Controllers
 
         public JsonResult GetBatchMasterResult(string BarchNo)
         {
-            var data = _context.BatchMasters.Where(x => x.BarchNo == BarchNo).ToList();
+                var data = _context.BatchMasters.Where(x => x.BarchNo == BarchNo).ToList();
 
             return Json(data);
         }
