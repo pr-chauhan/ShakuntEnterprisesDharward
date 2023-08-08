@@ -1004,14 +1004,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="BarchNo">
+      <Textbox Name="BatchNo">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!BatchDate.Value, "TestCertificate") + First(Fields!BarchNo.Value, "TestCertificate")</Value>
+                <Value>=First(Fields!BatchDate.Value, "TestCertificate") + First(Fields!BatchNo.Value, "TestCertificate")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -1020,7 +1020,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>BarchNo</rd:DefaultName>
+        <rd:DefaultName>BatchNo</rd:DefaultName>
         <Top>2.85745in</Top>
         <Left>3.40826in</Left>
         <Height>0.25in</Height>
@@ -2862,7 +2862,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_C.Value - Fields!Element_MIN_C.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2896,7 +2896,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_SI.Value - Fields!Element_MIN_SI.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2930,7 +2930,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_MN.Value - Fields!Element_MIN_MN.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2964,7 +2964,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_P.Value-Fields!Element_MIN_P.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2998,7 +2998,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_S.Value-Fields!Element_MIN_S.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3032,7 +3032,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_NI.Value-Fields!Element_MIN_NI.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3066,7 +3066,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_CR.Value-Fields!Element_MIN_CR.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3100,7 +3100,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_MO.Value-Fields!Element_MIN_MO.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3134,7 +3134,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_CU.Value-Fields!Element_MIN_CU.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -4071,7 +4071,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Test_MAX_UTS.Value-Fields!Test_MIN_UTS.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -6142,8 +6142,8 @@
           <DataField>APMS</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="BarchNo">
-          <DataField>BarchNo</DataField>
+        <Field Name="BatchNo">
+          <DataField>BatchNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="BaseMetal">

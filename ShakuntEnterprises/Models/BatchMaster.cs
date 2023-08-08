@@ -6,7 +6,7 @@ namespace ShakuntEnterprises.Models
     public partial class BatchMaster
     {
         public int Id { get; set; }
-        public string? BarchNo { get; set; }
+        public string? BatchNo { get; set; }
         public string? Size { get; set; }
         public decimal? ElementResultC { get; set; }
         public decimal? ElementResultSi { get; set; }
@@ -20,9 +20,9 @@ namespace ShakuntEnterprises.Models
         public decimal? TestResultUts { get; set; }
         public decimal? TestResultYs { get; set; }
         public decimal? TestResultElongation { get; set; }
-        public string? TestTemp { get; set; }
-        public string? TestImpectValue { get; set; }
-        public string? TestCondition { get; set; }
+        public string? TestResultTemp { get; set; }
+        public string? TestResultImpectValue { get; set; }
+        public string? TestResultCondition { get; set; }
         public string? OtherTestResultRadioSpecs { get; set; }
         public string? OtherTestResultFaceBendSpecs { get; set; }
         public string? OtherTestResultFilledSpecs { get; set; }

@@ -60,9 +60,9 @@
                     <span asp-validation-for="BatchDate" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="BarchNo" class="control-label"></label>
-                    <input asp-for="BarchNo" class="form-control" />
-                    <span asp-validation-for="BarchNo" class="text-danger"></span>
+                    <label asp-for="BatchNo" class="control-label"></label>
+                    <input asp-for="BatchNo" class="form-control" />
+                    <span asp-validation-for="BatchNo" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="ManufecturingDate" class="control-label"></label>
@@ -460,11 +460,11 @@
                     })
             })
 
-            $("#BarchNo").change(function () {
+            $("#BatchNo").change(function () {
 
-                var BarchNo = $("#BarchNo").val();
+                var BatchNo = $("#BatchNo").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
-                    { BarchNo: BarchNo }, function (data) {
+                    { BatchNo: BatchNo }, function (data) {
                         $("#ElementResultC").val(data[0].elementResultC);
                         $("#ElementResultSi").val(data[0].elementResultSi);
                         $("#ElementResultMn").val(data[0].elementResultMn);

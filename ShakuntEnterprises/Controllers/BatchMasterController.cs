@@ -63,7 +63,7 @@ namespace ShakuntEnterprises.Controllers
             var batchMaster = await _context.BatchMasters.FindAsync(id);
             if (batchMaster != null)
             {
-                Data.BarchNo = batchMaster.BarchNo;
+                Data.BatchNo = batchMaster.BatchNo;
                 Data.Size = batchMaster.Size;
                 Data.ElementResultC = batchMaster.ElementResultC;
                 Data.ElementResultSi = batchMaster.ElementResultSi;
@@ -80,9 +80,9 @@ namespace ShakuntEnterprises.Controllers
                 Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                 Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
                 Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
-                Data.TestTemp = batchMaster.TestTemp;
-                Data.TestImpectValue = batchMaster.TestImpectValue;
-                Data.TestCondition = batchMaster.TestCondition;
+                Data.TestResultTemp = batchMaster.TestResultTemp;
+                Data.TestResultImpectValue = batchMaster.TestResultImpectValue;
+                Data.TestResultCondition = batchMaster.TestResultCondition;
                 Data.CreatedDate = batchMaster.CreatedDate;
                 Data.CreatedBy = batchMaster.CreatedBy;
                 Data.ModifiedDate = batchMaster.ModifiedDate;
@@ -111,7 +111,7 @@ namespace ShakuntEnterprises.Controllers
                 if (ModelState.IsValid)
                 {
                     var Data = new BatchMaster();
-                    Data.BarchNo = batchMaster.BarchNo;
+                    Data.BatchNo = batchMaster.BatchNo;
                     Data.Size = batchMaster.Size;
                     Data.ElementResultC = batchMaster.ElementResultC;
                     Data.ElementResultSi = batchMaster.ElementResultSi;
@@ -128,9 +128,9 @@ namespace ShakuntEnterprises.Controllers
                     Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                     Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
                     Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
-                    Data.TestTemp = batchMaster.TestTemp;
-                    Data.TestImpectValue = batchMaster.TestImpectValue;
-                    Data.TestCondition = batchMaster.TestCondition;
+                    Data.TestResultTemp = batchMaster.TestResultTemp;
+                    Data.TestResultImpectValue = batchMaster.TestResultImpectValue;
+                    Data.TestResultCondition = batchMaster.TestResultCondition;
                     Data.CreatedDate = batchMaster.CreatedDate;
                     Data.CreatedBy = batchMaster.CreatedBy;
                     Data.ModifiedDate = batchMaster.ModifiedDate;
@@ -159,7 +159,7 @@ namespace ShakuntEnterprises.Controllers
             var batchMaster = await _context.BatchMasters.FindAsync(id);
             if (batchMaster != null)
             {
-                Data.BarchNo = batchMaster.BarchNo;
+                Data.BatchNo = batchMaster.BatchNo;
                 Data.Size = batchMaster.Size;
                 Data.ElementResultC = batchMaster.ElementResultC;
                 Data.ElementResultSi = batchMaster.ElementResultSi;
@@ -176,9 +176,9 @@ namespace ShakuntEnterprises.Controllers
                 Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                 Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
                 Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
-                Data.TestTemp = batchMaster.TestTemp;
-                Data.TestImpectValue = batchMaster.TestImpectValue;
-                Data.TestCondition = batchMaster.TestCondition;
+                Data.TestResultTemp = batchMaster.TestResultTemp;
+                Data.TestResultImpectValue = batchMaster.TestResultImpectValue;
+                Data.TestResultCondition = batchMaster.TestResultCondition;
                 Data.CreatedDate = batchMaster.CreatedDate;
                 Data.CreatedBy = batchMaster.CreatedBy;
                 Data.ModifiedDate = batchMaster.ModifiedDate;
@@ -210,7 +210,7 @@ namespace ShakuntEnterprises.Controllers
                     var Data = await _context.BatchMasters.FindAsync(id);
                     if (Data != null)
                     {
-                        Data.BarchNo = batchMaster.BarchNo;
+                        Data.BatchNo = batchMaster.BatchNo;
                         Data.Size = batchMaster.Size;
                         Data.ElementResultC = batchMaster.ElementResultC;
                         Data.ElementResultSi = batchMaster.ElementResultSi;
@@ -227,9 +227,9 @@ namespace ShakuntEnterprises.Controllers
                         Data.OtherTestResultRadioSpecs = batchMaster.OtherTestResultRadioSpecs;
                         Data.OtherTestResultFaceBendSpecs = batchMaster.OtherTestResultFaceBendSpecs;
                         Data.OtherTestResultFilledSpecs = batchMaster.OtherTestResultFilledSpecs;
-                        Data.TestTemp = batchMaster.TestTemp;
-                        Data.TestImpectValue = batchMaster.TestImpectValue;
-                        Data.TestCondition = batchMaster.TestCondition;
+                        Data.TestResultTemp = batchMaster.TestResultTemp;
+                        Data.TestResultImpectValue = batchMaster.TestResultImpectValue;
+                        Data.TestResultCondition = batchMaster.TestResultCondition;
                         Data.CreatedDate = batchMaster.CreatedDate;
                         Data.CreatedBy = batchMaster.CreatedBy;
                         Data.ModifiedDate = batchMaster.ModifiedDate;

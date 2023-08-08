@@ -70,7 +70,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
-                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.BatchNo = testCertificateRecord.BatchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
                 Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -177,7 +177,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                     Data.Size = testCertificateRecord.Size;
                     Data.BatchDate = testCertificateRecord.BatchDate;
-                    Data.BarchNo = testCertificateRecord.BarchNo;
+                    Data.BatchNo = testCertificateRecord.BatchNo;
                     Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                     Data.Specification = testCertificateRecord.Specification;
                     Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -282,7 +282,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
-                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.BatchNo = testCertificateRecord.BatchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
                 Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -390,7 +390,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                         Data.Size = testCertificateRecord.Size;
                         Data.BatchDate = testCertificateRecord.BatchDate;
-                        Data.BarchNo = testCertificateRecord.BarchNo;
+                        Data.BatchNo = testCertificateRecord.BatchNo;
                         Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                         Data.Specification = testCertificateRecord.Specification;
                         Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -507,7 +507,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
-                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.BatchNo = testCertificateRecord.BatchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
                 Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -590,18 +590,19 @@ namespace ShakuntEnterprises.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveCertificateResultData(string BarchNo, string Size, string CertificateNo, 
+        public JsonResult SaveCertificateResultData(string BatchNo, string Size, string CertificateNo, 
             decimal ElementResultC, decimal ElementResultSi, decimal ElementResultMn, decimal ElementResultP, 
             decimal ElementResultS,decimal ElementResultNi,decimal ElementResultCr,decimal ElementResultMo,
             decimal ElementResultCu,decimal TestResultUts,decimal TestResultYs,decimal TestResultElongation,
-            string TestTemp,string TestImpectValue,string TestCondition,string OtherTestResultRadioSpecs,
-            string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs)
+            string TestResultTemp, string TestResultImpectValue, string TestResultCondition,
+            string OtherTestResultRadioSpecs,string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs
+            )
         {
             
             TestCertificateResultRecord testCertificateResultRecord  = new TestCertificateResultRecord()
             {
                  
-                BarchNo = BarchNo,
+                BatchNo = BatchNo,
                 Size = Size,
                 CertificateNo = CertificateNo,
                 ElementResultC = ElementResultC,
@@ -616,9 +617,9 @@ namespace ShakuntEnterprises.Controllers
                 TestResultUts = TestResultUts,
                 TestResultYs = TestResultYs,
                 TestResultElongation = TestResultElongation,
-                TestTemp = TestTemp,
-                TestImpectValue = TestImpectValue,
-                TestCondition = TestCondition,
+                TestTemp = TestResultTemp,
+                TestImpectValue = TestResultImpectValue,
+                TestCondition = TestResultCondition,
                 OtherTestResultRadioSpecs = OtherTestResultRadioSpecs,
                 OtherTestResultFaceBendSpecs = OtherTestResultFaceBendSpecs,
                 OtherTestResultFilledSpecs = OtherTestResultFilledSpecs,
@@ -696,9 +697,9 @@ namespace ShakuntEnterprises.Controllers
             return Json(data);
         }
 
-        public JsonResult GetBatchMasterResult(string BarchNo)
+        public JsonResult GetBatchMasterResult(string BatchNo)
         {
-                var data = _context.BatchMasters.Where(x => x.BarchNo == BarchNo).ToList();
+                var data = _context.BatchMasters.Where(x => x.BatchNo == BatchNo).ToList();
 
             return Json(data);
         }

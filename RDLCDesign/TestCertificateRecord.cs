@@ -22,7 +22,8 @@ namespace RDLCDesign
         public string InvoiceNo { get; set; }
         public string TradeDesignation { get; set; }
         public string Size { get; set; }
-        public string BarchNo { get; set; }
+        public string BatchDate { get; set; }
+        public string BatchNo { get; set; }
         public Nullable<System.DateTime> ManufecturingDate { get; set; }
         public string Specification { get; set; }
         public string WeldingProcess { get; set; }
@@ -62,11 +63,6 @@ namespace RDLCDesign
         public string Test_Temp { get; set; }
         public string Test_ImpectValue { get; set; }
         public string Test_Condition { get; set; }
-        public string Remarks { get; set; }
-        public Nullable<System.DateTime> Created_Date { get; set; }
-        public string Created_By { get; set; }
-        public Nullable<System.DateTime> Modified_Date { get; set; }
-        public string Modified_By { get; set; }
         public string Size_StandardValue { get; set; }
         public string Size_ActualValue { get; set; }
         public string Coating_StandardValue { get; set; }
@@ -79,23 +75,13 @@ namespace RDLCDesign
         public string Helix_ActualValue { get; set; }
         public string OtherTest_Radio_Specs { get; set; }
         public string OtherTest_FaceBend_Specs { get; set; }
-        public string OtherTest_Fillet_Specs { get; set; }
+        public string OtherTest_Filled_Specs { get; set; }
+        public string Remarks { get; set; }
+        public Nullable<int> IsApproved { get; set; }
         public string Certificate_Type { get; set; }
-        public string BatchDate { get; set; }
-        public Nullable<decimal> Element_Result_C { get; set; }
-        public Nullable<decimal> Element_Result_SI { get; set; }
-        public Nullable<decimal> Element_Result_MN { get; set; }
-        public Nullable<decimal> Element_Result_P { get; set; }
-        public Nullable<decimal> Element_Result_S { get; set; }
-        public Nullable<decimal> Element_Result_NI { get; set; }
-        public Nullable<decimal> Element_Result_CR { get; set; }
-        public Nullable<decimal> Element_Result_MO { get; set; }
-        public Nullable<decimal> Element_Result_CU { get; set; }
-        public Nullable<decimal> Test_Result_UTS { get; set; }
-        public Nullable<decimal> Test_Result_YS { get; set; }
-        public Nullable<decimal> Test_Result_Elongation { get; set; }
-        public string OtherTestResult_Radio_Specs { get; set; }
-        public string OtherTestResult_FaceBend_Specs { get; set; }
-        public string OtherTestResultFilledSpecs { get; set; }
+        public Nullable<System.DateTime> Created_Date { get; set; }
+        public string Created_By { get; set; }
+        public Nullable<System.DateTime> Modified_Date { get; set; }
+        public string Modified_By { get; set; }
     }
 }

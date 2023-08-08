@@ -6,7 +6,7 @@ namespace ShakuntEnterprises.Models
     public class TestCertificateResultRecordModel
     {
         public int Id { get; set; }
-        public string? BarchNo { get; set; }
+        public string? BatchNo { get; set; }
         public string? Size { get; set; }
         public string? CertificateNo { get; set; }
         public decimal? ElementResultC { get; set; }
@@ -26,7 +26,7 @@ namespace ShakuntEnterprises.Models
         public string? TestCondition { get; set; }
         public string? OtherTestResultRadioSpecs { get; set; }
         public string? OtherTestResultFaceBendSpecs { get; set; }
-        public string? OtherTestResultFilletSpecs { get; set; }
+        public string? OtherTestResultFilledSpecs { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }

@@ -70,7 +70,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
-                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.BatchNo = testCertificateRecord.BatchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
                 Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -178,7 +178,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                     Data.Size = testCertificateRecord.Size;
                     Data.BatchDate = testCertificateRecord.BatchDate;
-                    Data.BarchNo = testCertificateRecord.BarchNo;
+                    Data.BatchNo = testCertificateRecord.BatchNo;
                     Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                     Data.Specification = testCertificateRecord.Specification;
                     Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -284,7 +284,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
-                Data.BarchNo = testCertificateRecord.BarchNo;
+                Data.BatchNo = testCertificateRecord.BatchNo;
                 Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                 Data.Specification = testCertificateRecord.Specification;
                 Data.WeldingProcess = testCertificateRecord.WeldingProcess;
@@ -392,7 +392,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                         Data.Size = testCertificateRecord.Size;
                         Data.BatchDate = testCertificateRecord.BatchDate;
-                        Data.BarchNo = testCertificateRecord.BarchNo;
+                        Data.BatchNo = testCertificateRecord.BatchNo;
                         Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
                         Data.Specification = testCertificateRecord.Specification;
                         Data.WeldingProcess = testCertificateRecord.WeldingProcess;

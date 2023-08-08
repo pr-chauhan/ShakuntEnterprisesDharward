@@ -22,8 +22,8 @@ namespace ShakuntEnterprises.ViewModels
         public string? Size { get; set; }
         [DisplayName("Barch Date")]
         public string? BatchDate { get; set; }
-        [DisplayName("Barch No.")]
-        public string? BarchNo { get; set; }
+        [DisplayName("Batch No.")]
+        public string? BatchNo { get; set; }
         [DisplayName("Manufecturing Date")]
         public DateTime? ManufecturingDate { get; set; }
         public string? Specification { get; set; }

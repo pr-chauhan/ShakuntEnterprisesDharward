@@ -42,7 +42,7 @@ namespace ShakuntEnterprises.Models
             {
                 entity.ToTable("BatchMaster");
 
-                entity.Property(e => e.BarchNo).HasMaxLength(50);
+                entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)
@@ -110,17 +110,21 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.Size).HasMaxLength(50);
 
-                entity.Property(e => e.TestCondition)
+                entity.Property(e => e.TestResultCondition)
                     .HasMaxLength(50)
-                    .HasColumnName("Test_Condition");
-
-                entity.Property(e => e.TestImpectValue)
-                    .HasMaxLength(50)
-                    .HasColumnName("Test_ImpectValue");
+                    .HasColumnName("Test_Result_Condition");
 
                 entity.Property(e => e.TestResultElongation)
                     .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_Result_Elongation");
+
+                entity.Property(e => e.TestResultImpectValue)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Result_ImpectValue");
+
+                entity.Property(e => e.TestResultTemp)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Result_Temp");
 
                 entity.Property(e => e.TestResultUts)
                     .HasColumnType("numeric(10, 3)")
@@ -129,10 +133,6 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.TestResultYs)
                     .HasColumnType("numeric(10, 3)")
                     .HasColumnName("Test_Result_YS");
-
-                entity.Property(e => e.TestTemp)
-                    .HasMaxLength(50)
-                    .HasColumnName("Test_Temp");
             });
 
             modelBuilder.Entity<MainModuleBar>(entity =>
@@ -314,11 +314,11 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("APMS");
 
-                entity.Property(e => e.BarchNo).HasMaxLength(50);
-
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
                 entity.Property(e => e.BatchDate).HasMaxLength(50);
+
+                entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.CastDiaActualValue)
                     .HasMaxLength(50)
@@ -545,7 +545,7 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("APMS");
 
-                entity.Property(e => e.BarchNo).HasMaxLength(50);
+                entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
@@ -832,7 +832,7 @@ namespace ShakuntEnterprises.Models
             {
                 entity.ToTable("TestCertificateResultRecord");
 
-                entity.Property(e => e.BarchNo).HasMaxLength(50);
+                entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.CertificateNo).HasMaxLength(50);
 

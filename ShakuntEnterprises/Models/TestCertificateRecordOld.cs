@@ -14,7 +14,7 @@ namespace ShakuntEnterprises.Models
         public string? TradeDesignation { get; set; }
         public string? Size { get; set; }
         public string? BatchDate { get; set; }
-        public string? BarchNo { get; set; }
+        public string? BatchNo { get; set; }
         public DateTime? ManufecturingDate { get; set; }
         public string? Specification { get; set; }
         public string? WeldingProcess { get; set; }

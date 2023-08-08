@@ -6,7 +6,7 @@ namespace ShakuntEnterprises.Models
     public partial class TestCertificateResultRecord
     {
         public int Id { get; set; }
-        public string? BarchNo { get; set; }
+        public string? BatchNo { get; set; }
         public string? Size { get; set; }
         public string? CertificateNo { get; set; }
         public decimal? ElementResultC { get; set; }

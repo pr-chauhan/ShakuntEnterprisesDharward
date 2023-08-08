@@ -1004,14 +1004,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="BarchNo">
+      <Textbox Name="BatchNo">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!BatchDate.Value, "TestCertificate") + First(Fields!BarchNo.Value, "TestCertificate")</Value>
+                <Value>=First(Fields!BatchNo.Value, "TestCertificate")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -1020,7 +1020,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>BarchNo</rd:DefaultName>
+        <rd:DefaultName>BatchNo</rd:DefaultName>
         <Top>2.85745in</Top>
         <Left>3.40826in</Left>
         <Height>0.25in</Height>
@@ -2855,14 +2855,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox60">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_C.Value - Fields!Element_MIN_C.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2873,7 +2873,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox60</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2889,14 +2889,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox88">
+                    <Textbox Name="Textbox37">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_SI.Value - Fields!Element_MIN_SI.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2907,7 +2907,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox88</rd:DefaultName>
+                      <rd:DefaultName>Textbox37</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2923,14 +2923,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox55">
+                    <Textbox Name="Textbox41">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_MN.Value - Fields!Element_MIN_MN.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2941,7 +2941,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox55</rd:DefaultName>
+                      <rd:DefaultName>Textbox41</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2957,14 +2957,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox56">
+                    <Textbox Name="Textbox43">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_P.Value-Fields!Element_MIN_P.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -2975,7 +2975,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox56</rd:DefaultName>
+                      <rd:DefaultName>Textbox43</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2998,7 +2998,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_S.Value-Fields!Element_MIN_S.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3025,14 +3025,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox68">
+                    <Textbox Name="Textbox48">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_NI.Value-Fields!Element_MIN_NI.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3043,7 +3043,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <rd:DefaultName>Textbox48</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3059,14 +3059,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox72">
+                    <Textbox Name="Textbox50">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_CR.Value-Fields!Element_MIN_CR.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3077,7 +3077,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox72</rd:DefaultName>
+                      <rd:DefaultName>Textbox50</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3093,14 +3093,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox76">
+                    <Textbox Name="Textbox52">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_MO.Value-Fields!Element_MIN_MO.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3111,7 +3111,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox76</rd:DefaultName>
+                      <rd:DefaultName>Textbox52</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3127,14 +3127,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox80">
+                    <Textbox Name="Textbox53">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Element_MAX_CU.Value-Fields!Element_MIN_CU.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -3145,7 +3145,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox80</rd:DefaultName>
+                      <rd:DefaultName>Textbox53</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -4071,7 +4071,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Test_MAX_UTS.Value-Fields!Test_MIN_UTS.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -6142,8 +6142,8 @@
           <DataField>APMS</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="BarchNo">
-          <DataField>BarchNo</DataField>
+        <Field Name="BatchNo">
+          <DataField>BatchNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="BaseMetal">
