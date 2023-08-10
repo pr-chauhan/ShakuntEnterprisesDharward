@@ -58,6 +58,8 @@ namespace ShakuntEnterprises.Controllers
             {
                 return NotFound();
             }
+            var CData = _context.TestCertificateRecords.FirstOrDefault(x => x.Id == id).CertificateNo;
+            ViewBag.ResultRecords = _context.TestCertificateResultRecords.Where(x => x.CertificateNo.Equals(CData)).ToList();
             var Data = new TestCertificateRecordModel();
             var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
             if (testCertificateRecord != null)
@@ -270,6 +272,9 @@ namespace ShakuntEnterprises.Controllers
             {
                 return NotFound();
             }
+            var CData = _context.TestCertificateRecords.FirstOrDefault(x => x.Id == id).CertificateNo;
+            ViewBag.ResultRecords = _context.TestCertificateResultRecords.Where(x=> x.CertificateNo.Equals(CData)).ToList();
+
             var Data = new TestCertificateRecordModel();
             var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
             if (testCertificateRecord != null)

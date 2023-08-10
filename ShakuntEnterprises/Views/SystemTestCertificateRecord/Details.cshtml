@@ -10,11 +10,12 @@
 <div class="row">
     <div class="col-md-12">
         <fieldset asp-action="Details" disabled="disabled">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
- <div class="row">
+  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <hr />
+            <div class="row" style="">
                     <div class="form-group" style="width:20%;display: inline-block;">
                         <label asp-for="CertificateNo" class="control-label"></label>
-                        <input asp-for="CertificateNo" class="form-control"  />
+                        <input asp-for="CertificateNo" class="form-control"   readonly/>
                         <span asp-validation-for="CertificateNo" class="text-danger"></span>
                     </div>
                     <div class="form-group" style="width:35%;display: inline-block;">
@@ -38,7 +39,9 @@
                         <span asp-validation-for="InvoiceNo" class="text-danger"></span>
                     </div>
             </div>
+           <hr />
             <h4>Welding Material</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
@@ -76,7 +79,9 @@
                 </div>
 
             </div>
+            <hr />
             <h4>Welding Condition</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="WeldingProcess" class="control-label"></label>
@@ -130,6 +135,7 @@
                 </div>
 
             </div>
+            <hr />
             <h4>Chemical Composition (Wire)</h4>
             <div class="row">
                 <div class="form-group" style="width:10%;display: inline-block;">
@@ -226,10 +232,44 @@
                 </div>
             </div>
             <div class="row">
-                
-            </div>
+                <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
+                    <thead style="border:dotted">
+                        <tr>
+                             <th width="10%">Id</th>
+                            <th width="15%">ResultC</th>
+                            <th width="15%">ResultSi</th>
+                            <th width="15%">ResultMn</th>
+                            <th width="15%">ResultP</th>
+                            <th width="15%">ResultS</th>
+                            <th width="15%">ResultNi</th>
+                            <th width="15%">ResultCr</th>
+                            <th width="15%">ResultMo</th>
+                            <th width="15%">ResultCu</th>
 
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                        @foreach (var item in ViewBag.ResultRecords)
+                        {
+                                <tr>
+                                    <td><input type="text" id="Id" class="form-control" value="@item.Id" readonly /> </td>
+                                    <td><input type="text" id="ElementResultC" class="form-control" value="@item.ElementResultC" readonly /> </td>
+                                    <td><input type="text" id="ElementResultSi" class="form-control" value="@item.ElementResultSi" readonly /> </td>
+                                    <td><input type="text" id="ElementResultMn" class="form-control" value="@item.ElementResultMn" readonly /> </td>
+                                    <td><input type="text" id="ElementResultP" class="form-control" value="@item.ElementResultP" readonly /> </td>
+                                    <td><input type="text" id="ElementResultS" class="form-control" value="@item.ElementResultS" readonly /> </td>
+                                    <td><input type="text" id="ElementResultNi" class="form-control" value="@item.ElementResultNi" readonly /> </td>
+                                    <td><input type="text" id="ElementResultCr" class="form-control" value="@item.ElementResultCr" readonly /> </td>
+                                    <td><input type="text" id="ElementResultMo" class="form-control" value="@item.ElementResultMo" readonly /> </td>
+                                    <td><input type="text" id="ElementResultCu" class="form-control" value="@item.ElementResultCu" readonly /> </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+          <hr />
             <h4>Mechanical Test (All Weld Metal)</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestMinUts" class="control-label"></label>
@@ -261,9 +301,6 @@
                     <input asp-for="TestMaxElongation" class="form-control" />
                     <span asp-validation-for="TestMaxElongation" class="text-danger"></span>
                 </div>
-
-                   
-
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestTemp" class="control-label"></label>
                     <input asp-for="TestTemp" class="form-control" />
@@ -276,11 +313,43 @@
                 </div>
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestCondition" class="control-label"></label>
-                    <input asp-for="TestCondition" class="form-control" />
+                    <input asp-for="TestCondition" class="form-control"  />
                     <span asp-validation-for="TestCondition" class="text-danger"></span>
                 </div>
             </div>
-             <h4>Other Properties - Wire</h4>
+            <div class="row">
+                <table id="MechanicalTestTable" class="display expandable-table dataTable no-footer">
+                    <thead style="border:dotted">
+                        <tr>
+                             <th width="10%">Id</th>
+                            <th width="15%">ResultUts</th>
+                            <th width="15%">ResultYs</th>
+                            <th width="15%">ResultElongation</th>
+                            <th width="15%">ResultTemp</th>
+                            <th width="15%">ImpectValue</th>
+                            <th width="15%">Condition</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                        @foreach (var item in ViewBag.ResultRecords)
+                        {
+                                <tr>
+                                    <td><input type="text" id="Id" class="form-control" value="@item.Id" readonly /> </td>
+                                    <td><input type="text" id="TestResultUts" class="form-control" value="@item.TestResultUts" readonly /> </td>
+                                    <td><input type="text" id="TestResultYs" class="form-control" value="@item.TestResultYs" readonly /> </td>
+                                    <td><input type="text" id="TestResultElongation" class="form-control" value="@item.TestResultElongation" readonly /> </td>
+                                    <td><input type="text" id="TestTemp" class="form-control" value="@item.TestTemp" readonly /> </td>
+                                    <td><input type="text" id="TestImpectValue" class="form-control" value="@item.TestImpectValue" readonly /> </td>
+                                    <td><input type="text" id="TestCondition" class="form-control" value="@item.TestCondition" readonly /> </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+            <h4>Other Properties - Wire</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="SizeStandardValue" class="control-label"></label>
@@ -333,8 +402,9 @@
                     <span asp-validation-for="HelixActualValue" class="text-danger"></span>
                 </div>
             </div>
-
+            <hr />
               <h4>Other Test (Weld Metal)</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="OtherTestRadioSpecs" class="control-label"></label>
@@ -354,10 +424,29 @@
 
             </div>
             <div class="row">
-               
-
+                <table id="OtherTestTable" class="display expandable-table dataTable no-footer">
+                    <thead style="border:dotted">
+                        <tr>
+                             <th width="10%">Id</th>
+                            <th width="30%">ResultRadioSpecs</th>
+                            <th width="30%">ResultFaceBendSpecs</th>
+                            <th width="30%">ResultFilledSpecs</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                        @foreach (var item in ViewBag.ResultRecords)
+                        {
+                                <tr>
+                                    <td><input type="text" id="Id" class="form-control" value="@item.Id" readonly /> </td>
+                                    <td><input type="text" id="OtherTestResultRadioSpecs" class="form-control" value="@item.OtherTestResultRadioSpecs" readonly /> </td>
+                                    <td><input type="text" id="OtherTestResultFaceBendSpecs" class="form-control" value="@item.OtherTestResultFaceBendSpecs" readonly /> </td>
+                                    <td><input type="text" id="OtherTestResultFilledSpecs" class="form-control" value="@item.OtherTestResultFilledSpecs" readonly /> </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
-
+            <hr />
             <div>
                 <div class="form-group">
                     <label asp-for="Remarks" class="control-label"></label>
@@ -365,6 +454,7 @@
                     <span asp-validation-for="Remarks" class="text-danger"></span>
                 </div>
             </div>
+
 
             <div class="form-group" style="display:none;">
                 <label asp-for="CreatedDate" class="control-label"></label>

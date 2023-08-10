@@ -12,7 +12,8 @@
     <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="row">
+            <hr />
+            <div class="row" style="">
                     <div class="form-group" style="width:20%;display: inline-block;">
                         <label asp-for="CertificateNo" class="control-label"></label>
                         <input asp-for="CertificateNo" class="form-control" value=@ViewBag.CERTINO   readonly/>
@@ -39,7 +40,9 @@
                         <span asp-validation-for="InvoiceNo" class="text-danger"></span>
                     </div>
             </div>
+           <hr />
             <h4>Welding Material</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
@@ -77,7 +80,9 @@
                 </div>
             
             </div>
+            <hr />
             <h4>Welding Condition</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="WeldingProcess" class="control-label"></label>
@@ -131,6 +136,7 @@
                 </div>
 
             </div>
+            <hr />
             <h4>Chemical Composition (Wire)</h4>
             <div class="row">
                 <div class="form-group" style="width:10%;display: inline-block;">
@@ -226,9 +232,8 @@
                     <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-md-12" style="height:200px;overflow: scroll;">
-                <h4>Batch Result Table</h4>
-                <table id="BatchDetailsTable" class="display expandable-table dataTable no-footer">
+            <div class="row">
+                <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
                     <thead style="border:dotted">
                         <tr>
                             <th width="20%">ResultC</th>
@@ -240,7 +245,7 @@
                             <th width="20%">ResultCr</th>
                             <th width="20%">ResultMo</th>
                             <th width="20%">ResultCu</th>
-                            <th width="20%">ResultUts</th>
+                        @*    <th width="20%">ResultUts</th>
                             <th width="20%">ResultYs</th>
                             <th width="20%">ResultElongation</th>
                             <th width="20%">ResultTemp</th>
@@ -249,15 +254,16 @@
                             <th width="20%">ResultRadioSpecs</th>
                             <th width="20%">ResultFaceBendSpecs</th>
                             <th width="20%">ResultFilledSpecs</th>
-                            <th width="10%">Delete</th>
+                            <th width="10%">Delete</th>*@
                         </tr>
                     </thead>
                     <tbody id="tbodyid">
                     </tbody>
                 </table>
             </div>
-          
+          <hr />
             <h4>Mechanical Test (All Weld Metal)</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestMinUts" class="control-label"></label>
@@ -289,9 +295,6 @@
                     <input asp-for="TestMaxElongation" class="form-control" />
                     <span asp-validation-for="TestMaxElongation" class="text-danger"></span>
                 </div>
-
-                 
-
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestTemp" class="control-label"></label>
                     <input asp-for="TestTemp" class="form-control" />
@@ -304,11 +307,30 @@
                 </div>
                 <div class="form-group" style="width:10%;display: inline-block;">
                     <label asp-for="TestCondition" class="control-label"></label>
-                    <input asp-for="TestCondition" class="form-control" />
+                    <input asp-for="TestCondition" class="form-control"  />
                     <span asp-validation-for="TestCondition" class="text-danger"></span>
                 </div>
             </div>
-             <h4>Other Properties - Wire</h4>
+            <div class="row">
+                <table id="MechanicalTestTable" class="display expandable-table dataTable no-footer">
+                    <thead style="border:dotted">
+                        <tr>
+                            <th width="20%">ResultUts</th>
+                            <th width="20%">ResultYs</th>
+                            <th width="20%">ResultElongation</th>
+                            <th width="20%">ResultTemp</th>
+                            <th width="20%">ImpectValue</th>
+                            <th width="20%">Condition</th>
+                             
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+            <h4>Other Properties - Wire</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="SizeStandardValue" class="control-label"></label>
@@ -361,8 +383,9 @@
                     <span asp-validation-for="HelixActualValue" class="text-danger"></span>
                 </div>
             </div>
-            
+            <hr />
               <h4>Other Test (Weld Metal)</h4>
+            <hr />
             <div class="row">
                 <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="OtherTestRadioSpecs" class="control-label"></label>
@@ -382,8 +405,19 @@
                 
             </div>
             <div class="row">
-               
+                <table id="OtherTestTable" class="display expandable-table dataTable no-footer">
+                    <thead style="border:dotted">
+                        <tr>
+                            <th width="33%">ResultRadioSpecs</th>
+                            <th width="33%">ResultFaceBendSpecs</th>
+                            <th width="33%">ResultFilledSpecs</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+                    </tbody>
+                </table>
             </div>
+            <hr />
             <div>
                 <div class="form-group">
                     <label asp-for="Remarks" class="control-label"></label>
@@ -493,6 +527,7 @@
             $("#BatchNo").change(function () {
               debugger
                 var BatchNo = $("#BatchNo").val();
+                var Size = $("#Size  option:selected").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
                     { BatchNo: BatchNo }, function (data) {
 
@@ -584,68 +619,110 @@
                         }
 
                     $('<tr id="tablerow' + counter + '"><td>' +
-
-                            '<input type="text" class="form-control" id="elementResultC[' + counter + ']" value="' + data[0].elementResultC + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;" />' +
+                            '<input type="text" class="form-control" id="elementResultC[' + counter + ']" value="' + data[0].elementResultC + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;" />' +
                             '</td>' +
                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultSi[' + counter + ']" value="' + data[0].elementResultSi + '" required="required"  readonly=readonly   style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultSi[' + counter + ']" value="' + data[0].elementResultSi + '" required="required"  readonly=readonly   style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultMn[' + counter + ']" value="' + data[0].elementResultMn + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultMn[' + counter + ']" value="' + data[0].elementResultMn + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                             '<td>' +
-                                    '<input type="text" class="form-control" id="elementResultP[' + counter + ']" value="' + data[0].elementResultP + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                                    '<input type="text" class="form-control" id="elementResultP[' + counter + ']" value="' + data[0].elementResultP + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                              '<td>' +
-                            '<input type="text" class="form-control" id="elementResultS[' + counter + ']" value="' + data[0].elementResultS + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultS[' + counter + ']" value="' + data[0].elementResultS + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                              '<td>' +
-                            '<input type="text" class="form-control" id="elementResultNi[' + counter + ']" value="' + data[0].elementResultNi + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultNi[' + counter + ']" value="' + data[0].elementResultNi + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                              '<td>' +
-                            '<input type="text" class="form-control" id="elementResultCr[' + counter + ']" value="' + data[0].elementResultCr + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultCr[' + counter + ']" value="' + data[0].elementResultCr + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                              '<td>' +
-                                    '<input type="text" class="form-control" id="elementResultMo[' + counter + ']" value="' + data[0].elementResultMo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                             '<input type="text" class="form-control" id="elementResultMo[' + counter + ']" value="' + data[0].elementResultMo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                             '<td>' +
-                            '<input type="text" class="form-control" id="elementResultCu[' + counter + ']" value="' + data[0].elementResultCu + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                            '<input type="text" class="form-control" id="elementResultCu[' + counter + ']" value="' + data[0].elementResultCu + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultUts[' + counter + ']" value="' + data[0].testResultUts + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultYs[' + counter + ']" value="' + data[0].testResultYs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultElongation[' + counter + ']" value="' + data[0].testResultElongation + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultTemp[' + counter + ']" value="' + data[0].testResultTemp + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultImpectValue[' + counter + ']" value="' + data[0].testResultImpectValue + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="testResultCondition[' + counter + ']" value="' + data[0].testResultCondition + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                             '<input type="text" class="form-control" id="otherTestResultRadioSpecs[' + counter + ']" value="' + data[0].otherTestResultRadioSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="otherTestResultFaceBendSpecs[' + counter + ']" value="' + data[0].otherTestResultFaceBendSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="otherTestResultFilledSpecs[' + counter + ']" value="' + data[0].otherTestResultFilledSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="BatchNo[' + counter + ']" value="' + BatchNo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="Size[' + counter + ']" value="' + Size + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                            '</td>' +
+                            //'<td>' +
+                            //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
+                            //'</td>' +
+                    '</tr>').appendTo('#ChemicalCompositionTable');
 
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultUts[' + counter + ']" value="' + data[0].testResultUts + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultYs[' + counter + ']" value="' + data[0].testResultYs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="testResultElongation[' + counter + ']" value="' + data[0].testResultElongation + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                               '<td>' +
-                            '<input type="text" class="form-control" id="testResultTemp[' + counter + ']" value="' + data[0].testResultTemp + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                               '<td>' +
-                            '<input type="text" class="form-control" id="testResultImpectValue[' + counter + ']" value="' + data[0].testResultImpectValue + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                            '<td>' +
-                            '<input type="text" class="form-control" id="testResultCondition[' + counter + ']" value="' + data[0].testResultCondition + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultRadioSpecs[' + counter + ']" value="' + data[0].otherTestResultRadioSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultFaceBendSpecs[' + counter + ']" value="' + data[0].otherTestResultFaceBendSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
-                              '<td>' +
-                            '<input type="text" class="form-control" id="otherTestResultFilledSpecs[' + counter + ']" value="' + data[0].otherTestResultFilledSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
-                            '</td>' +
+                    $('<tr id="tablerow' + counter + '"><td>' +
+                        '<input type="text" class="form-control" id="testResultUts[' + counter + ']" value="' + data[0].testResultUts + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="testResultYs[' + counter + ']" value="' + data[0].testResultYs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="testResultElongation[' + counter + ']" value="' + data[0].testResultElongation + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="testResultTemp[' + counter + ']" value="' + data[0].testResultTemp + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="testResultImpectValue[' + counter + ']" value="' + data[0].testResultImpectValue + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="testResultCondition[' + counter + ']" value="' + data[0].testResultCondition + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
+                        '</td>' +
+                        //'<td>' +
+                        //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
+                        //'</td>' +
+                        '</tr>').appendTo('#MechanicalTestTable');
+                             
 
-                            '<td>' +
-                            '<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
-                            '</td>' +
-                    '</tr>').appendTo('#BatchDetailsTable');
+                    $('<tr id="tablerow' + counter + '"><td>' +
+                        '<input type="text" class="form-control" id="otherTestResultRadioSpecs[' + counter + ']" value="' + data[0].otherTestResultRadioSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="otherTestResultFaceBendSpecs[' + counter + ']" value="' + data[0].otherTestResultFaceBendSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" id="otherTestResultFilledSpecs[' + counter + ']" value="' + data[0].otherTestResultFilledSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                        '</td>' +
+                          
+                        //'<td>' +
+                        //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
+                        //'</td>' +
+                        '</tr>').appendTo('#OtherTestTable');
 
-                    counter++;
+                counter++;
 
 
                     return false;
@@ -682,7 +759,7 @@
                 Size = $("#Size option:selected").text();
                 CertificateNo = $("#CertificateNo").val();
              
-            $("#BatchDetailsTable TBODY TR").each(function () {
+            $("#ChemicalCompositionTable TBODY TR").each(function () {
                     row = $(this);
                     ElementResultC = row.find("td:eq(0) input[type='text']").val();
                     ElementResultSi = row.find("td:eq(1) input[type='text']").val();
@@ -702,6 +779,8 @@
                     OtherTestResultRadioSpecs = row.find("td:eq(15) input[type='text']").val();
                     OtherTestResultFaceBendSpecs = row.find("td:eq(16) input[type='text']").val();
                     OtherTestResultFilledSpecs = row.find("td:eq(17) input[type='text']").val();
+                    BatchNo = row.find("td:eq(18) input[type='text']").val();
+                    Size = row.find("td:eq(19) input[type='text']").val();
 
                     $.post("/SystemTestCertificateRecord/SaveCertificateResultData", {
                         BatchNo: BatchNo, Size: Size, CertificateNo: CertificateNo,
@@ -713,7 +792,7 @@
                          OtherTestResultRadioSpecs:OtherTestResultRadioSpecs,OtherTestResultFaceBendSpecs:OtherTestResultFaceBendSpecs,
                          OtherTestResultFilledSpecs: OtherTestResultFilledSpecs
                 },function(data){
-                     alert("Data saved successfully..!!" + "  Requisition No.: "+ data);
+                    // alert("Data saved successfully..!!" + "  Requisition No.: "+ data);
                 });
                rID += 1;
             });
