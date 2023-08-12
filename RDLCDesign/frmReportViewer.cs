@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,12 @@ namespace RDLCDesign
         public frmReportViewer()
         {
             InitializeComponent();
-
-            this.reportViewer1.LocalReport.ReportPath = AppDomain.CurrentDomain.BaseDirectory + @"\Reports\TestCertificate.rdlc";
-            var certificateData = db.TestCertificateRecords.Where(x => x.Id == 1).ToList();
-            var certificateResultData = db.TestCertificateResultRecords.Where(x => x.Id == 1).ToList();
-
+            string certificateno = "109";
+            //this.reportViewer1.LocalReport.ReportPath = AppDomain.CurrentDomain.BaseDirectory + @"\Reports\TestCertificate.rdlc";
+            this.reportViewer1.LocalReport.ReportPath =  @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprises\RDLCDesign\Reports\TestCertificate.rdlc";
+            var certificateData = db.TestCertificateRecords.Where(x => x.CertificateNo == certificateno).ToList();
+            var certificateResultData = db.TestCertificateResultRecords.Where(x => x.CertificateNo == certificateno).ToList();
+            
             ReportDataSource TestCertificate = new ReportDataSource();
             TestCertificate.Name = "TestCertificate";
             TestCertificate.Value = certificateData;
