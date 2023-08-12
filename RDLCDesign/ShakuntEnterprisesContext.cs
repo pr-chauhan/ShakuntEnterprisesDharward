@@ -12,6 +12,7 @@ namespace RDLCDesign
         {
         }
         public virtual DbSet<TestCertificateRecord> TestCertificateRecords { get; set; } 
+        public virtual DbSet<TestCertificateResultRecord> TestCertificateResultRecords { get; set; } 
       
 
         

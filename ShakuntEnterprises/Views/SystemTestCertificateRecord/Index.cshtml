@@ -64,7 +64,7 @@
                     @if (item.IsApproved==1)
                     {
                         <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        @Html.ActionLink("Print", "PrintCertificate","Report" ,new { Id=item.Id.ToString()   },new { @class = "btn btn-info"})
+                        @Html.ActionLink("Print", "PrintCertificate","Report" ,new { Id=item.CertificateNo },new { @class = "btn btn-info"})
                     }
                 </td>
             </tr>

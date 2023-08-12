@@ -119,12 +119,16 @@
         }
         public DataTable getTestCertificateRecordList(string Id)
         {
-            //var result = _context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
-            var result = GetDataTable("SELECT *  FROM  [TestCertificateRecord] Where Id='"+Id+"'");//)_context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
+            var result = GetDataTable("SELECT *  FROM  [TestCertificateRecord] Where CertificateNo='" + Id+"'");//)_context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
 
             return result;
         }
+        public DataTable getTestCertificateResultRecordList(string Id)
+        {
+            var result = GetDataTable("SELECT *  FROM  [TestCertificateResultRecord] Where CertificateNo='" + Id + "'");//)_context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
 
+            return result;
+        }
         public string TotalCertificate()
         {
             var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord]");
