@@ -47,14 +47,14 @@
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
                     <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignation"))" class="dropdown-item" style="border:1px solid #b8bee6;">
-                        <option value="">Select-TradeDesignation</option>
+                        <option value="">Select</option>
                     </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:15%;display: inline-block;">
+                <div class="form-group" style="width:13%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
                    <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
-                        <option value="">Select-Size</option>
+                        <option value="">Select</option>
                     </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
@@ -63,12 +63,19 @@
                     <input asp-for="BatchDate" class="form-control" />
                     <span asp-validation-for="BatchDate" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
-                    <label asp-for="BatchNo" class="control-label"></label>
-                    <input asp-for="BatchNo" class="form-control" />
-                    <span asp-validation-for="BatchNo" class="text-danger"></span>
+                <div class="form-group" style="width:15%;display: inline-block;">
+                    <div style="float:left;">
+                        <label asp-for="BatchNo" class="control-label"></label>
+                        <input asp-for="BatchNo" class="form-control" style="width:100px;" />
+                        <span asp-validation-for="BatchNo" class="text-danger"></span>
+                    </div>
+                    <div style="float:left;">
+                        <br /> <br />
+                        <input type="button" id="addBatch" value="Add" style="background-color:#678;color:#fff;height:33px;" />
+                    </div>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
+                
+                <div class="form-group" style="width:17%;display: inline-block;">
                     <label asp-for="ManufecturingDate" class="control-label"></label>
                     <input asp-for="ManufecturingDate" class="form-control" type="date" />
                     <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
@@ -138,95 +145,96 @@
             </div>
             <hr />
             <h4>Chemical Composition (Wire)</h4>
+            <hr />
             <div class="row">
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinC" class="control-label"></label>
                     <input asp-for="ElementMinC" class="form-control" />
                     <span asp-validation-for="ElementMinC" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinSi" class="control-label"></label>
                     <input asp-for="ElementMinSi" class="form-control" />
                     <span asp-validation-for="ElementMinSi" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinMn" class="control-label"></label>
                     <input asp-for="ElementMinMn" class="form-control" />
                     <span asp-validation-for="ElementMinMn" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinP" class="control-label"></label>
                     <input asp-for="ElementMinP" class="form-control" />
                     <span asp-validation-for="ElementMinP" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinS" class="control-label"></label>
                     <input asp-for="ElementMinS" class="form-control" />
                     <span asp-validation-for="ElementMinS" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinNi" class="control-label"></label>
                     <input asp-for="ElementMinNi" class="form-control" />
                     <span asp-validation-for="ElementMinNi" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinCr" class="control-label"></label>
                     <input asp-for="ElementMinCr" class="form-control" />
                     <span asp-validation-for="ElementMinCr" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinMo" class="control-label"></label>
                     <input asp-for="ElementMinMo" class="form-control" />
                     <span asp-validation-for="ElementMinMo" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinCu" class="control-label"></label>
                     <input asp-for="ElementMinCu" class="form-control" />
                     <span asp-validation-for="ElementMinCu" class="text-danger"></span>
                 </div>
             </div>
               <div class="row">
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxC" class="control-label"></label>
                     <input asp-for="ElementMaxC" class="form-control" />
                     <span asp-validation-for="ElementMaxC" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxSi" class="control-label"></label>
                     <input asp-for="ElementMaxSi" class="form-control" />
                     <span asp-validation-for="ElementMaxSi" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxMn" class="control-label"></label>
                     <input asp-for="ElementMaxMn" class="form-control" />
                     <span asp-validation-for="ElementMaxMn" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxP" class="control-label"></label>
                     <input asp-for="ElementMaxP" class="form-control" />
                     <span asp-validation-for="ElementMaxP" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxS" class="control-label"></label>
                     <input asp-for="ElementMaxS" class="form-control" />
                     <span asp-validation-for="ElementMaxS" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxNi" class="control-label"></label>
                     <input asp-for="ElementMaxNi" class="form-control" />
                     <span asp-validation-for="ElementMaxNi" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxCr" class="control-label"></label>
                     <input asp-for="ElementMaxCr" class="form-control" />
                     <span asp-validation-for="ElementMaxCr" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxMo" class="control-label"></label>
                     <input asp-for="ElementMaxMo" class="form-control" />
                     <span asp-validation-for="ElementMaxMo" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMaxCu" class="control-label"></label>
                     <input asp-for="ElementMaxCu" class="form-control" />
                     <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
@@ -236,15 +244,15 @@
                 <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
                     <thead style="border:dotted">
                         <tr>
-                            <th width="20%">ResultC</th>
-                            <th width="20%">ResultSi</th>
-                            <th width="20%">ResultMn</th>
-                            <th width="20%">ResultP</th>
-                            <th width="20%">ResultS</th>
-                            <th width="20%">ResultNi</th>
-                            <th width="20%">ResultCr</th>
-                            <th width="20%">ResultMo</th>
-                            <th width="20%">ResultCu</th>
+                            <th width="11%">ResultC</th>
+                            <th width="11%">ResultSi</th>
+                            <th width="11%">ResultMn</th>
+                            <th width="11%">ResultP</th>
+                            <th width="11%">ResultS</th>
+                            <th width="11%">ResultNi</th>
+                            <th width="11%">ResultCr</th>
+                            <th width="11%">ResultMo</th>
+                            <th width="11%">ResultCu</th>
                         @*    <th width="20%">ResultUts</th>
                             <th width="20%">ResultYs</th>
                             <th width="20%">ResultElongation</th>
@@ -265,47 +273,47 @@
             <h4>Mechanical Test (All Weld Metal)</h4>
             <hr />
             <div class="row">
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMinUts" class="control-label"></label>
                     <input asp-for="TestMinUts" class="form-control" />
                     <span asp-validation-for="TestMinUts" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMinYs" class="control-label"></label>
                     <input asp-for="TestMinYs" class="form-control" />
                     <span asp-validation-for="TestMinYs" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMinElongation" class="control-label"></label>
                     <input asp-for="TestMinElongation" class="form-control" />
                     <span asp-validation-for="TestMinElongation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMaxUts" class="control-label"></label>
                     <input asp-for="TestMaxUts" class="form-control" />
                     <span asp-validation-for="TestMaxUts" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMaxYs" class="control-label"></label>
                     <input asp-for="TestMaxYs" class="form-control" />
                     <span asp-validation-for="TestMaxYs" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestMaxElongation" class="control-label"></label>
                     <input asp-for="TestMaxElongation" class="form-control" />
                     <span asp-validation-for="TestMaxElongation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestTemp" class="control-label"></label>
                     <input asp-for="TestTemp" class="form-control" />
                     <span asp-validation-for="TestTemp" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestImpectValue" class="control-label"></label>
                     <input asp-for="TestImpectValue" class="form-control" />
                     <span asp-validation-for="TestImpectValue" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+                <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="TestCondition" class="control-label"></label>
                     <input asp-for="TestCondition" class="form-control"  />
                     <span asp-validation-for="TestCondition" class="text-danger"></span>
@@ -524,7 +532,7 @@
                     })
             })
 
-            $("#BatchNo").change(function () {
+            $("#addBatch").click(function () {
               debugger
                 var BatchNo = $("#BatchNo").val();
                 var Size = $("#Size  option:selected").val();

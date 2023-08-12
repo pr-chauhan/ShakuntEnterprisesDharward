@@ -20,7 +20,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? TradeDesignation { get; set; }
         [DisplayName("Size (MM)")]
         public string? Size { get; set; }
-        [DisplayName("Barch Date")]
+        [DisplayName("Batch Date")]
         public string? BatchDate { get; set; }
         [DisplayName("Batch No.")]
         public string? BatchNo { get; set; }
@@ -83,22 +83,22 @@ namespace ShakuntEnterprises.ViewModels
         [DisplayName("MAX (Cu%)")]
         public decimal? ElementMaxCu { get; set; }
 
-        [DisplayName("MIN UTS (Mpa)")]
+        [DisplayName("MIN.UTS.(Mpa)")]
         public decimal? TestMinUts { get; set; }
-        [DisplayName("MIN Y.S. (Mpa)")]
+        [DisplayName("MIN Y.S.(Mpa)")]
         public decimal? TestMinYs { get; set; }
-        [DisplayName("MIN Elongation")]
+        [DisplayName("MIN.Elongation")]
         public decimal? TestMinElongation { get; set; }
-        [DisplayName("MAX UTS (Mpa)")]
+        [DisplayName("MAX.UTS.(Mpa)")]
         public decimal? TestMaxUts { get; set; }
-        [DisplayName("MAX Y.S. (Mpa)")]
+        [DisplayName("MAX.YS.(Mpa)")]
         public decimal? TestMaxYs { get; set; }
-        [DisplayName("MAX Elongation")]
+        [DisplayName("MAX.Elongation")]
         public decimal? TestMaxElongation { get; set; }
 
-        [DisplayName("Test Temp. (C$)")]
+        [DisplayName("Test Temp.(C$)")]
         public string? TestTemp { get; set; }
-        [DisplayName("Impact Value (J@ - 40C)")]
+        [DisplayName("Impact.Value(J@-40C)")]
         public string? TestImpectValue { get; set; }
         [DisplayName("Test Condition")]
         public string? TestCondition { get; set; }
