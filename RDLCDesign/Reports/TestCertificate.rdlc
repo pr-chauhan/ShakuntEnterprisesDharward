@@ -355,7 +355,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>4.79605in</Top>
+        <Top>4.77105in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -2206,7 +2206,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=First(Fields!Test_Temp.Value, "TestCertificateResultRecord")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -2329,7 +2329,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>5.06725in</Top>
+        <Top>5.04225in</Top>
         <Left>0.04479in</Left>
         <Height>0.675in</Height>
         <Width>7.75366in</Width>
@@ -2358,7 +2358,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.20083in</Top>
+        <Top>8.16333in</Top>
         <Left>0.04479in</Left>
         <Height>0.25in</Height>
         <Width>0.97604in</Width>
@@ -2390,7 +2390,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remarks</rd:DefaultName>
-        <Top>8.19316in</Top>
+        <Top>8.15566in</Top>
         <Left>1.09027in</Left>
         <Height>0.25in</Height>
         <Width>6.7082in</Width>
@@ -2425,7 +2425,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.46055in</Top>
+        <Top>8.42305in</Top>
         <Left>0.04479in</Left>
         <Height>0.21445in</Height>
         <Width>7.75369in</Width>
@@ -2461,7 +2461,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.98611in</Top>
+        <Top>8.94861in</Top>
         <Left>5.67348in</Left>
         <Height>0.25in</Height>
         <Width>1.5in</Width>
@@ -2494,7 +2494,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox121</rd:DefaultName>
-        <Top>8.68889in</Top>
+        <Top>8.65139in</Top>
         <Left>0.04479in</Left>
         <Height>0.53472in</Height>
         <Width>1.21647in</Width>
@@ -2561,7 +2561,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>5.95406in</Top>
+        <Top>5.91656in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -2597,7 +2597,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.34155in</Top>
+        <Top>7.30405in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -3299,7 +3299,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>6.20705in</Top>
+        <Top>6.16955in</Top>
         <Left>0.04479in</Left>
         <Height>1.11667in</Height>
         <Width>7.75368in</Width>
@@ -3633,7 +3633,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>7.60705in</Top>
+        <Top>7.56955in</Top>
         <Left>0.04479in</Left>
         <Height>0.36666in</Height>
         <Width>7.75368in</Width>
@@ -4049,7 +4049,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>4.58911in</Top>
+        <Top>4.56411in</Top>
         <Left>0.04479in</Left>
         <Height>0.18333in</Height>
         <Width>7.7537in</Width>
@@ -4230,7 +4230,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Test_Temp.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -4311,7 +4311,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>5.75336in</Top>
+        <Top>5.71586in</Top>
         <Left>0.04479in</Left>
         <Height>0.18333in</Height>
         <Width>6.73924in</Width>
@@ -4497,7 +4497,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>7.98483in</Top>
+        <Top>7.93483in</Top>
         <Left>0.04479in</Left>
         <Height>0.2in</Height>
         <Width>7.75369in</Width>
