@@ -3691,7 +3691,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(Fields!BatchDate.Value, "TestCertificate")+""+(Fields!BatchNo.Value, "TestCertificate")</Value>
+                              <Value>=Fields!BatchDate.Value +""+Fields!BatchNo.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -4095,7 +4095,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!BatchDate.Value, "TestCertificate")+""+First(Fields!BatchNo.Value, "TestCertificate")</Value>
+                              <Value>=Fields!BatchDate.Value +""+Fields!BatchNo.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -4351,7 +4351,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!BatchDate.Value, "TestCertificate")+""+First(Fields!BatchNo.Value, "TestCertificate")</Value>
+                              <Value>=Fields!BatchDate.Value +""+Fields!BatchNo.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -4965,7 +4965,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!CertificateNo.Value, "TestCertificate")</Value>
+                              <Value>="SEPL/"+First(Fields!CertificateNo.Value, "TestCertificate")+"/" +Now.ToString("MM")+"/"+Now.ToString("yyyy")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -6477,6 +6477,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="BatchDate">
+          <DataField>BatchDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="BatchNo">
           <DataField>BatchNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
