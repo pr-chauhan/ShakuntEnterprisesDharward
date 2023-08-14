@@ -19,7 +19,7 @@ namespace RDLCDesign
         public frmReportViewer()
         {
             InitializeComponent();
-            string certificateno = "109";
+            string certificateno = "114";
             //this.reportViewer1.LocalReport.ReportPath = AppDomain.CurrentDomain.BaseDirectory + @"\Reports\TestCertificate.rdlc";
             this.reportViewer1.LocalReport.ReportPath =  @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprises\RDLCDesign\Reports\TestCertificate.rdlc";
             var certificateData = db.TestCertificateRecords.Where(x => x.CertificateNo == certificateno).ToList();

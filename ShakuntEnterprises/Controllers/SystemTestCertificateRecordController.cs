@@ -595,7 +595,7 @@ namespace ShakuntEnterprises.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveCertificateResultData(string BatchNo, string Size, string CertificateNo, 
+        public JsonResult SaveCertificateResultData(string BatchDate, string BatchNo, string Size, string CertificateNo, 
             decimal ElementResultC, decimal ElementResultSi, decimal ElementResultMn, decimal ElementResultP, 
             decimal ElementResultS,decimal ElementResultNi,decimal ElementResultCr,decimal ElementResultMo,
             decimal ElementResultCu,decimal TestResultUts,decimal TestResultYs,decimal TestResultElongation,
@@ -606,7 +606,7 @@ namespace ShakuntEnterprises.Controllers
             
             TestCertificateResultRecord testCertificateResultRecord  = new TestCertificateResultRecord()
             {
-                 
+                BatchDate = BatchDate,
                 BatchNo = BatchNo,
                 Size = Size,
                 CertificateNo = CertificateNo,

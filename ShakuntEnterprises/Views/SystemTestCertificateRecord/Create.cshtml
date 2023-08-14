@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group" style="width:13%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
-                   <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                     <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
@@ -534,6 +534,7 @@
 
             $("#addBatch").click(function () {
               debugger
+                var BatchDate = $("#BatchDate").val();
                 var BatchNo = $("#BatchNo").val();
                 var Size = $("#Size  option:selected").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
@@ -681,6 +682,9 @@
                             '<input type="text" class="form-control" id="otherTestResultFilledSpecs[' + counter + ']" value="' + data[0].otherTestResultFilledSpecs + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                             '<td style="display:none;">' +
+                            '<input type="text" class="form-control" id="BatchDate[' + counter + ']" value="' + BatchDate + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
+                            '</td>' +
+                            '<td style="display:none;">' +
                             '<input type="text" class="form-control" id="BatchNo[' + counter + ']" value="' + BatchNo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
                             '</td>' +
                             '<td style="display:none;">' +
@@ -742,6 +746,7 @@
 
              $("#submit").click(function(){
                 var rID = 1;
+                var BatchDate="";
                 var BatchNo = "";
                 var Size = "";
                 var CertificateNo = "";
@@ -787,11 +792,12 @@
                     OtherTestResultRadioSpecs = row.find("td:eq(15) input[type='text']").val();
                     OtherTestResultFaceBendSpecs = row.find("td:eq(16) input[type='text']").val();
                     OtherTestResultFilledSpecs = row.find("td:eq(17) input[type='text']").val();
-                    BatchNo = row.find("td:eq(18) input[type='text']").val();
-                    Size = row.find("td:eq(19) input[type='text']").val();
+                    BatchDate = row.find("td:eq(18) input[type='text']").val();
+                    BatchNo = row.find("td:eq(19) input[type='text']").val();
+                    Size = row.find("td:eq(20) input[type='text']").val();
 
                     $.post("/SystemTestCertificateRecord/SaveCertificateResultData", {
-                        BatchNo: BatchNo, Size: Size, CertificateNo: CertificateNo,
+                        BatchDate:BatchDate,BatchNo: BatchNo, Size: Size, CertificateNo: CertificateNo,
                          ElementResultC:ElementResultC,ElementResultSi:ElementResultSi, ElementResultMn:ElementResultMn,
                          ElementResultP:ElementResultP,ElementResultS:ElementResultS,ElementResultNi:ElementResultNi,
                          ElementResultCr:ElementResultCr,ElementResultMo:ElementResultMo,ElementResultCu:ElementResultCu,

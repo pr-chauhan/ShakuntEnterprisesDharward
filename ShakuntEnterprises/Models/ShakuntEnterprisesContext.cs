@@ -545,11 +545,11 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("APMS");
 
-                entity.Property(e => e.BatchNo).HasMaxLength(50);
-
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
                 entity.Property(e => e.BatchDate).HasMaxLength(50);
+
+                entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.CastDiaActualValue)
                     .HasMaxLength(50)
@@ -831,6 +831,8 @@ namespace ShakuntEnterprises.Models
             modelBuilder.Entity<TestCertificateResultRecord>(entity =>
             {
                 entity.ToTable("TestCertificateResultRecord");
+
+                entity.Property(e => e.BatchDate).HasMaxLength(50);
 
                 entity.Property(e => e.BatchNo).HasMaxLength(50);
 
