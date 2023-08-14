@@ -108,6 +108,9 @@
     <Compile Include="TestCertificateResultRecord.cs">
       <DependentUpon>Shakunt.tt</DependentUpon>
     </Compile>
+    <Compile Include="TradeDesignationMaster.cs">
+      <DependentUpon>Shakunt.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +127,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TestCertificateRecord.datasource" />
     <None Include="Properties\DataSources\TestCertificateResultRecord.datasource" />
+    <None Include="Properties\DataSources\TradeDesignationMaster.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

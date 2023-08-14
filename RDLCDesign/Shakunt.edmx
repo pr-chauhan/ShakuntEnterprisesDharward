@@ -110,9 +110,62 @@
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="TradeDesignationMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="TradeDesignation" Type="nvarchar" MaxLength="100" />
+          <Property Name="Specification" Type="nvarchar" MaxLength="200" />
+          <Property Name="WeldingProcess" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShieldingGas" Type="nvarchar" MaxLength="50" />
+          <Property Name="PreHeatInerpassTemp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="FlowRate" Type="nvarchar" MaxLength="50" />
+          <Property Name="CurrentPolarity" Type="nvarchar" MaxLength="50" />
+          <Property Name="BaseMetal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_C" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_SI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_MN" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_P" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_S" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_NI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_CR" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_MO" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_CU" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_C" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_SI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_MN" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_P" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_S" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_NI" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_CR" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_MO" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_CU" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_UTS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_YS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_UTS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_YS" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_ImpectDegree" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Condition" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompositionHeading" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_Radio_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_FaceBend_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherTest_Filled_Specs" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="Modified_Date" Type="datetime" />
+          <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
+        </EntityType>
         <EntityContainer Name="ShakuntEnterprisesModelStoreContainer">
           <EntitySet Name="TestCertificateRecord" EntityType="Self.TestCertificateRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TestCertificateResultRecord" EntityType="Self.TestCertificateResultRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TradeDesignationMaster" EntityType="Self.TradeDesignationMaster" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -121,6 +174,7 @@
         <EntityContainer Name="ShakuntEnterprisesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TestCertificateRecords" EntityType="ShakuntEnterprisesModel.TestCertificateRecord" />
           <EntitySet Name="TestCertificateResultRecords" EntityType="ShakuntEnterprisesModel.TestCertificateResultRecord" />
+          <EntitySet Name="TradeDesignationMasters" EntityType="ShakuntEnterprisesModel.TradeDesignationMaster" />
         </EntityContainer>
         <EntityType Name="TestCertificateRecord">
           <Key>
@@ -222,6 +276,58 @@
           <Property Name="OtherTestResult_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OtherTestResult_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OtherTestResult_Filled_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TradeDesignationMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TradeDesignation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Specification" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WeldingProcess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShieldingGas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PreHeatInerpassTemp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentPolarity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BaseMetal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_C" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_SI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_MN" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_P" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_S" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_NI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_CR" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_MO" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_CU" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_C" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_SI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_MN" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_P" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_S" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_NI" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_CR" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_MO" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MAX_CU" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_UTS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_YS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MIN_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_UTS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_YS" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_MAX_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_ImpectDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionHeading" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Filled_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Created_Date" Type="DateTime" Precision="3" />
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
@@ -336,6 +442,59 @@
                 <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TradeDesignationMasters">
+            <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TradeDesignationMaster">
+              <MappingFragment StoreEntitySet="TradeDesignationMaster">
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="OtherTest_Filled_Specs" ColumnName="OtherTest_Filled_Specs" />
+                <ScalarProperty Name="OtherTest_FaceBend_Specs" ColumnName="OtherTest_FaceBend_Specs" />
+                <ScalarProperty Name="OtherTest_Radio_Specs" ColumnName="OtherTest_Radio_Specs" />
+                <ScalarProperty Name="CompositionHeading" ColumnName="CompositionHeading" />
+                <ScalarProperty Name="Test_Condition" ColumnName="Test_Condition" />
+                <ScalarProperty Name="Test_ImpectValue" ColumnName="Test_ImpectValue" />
+                <ScalarProperty Name="Test_ImpectDegree" ColumnName="Test_ImpectDegree" />
+                <ScalarProperty Name="Test_Temp" ColumnName="Test_Temp" />
+                <ScalarProperty Name="Test_MAX_Elongation" ColumnName="Test_MAX_Elongation" />
+                <ScalarProperty Name="Test_MAX_YS" ColumnName="Test_MAX_YS" />
+                <ScalarProperty Name="Test_MAX_UTS" ColumnName="Test_MAX_UTS" />
+                <ScalarProperty Name="Test_MIN_Elongation" ColumnName="Test_MIN_Elongation" />
+                <ScalarProperty Name="Test_MIN_YS" ColumnName="Test_MIN_YS" />
+                <ScalarProperty Name="Test_MIN_UTS" ColumnName="Test_MIN_UTS" />
+                <ScalarProperty Name="Element_MAX_CU" ColumnName="Element_MAX_CU" />
+                <ScalarProperty Name="Element_MAX_MO" ColumnName="Element_MAX_MO" />
+                <ScalarProperty Name="Element_MAX_CR" ColumnName="Element_MAX_CR" />
+                <ScalarProperty Name="Element_MAX_NI" ColumnName="Element_MAX_NI" />
+                <ScalarProperty Name="Element_MAX_S" ColumnName="Element_MAX_S" />
+                <ScalarProperty Name="Element_MAX_P" ColumnName="Element_MAX_P" />
+                <ScalarProperty Name="Element_MAX_MN" ColumnName="Element_MAX_MN" />
+                <ScalarProperty Name="Element_MAX_SI" ColumnName="Element_MAX_SI" />
+                <ScalarProperty Name="Element_MAX_C" ColumnName="Element_MAX_C" />
+                <ScalarProperty Name="Element_MIN_CU" ColumnName="Element_MIN_CU" />
+                <ScalarProperty Name="Element_MIN_MO" ColumnName="Element_MIN_MO" />
+                <ScalarProperty Name="Element_MIN_CR" ColumnName="Element_MIN_CR" />
+                <ScalarProperty Name="Element_MIN_NI" ColumnName="Element_MIN_NI" />
+                <ScalarProperty Name="Element_MIN_S" ColumnName="Element_MIN_S" />
+                <ScalarProperty Name="Element_MIN_P" ColumnName="Element_MIN_P" />
+                <ScalarProperty Name="Element_MIN_MN" ColumnName="Element_MIN_MN" />
+                <ScalarProperty Name="Element_MIN_SI" ColumnName="Element_MIN_SI" />
+                <ScalarProperty Name="Element_MIN_C" ColumnName="Element_MIN_C" />
+                <ScalarProperty Name="BaseMetal" ColumnName="BaseMetal" />
+                <ScalarProperty Name="CurrentPolarity" ColumnName="CurrentPolarity" />
+                <ScalarProperty Name="FlowRate" ColumnName="FlowRate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PreHeatInerpassTemp" ColumnName="PreHeatInerpassTemp" />
+                <ScalarProperty Name="ShieldingGas" ColumnName="ShieldingGas" />
+                <ScalarProperty Name="WeldingProcess" ColumnName="WeldingProcess" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="TradeDesignation" ColumnName="TradeDesignation" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

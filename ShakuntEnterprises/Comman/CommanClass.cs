@@ -129,6 +129,12 @@
 
             return result;
         }
+        public DataTable getTradeDesignationMasterRecord(string Id)
+        {
+            var result = GetDataTable("SELECT *  FROM  [TradeDesignationMaster] Where TradeDesignation='" + Id + "'");//)_context.MainNavigationBars.Where(x => x.UserId == "admin" && x.IsActive == "Y").ToList();
+
+            return result;
+        }
         public string TotalCertificate()
         {
             var result = GetDataTable("SELECT count(Id) TotalCertificate  FROM  [TestCertificateRecord]");

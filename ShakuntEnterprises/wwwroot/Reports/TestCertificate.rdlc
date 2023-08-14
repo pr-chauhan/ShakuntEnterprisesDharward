@@ -269,7 +269,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.74562in</Top>
+        <Top>2.73312in</Top>
         <Left>0.04479in</Left>
         <Height>0.23355in</Height>
         <Width>7.75369in</Width>
@@ -292,7 +292,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>3. Chemical Composition (Wires)</Value>
+                <Value>3. Chemical Composition (</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!CompositionHeading.Value, "TradeDesignationMaster")</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>)</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -305,7 +319,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>3.7375in</Top>
+        <Top>3.725in</Top>
         <Left>0.04479in</Left>
         <Height>0.26688in</Height>
         <Width>7.75369in</Width>
@@ -341,7 +355,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>4.84605in</Top>
+        <Top>4.79605in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -1470,10 +1484,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>4.03216in</Top>
+        <Top>4.01966in</Top>
         <Left>0.04479in</Left>
         <Height>0.55in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.75373in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -1736,21 +1750,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Impact Value</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>(J @ - 40 °C)</Value>
+                              <Value>="Impact Value (J @ -"+ First(Fields!Test_ImpectDegree.Value, "TradeDesignationMaster").ToString() +"°C)"</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -2206,7 +2206,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Test_Temp.Value</Value>
+                              <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -2329,10 +2329,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>5.10475in</Top>
+        <Top>5.06725in</Top>
         <Left>0.04479in</Left>
         <Height>0.675in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.75366in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -2358,7 +2358,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.41333in</Top>
+        <Top>8.20083in</Top>
         <Left>0.04479in</Left>
         <Height>0.25in</Height>
         <Width>0.97604in</Width>
@@ -2390,7 +2390,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remarks</rd:DefaultName>
-        <Top>8.40566in</Top>
+        <Top>8.19316in</Top>
         <Left>1.09027in</Left>
         <Height>0.25in</Height>
         <Width>6.7082in</Width>
@@ -2425,7 +2425,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>8.67305in</Top>
+        <Top>8.46055in</Top>
         <Left>0.04479in</Left>
         <Height>0.21445in</Height>
         <Width>7.75369in</Width>
@@ -2461,7 +2461,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox117</rd:DefaultName>
-        <Top>9.30278in</Top>
+        <Top>8.98611in</Top>
         <Left>5.67348in</Left>
         <Height>0.25in</Height>
         <Width>1.5in</Width>
@@ -2494,9 +2494,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox121</rd:DefaultName>
-        <Top>8.90139in</Top>
+        <Top>8.68889in</Top>
         <Left>0.04479in</Left>
-        <Height>0.65139in</Height>
+        <Height>0.53472in</Height>
         <Width>1.21647in</Width>
         <ZIndex>13</ZIndex>
         <Style>
@@ -2526,8 +2526,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
-        <Top>0.08195in</Top>
-        <Left>3.30371in</Left>
+        <Top>0.06945in</Top>
+        <Left>3.40371in</Left>
         <Height>0.375in</Height>
         <Width>0.375in</Width>
         <ZIndex>14</ZIndex>
@@ -2561,7 +2561,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>5.97906in</Top>
+        <Top>5.95406in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -2597,7 +2597,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.54155in</Top>
+        <Top>7.34155in</Top>
         <Left>0.04479in</Left>
         <Height>0.23772in</Height>
         <Width>7.75369in</Width>
@@ -3299,10 +3299,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>6.24455in</Top>
+        <Top>6.20705in</Top>
         <Left>0.04479in</Left>
         <Height>1.11667in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.75368in</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -3633,10 +3633,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>7.80705in</Top>
+        <Top>7.60705in</Top>
         <Left>0.04479in</Left>
         <Height>0.36666in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.75368in</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -4049,10 +4049,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>4.65161in</Top>
+        <Top>4.58911in</Top>
         <Left>0.04479in</Left>
         <Height>0.18333in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.7537in</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -4064,22 +4064,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.18471in</Width>
+              <Width>1.01444in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.18471in</Width>
+              <Width>1.03225in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83015in</Width>
+              <Width>1.64922in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.18471in</Width>
+              <Width>1.01775in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.18471in</Width>
+              <Width>1.01114in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.18471in</Width>
+              <Width>1.01444in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -4311,10 +4311,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>5.77836in</Top>
+        <Top>5.75336in</Top>
         <Left>0.04479in</Left>
         <Height>0.18333in</Height>
-        <Width>7.75369in</Width>
+        <Width>6.73924in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -4497,7 +4497,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificateResultRecord</DataSetName>
-        <Top>8.18483in</Top>
+        <Top>7.98483in</Top>
         <Left>0.04479in</Left>
         <Height>0.2in</Height>
         <Width>7.75369in</Width>
@@ -4888,7 +4888,7 @@
         <Top>2.34667in</Top>
         <Left>0.04479in</Left>
         <Height>0.36167in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.7537in</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -5299,7 +5299,7 @@
         <Top>1.66472in</Top>
         <Left>0.04479in</Left>
         <Height>0.38334in</Height>
-        <Width>7.75369in</Width>
+        <Width>7.75371in</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -6146,9 +6146,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>TestCertificate</DataSetName>
-        <Top>2.98834in</Top>
+        <Top>2.97584in</Top>
         <Left>0.04479in</Left>
-        <Height>0.725in</Height>
+        <Height>0.72499in</Height>
         <Width>7.75369in</Width>
         <ZIndex>24</ZIndex>
         <Style>
@@ -6158,14 +6158,14 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>9.63334in</Height>
+    <Height>9.30834in</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
       </Border>
     </Style>
   </Body>
-  <Width>7.79848in</Width>
+  <Width>7.79852in</Width>
   <Page>
     <LeftMargin>0.2in</LeftMargin>
     <RightMargin>0.2in</RightMargin>
@@ -6586,6 +6586,207 @@
         <rd:DataSetName>RDLCDesign</rd:DataSetName>
         <rd:TableName>TestCertificateResultRecord</rd:TableName>
         <rd:ObjectDataSourceType>RDLCDesign.TestCertificateResultRecord, RDLCDesign, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="TradeDesignationMaster">
+      <Query>
+        <DataSourceName>RDLCDesign</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="BaseMetal">
+          <DataField>BaseMetal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompositionHeading">
+          <DataField>CompositionHeading</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Created_By">
+          <DataField>Created_By</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Created_Date">
+          <DataField>Created_Date</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CurrentPolarity">
+          <DataField>CurrentPolarity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_C">
+          <DataField>Element_MAX_C</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_CR">
+          <DataField>Element_MAX_CR</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_CU">
+          <DataField>Element_MAX_CU</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_MN">
+          <DataField>Element_MAX_MN</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_MO">
+          <DataField>Element_MAX_MO</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_NI">
+          <DataField>Element_MAX_NI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_P">
+          <DataField>Element_MAX_P</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_S">
+          <DataField>Element_MAX_S</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MAX_SI">
+          <DataField>Element_MAX_SI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_C">
+          <DataField>Element_MIN_C</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_CR">
+          <DataField>Element_MIN_CR</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_CU">
+          <DataField>Element_MIN_CU</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_MN">
+          <DataField>Element_MIN_MN</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_MO">
+          <DataField>Element_MIN_MO</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_NI">
+          <DataField>Element_MIN_NI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_P">
+          <DataField>Element_MIN_P</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_S">
+          <DataField>Element_MIN_S</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Element_MIN_SI">
+          <DataField>Element_MIN_SI</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="FlowRate">
+          <DataField>FlowRate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Modified_By">
+          <DataField>Modified_By</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Modified_Date">
+          <DataField>Modified_Date</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="OtherTest_FaceBend_Specs">
+          <DataField>OtherTest_FaceBend_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherTest_Filled_Specs">
+          <DataField>OtherTest_Filled_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtherTest_Radio_Specs">
+          <DataField>OtherTest_Radio_Specs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PreHeatInerpassTemp">
+          <DataField>PreHeatInerpassTemp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShieldingGas">
+          <DataField>ShieldingGas</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Size">
+          <DataField>Size</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Specification">
+          <DataField>Specification</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Test_Condition">
+          <DataField>Test_Condition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Test_ImpectDegree">
+          <DataField>Test_ImpectDegree</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Test_ImpectValue">
+          <DataField>Test_ImpectValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Test_MAX_Elongation">
+          <DataField>Test_MAX_Elongation</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_MAX_UTS">
+          <DataField>Test_MAX_UTS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_MAX_YS">
+          <DataField>Test_MAX_YS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_MIN_Elongation">
+          <DataField>Test_MIN_Elongation</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_MIN_UTS">
+          <DataField>Test_MIN_UTS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_MIN_YS">
+          <DataField>Test_MIN_YS</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Test_Temp">
+          <DataField>Test_Temp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TradeDesignation">
+          <DataField>TradeDesignation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WeldingProcess">
+          <DataField>WeldingProcess</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>RDLCDesign</rd:DataSetName>
+        <rd:TableName>TradeDesignationMaster</rd:TableName>
+        <rd:ObjectDataSourceType>RDLCDesign.TradeDesignationMaster, RDLCDesign, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

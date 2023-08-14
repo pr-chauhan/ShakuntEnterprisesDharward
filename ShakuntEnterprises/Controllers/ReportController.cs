@@ -57,10 +57,13 @@ namespace ShakuntEnterprises.Controllers
                 //var certificateRecords = _context.TestCertificateRecords.Where(x => x.Id == OrderN).ToList();
                 var certificateRecords = commanClass.getTestCertificateRecordList(Id);
                 var certificateResultData = commanClass.getTestCertificateResultRecordList(Id);
+                var tradeDesignation = certificateRecords.Rows[0]["TradeDesignation"].ToString();
+                var tradeDesignationMaster = commanClass.getTradeDesignationMasterRecord(tradeDesignation);
 
                 LocalReport localReport = new LocalReport(path);
                 localReport.AddDataSource("TestCertificate", certificateRecords);
                 localReport.AddDataSource("TestCertificateResultRecord", certificateResultData);
+                localReport.AddDataSource("TradeDesignationMaster", tradeDesignationMaster);
                 
                 var result = localReport.Execute(RenderType.Pdf, extension, null, mimtype);
                 return File(result.MainStream, "application/pdf", Id.ToString() + "certificateRecords" + ".pdf");
