@@ -8,18 +8,18 @@ namespace ShakuntEnterprises.ViewModels
         public int Id { get; set; }
         public string? BatchNo { get; set; }
         public string? Size { get; set; }
-        public decimal? ElementResultC { get; set; }
-        public decimal? ElementResultSi { get; set; }
-        public decimal? ElementResultMn { get; set; }
-        public decimal? ElementResultP { get; set; }
-        public decimal? ElementResultS { get; set; }
-        public decimal? ElementResultNi { get; set; }
-        public decimal? ElementResultCr { get; set; }
-        public decimal? ElementResultMo { get; set; }
-        public decimal? ElementResultCu { get; set; }
-        public decimal? TestResultUts { get; set; }
-        public decimal? TestResultYs { get; set; }
-        public decimal? TestResultElongation { get; set; }
+        public string? ElementResultC { get; set; }
+        public string? ElementResultSi { get; set; }
+        public string? ElementResultMn { get; set; }
+        public string? ElementResultP { get; set; }
+        public string? ElementResultS { get; set; }
+        public string? ElementResultNi { get; set; }
+        public string? ElementResultCr { get; set; }
+        public string? ElementResultMo { get; set; }
+        public string? ElementResultCu { get; set; }
+        public string? TestResultUts { get; set; }
+        public string? TestResultYs { get; set; }
+        public string? TestResultElongation { get; set; }
         public string? TestResultTemp { get; set; }
         public string? TestResultImpectValue { get; set; }
         public string? TestResultCondition { get; set; }

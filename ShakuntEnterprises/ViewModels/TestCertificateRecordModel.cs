@@ -13,7 +13,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? CustomerName { get; set; }
         [DisplayName("Issue Date")]
         public DateTime? IssueDate { get; set; }
-        public decimal? Quanity { get; set; }
+        public string? Quanity { get; set; }
         [DisplayName("Invoice No.")]
         public string? InvoiceNo { get; set; }
         [DisplayName("Trade Designation")]
@@ -47,54 +47,54 @@ namespace ShakuntEnterprises.ViewModels
         [DisplayName("Base Metal")]
         public string? BaseMetal { get; set; }
         [DisplayName("MIN (C%)")]
-        public decimal? ElementMinC { get; set; }
+        public string? ElementMinC { get; set; }
         [DisplayName("MIN (Si%)")]
-        public decimal? ElementMinSi { get; set; }
+        public string? ElementMinSi { get; set; }
         [DisplayName("MIN (Mn%)")]
-        public decimal? ElementMinMn { get; set; }
+        public string? ElementMinMn { get; set; }
         [DisplayName("MIN (P%)")]
-        public decimal? ElementMinP { get; set; }
+        public string? ElementMinP { get; set; }
         [DisplayName("MIN (S%)")]
-        public decimal? ElementMinS { get; set; }
+        public string? ElementMinS { get; set; }
         [DisplayName("MIN (Ni%)")]
-        public decimal? ElementMinNi { get; set; }
+        public string? ElementMinNi { get; set; }
         [DisplayName("MIN (Cr%)")]
-        public decimal? ElementMinCr { get; set; }
+        public string? ElementMinCr { get; set; }
         [DisplayName("MIN (Mo%)")]
-        public decimal? ElementMinMo { get; set; }
+        public string? ElementMinMo { get; set; }
         [DisplayName("MIN (Cu%)")]
-        public decimal? ElementMinCu { get; set; }
+        public string? ElementMinCu { get; set; }
         [DisplayName("MAX (C%)")]
-        public decimal? ElementMaxC { get; set; }
+        public string? ElementMaxC { get; set; }
         [DisplayName("MAX (Si%)")]
-        public decimal? ElementMaxSi { get; set; }
+        public string? ElementMaxSi { get; set; }
         [DisplayName("MAX (Mn%)")]
-        public decimal? ElementMaxMn { get; set; }
+        public string? ElementMaxMn { get; set; }
         [DisplayName("MAX (P%)")]
-        public decimal? ElementMaxP { get; set; }
+        public string? ElementMaxP { get; set; }
         [DisplayName("MAX (S%)")]
-        public decimal? ElementMaxS { get; set; }
+        public string? ElementMaxS { get; set; }
         [DisplayName("MAX (Ni%)")]
-        public decimal? ElementMaxNi { get; set; }
+        public string? ElementMaxNi { get; set; }
         [DisplayName("MAX (Cr%)")]
-        public decimal? ElementMaxCr { get; set; }
+        public string? ElementMaxCr { get; set; }
         [DisplayName("MAX (Mo%)")]
-        public decimal? ElementMaxMo { get; set; }
+        public string? ElementMaxMo { get; set; }
         [DisplayName("MAX (Cu%)")]
-        public decimal? ElementMaxCu { get; set; }
+        public string? ElementMaxCu { get; set; }
 
         [DisplayName("MIN.UTS.(Mpa)")]
-        public decimal? TestMinUts { get; set; }
+        public string? TestMinUts { get; set; }
         [DisplayName("MIN Y.S.(Mpa)")]
-        public decimal? TestMinYs { get; set; }
+        public string? TestMinYs { get; set; }
         [DisplayName("MIN.Elongation")]
-        public decimal? TestMinElongation { get; set; }
+        public string? TestMinElongation { get; set; }
         [DisplayName("MAX.UTS.(Mpa)")]
-        public decimal? TestMaxUts { get; set; }
+        public string? TestMaxUts { get; set; }
         [DisplayName("MAX.YS.(Mpa)")]
-        public decimal? TestMaxYs { get; set; }
+        public string? TestMaxYs { get; set; }
         [DisplayName("MAX.Elongation")]
-        public decimal? TestMaxElongation { get; set; }
+        public string? TestMaxElongation { get; set; }
 
         [DisplayName("Test Temp.(C$)")]
         public string? TestTemp { get; set; }

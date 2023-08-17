@@ -13,7 +13,7 @@
           <Property Name="CertificateNo" Type="nvarchar" MaxLength="50" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="150" />
           <Property Name="IssueDate" Type="datetime" />
-          <Property Name="Quanity" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Quanity" Type="nvarchar" MaxLength="50" />
           <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
           <Property Name="TradeDesignation" Type="nvarchar" MaxLength="100" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
@@ -31,30 +31,30 @@
           <Property Name="Volts" Type="nvarchar" MaxLength="50" />
           <Property Name="TravelSpeed" Type="nvarchar" MaxLength="50" />
           <Property Name="BaseMetal" Type="nvarchar" MaxLength="50" />
-          <Property Name="Element_MIN_C" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_SI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MN" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_P" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_S" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_NI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CR" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MO" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CU" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_C" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_SI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MN" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_P" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_S" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_NI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CR" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MO" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CU" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_UTS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_YS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_Elongation" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_UTS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_YS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_C" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_SI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_P" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_NI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_CR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_MO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_CU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_C" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_SI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_P" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_NI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_CR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_MO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_CU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_UTS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_YS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_Elongation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_UTS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_YS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_Elongation" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Condition" Type="nvarchar" MaxLength="50" />
@@ -88,18 +88,18 @@
           <Property Name="BatchNo" Type="nvarchar" MaxLength="50" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
           <Property Name="CertificateNo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Element_Result_C" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_SI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_MN" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_P" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_S" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_NI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_CR" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_MO" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_Result_CU" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_Result_UTS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_Result_YS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_Result_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_Result_C" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_SI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_P" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_NI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_CR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_MO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_CU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Result_UTS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Result_YS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Result_Elongation" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Condition" Type="nvarchar" MaxLength="50" />
@@ -126,30 +126,30 @@
           <Property Name="FlowRate" Type="nvarchar" MaxLength="50" />
           <Property Name="CurrentPolarity" Type="nvarchar" MaxLength="50" />
           <Property Name="BaseMetal" Type="nvarchar" MaxLength="50" />
-          <Property Name="Element_MIN_C" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_SI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MN" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_P" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_S" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_NI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CR" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MO" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CU" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_C" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_SI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MN" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_P" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_S" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_NI" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CR" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MO" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CU" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_UTS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_YS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_Elongation" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_UTS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_YS" Type="numeric" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_Elongation" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_C" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_SI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_P" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_NI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_CR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_MO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MIN_CU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_C" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_SI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_MN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_P" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_S" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_NI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_CR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_MO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_CU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_UTS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_YS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MIN_Elongation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_UTS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_YS" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_MAX_Elongation" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Temp" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectDegree" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_ImpectValue" Type="nvarchar" MaxLength="50" />
@@ -185,7 +185,7 @@
           <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CustomerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="IssueDate" Type="DateTime" Precision="3" />
-          <Property Name="Quanity" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Quanity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TradeDesignation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -203,30 +203,30 @@
           <Property Name="Volts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TravelSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BaseMetal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_C" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_SI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MN" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_P" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_S" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_NI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CR" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MO" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CU" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_C" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_SI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MN" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_P" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_S" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_NI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CR" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MO" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CU" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_UTS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_YS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_Elongation" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_UTS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_YS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -256,21 +256,22 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BatchDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_Result_C" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_SI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_MN" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_P" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_S" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_NI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_CR" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_MO" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_Result_CU" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_Result_UTS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_Result_YS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_Result_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_Result_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Result_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Result_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Result_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -281,7 +282,6 @@
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="BatchDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TradeDesignationMaster">
           <Key>
@@ -298,30 +298,30 @@
           <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CurrentPolarity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BaseMetal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_C" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_SI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MN" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_P" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_S" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_NI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CR" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_MO" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MIN_CU" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_C" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_SI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MN" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_P" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_S" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_NI" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CR" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_MO" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Element_MAX_CU" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_UTS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_YS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MIN_Elongation" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_UTS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_YS" Type="Decimal" Precision="10" Scale="3" />
-          <Property Name="Test_MAX_Elongation" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="Element_MIN_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_ImpectDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -419,7 +419,6 @@
           <EntitySetMapping Name="TestCertificateResultRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateResultRecord">
               <MappingFragment StoreEntitySet="TestCertificateResultRecord">
-                <ScalarProperty Name="BatchDate" ColumnName="BatchDate" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
                 <ScalarProperty Name="Created_By" ColumnName="Created_By" />
@@ -445,6 +444,7 @@
                 <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="BatchDate" ColumnName="BatchDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

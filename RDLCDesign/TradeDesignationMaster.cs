@@ -25,30 +25,30 @@ namespace RDLCDesign
         public string FlowRate { get; set; }
         public string CurrentPolarity { get; set; }
         public string BaseMetal { get; set; }
-        public Nullable<decimal> Element_MIN_C { get; set; }
-        public Nullable<decimal> Element_MIN_SI { get; set; }
-        public Nullable<decimal> Element_MIN_MN { get; set; }
-        public Nullable<decimal> Element_MIN_P { get; set; }
-        public Nullable<decimal> Element_MIN_S { get; set; }
-        public Nullable<decimal> Element_MIN_NI { get; set; }
-        public Nullable<decimal> Element_MIN_CR { get; set; }
-        public Nullable<decimal> Element_MIN_MO { get; set; }
-        public Nullable<decimal> Element_MIN_CU { get; set; }
-        public Nullable<decimal> Element_MAX_C { get; set; }
-        public Nullable<decimal> Element_MAX_SI { get; set; }
-        public Nullable<decimal> Element_MAX_MN { get; set; }
-        public Nullable<decimal> Element_MAX_P { get; set; }
-        public Nullable<decimal> Element_MAX_S { get; set; }
-        public Nullable<decimal> Element_MAX_NI { get; set; }
-        public Nullable<decimal> Element_MAX_CR { get; set; }
-        public Nullable<decimal> Element_MAX_MO { get; set; }
-        public Nullable<decimal> Element_MAX_CU { get; set; }
-        public Nullable<decimal> Test_MIN_UTS { get; set; }
-        public Nullable<decimal> Test_MIN_YS { get; set; }
-        public Nullable<decimal> Test_MIN_Elongation { get; set; }
-        public Nullable<decimal> Test_MAX_UTS { get; set; }
-        public Nullable<decimal> Test_MAX_YS { get; set; }
-        public Nullable<decimal> Test_MAX_Elongation { get; set; }
+        public string Element_MIN_C { get; set; }
+        public string Element_MIN_SI { get; set; }
+        public string Element_MIN_MN { get; set; }
+        public string Element_MIN_P { get; set; }
+        public string Element_MIN_S { get; set; }
+        public string Element_MIN_NI { get; set; }
+        public string Element_MIN_CR { get; set; }
+        public string Element_MIN_MO { get; set; }
+        public string Element_MIN_CU { get; set; }
+        public string Element_MAX_C { get; set; }
+        public string Element_MAX_SI { get; set; }
+        public string Element_MAX_MN { get; set; }
+        public string Element_MAX_P { get; set; }
+        public string Element_MAX_S { get; set; }
+        public string Element_MAX_NI { get; set; }
+        public string Element_MAX_CR { get; set; }
+        public string Element_MAX_MO { get; set; }
+        public string Element_MAX_CU { get; set; }
+        public string Test_MIN_UTS { get; set; }
+        public string Test_MIN_YS { get; set; }
+        public string Test_MIN_Elongation { get; set; }
+        public string Test_MAX_UTS { get; set; }
+        public string Test_MAX_YS { get; set; }
+        public string Test_MAX_Elongation { get; set; }
         public string Test_Temp { get; set; }
         public string Test_ImpectDegree { get; set; }
         public string Test_ImpectValue { get; set; }

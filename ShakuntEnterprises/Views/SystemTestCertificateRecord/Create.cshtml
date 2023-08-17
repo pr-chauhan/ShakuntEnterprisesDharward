@@ -533,7 +533,20 @@
             })
 
             $("#addBatch").click(function () {
-              debugger
+                if ($("#BatchDate").val() == "")
+                {
+                      alert("Please enter batch date and try again..!!");
+                        return;
+                }
+                if ($("#BatchNo").val() == "")
+                {
+                      alert("Please enter batch number and try again..!!");
+                        return;
+                }
+                if ($("#Size  option:selected").val() == "") {
+                    alert("Please select size number and try again..!!");
+                    return;
+                }
                 var BatchDate = $("#BatchDate").val();
                 var BatchNo = $("#BatchNo").val();
                 var Size = $("#Size  option:selected").val();
@@ -733,7 +746,7 @@
                         //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
                         //'</td>' +
                         '</tr>').appendTo('#OtherTestTable');
-
+                        $("#BatchNo").val("");
                 counter++;
 
 
@@ -768,7 +781,6 @@
                 var OtherTestResultRadioSpecs = "";
                 var OtherTestResultFaceBendSpecs = "";
                 var OtherTestResultFilledSpecs = "";
-                BatchNo = $("#BatchNo").val();
                 Size = $("#Size option:selected").text();
                 CertificateNo = $("#CertificateNo").val();
              

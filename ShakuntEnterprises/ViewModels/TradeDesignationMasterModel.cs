@@ -16,30 +16,30 @@ namespace ShakuntEnterprises.ViewModels
         public string? FlowRate { get; set; }
         public string? CurrentPolarity { get; set; }
         public string? BaseMetal { get; set; }
-        public decimal? ElementMinC { get; set; }
-        public decimal? ElementMinSi { get; set; }
-        public decimal? ElementMinMn { get; set; }
-        public decimal? ElementMinP { get; set; }
-        public decimal? ElementMinS { get; set; }
-        public decimal? ElementMinNi { get; set; }
-        public decimal? ElementMinCr { get; set; }
-        public decimal? ElementMinMo { get; set; }
-        public decimal? ElementMinCu { get; set; }
-        public decimal? ElementMaxC { get; set; }
-        public decimal? ElementMaxSi { get; set; }
-        public decimal? ElementMaxMn { get; set; }
-        public decimal? ElementMaxP { get; set; }
-        public decimal? ElementMaxS { get; set; }
-        public decimal? ElementMaxNi { get; set; }
-        public decimal? ElementMaxCr { get; set; }
-        public decimal? ElementMaxMo { get; set; }
-        public decimal? ElementMaxCu { get; set; }
-        public decimal? TestMinUts { get; set; }
-        public decimal? TestMinYs { get; set; }
-        public decimal? TestMinElongation { get; set; }
-        public decimal? TestMaxUts { get; set; }
-        public decimal? TestMaxYs { get; set; }
-        public decimal? TestMaxElongation { get; set; }
+        public string? ElementMinC { get; set; }
+        public string? ElementMinSi { get; set; }
+        public string? ElementMinMn { get; set; }
+        public string? ElementMinP { get; set; }
+        public string? ElementMinS { get; set; }
+        public string? ElementMinNi { get; set; }
+        public string? ElementMinCr { get; set; }
+        public string? ElementMinMo { get; set; }
+        public string? ElementMinCu { get; set; }
+        public string? ElementMaxC { get; set; }
+        public string? ElementMaxSi { get; set; }
+        public string? ElementMaxMn { get; set; }
+        public string? ElementMaxP { get; set; }
+        public string? ElementMaxS { get; set; }
+        public string? ElementMaxNi { get; set; }
+        public string? ElementMaxCr { get; set; }
+        public string? ElementMaxMo { get; set; }
+        public string? ElementMaxCu { get; set; }
+        public string? TestMinUts { get; set; }
+        public string? TestMinYs { get; set; }
+        public string? TestMinElongation { get; set; }
+        public string? TestMaxUts { get; set; }
+        public string? TestMaxYs { get; set; }
+        public string? TestMaxElongation { get; set; }
         public string? TestTemp { get; set; }
         public string? TestImpectDegree { get; set; }
         public string? TestImpectValue { get; set; }
