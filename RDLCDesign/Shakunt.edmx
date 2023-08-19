@@ -73,6 +73,7 @@
           <Property Name="OtherTest_Filled_Specs" Type="nvarchar" MaxLength="50" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsApproved" Type="int" />
+          <Property Name="HideSection" Type="nvarchar" MaxLength="5" />
           <Property Name="Certificate_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Created_Date" Type="datetime" />
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
@@ -173,84 +174,10 @@
     <edmx:ConceptualModels>
       <Schema Namespace="ShakuntEnterprisesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ShakuntEnterprisesEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TestCertificateRecords" EntityType="ShakuntEnterprisesModel.TestCertificateRecord" />
           <EntitySet Name="TestCertificateResultRecords" EntityType="ShakuntEnterprisesModel.TestCertificateResultRecord" />
           <EntitySet Name="TradeDesignationMasters" EntityType="ShakuntEnterprisesModel.TradeDesignationMaster" />
+          <EntitySet Name="TestCertificateRecords" EntityType="ShakuntEnterprisesModel.TestCertificateRecord" />
         </EntityContainer>
-        <EntityType Name="TestCertificateRecord">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CustomerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="IssueDate" Type="DateTime" Precision="3" />
-          <Property Name="Quanity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TradeDesignation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BatchDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ManufecturingDate" Type="DateTime" Precision="3" />
-          <Property Name="Specification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="WeldingProcess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ShieldingGas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PreHeatInerpassTemp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="APMS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CurrentPolarity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Volts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TravelSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BaseMetal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MIN_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Element_MAX_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MIN_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MIN_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MIN_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MAX_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MAX_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_MAX_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Test_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Size_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Size_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Coating_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Coating_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UTSWire_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UTSWire_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CastDia_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CastDia_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Helix_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Helix_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OtherTest_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OtherTest_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OtherTest_Filled_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="IsApproved" Type="Int32" />
-          <Property Name="Certificate_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Created_Date" Type="DateTime" Precision="3" />
-          <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
-          <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
             <PropertyRef Name="Id" />
@@ -335,87 +262,87 @@
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="TestCertificateRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IssueDate" Type="DateTime" Precision="3" />
+          <Property Name="Quanity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TradeDesignation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BatchDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ManufecturingDate" Type="DateTime" Precision="3" />
+          <Property Name="Specification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WeldingProcess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShieldingGas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PreHeatInerpassTemp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APMS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentPolarity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Volts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TravelSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BaseMetal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_SI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_P" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_S" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_NI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_MO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_CU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MIN_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_UTS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_YS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_MAX_Elongation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_ImpectValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Coating_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Coating_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UTSWire_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UTSWire_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CastDia_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CastDia_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Helix_StandardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Helix_ActualValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Radio_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_FaceBend_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherTest_Filled_Specs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproved" Type="Int32" />
+          <Property Name="HideSection" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Certificate_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ShakuntEnterprisesModelStoreContainer" CdmEntityContainer="ShakuntEnterprisesEntities">
-          <EntitySetMapping Name="TestCertificateRecords">
-            <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
-              <MappingFragment StoreEntitySet="TestCertificateRecord">
-                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
-                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
-                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
-                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
-                <ScalarProperty Name="Certificate_Type" ColumnName="Certificate_Type" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-                <ScalarProperty Name="OtherTest_Filled_Specs" ColumnName="OtherTest_Filled_Specs" />
-                <ScalarProperty Name="OtherTest_FaceBend_Specs" ColumnName="OtherTest_FaceBend_Specs" />
-                <ScalarProperty Name="OtherTest_Radio_Specs" ColumnName="OtherTest_Radio_Specs" />
-                <ScalarProperty Name="Helix_ActualValue" ColumnName="Helix_ActualValue" />
-                <ScalarProperty Name="Helix_StandardValue" ColumnName="Helix_StandardValue" />
-                <ScalarProperty Name="CastDia_ActualValue" ColumnName="CastDia_ActualValue" />
-                <ScalarProperty Name="CastDia_StandardValue" ColumnName="CastDia_StandardValue" />
-                <ScalarProperty Name="UTSWire_ActualValue" ColumnName="UTSWire_ActualValue" />
-                <ScalarProperty Name="UTSWire_StandardValue" ColumnName="UTSWire_StandardValue" />
-                <ScalarProperty Name="Coating_ActualValue" ColumnName="Coating_ActualValue" />
-                <ScalarProperty Name="Coating_StandardValue" ColumnName="Coating_StandardValue" />
-                <ScalarProperty Name="Size_ActualValue" ColumnName="Size_ActualValue" />
-                <ScalarProperty Name="Size_StandardValue" ColumnName="Size_StandardValue" />
-                <ScalarProperty Name="Test_Condition" ColumnName="Test_Condition" />
-                <ScalarProperty Name="Test_ImpectValue" ColumnName="Test_ImpectValue" />
-                <ScalarProperty Name="Test_Temp" ColumnName="Test_Temp" />
-                <ScalarProperty Name="Test_MAX_Elongation" ColumnName="Test_MAX_Elongation" />
-                <ScalarProperty Name="Test_MAX_YS" ColumnName="Test_MAX_YS" />
-                <ScalarProperty Name="Test_MAX_UTS" ColumnName="Test_MAX_UTS" />
-                <ScalarProperty Name="Test_MIN_Elongation" ColumnName="Test_MIN_Elongation" />
-                <ScalarProperty Name="Test_MIN_YS" ColumnName="Test_MIN_YS" />
-                <ScalarProperty Name="Test_MIN_UTS" ColumnName="Test_MIN_UTS" />
-                <ScalarProperty Name="Element_MAX_CU" ColumnName="Element_MAX_CU" />
-                <ScalarProperty Name="Element_MAX_MO" ColumnName="Element_MAX_MO" />
-                <ScalarProperty Name="Element_MAX_CR" ColumnName="Element_MAX_CR" />
-                <ScalarProperty Name="Element_MAX_NI" ColumnName="Element_MAX_NI" />
-                <ScalarProperty Name="Element_MAX_S" ColumnName="Element_MAX_S" />
-                <ScalarProperty Name="Element_MAX_P" ColumnName="Element_MAX_P" />
-                <ScalarProperty Name="Element_MAX_MN" ColumnName="Element_MAX_MN" />
-                <ScalarProperty Name="Element_MAX_SI" ColumnName="Element_MAX_SI" />
-                <ScalarProperty Name="Element_MAX_C" ColumnName="Element_MAX_C" />
-                <ScalarProperty Name="Element_MIN_CU" ColumnName="Element_MIN_CU" />
-                <ScalarProperty Name="Element_MIN_MO" ColumnName="Element_MIN_MO" />
-                <ScalarProperty Name="Element_MIN_CR" ColumnName="Element_MIN_CR" />
-                <ScalarProperty Name="Element_MIN_NI" ColumnName="Element_MIN_NI" />
-                <ScalarProperty Name="Element_MIN_S" ColumnName="Element_MIN_S" />
-                <ScalarProperty Name="Element_MIN_P" ColumnName="Element_MIN_P" />
-                <ScalarProperty Name="Element_MIN_MN" ColumnName="Element_MIN_MN" />
-                <ScalarProperty Name="Element_MIN_SI" ColumnName="Element_MIN_SI" />
-                <ScalarProperty Name="Element_MIN_C" ColumnName="Element_MIN_C" />
-                <ScalarProperty Name="BaseMetal" ColumnName="BaseMetal" />
-                <ScalarProperty Name="TravelSpeed" ColumnName="TravelSpeed" />
-                <ScalarProperty Name="Volts" ColumnName="Volts" />
-                <ScalarProperty Name="CurrentPolarity" ColumnName="CurrentPolarity" />
-                <ScalarProperty Name="FlowRate" ColumnName="FlowRate" />
-                <ScalarProperty Name="APMS" ColumnName="APMS" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="PreHeatInerpassTemp" ColumnName="PreHeatInerpassTemp" />
-                <ScalarProperty Name="ShieldingGas" ColumnName="ShieldingGas" />
-                <ScalarProperty Name="WeldingProcess" ColumnName="WeldingProcess" />
-                <ScalarProperty Name="Specification" ColumnName="Specification" />
-                <ScalarProperty Name="ManufecturingDate" ColumnName="ManufecturingDate" />
-                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
-                <ScalarProperty Name="BatchDate" ColumnName="BatchDate" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="TradeDesignation" ColumnName="TradeDesignation" />
-                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
-                <ScalarProperty Name="Quanity" ColumnName="Quanity" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TestCertificateResultRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateResultRecord">
               <MappingFragment StoreEntitySet="TestCertificateResultRecord">
@@ -498,6 +425,82 @@
                 <ScalarProperty Name="Specification" ColumnName="Specification" />
                 <ScalarProperty Name="TradeDesignation" ColumnName="TradeDesignation" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestCertificateRecords">
+            <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
+              <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Certificate_Type" ColumnName="Certificate_Type" />
+                <ScalarProperty Name="HideSection" ColumnName="HideSection" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="OtherTest_Filled_Specs" ColumnName="OtherTest_Filled_Specs" />
+                <ScalarProperty Name="OtherTest_FaceBend_Specs" ColumnName="OtherTest_FaceBend_Specs" />
+                <ScalarProperty Name="OtherTest_Radio_Specs" ColumnName="OtherTest_Radio_Specs" />
+                <ScalarProperty Name="Helix_ActualValue" ColumnName="Helix_ActualValue" />
+                <ScalarProperty Name="Helix_StandardValue" ColumnName="Helix_StandardValue" />
+                <ScalarProperty Name="CastDia_ActualValue" ColumnName="CastDia_ActualValue" />
+                <ScalarProperty Name="CastDia_StandardValue" ColumnName="CastDia_StandardValue" />
+                <ScalarProperty Name="UTSWire_ActualValue" ColumnName="UTSWire_ActualValue" />
+                <ScalarProperty Name="UTSWire_StandardValue" ColumnName="UTSWire_StandardValue" />
+                <ScalarProperty Name="Coating_ActualValue" ColumnName="Coating_ActualValue" />
+                <ScalarProperty Name="Coating_StandardValue" ColumnName="Coating_StandardValue" />
+                <ScalarProperty Name="Size_ActualValue" ColumnName="Size_ActualValue" />
+                <ScalarProperty Name="Size_StandardValue" ColumnName="Size_StandardValue" />
+                <ScalarProperty Name="Test_Condition" ColumnName="Test_Condition" />
+                <ScalarProperty Name="Test_ImpectValue" ColumnName="Test_ImpectValue" />
+                <ScalarProperty Name="Test_Temp" ColumnName="Test_Temp" />
+                <ScalarProperty Name="Test_MAX_Elongation" ColumnName="Test_MAX_Elongation" />
+                <ScalarProperty Name="Test_MAX_YS" ColumnName="Test_MAX_YS" />
+                <ScalarProperty Name="Test_MAX_UTS" ColumnName="Test_MAX_UTS" />
+                <ScalarProperty Name="Test_MIN_Elongation" ColumnName="Test_MIN_Elongation" />
+                <ScalarProperty Name="Test_MIN_YS" ColumnName="Test_MIN_YS" />
+                <ScalarProperty Name="Test_MIN_UTS" ColumnName="Test_MIN_UTS" />
+                <ScalarProperty Name="Element_MAX_CU" ColumnName="Element_MAX_CU" />
+                <ScalarProperty Name="Element_MAX_MO" ColumnName="Element_MAX_MO" />
+                <ScalarProperty Name="Element_MAX_CR" ColumnName="Element_MAX_CR" />
+                <ScalarProperty Name="Element_MAX_NI" ColumnName="Element_MAX_NI" />
+                <ScalarProperty Name="Element_MAX_S" ColumnName="Element_MAX_S" />
+                <ScalarProperty Name="Element_MAX_P" ColumnName="Element_MAX_P" />
+                <ScalarProperty Name="Element_MAX_MN" ColumnName="Element_MAX_MN" />
+                <ScalarProperty Name="Element_MAX_SI" ColumnName="Element_MAX_SI" />
+                <ScalarProperty Name="Element_MAX_C" ColumnName="Element_MAX_C" />
+                <ScalarProperty Name="Element_MIN_CU" ColumnName="Element_MIN_CU" />
+                <ScalarProperty Name="Element_MIN_MO" ColumnName="Element_MIN_MO" />
+                <ScalarProperty Name="Element_MIN_CR" ColumnName="Element_MIN_CR" />
+                <ScalarProperty Name="Element_MIN_NI" ColumnName="Element_MIN_NI" />
+                <ScalarProperty Name="Element_MIN_S" ColumnName="Element_MIN_S" />
+                <ScalarProperty Name="Element_MIN_P" ColumnName="Element_MIN_P" />
+                <ScalarProperty Name="Element_MIN_MN" ColumnName="Element_MIN_MN" />
+                <ScalarProperty Name="Element_MIN_SI" ColumnName="Element_MIN_SI" />
+                <ScalarProperty Name="Element_MIN_C" ColumnName="Element_MIN_C" />
+                <ScalarProperty Name="BaseMetal" ColumnName="BaseMetal" />
+                <ScalarProperty Name="TravelSpeed" ColumnName="TravelSpeed" />
+                <ScalarProperty Name="Volts" ColumnName="Volts" />
+                <ScalarProperty Name="CurrentPolarity" ColumnName="CurrentPolarity" />
+                <ScalarProperty Name="FlowRate" ColumnName="FlowRate" />
+                <ScalarProperty Name="APMS" ColumnName="APMS" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PreHeatInerpassTemp" ColumnName="PreHeatInerpassTemp" />
+                <ScalarProperty Name="ShieldingGas" ColumnName="ShieldingGas" />
+                <ScalarProperty Name="WeldingProcess" ColumnName="WeldingProcess" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="ManufecturingDate" ColumnName="ManufecturingDate" />
+                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="BatchDate" ColumnName="BatchDate" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="TradeDesignation" ColumnName="TradeDesignation" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="Quanity" ColumnName="Quanity" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

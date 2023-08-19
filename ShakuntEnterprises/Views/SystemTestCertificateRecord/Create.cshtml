@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout_Views.cshtml";
 }
- 
+<script src="~/js/alertifjsfile.js"></script>
 <hr />
 <h3>Add System Test Certificate</h3>
 <hr />
@@ -341,6 +341,17 @@
             <hr />
             <div class="row">
                 <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="HideSection" class="control-label"></label>
+                    <select asp-for="HideSection"  class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                    <span asp-validation-for="HideSection" class="text-danger"></span>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="SizeStandardValue" class="control-label"></label>
                     <input asp-for="SizeStandardValue" class="form-control" />
                     <span asp-validation-for="SizeStandardValue" class="text-danger"></span>
@@ -458,8 +469,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var counter = 0;
-
-
             $("#TradeDesignation").change(function () {
 
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();
@@ -552,91 +561,330 @@
                 var Size = $("#Size  option:selected").val();
                 $.getJSON("/SystemTestCertificateRecord/GetBatchMasterResult",
                     { BatchNo: BatchNo }, function (data) {
-
+                       debugger;
                         if (data[0].elementResultC > 0) {
-                            if ($("#ElementMinC").val() > data[0].elementResultC || $("#ElementMaxC").val() < data[0].elementResultC) {
-                                $("#submit").hide();
-                                alert("Element Result C% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinC").val() > 0)
+                            {
+                                if ($("#ElementMinC").val() > data[0].elementResultC) {
+                                    $("#submit").hide();
+                                    alert("Element Result C% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMaxC").val() > 0)
+                            {
+                                if ($("#ElementMaxC").val() < data[0].elementResultC) {
+                                    $("#submit").hide();
+                                    alert("Element Result C% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMinC").val() > 0 && $("#ElementMaxC").val() > 0)
+                            {
+                                if ($("#ElementMinC").val() > data[0].elementResultC || $("#ElementMaxC").val() < data[0].elementResultC) {
+                                    $("#submit").hide();
+                                    alert("Element Result C% is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
+                        
                         if (data[0].elementResultSi > 0) {
-                            if ($("#ElementMinSi").val() > data[0].elementResultSi || $("#ElementMaxSi").val() < data[0].elementResultSi) {
-                                $("#submit").hide();
-                                alert("Element Result Si% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinSi").val() > 0)
+                            {
+                                if ($("#ElementMinSi").val() > data[0].elementResultSi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Si% is not under result conditons..!!");
+                                    return;
+                                }
                             }
+
+                            if( $("#ElementMaxSi").val() > 0)
+                            {
+                                  if ($("#ElementMaxSi").val() < data[0].elementResultSi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Si% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMinSi").val() > 0 && $("#ElementMaxSi").val() > 0)
+                            {
+                                  if ($("#ElementMinSi").val() > data[0].elementResultSi || $("#ElementMaxSi").val() < data[0].elementResultSi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Si% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+
                         }
+                       
                         if (data[0].elementResultMn > 0) {
-                            if ($("#ElementMinMn").val() > data[0].elementResultMn || $("#ElementMaxMn").val() < data[0].elementResultMn) {
-                                $("#submit").hide();
-                                alert("Element  Result Mn% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinMn").val() > 0)
+                            {
+                                if ($("#ElementMinMn").val() > data[0].elementResultMn) {
+                                    $("#submit").hide();
+                                    alert("Element  Result Mn% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMaxMn").val() > 0)
+                            {
+                                if ($("#ElementMaxMn").val() < data[0].elementResultMn) {
+                                    $("#submit").hide();
+                                    alert("Element  Result Mn% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMinMn").val()  > 0 && $("#ElementMaxMn").val() > 0)
+                            {
+                                if ($("#ElementMinMn").val() > data[0].elementResultMn || $("#ElementMaxMn").val() < data[0].elementResultMn) {
+                                    $("#submit").hide();
+                                    alert("Element  Result Mn% is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
+                        
                         if (data[0].elementResultP > 0) {
-                            if ($("#ElementMinP").val() > data[0].elementResultP || $("#ElementMaxP").val() < data[0].elementResultP) {
-                                $("#submit").hide();
-                                alert("Element Result P% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinP").val() > 0)
+                            {
+                                if ($("#ElementMinP").val() > data[0].elementResultP) {
+                                    $("#submit").hide();
+                                    alert("Element Result P% is not under result conditons..!!");
+                                    return;
+                                }
                             }
+                            if($("#ElementMaxP").val() > 0)
+                            {
+                                 if ($("#ElementMaxP").val() < data[0].elementResultP) {
+                                    $("#submit").hide();
+                                    alert("Element Result P% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                             if ($("#ElementMinP").val() > 0 && $("#ElementMaxP").val() > 0) {
+                                 if ($("#ElementMinP").val() > data[0].elementResultP || $("#ElementMaxP").val() < data[0].elementResultP) {
+                                    $("#submit").hide();
+                                    alert("Element Result P% is not under result conditons..!!");
+                                    return;
+                                }
+                             }
                         }
+                       
                         if (data[0].elementResultS > 0) {
-                            if ($("#ElementMinS").val() > data[0].elementResultS || $("#ElementMaxS").val() < data[0].elementResultS) {
-                                $("#submit").hide();
-                                alert("Element Result S% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinS").val() > 0)
+                            {
+                                if ($("#ElementMinS").val() > data[0].elementResultS) {
+                                    $("#submit").hide();
+                                    alert("Element Result S% is not under result conditons..!!");
+                                    return;
+                                }
                             }
+                            if($("#ElementMaxS").val() > 0 )
+                            {
+                                if ($("#ElementMaxS").val() < data[0].elementResultS) {
+                                    $("#submit").hide();
+                                    alert("Element Result S% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                             if ($("#ElementMinS").val() > 0 && $("#ElementMaxS").val() > 0)
+                             {
+                                if ($("#ElementMinS").val() > data[0].elementResultS || $("#ElementMaxS").val() < data[0].elementResultS) {
+                                    $("#submit").hide();
+                                    alert("Element Result S% is not under result conditons..!!");
+                                    return;
+                                }
+                             }
                         }
+                       
                         if (data[0].elementResultNi > 0) {
-                            if ($("#ElementMinNi").val() > data[0].elementResultNi || $("#ElementMaxNi").val() < data[0].elementResultNi) {
-                                $("#submit").hide();
-                                alert("Element Result Ni% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinNi").val() > 0)
+                            {
+                                if ($("#ElementMinNi").val() > data[0].elementResultNi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Ni% is not under result conditons..!!");
+                                    return;
+                                }
                             }
+                            if( $("#ElementMaxNi").val() > 0)
+                            {
+                                if ($("#ElementMaxNi").val() < data[0].elementResultNi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Ni% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                             if ($("#ElementMinNi").val() > 0 && $("#ElementMaxNi").val() > 0) 
+                             {
+                                if ($("#ElementMinNi").val() > data[0].elementResultNi || $("#ElementMaxNi").val() < data[0].elementResultNi) {
+                                    $("#submit").hide();
+                                    alert("Element Result Ni% is not under result conditons..!!");
+                                    return;
+                                }
+                             }
                         }
+                        
                         if (data[0].elementResultCr > 0) {
-                            if ($("#ElementMinCr").val() > data[0].elementResultCr || $("#ElementMaxCr").val() < data[0].elementResultCr) {
-                                $("#submit").hide();
-                                alert("Element Result Cr% is not under result conditons..!!");
-                                return;
+                            if($("#ElementMinCr").val() > 0)
+                            {
+                                if ($("#ElementMinCr").val() > data[0].elementResultCr ) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cr% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#ElementMaxCr").val() > 0)
+                            {
+                             if ($("#ElementMaxCr").val() < data[0].elementResultCr) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cr% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ($("#ElementMinCr").val() > 0 && $("#ElementMaxCr").val() > 0) 
+                            {
+                                if ($("#ElementMinCr").val() > data[0].elementResultCr || $("#ElementMaxCr").val() < data[0].elementResultCr) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cr% is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
 
                         if (data[0].elementResultMo > 0) {
-                            if ($("#ElementMinMo").val() > data[0].elementResultMo || $("#ElementMaxMo").val() < data[0].elementResultMo) {
-                                $("#submit").hide();
-                                alert("Element Result Mo% is not under result conditons..!!");
-                                return;
+                            if ( $("#ElementMinMo").val() > 0)
+                            {
+                                if ($("#ElementMinMo").val() > data[0].elementResultMo) {
+                                    $("#submit").hide();
+                                    alert("Element Result Mo% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if( $("#ElementMaxMo").val()  > 0 )
+                            {
+                                 if ($("#ElementMaxMo").val() < data[0].elementResultMo) {
+                                    $("#submit").hide();
+                                    alert("Element Result Mo% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ($("#ElementMinMo").val() > 0 && $("#ElementMaxMo").val() > 0)
+                            {
+                                 if ($("#ElementMinMo").val() > data[0].elementResultMo || $("#ElementMaxMo").val() < data[0].elementResultMo) {
+                                    $("#submit").hide();
+                                    alert("Element Result Mo% is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
-                        if (data[0].elementResultCu > 0) {
-                            if ($("#ElementMinCu").val() > data[0].elementResultCu || $("#ElementMaxCu").val() < data[0].elementResultCu) {
-                                $("#submit").hide();
-                                alert("Element Result Cu% is not under result conditons..!!");
-                                return;
+                      
+                        if (data[0].elementResultCu > 0 ) {
+                            if ($("#ElementMinCu").val() > 0)
+                            {
+                                if ($("#ElementMinCu").val() > data[0].elementResultCu) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cu% is not under result conditons..!!");
+                                    return;
+                                }
                             }
-                        }
-                        if (data[0].testResultUts > 0) {
-                            if ($("#TestMinUts").val() > data[0].testResultUts || $("#TestMaxUts").val() < data[0].testResultUts) {
-                                $("#submit").hide();
-                                alert("Test Result Uts is not under result conditons..!!");
-                                return;
+                            if( $("#ElementMaxCu").val() > 0)
+                            {
+                                 if ($("#ElementMaxCu").val() < data[0].elementResultCu) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cu% is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ($("#ElementMinCu").val() > 0 &&  $("#ElementMaxCu").val() > 0) 
+                            {
+                                 if ($("#ElementMinCu").val() > data[0].elementResultCu || $("#ElementMaxCu").val() < data[0].elementResultCu) {
+                                    $("#submit").hide();
+                                    alert("Element Result Cu% is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
 
-                        if (data[0].testResultYs > 0) {
-                            if ($("#TestMinYs").val() > data[0].testResultYs || $("#TestMaxYs").val() < data[0].testResultYs) {
-                                $("#submit").hide();
-                                alert("Test Result Ys is not under result conditons..!!");
-                                return;
+                        if (data[0].testResultUts > 0) {
+                            if($("#TestMinUts").val() > 0)
+                            {
+                                if ($("#TestMinUts").val() > data[0].testResultUts) {
+                                    $("#submit").hide();
+                                    alert("Test Result Uts is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if( $("#TestMaxUts").val() > 0)
+                            {
+                                 if ($("#TestMaxUts").val() < data[0].testResultUts) {
+                                    $("#submit").hide();
+                                    alert("Test Result Uts is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ($("#TestMinUts").val() > 0 &&  $("#TestMaxUts").val() > 0) 
+                            {
+                                 if ($("#TestMinUts").val() > data[0].testResultUts || $("#TestMaxUts").val() < data[0].testResultUts) {
+                                    $("#submit").hide();
+                                    alert("Test Result Uts is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
+
+                        if (data[0].testResultYs > 0 )
+                        {
+                            if ( $("#TestMinYs").val() > 0)
+                            {
+                                if ($("#TestMinYs").val() > data[0].testResultYs ) {
+                                    $("#submit").hide();
+                                    alert("Test Result Ys is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ( $("#TestMaxYs").val() > 0)
+                            {
+                                 if ($("#TestMaxYs").val() < data[0].testResultYs) {
+                                    $("#submit").hide();
+                                    alert("Test Result Ys is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ( $("#TestMinYs").val() > 0 && $("#TestMaxYs").val() > 0) 
+                            {
+                                 if ($("#TestMinYs").val() > data[0].testResultYs || $("#TestMaxYs").val() < data[0].testResultYs) {
+                                    $("#submit").hide();
+                                    alert("Test Result Ys is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                        }
+                        
                         if (data[0].testResultElongation > 0) {
-                            if ($("#TestMinElongation").val() > data[0].testResultElongation || $("#TestMaxElongation").val() < data[0].testResultElongation) {
-                                $("#submit").hide();
-                                alert("Test Result Elongation is not under result conditons..!!");
-                                return;
+                            if($("#TestMinElongation").val() > 0)
+                            {
+                                if ($("#TestMinElongation").val() > data[0].testResultElongation) {
+                                    $("#submit").hide();
+                                    alert("Test Result Elongation is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if($("#TestMaxElongation").val() > 0)
+                            {
+                                if ($("#TestMaxElongation").val() < data[0].testResultElongation) {
+                                    $("#submit").hide();
+                                    alert("Test Result Elongation is not under result conditons..!!");
+                                    return;
+                                }
+                            }
+                            if ($("#TestMinElongation").val() > 0 && $("#TestMaxElongation").val() > 0) 
+                            {
+                                if ($("#TestMinElongation").val() > data[0].testResultElongation || $("#TestMaxElongation").val() < data[0].testResultElongation) {
+                                    $("#submit").hide();
+                                    alert("Test Result Elongation is not under result conditons..!!");
+                                    return;
+                                }
                             }
                         }
 
@@ -747,6 +995,7 @@
                         //'</td>' +
                         '</tr>').appendTo('#OtherTestTable');
                         $("#BatchNo").val("");
+                         $("#submit").show();
                 counter++;
 
 

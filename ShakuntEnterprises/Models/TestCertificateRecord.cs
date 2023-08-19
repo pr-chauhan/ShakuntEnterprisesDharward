@@ -69,6 +69,7 @@ namespace ShakuntEnterprises.Models
         public string? OtherTestFilledSpecs { get; set; }
         public string? Remarks { get; set; }
         public int? IsApproved { get; set; }
+        public string? HideSection { get; set; }
         public string? CertificateType { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }

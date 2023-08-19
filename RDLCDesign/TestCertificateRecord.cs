@@ -78,6 +78,7 @@ namespace RDLCDesign
         public string OtherTest_Filled_Specs { get; set; }
         public string Remarks { get; set; }
         public Nullable<int> IsApproved { get; set; }
+        public string HideSection { get; set; }
         public string Certificate_Type { get; set; }
         public Nullable<System.DateTime> Created_Date { get; set; }
         public string Created_By { get; set; }

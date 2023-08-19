@@ -141,6 +141,7 @@ namespace ShakuntEnterprises.Controllers
                 //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs;
                 //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
                 Data.Remarks = testCertificateRecord.Remarks;
+                Data.HideSection = testCertificateRecord.HideSection;
                 Data.CertificateType = "System";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -248,6 +249,7 @@ namespace ShakuntEnterprises.Controllers
                     //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs?? "-----";
                     //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs?? "-----";
                     Data.Remarks = testCertificateRecord.Remarks?? "-----";
+                    Data.HideSection = testCertificateRecord.HideSection;
                     Data.CertificateType = "System";
                     Data.CreatedDate = testCertificateRecord.CreatedDate;
                     Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -356,6 +358,7 @@ namespace ShakuntEnterprises.Controllers
                 //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs ?? "-----";
                 //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs ?? "-----";
                 Data.Remarks = testCertificateRecord.Remarks ?? "-----";
+                Data.HideSection = testCertificateRecord.HideSection;
                 Data.CertificateType = "System";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -463,6 +466,7 @@ namespace ShakuntEnterprises.Controllers
                         //Data.OtherTestResultRadioSpecs = testCertificateRecord.OtherTestResultRadioSpecs;
                         //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs;
                         //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
+                        Data.HideSection = testCertificateRecord.HideSection;
                         Data.Remarks = testCertificateRecord.Remarks;
                         Data.CertificateType = "System";
                         Data.CreatedDate = testCertificateRecord.CreatedDate;

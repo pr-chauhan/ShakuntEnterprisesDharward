@@ -436,6 +436,8 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Helix_StandardValue");
 
+                entity.Property(e => e.HideSection).HasMaxLength(5);
+
                 entity.Property(e => e.InvoiceNo).HasMaxLength(50);
 
                 entity.Property(e => e.IssueDate).HasColumnType("datetime");
