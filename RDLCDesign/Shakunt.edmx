@@ -79,6 +79,7 @@
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="CombineBatchNo" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -336,6 +337,7 @@
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CombineBatchNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -432,6 +434,7 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="CombineBatchNo" ColumnName="CombineBatchNo" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
                 <ScalarProperty Name="Created_By" ColumnName="Created_By" />

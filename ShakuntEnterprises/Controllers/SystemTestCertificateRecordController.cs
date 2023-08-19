@@ -494,6 +494,23 @@ namespace ShakuntEnterprises.Controllers
                     }
                     _context.Update(Data);
                     await _context.SaveChangesAsync();
+
+                    var combineBatchNo = string.Empty;
+                    var batchoNo = _context.TestCertificateResultRecords.Where(x => x.CertificateNo == testCertificateRecord.CertificateNo).ToList();
+                    foreach (var batcho in batchoNo)
+                    {
+                        if(combineBatchNo.Length>0)
+                            combineBatchNo= combineBatchNo+ Environment.NewLine;
+                        combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                    }
+
+                    var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == testCertificateRecord.CertificateNo);
+                    if (CetrificateRecord != null)
+                    {
+                        CetrificateRecord.CombineBatchNo = combineBatchNo;
+                        _context.TestCertificateRecords.Update(CetrificateRecord);
+                        _context.SaveChanges();
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -662,6 +679,25 @@ namespace ShakuntEnterprises.Controllers
             };
             _context.TestCertificateResultRecords.Add(testCertificateResultRecord);
             _context.SaveChanges();
+          
+            var combineBatchNo = string.Empty;
+            var batchoNo = _context.TestCertificateResultRecords.Where(x=> x.CertificateNo == CertificateNo).ToList();
+            foreach(var batcho in batchoNo)
+            {
+                if (combineBatchNo.Length > 0)
+                    combineBatchNo = combineBatchNo + Environment.NewLine;
+                combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+            }
+
+            var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == CertificateNo);
+            if(CetrificateRecord!=null)
+            {
+                CetrificateRecord.CombineBatchNo = combineBatchNo;
+                _context.TestCertificateRecords.Update(CetrificateRecord);
+                _context.SaveChanges();
+            }
+
+
             return Json(CertificateNo);
         }
 

@@ -84,5 +84,6 @@ namespace RDLCDesign
         public string Created_By { get; set; }
         public Nullable<System.DateTime> Modified_Date { get; set; }
         public string Modified_By { get; set; }
+        public string CombineBatchNo { get; set; }
     }
 }

@@ -135,6 +135,7 @@ namespace ShakuntEnterprises.ViewModels
         public int? IsApproved { get; set; }
 
         public string? HideSection { get; set; }
+        public string? CombineBatchNo { get; set; }
 
         public string? CertificateType { get; set; }
         public DateTime? CreatedDate { get; set; }
