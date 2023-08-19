@@ -90,7 +90,10 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Index()
         {
-              return _context.MainNavigationBars != null ? 
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
+            return _context.MainNavigationBars != null ? 
                           View(await _context.MainNavigationBars.ToListAsync()) :
                           Problem("Entity set 'ShakuntEnterprisesContext.MainNavigationBars'  is null.");
         }
@@ -98,6 +101,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainNavigationBars/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.MainNavigationBars == null)
             {
                 return NotFound();
@@ -116,6 +122,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainNavigationBars/Create
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -126,6 +135,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create( MainNavigationBar mainNavigationBar)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (ModelState.IsValid)
             {
                 _context.Add(mainNavigationBar);
@@ -138,6 +150,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainNavigationBars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.MainNavigationBars == null)
             {
                 return NotFound();
@@ -158,6 +173,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id,MainNavigationBar mainNavigationBar)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id != mainNavigationBar.Id)
             {
                 return NotFound();
@@ -189,6 +207,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainNavigationBars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.MainNavigationBars == null)
             {
                 return NotFound();
@@ -209,6 +230,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (_context.MainNavigationBars == null)
             {
                 return Problem("Entity set 'ShakuntEnterprisesContext.MainNavigationBars'  is null.");

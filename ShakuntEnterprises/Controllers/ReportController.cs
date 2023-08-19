@@ -47,6 +47,9 @@ namespace ShakuntEnterprises.Controllers
         }
         public IActionResult PrintCertificate(string Id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 int OrderN = int.Parse(Id);

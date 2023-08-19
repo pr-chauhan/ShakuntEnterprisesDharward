@@ -31,12 +31,18 @@ namespace ShakuntEnterprises.Controllers
         // GET: UserMasters
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View(await _context.UserMasters.ToListAsync());
         }
 
         // GET: UserMasters/Details/5
         public async Task<IActionResult> Details(string id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return NotFound();
@@ -55,6 +61,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: UserMasters/Create
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             ViewBag.LID = HttpContext.Session.GetString("lid");
             ViewBag.CDT = DateTime.Now.ToString("yyyy-MM-dd");
             return View();
@@ -67,6 +76,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(UserMaster userMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             if (ModelState.IsValid)
             {
                 try
@@ -86,6 +98,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: UserMasters/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             ViewBag.LID = HttpContext.Session.GetString("lid");
             ViewBag.CDT = DateTime.Now.ToString("yyyy-MM-dd");
             if (id == null)
@@ -108,6 +123,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, UserMaster userMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             if (id != userMaster.UserId)
             {
                 return NotFound();
@@ -139,6 +157,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: UserMasters/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return NotFound();
@@ -159,6 +180,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
             var userMaster = await _context.UserMasters.FindAsync(id);
             _context.UserMasters.Remove(userMaster);
             await _context.SaveChangesAsync();

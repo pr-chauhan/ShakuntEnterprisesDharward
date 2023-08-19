@@ -40,6 +40,9 @@ namespace ShakuntEnterprises.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
 
             var tradeDesignationMasterModel = new TradeDesignationMasterModel();
             var lstTradeDesignationMasters = await _context.TradeDesignationMasters.ToListAsync();
@@ -55,6 +58,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TradeDesignationMasterController/Details/5
         public async Task<IActionResult> Details(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.TradeDesignationMasters == null)
             {
                 return NotFound();
@@ -120,6 +126,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TradeDesignationMasterController/Create
         public ActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -128,6 +137,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(TradeDesignationMasterModel tradeDesignationMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 if (ModelState.IsValid)
@@ -195,6 +207,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TradeDesignationMasterController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.TradeDesignationMasters == null)
             {
                 return NotFound();
@@ -264,6 +279,9 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Edit(int id, TradeDesignationMasterModel tradeDesignationMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id != tradeDesignationMaster.Id)
             {
                 return NotFound();
@@ -355,6 +373,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 return RedirectToAction(nameof(Index));

@@ -39,6 +39,9 @@ namespace ShakuntEnterprises.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             var sizeMaster = new SizeMasterModel();
             var lstSizeMaster = await _context.SizeMasters.ToListAsync();
             //foreach (var lst in lstSizeMaster)
@@ -52,6 +55,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: SizeMasterController/Details/5
         public async Task<IActionResult> Details(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.SizeMasters == null)
             {
                 return NotFound();
@@ -89,6 +95,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: SizeMasterController/Create
         public ActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -97,6 +106,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SizeMasterModel sizeMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 if (ModelState.IsValid)
@@ -136,6 +148,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: SizeMasterController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.SizeMasters == null)
             {
                 return NotFound();
@@ -177,6 +192,9 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Edit(int id, SizeMasterModel sizeMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id != sizeMaster.Id)
             {
                 return NotFound();
@@ -231,6 +249,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: SizeMasterController/Delete/5
         public ActionResult Delete(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -240,6 +261,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 return RedirectToAction(nameof(Index));

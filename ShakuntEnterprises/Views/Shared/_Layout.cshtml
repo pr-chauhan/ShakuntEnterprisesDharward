@@ -260,24 +260,24 @@
         @{
             foreach (var item in ViewBag.Modules)
             {
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#@item.ModuleName" aria-expanded="false" aria-controls="@item.ModuleName">
-                        <i class="icon-layout menu-icon"></i>
-                        <span class="menu-title">@item.ModuleName</span>
-                        <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="@item.ModuleName">
-                            <ul class="nav flex-column sub-menu">
-                                @foreach (var menu in ViewBag.Menus)
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#@item.ModuleName" aria-expanded="false" aria-controls="@item.ModuleName">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">@item.ModuleName</span>
+                            <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="@item.ModuleName">
+                                <ul class="nav flex-column sub-menu">
+                                    @foreach (var menu in ViewBag.Menus)
                                 {
                                             if (@item.ModuleId == @menu.ModuleId)
                                             {
-                                                 <li class="nav-item"> <a class="nav-link" href=@Url.Action((string)@menu.ActionName,(string)@menu.ContollerName)>@menu.MenuName</a> </li>
+                                                     <li class="nav-item"> <a class="nav-link" href=@Url.Action((string)@menu.ActionName,(string)@menu.ContollerName)>@menu.MenuName</a> </li>
                                             }
                                 }    
-                            </ul>
-                        </div>
-                        </li>
+                                </ul>
+                            </div>
+                            </li>
             }
          }
          
@@ -415,8 +415,8 @@
             </div>
  
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - crm 
+        <div class="container" style="text-align:center;">
+            Designed & Developed by : <a href="www.prinfosys.com" target="_blank">PRInfosys</a>
         </div>
     </footer>
    <script src="~/lib/jquery/dist/jquery.min.js"></script>

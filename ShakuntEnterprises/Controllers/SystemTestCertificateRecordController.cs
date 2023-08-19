@@ -41,7 +41,10 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController
         public async Task<IActionResult> Index()
         {
-            var  testCertificateRecordModel = new TestCertificateRecordModel();
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
+            var testCertificateRecordModel = new TestCertificateRecordModel();
             var lstTestCertificateRecord = await _context.TestCertificateRecords.Where(x => x.CertificateType.Equals("System")).ToListAsync();
             //foreach (var lst in lstTestCertificateRecord)
             //{
@@ -54,6 +57,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController/Details/5
         public async Task<IActionResult> Details(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.TestCertificateRecords == null)
             {
                 return NotFound();
@@ -158,6 +164,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController/Create
         public ActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             ViewBag.CERTINO = commanClass.GenerateNumberSeries("CERTIFICATE");
             return View();
         }
@@ -167,6 +176,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(TestCertificateRecordModel testCertificateRecord)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 if (ModelState.IsValid)
@@ -270,6 +282,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.TestCertificateRecords == null)
             {
                 return NotFound();
@@ -378,6 +393,9 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Edit(int id, TestCertificateRecordModel testCertificateRecord )
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id != testCertificateRecord.Id)
             {
                 return NotFound();
@@ -494,12 +512,18 @@ namespace ShakuntEnterprises.Controllers
         }
         public async Task<IActionResult> UnApprovedCertificateList()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             var testCertificateRecordModel = new TestCertificateRecordModel();
             var lstTestCertificateRecord = await _context.TestCertificateRecords.Where(x => x.IsApproved == null || x.IsApproved == 0).ToListAsync();
             return View(lstTestCertificateRecord);
         }
         public async Task<IActionResult> ApproveCertificate(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.TestCertificateRecords == null)
             {
                 return NotFound();
@@ -668,6 +692,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: TestCertificateRecordController/Delete/5
         public ActionResult Delete(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -676,6 +703,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             try
             {
                 return RedirectToAction(nameof(Index));

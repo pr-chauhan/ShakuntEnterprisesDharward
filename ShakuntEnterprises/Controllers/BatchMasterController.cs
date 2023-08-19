@@ -41,7 +41,8 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Index()
         {
-
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             var batchMaster = new BatchMasterModel();
             var lstBatchMaster = await _context.BatchMasters.ToListAsync();
             //foreach(var lst in lstBatchMaster)
@@ -55,6 +56,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: BatchMasterController/Details/5
         public async Task<IActionResult> Details(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.BatchMasters == null)
             {
                 return NotFound();
@@ -97,7 +101,8 @@ namespace ShakuntEnterprises.Controllers
 
         // GET: BatchMasterController/Create
         public ActionResult Create()
-        {
+        {if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             return View();
         }
 
@@ -108,6 +113,8 @@ namespace ShakuntEnterprises.Controllers
         {
             try
             {
+                if (HttpContext.Session.GetString("lid") == null)
+                    return RedirectToAction("Login","Home");
                 if (ModelState.IsValid)
                 {
                     var Data = new BatchMaster();
@@ -151,6 +158,8 @@ namespace ShakuntEnterprises.Controllers
         // GET: BatchMasterController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             if (id == null || _context.BatchMasters == null)
             {
                 return NotFound();
@@ -198,6 +207,8 @@ namespace ShakuntEnterprises.Controllers
 
         public async Task<IActionResult> Edit(int id, BatchMasterModel batchMaster)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             if (id != batchMaster.Id)
             {
                 return NotFound();
@@ -257,7 +268,8 @@ namespace ShakuntEnterprises.Controllers
 
         // GET: BatchMasterController/Delete/5
         public ActionResult Delete(int id)
-        {
+        {if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             return View();
         }
 
@@ -267,6 +279,8 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             try
             {
                 return RedirectToAction(nameof(Index));

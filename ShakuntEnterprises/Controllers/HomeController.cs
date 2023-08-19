@@ -39,6 +39,7 @@ namespace ShakuntEnterprises.Controllers
         }
         public async Task<string> TallyConnection()
         {
+            
             try
             {
                 Tally tally = new("http://192.168.1.101", 9000);
@@ -63,6 +64,8 @@ namespace ShakuntEnterprises.Controllers
         }
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             return View();
         }
         public IActionResult Login()
@@ -76,11 +79,13 @@ namespace ShakuntEnterprises.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Login","Home");
 
         }
         public IActionResult IndexHome()
         {
+            if(HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             return View();
         }
         [HttpPost]
@@ -88,11 +93,12 @@ namespace ShakuntEnterprises.Controllers
         {
             try
             {
+
                 HttpContext.Session.SetString("LoginFailed", "");
                 if (!UserMasterExists(userMaster.UserId, userMaster.UserPassword))
                 {
                     HttpContext.Session.SetString("LoginFailed", "LoginFailed");
-                    return RedirectToAction("Login");
+                    return RedirectToAction("Login","Home");
                 }
                 else
                 {

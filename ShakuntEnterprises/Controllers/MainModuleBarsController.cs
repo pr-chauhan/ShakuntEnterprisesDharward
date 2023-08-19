@@ -35,7 +35,10 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainModuleBars
         public async Task<IActionResult> Index()
         {
-              return _context.MainModuleBars != null ? 
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
+            return _context.MainModuleBars != null ? 
                           View(await _context.MainModuleBars.ToListAsync()) :
                           Problem("Entity set 'ShakuntEnterprisesContext.MainModuleBars'  is null.");
         }
@@ -43,6 +46,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainModuleBars/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.MainModuleBars == null)
             {
                 return NotFound();
@@ -61,6 +67,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainModuleBars/Create
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             return View();
         }
 
@@ -71,6 +80,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create( MainModuleBar mainModuleBar)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (ModelState.IsValid)
             {
                 _context.Add(mainModuleBar);
@@ -83,6 +95,9 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainModuleBars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (id == null || _context.MainModuleBars == null)
             {
                 return NotFound();
@@ -103,6 +118,8 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, MainModuleBar mainModuleBar)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             if (id != mainModuleBar.ModuleId)
             {
                 return NotFound();
@@ -134,6 +151,8 @@ namespace ShakuntEnterprises.Controllers
         // GET: MainModuleBars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
             if (id == null || _context.MainModuleBars == null)
             {
                 return NotFound();
@@ -154,6 +173,9 @@ namespace ShakuntEnterprises.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login","Home");
+
             if (_context.MainModuleBars == null)
             {
                 return Problem("Entity set 'ShakuntEnterprisesContext.MainModuleBars'  is null.");
