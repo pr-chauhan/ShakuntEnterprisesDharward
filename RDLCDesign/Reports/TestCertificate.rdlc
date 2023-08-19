@@ -4434,13 +4434,13 @@
               <Width>1.28003in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.40555in</Width>
+              <Width>1.40551in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.03049in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.05394in</Width>
+              <Width>2.0673in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -4515,7 +4515,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox68">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -4532,7 +4532,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -4702,7 +4702,8 @@
                       <rd:DefaultName>CombineBatchNo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4803,7 +4804,7 @@
         <Top>2.34667in</Top>
         <Left>0.04479in</Left>
         <Height>0.36167in</Height>
-        <Width>7.7537in</Width>
+        <Width>7.76702in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
