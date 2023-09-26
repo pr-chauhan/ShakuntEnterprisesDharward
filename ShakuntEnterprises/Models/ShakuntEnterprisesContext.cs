@@ -314,6 +314,14 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("APMS");
 
+                entity.Property(e => e.ApprovedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Approved_By");
+
+                entity.Property(e => e.ApprovedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Approved_Date");
+
                 entity.Property(e => e.BaseMetal).HasMaxLength(50);
 
                 entity.Property(e => e.BatchDate).HasMaxLength(50);
@@ -341,6 +349,8 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.CoatingStandardValue)
                     .HasMaxLength(50)
                     .HasColumnName("Coating_StandardValue");
+
+                entity.Property(e => e.CombineBatchNo).HasMaxLength(100);
 
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)

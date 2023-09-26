@@ -53,7 +53,7 @@
                 </td>
 
                 <td>
-                    @if (@Context.Session.GetString("lid").ToLower() == "admin")
+                    @if (@Context.Session.GetString("lrole").ToLower() == "authorized" || @Context.Session.GetString("lrole").ToLower() == "admin")
                     {
                         <a class="btn btn-primary" asp-action="ApproveCertificate" asp-route-id="@item.Id">Approve</a> 
                     }

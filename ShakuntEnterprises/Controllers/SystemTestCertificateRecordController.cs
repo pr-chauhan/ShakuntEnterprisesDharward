@@ -710,7 +710,8 @@ namespace ShakuntEnterprises.Controllers
             if (Data != null)
             {
                 Data.IsApproved = 1;
-               
+                Data.ApprovedBy = HttpContext.Session.GetString("lid");
+                Data.ApprovedDate = DateTime.Now;
                 Data.ModifiedDate = DateTime.Now;
                 Data.ModifiedBy = HttpContext.Session.GetString("lid");
 

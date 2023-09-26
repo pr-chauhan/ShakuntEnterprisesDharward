@@ -74,12 +74,14 @@
           <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
           <Property Name="IsApproved" Type="int" />
           <Property Name="HideSection" Type="nvarchar" MaxLength="5" />
+          <Property Name="CombineBatchNo" Type="nvarchar" MaxLength="100" />
           <Property Name="Certificate_Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Created_Date" Type="datetime" />
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
-          <Property Name="CombineBatchNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Approved_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="Approved_Date" Type="datetime" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -338,6 +340,8 @@
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CombineBatchNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Approved_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Approved_Date" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -434,6 +438,8 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
+                <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
                 <ScalarProperty Name="CombineBatchNo" ColumnName="CombineBatchNo" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
