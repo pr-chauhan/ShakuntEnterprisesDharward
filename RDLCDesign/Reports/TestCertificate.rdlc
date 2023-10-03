@@ -6704,13 +6704,13 @@
             <Source>Embedded</Source>
             <Value>ABG</Value>
             <Sizing>Fit</Sizing>
-            <Top>8.35705in</Top>
+            <Top>8.34316in</Top>
             <Left>6.33819in</Left>
             <Height>0.5in</Height>
             <Width>0.5in</Width>
             <ZIndex>23</ZIndex>
             <Visibility>
-              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToString().Equals("abhilekh"), false, true)</Hidden>
+              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().Equals("abhilekh"), false, true)</Hidden>
             </Visibility>
             <Style>
               <Border>
@@ -6722,13 +6722,13 @@
             <Source>Embedded</Source>
             <Value>AHD</Value>
             <Sizing>Fit</Sizing>
-            <Top>8.34316in</Top>
-            <Left>6.38833in</Left>
+            <Top>8.37094in</Top>
+            <Left>6.2935in</Left>
             <Height>0.5in</Height>
             <Width>0.5in</Width>
             <ZIndex>24</ZIndex>
             <Visibility>
-              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToString().Equals("nipun"), false, true)</Hidden>
+              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().Equals("nipun"), false, true)</Hidden>
             </Visibility>
             <Style>
               <Border>
@@ -6741,12 +6741,12 @@
             <Value>HD</Value>
             <Sizing>Fit</Sizing>
             <Top>8.34316in</Top>
-            <Left>6.4925in</Left>
+            <Left>6.34906in</Left>
             <Height>0.5in</Height>
             <Width>0.5in</Width>
             <ZIndex>25</ZIndex>
             <Visibility>
-              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToString().Equals("gopal"), false, true)</Hidden>
+              <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().ToLower().Equals("gopal"), false, true)</Hidden>
             </Visibility>
             <Style>
               <Border>
