@@ -8,6 +8,8 @@ using ShakuntEnterprises.Models;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using NToastNotify;
+
 namespace ShakuntEnterprises.Controllers
 {
     public class UserMasterController : Controller
@@ -15,10 +17,12 @@ namespace ShakuntEnterprises.Controllers
         private readonly ShakuntEnterprisesContext _context;
         private IConfiguration configuration;
         private CommanClass commanClass;
-        public UserMasterController(ShakuntEnterprisesContext context, IConfiguration _configuration)
+        private readonly IToastNotification _toastNotification;
+        public UserMasterController(ShakuntEnterprisesContext context, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _context = context;
             configuration = _configuration;
+            _toastNotification = toastNotification;
             commanClass = new CommanClass(context, configuration);
         }
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -85,6 +89,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     _context.Add(userMaster);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(userMaster.UserId + " Created successfully!");
                 }
                 catch(Exception ex)
                 {
@@ -137,6 +142,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     _context.Update(userMaster);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(userMaster.UserId + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -186,6 +192,7 @@ namespace ShakuntEnterprises.Controllers
             var userMaster = await _context.UserMasters.FindAsync(id);
             _context.UserMasters.Remove(userMaster);
             await _context.SaveChangesAsync();
+            _toastNotification.AddSuccessToastMessage(userMaster.UserId + " Deleted successfully!");
             return RedirectToAction(nameof(Index));
         }
 

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Drawing;
+using NToastNotify;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -21,12 +22,13 @@ namespace ShakuntEnterprises.Controllers
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
-
-        public SystemTestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
+        private readonly IToastNotification _toastNotification;
+        public SystemTestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _logger = logger;
             _context = enterprisesContext;
             configuration = _configuration;
+            _toastNotification = toastNotification;
             commanClass = new CommanClass(enterprisesContext,configuration);
         }
 
@@ -269,6 +271,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ModifiedBy = testCertificateRecord.ModifiedBy;
                     _context.Add(Data);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(testCertificateRecord.CertificateNo + " Created successfully!");
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -511,6 +514,7 @@ namespace ShakuntEnterprises.Controllers
                         _context.TestCertificateRecords.Update(CetrificateRecord);
                         _context.SaveChanges();
                     }
+                    _toastNotification.AddSuccessToastMessage(testCertificateRecord.CertificateNo + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -696,7 +700,7 @@ namespace ShakuntEnterprises.Controllers
                 _context.TestCertificateRecords.Update(CetrificateRecord);
                 _context.SaveChanges();
             }
-
+            _toastNotification.AddSuccessToastMessage(CertificateNo + " Saved successfully!");
 
             return Json(CertificateNo);
         }
@@ -717,6 +721,7 @@ namespace ShakuntEnterprises.Controllers
 
                 _context.Update(Data);
                 await _context.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage(id.ToString() + " Appproved successfully!");
             }
             if (Data == null)
             {

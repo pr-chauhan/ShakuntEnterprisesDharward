@@ -11,6 +11,7 @@ using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using NToastNotify;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -21,12 +22,13 @@ namespace ShakuntEnterprises.Controllers
         private CommanClass commanClass;
         private IConfiguration configuration;
         // GET: TradeDesignationMasterController
-
-        public TradeDesignationMasterController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
+        private readonly IToastNotification _toastNotification;
+        public TradeDesignationMasterController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _logger = logger;
             _context = enterprisesContext;
             configuration = _configuration;
+            _toastNotification = toastNotification;
             commanClass = new CommanClass(enterprisesContext, configuration);
         }
 
@@ -193,6 +195,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ModifiedBy = tradeDesignationMaster.ModifiedBy;
                     _context.Add(Data);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(tradeDesignationMaster.TradeDesignation + " Created successfully!");
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -343,6 +346,7 @@ namespace ShakuntEnterprises.Controllers
                     }
                     _context.Update(Data);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(tradeDesignationMaster.TradeDesignation + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {

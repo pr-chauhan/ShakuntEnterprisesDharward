@@ -9,6 +9,7 @@ using ShakuntEnterprises.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Text.Json;
+using NToastNotify;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -17,10 +18,12 @@ namespace ShakuntEnterprises.Controllers
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
-        public MainNavigationBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration)
+        private readonly IToastNotification _toastNotification;
+        public MainNavigationBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _context = context;
             configuration = _configuration;
+            _toastNotification = toastNotification;
             commanClass = new CommanClass(context,configuration);
         }
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -142,6 +145,7 @@ namespace ShakuntEnterprises.Controllers
             {
                 _context.Add(mainNavigationBar);
                 await _context.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage(mainNavigationBar.SubMenuName + " Created successfully!");
                 return RedirectToAction(nameof(Index));
             }
             return View(mainNavigationBar);
@@ -187,6 +191,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     _context.Update(mainNavigationBar);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(mainNavigationBar.SubMenuName + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -244,6 +249,7 @@ namespace ShakuntEnterprises.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _toastNotification.AddSuccessToastMessage(mainNavigationBar.SubMenuName + " Deleted successfully!");
             return RedirectToAction(nameof(Index));
         }
 

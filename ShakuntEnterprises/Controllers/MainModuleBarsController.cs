@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using NToastNotify;
+
 namespace ShakuntEnterprises.Controllers
 {
     public class MainModuleBarsController : Controller
@@ -15,6 +17,7 @@ namespace ShakuntEnterprises.Controllers
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
+        private readonly IToastNotification _toastNotification;
         public MainModuleBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration)
         {
             _context = context;
@@ -87,6 +90,7 @@ namespace ShakuntEnterprises.Controllers
             {
                 _context.Add(mainModuleBar);
                 await _context.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage(mainModuleBar.ModuleName + " Created successfully!");
                 return RedirectToAction(nameof(Index));
             }
             return View(mainModuleBar);
@@ -131,6 +135,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     _context.Update(mainModuleBar);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(mainModuleBar.ModuleName + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -187,6 +192,7 @@ namespace ShakuntEnterprises.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _toastNotification.AddSuccessToastMessage(mainModuleBar.ModuleName + " Deleted successfully!");
             return RedirectToAction(nameof(Index));
         }
 

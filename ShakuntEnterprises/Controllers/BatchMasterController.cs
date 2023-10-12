@@ -11,6 +11,7 @@ using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using NToastNotify;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -21,12 +22,13 @@ namespace ShakuntEnterprises.Controllers
         private CommanClass commanClass;
         private IConfiguration configuration;
         // GET: BatchMasterController
-
-        public BatchMasterController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
+        private readonly IToastNotification _toastNotification;
+        public BatchMasterController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _logger = logger;
             _context = enterprisesContext;
             configuration = _configuration;
+            _toastNotification = toastNotification;
             commanClass = new CommanClass(enterprisesContext, configuration);
         }
 
@@ -50,7 +52,10 @@ namespace ShakuntEnterprises.Controllers
             //    batchMaster.Id = lst.Id;
             //    batchMaster.BarchNo = lst.BarchNo;
             //}
+                       
             return View(lstBatchMaster);
+         
+
         }
 
         // GET: BatchMasterController/Details/5
@@ -144,11 +149,13 @@ namespace ShakuntEnterprises.Controllers
                     Data.ModifiedBy = batchMaster.ModifiedBy;
                     _context.Add(Data);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(batchMaster.BatchNo + " Created successfully!");
                     return RedirectToAction(nameof(Index));
                 }
             }
             catch
             {
+                _toastNotification.AddSuccessToastMessage(batchMaster.BatchNo + " Failed to created!");
                 return View(batchMaster);
             }
             return View(batchMaster);
@@ -248,6 +255,7 @@ namespace ShakuntEnterprises.Controllers
                     }
                     _context.Update(Data);
                     await _context.SaveChangesAsync();
+                    _toastNotification.AddSuccessToastMessage(batchMaster.BatchNo + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
                 {

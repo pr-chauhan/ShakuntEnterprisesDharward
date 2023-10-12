@@ -152,6 +152,7 @@
     <script src="~/js/alertifjsfile.js"></script>
   <!-- End custom js for this page-->
     @RenderSection("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
 </body>
 </html>
 

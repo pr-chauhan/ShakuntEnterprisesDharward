@@ -31,6 +31,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.WebForms" Version="150.1586.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+    <PackageReference Include="NToastNotify" Version="8.0.0" />
     <PackageReference Include="System.Data.Odbc" Version="7.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="TallyConnector" Version="1.0.8" />

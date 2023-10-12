@@ -1,13 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using ShakuntEnterprises.Models;
-
+using NToastNotify;
 
 //=========================================================
 
- 
+
 
 var builder = WebApplication.CreateBuilder(args);
+//==========toaster===========
+builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
+{
+    ProgressBar = true,
+    Timeout = 5000
+});
+//==========toaster===========
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //builder.Services.AddDbContext<crmDBContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<ShakuntEnterprisesContext>(options => options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptionAction =>
@@ -56,7 +63,10 @@ app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();
-
+//==========toaster===========
+app.UseNToastNotify();
+app.MapRazorPages();
+//==========toaster===========
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Login}/{id?}");
