@@ -142,5 +142,9 @@ namespace ShakuntEnterprises.ViewModels
         public string? CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public string? ModifiedBy { get; set; }
+        public string? ApprovedBy { get; set; }
+        public DateTime? ApprovedDate { get; set; }
+        [DisplayName("Show CE Logo")]
+        public string? IsShowCelogo { get; set; }
     }
 }

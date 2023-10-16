@@ -262,6 +262,7 @@ namespace ShakuntEnterprises.Controllers
                     //Data.OtherTestResultRadioSpecs = testCertificateRecord.OtherTestResultRadioSpecs?? "-----";
                     //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs?? "-----";
                     //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs?? "-----";
+                    Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                     Data.Remarks = testCertificateRecord.Remarks?? "-----";
                     Data.HideSection = testCertificateRecord.HideSection;
                     Data.CertificateType = "System";
@@ -376,6 +377,7 @@ namespace ShakuntEnterprises.Controllers
                 //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs ?? "-----";
                 //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs ?? "-----";
                 Data.Remarks = testCertificateRecord.Remarks ?? "-----";
+                Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                 Data.HideSection = testCertificateRecord.HideSection;
                 Data.CertificateType = "System";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
@@ -488,6 +490,7 @@ namespace ShakuntEnterprises.Controllers
                         //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs;
                         //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
                         Data.HideSection = testCertificateRecord.HideSection;
+                        Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                         Data.Remarks = testCertificateRecord.Remarks;
                         Data.CertificateType = "System";
                         Data.CreatedDate = testCertificateRecord.CreatedDate;

@@ -87,5 +87,6 @@ namespace RDLCDesign
         public string CombineBatchNo { get; set; }
         public string Approved_By { get; set; }
         public Nullable<System.DateTime> Approved_Date { get; set; }
+        public string IsShowCELogo { get; set; }
     }
 }

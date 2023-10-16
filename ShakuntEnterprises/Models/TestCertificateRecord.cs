@@ -78,5 +78,6 @@ namespace ShakuntEnterprises.Models
         public string? ModifiedBy { get; set; }
         public string? ApprovedBy { get; set; }
         public DateTime? ApprovedDate { get; set; }
+        public string? IsShowCelogo { get; set; }
     }
 }

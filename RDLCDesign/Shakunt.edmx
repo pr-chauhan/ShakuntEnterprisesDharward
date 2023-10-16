@@ -82,6 +82,7 @@
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Approved_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Approved_Date" Type="datetime" />
+          <Property Name="IsShowCELogo" Type="nvarchar" MaxLength="3" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -342,6 +343,7 @@
           <Property Name="CombineBatchNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Approved_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Approved_Date" Type="DateTime" Precision="3" />
+          <Property Name="IsShowCELogo" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -438,6 +440,7 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="IsShowCELogo" ColumnName="IsShowCELogo" />
                 <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
                 <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
                 <ScalarProperty Name="CombineBatchNo" ColumnName="CombineBatchNo" />

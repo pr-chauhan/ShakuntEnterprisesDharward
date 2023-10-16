@@ -185,6 +185,10 @@
           <DataField>IsApproved</DataField>
           <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="IsShowCELogo">
+          <DataField>IsShowCELogo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="IssueDate">
           <DataField>IssueDate</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
@@ -6763,6 +6767,9 @@
             <Height>0.44167in</Height>
             <Width>0.5791in</Width>
             <ZIndex>26</ZIndex>
+            <Visibility>
+              <Hidden>=IIF((First(Fields!IsShowCELogo.Value, "TestCertificate")).ToLower().ToString().ToLower().Equals("yes"), false, true)</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
