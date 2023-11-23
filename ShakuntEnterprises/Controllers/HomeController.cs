@@ -127,7 +127,7 @@ namespace ShakuntEnterprises.Controllers
         {
             try
             {
-                if (commanClass.CheckLicenseDate())
+                if (commanClass.CheckLicenseDate("SHAKUNTENTERPRISES"))
                     return false;
                 var s = _context.UserMasters.ToList();
                 var pass = _context.UserMasters.Where(x => x.UserId == id && x.UserPassword == password).ToList();

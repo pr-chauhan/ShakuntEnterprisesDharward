@@ -237,7 +237,7 @@
              
         }
 
-        public bool CheckLicenseDate()
+        public bool CheckLicenseDate(string appName)
         {
             bool lRetVal = false;
 
@@ -247,7 +247,7 @@
             DataTable dataTable = new DataTable();
             try
             {
-                string sqlLString = "EXEC sp_get_applicatioin_date ";
+                string sqlLString = "EXEC sp_get_applicatioin_date "+ appName;
                 SqlCommand llCommand = new SqlCommand();
                 llCommand.CommandText = sqlLString;
                 llCommand.Connection = sqlConnectionerp;
