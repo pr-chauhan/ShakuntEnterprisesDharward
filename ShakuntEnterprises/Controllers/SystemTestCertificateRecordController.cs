@@ -38,7 +38,7 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
             ViewBag.CDT = DateTime.Now.ToString();
             ViewBag.SIZE = commanClass.getAllSizeList();
-            ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x => new { TradeDesignation = x.TradeDesignation }).Distinct();
+            ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x => new { TradeDesignation = x.TradeDesignation, TradeDesignationGradeType = x.TradeDesignation +"-"+ x.GradeType }).Distinct();
         }
         // GET: TestCertificateRecordController
         public async Task<IActionResult> Index()

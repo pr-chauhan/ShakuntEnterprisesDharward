@@ -172,6 +172,12 @@
 
             return result;
         }
+        public List<TradeDesignationGradeType> getAllTradeDesignationGradeTypeList()
+        {
+            List<TradeDesignationGradeType> result = _context.TradeDesignationGradeTypes.ToList();
+
+            return result;
+        }
         public List<TradeDesignationMaster> getAllTradeDesignationMasterList()
         {
             List<TradeDesignationMaster> result = _context.TradeDesignationMasters.ToList();

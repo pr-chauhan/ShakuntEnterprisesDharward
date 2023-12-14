@@ -20,6 +20,13 @@
                 </div>
                 <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
+                    <select asp-for="GradeType" asp-items="@(new SelectList(ViewBag.TDGT,"GradeType","GradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select-GradeType</option>
+                    </select>
+                    <span asp-validation-for="GradeType" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="Size" class="control-label"></label>
                     <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select-Size</option>
                     </select>

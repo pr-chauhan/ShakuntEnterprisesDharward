@@ -8,6 +8,7 @@ namespace ShakuntEnterprises.Models
         public int Id { get; set; }
         public string? Size { get; set; }
         public string? TradeDesignation { get; set; }
+        public string? GradeType { get; set; }
         public string? Specification { get; set; }
         public string? WeldingProcess { get; set; }
         public string? ShieldingGas { get; set; }

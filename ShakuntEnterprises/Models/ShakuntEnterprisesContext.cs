@@ -25,6 +25,7 @@ namespace ShakuntEnterprises.Models
         public virtual DbSet<TestCertificateRecord> TestCertificateRecords { get; set; } = null!;
         public virtual DbSet<TestCertificateRecordOld> TestCertificateRecordOlds { get; set; } = null!;
         public virtual DbSet<TestCertificateResultRecord> TestCertificateResultRecords { get; set; } = null!;
+        public virtual DbSet<TradeDesignationGradeType> TradeDesignationGradeTypes { get; set; } = null!;
         public virtual DbSet<TradeDesignationMaster> TradeDesignationMasters { get; set; } = null!;
         public virtual DbSet<UserMaster> UserMasters { get; set; } = null!;
 
@@ -945,6 +946,29 @@ namespace ShakuntEnterprises.Models
                     .HasColumnName("Test_Temp");
             });
 
+            modelBuilder.Entity<TradeDesignationGradeType>(entity =>
+            {
+                entity.ToTable("TradeDesignationGradeType");
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Created_By");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Created_Date");
+
+                entity.Property(e => e.GradeType).HasMaxLength(10);
+
+                entity.Property(e => e.ModifiedBy)
+                    .HasMaxLength(20)
+                    .HasColumnName("Modified_By");
+
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("Modified_Date");
+            });
+
             modelBuilder.Entity<TradeDesignationMaster>(entity =>
             {
                 entity.ToTable("TradeDesignationMaster");
@@ -1036,6 +1060,8 @@ namespace ShakuntEnterprises.Models
                     .HasColumnName("Element_MIN_SI");
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
+
+                entity.Property(e => e.GradeType).HasMaxLength(10);
 
                 entity.Property(e => e.ModifiedBy)
                     .HasMaxLength(20)

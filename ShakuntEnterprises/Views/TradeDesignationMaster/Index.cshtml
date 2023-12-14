@@ -17,6 +17,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.TradeDesignation)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GradeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
             
             
             <th>Action / Command</th>
@@ -28,6 +34,12 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.TradeDesignation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GradeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
                 </td>
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> &nbsp;

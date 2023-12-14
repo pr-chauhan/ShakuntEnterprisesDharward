@@ -38,6 +38,7 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
             ViewBag.CDT = DateTime.Now.ToString();
             ViewBag.SIZE = commanClass.getAllSizeList();
+            ViewBag.TDGT = commanClass.getAllTradeDesignationGradeTypeList();
 
         }
         public async Task<IActionResult> Index()
@@ -72,6 +73,7 @@ namespace ShakuntEnterprises.Controllers
             if (tradeDesignationMaster != null)
             {
                 Data.TradeDesignation = tradeDesignationMaster.TradeDesignation;
+                Data.GradeType = tradeDesignationMaster.GradeType;
                 Data.Size = tradeDesignationMaster.Size;
                 Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                 Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
@@ -148,6 +150,7 @@ namespace ShakuntEnterprises.Controllers
                 {
                     var Data = new TradeDesignationMaster();
                     Data.TradeDesignation = tradeDesignationMaster.TradeDesignation;
+                    Data.GradeType = tradeDesignationMaster.GradeType;
                     Data.Size = tradeDesignationMaster.Size;
                     Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                     Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
@@ -222,6 +225,7 @@ namespace ShakuntEnterprises.Controllers
             if (tradeDesignationMaster != null)
             {
                 Data.TradeDesignation = tradeDesignationMaster.TradeDesignation;
+                Data.GradeType = tradeDesignationMaster.GradeType;
                 Data.Size = tradeDesignationMaster.Size;
                 Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                 Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
@@ -298,6 +302,7 @@ namespace ShakuntEnterprises.Controllers
                     if (Data != null)
                     {
                         Data.TradeDesignation = tradeDesignationMaster.TradeDesignation;
+                        Data.GradeType = tradeDesignationMaster.GradeType;
                         Data.Size = tradeDesignationMaster.Size;
                         Data.WeldingProcess = tradeDesignationMaster.WeldingProcess;
                         Data.ShieldingGas = tradeDesignationMaster.ShieldingGas;
