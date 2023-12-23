@@ -158,12 +158,12 @@ namespace ShakuntEnterprises.Controllers
 
                 DbConnection.Open();
                 OdbcCommand DbCommand = DbConnection.CreateCommand();
-                DbCommand.CommandText = "SELECT $Name FROM StockItem";
-                DbCommand.CommandText = "SELECT $Name FROM Ledger";
-                DbCommand.CommandText = "SELECT * FROM ledger WHERE $Name LIKE '%sale%'";
-                DbCommand.CommandText = "SELECT $Name FROM ODBCTables";
-                DbCommand.CommandText = "SELECT $Name FROM ListofLedgers";
-                DbCommand.CommandText = "SELECT $Name FROM [Sale Ledger]";
+                //DbCommand.CommandText = "SELECT $Name FROM StockItem";
+                //DbCommand.CommandText = "SELECT $Name FROM Ledger";
+                //DbCommand.CommandText = "SELECT * FROM ledger WHERE $Name LIKE '%sale%'";
+                //DbCommand.CommandText = "SELECT $Name FROM ODBCTables";
+                //DbCommand.CommandText = "SELECT $Name FROM ListofLedgers";
+                DbCommand.CommandText = "SELECT * FROM Voucher";
                 OdbcDataAdapter dataAdapter = new OdbcDataAdapter(DbCommand);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
