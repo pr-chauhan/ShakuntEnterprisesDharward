@@ -10,6 +10,12 @@ using ShakuntEnterprises.Models;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
+using TallyConnector.Core.Models.Masters;
+using NuGet.Protocol;
+using System;
+using TallyConnector.Services;
+using NToastNotify.Helpers;
+using TallyConnector.Core.Converters.XMLConverterHelpers;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -42,19 +48,20 @@ namespace ShakuntEnterprises.Controllers
             
             try
             {
-                Tally tally = new("http://192.168.1.101", 9000);
+                //Tally tally = new Tally();
+                //Tally tally = new("http://192.168.1.101", 9000);
                 //tally.Setup("http://localhost", 9000);
-                tally.Setup("http://192.168.1.101", 9000);
-                tally.Check();
+                //tally.Setup("http://192.168.1.101", 9000);
+                //tally.Check();
                 //var LicesneData = await tally.GetLicenseInfo();
                 //string ActiveCompany = tally.GetActiveTallyCompany();
                 //string ActiveCompany = tally.GetActiveTallyCompany();
-                var complist = await tally.GetCompaniesList();
-                var complistpath = await tally.GetCompaniesListinPath();
-                tally.ChangeCompany("PRInfosys");
-                tally.GetBasicVoucherData();
+                //var complist = await tally.GetCompaniesList();
+                //var complistpath = await tally.GetCompaniesListinPath();
+                //tally.ChangeCompany("PRInfosys");
+                //tally.GetBasicVoucherData();
 
-                var MasterStatistics = await tally.GetMasterStatistics();
+                //var MasterStatistics = await tally.GetMasterStatistics();
             }
             catch (Exception ex)
             {
@@ -148,8 +155,94 @@ namespace ShakuntEnterprises.Controllers
             }
         }
 
+        public async Task<IActionResult> Tally()
+        {
+            try
+            {
+                 
+                TallyService tally = new("http://localhost", 9000);
+                tally.Setup("http://localhost", 9000);
+                tally.CheckAsync();
+                var LicesneData = await tally.GetLicenseInfoAsync();
+                var company = await tally.GetActiveCompanyAsync();
+                var com= await  tally.GetCompaniesAsync<Company>();
+                var MasterStatistics = await tally.GetMasterStatisticsAsync();
+                var VoucherStatistics = await tally.GetVoucherStatisticsAsync(
+                new()
+                {
+                    FromDate = new DateTime(2010, 04, 01),
+                    ToDate = new DateTime(2021, 03, 31)
+                });
+                //VoucherStatistics.Where(c => c.Count > 0)
+                var voucherType = await tally.GetVoucherTypeAsync("Sale");
+                var allVoucher = await tally.GetVouchersAsync();
+                var voucherNumber = allVoucher.First(x => x.MasterId.Equals(7)).MasterId;
+                var sVouchers = await tally.GetVoucherAsync(voucherNumber.ToString(),null);
+                
+                var StockItem = await tally.GetStockItemAsync("Stationary", null);
+                var StockItems = await tally.GetStockItemsAsync();
+                //var StockItem = await tally.GetStockItemAsync(sVouchers.MasterId.ToString(), null);
+               
+               
+                var Ledger = await tally.GetLedgersAsync();
+                var tLedger = await tally.GetLedgerAsync("Sale");
+                var StockCategories = await tally.GetStockCategoriesAsync();
+                var StockGroups = await tally.GetStockGroupsAsync();
+                var Groups = await tally.GetGroupsAsync();
 
-        public IActionResult Privacy()
+                TallyResult tallyResult = new TallyResult();
+                var res = tallyResult.Response;
+
+                TallyQuantity tallyQuantity = new TallyQuantity();
+                var qty = tallyQuantity.Number;
+                 Voucher voucher = new Voucher();
+                voucher.VoucherNumber = "7";
+                var a = voucher.InventoryAllocations;
+                var b = voucher.VoucherEntryMode;
+                var c = voucher.InventoriesOut;
+                var d = voucher.VoucherType;
+
+                InventoryEntries inventoryEntries = new InventoryEntries();
+                var qqty = inventoryEntries.ActualQuantity;
+                
+           
+            
+
+                //TallyResult tally = new TallyResult();
+
+                //tally = new TallyResult();
+                //tall tally = new("http://localhost", 9000);
+                //tally.Setup("http://localhost", 9000);
+                // tally.Setup("http://192.168.1.101", 9000);
+                // tally.Check();
+                //var LicesneData = await tally.GetLicenseInfo();
+                //string ActiveCompany = tally.GetActiveTallyCompany();
+                //string ActiveCompany = tally.GetActiveTallyCompany();
+                //var complist =   tally.GetCompaniesList();
+                //var complistpath =   tally.GetCompaniesListinPath();
+                //tally.ChangeCompany("PRInfosys");
+                //tally.GetBasicVoucherData();
+
+                // var MasterStatistics =   tally.FetchAllTallyData();
+
+
+                //Voucher objLedger = new Voucher();
+                //objLedger.VoucherNumber = "7";
+                //objLedger. = "Sundry Debtors";
+                //objLedger.OPENINGBALANCE = -100;
+                //oDll.CREATELEDGER_Async(objLedger);
+
+
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.ToString();
+                return View(ViewBag.Error);
+            }
+            return View();
+        }
+
+                public IActionResult Privacy()
         {
             try
             {
@@ -161,9 +254,9 @@ namespace ShakuntEnterprises.Controllers
                 //DbCommand.CommandText = "SELECT $Name FROM StockItem";
                 //DbCommand.CommandText = "SELECT $Name FROM Ledger";
                 //DbCommand.CommandText = "SELECT * FROM ledger WHERE $Name LIKE '%sale%'";
-                //DbCommand.CommandText = "SELECT $Name FROM ODBCTables";
+                DbCommand.CommandText = "SELECT * FROM ODBCTables";
                 //DbCommand.CommandText = "SELECT $Name FROM ListofLedgers";
-                DbCommand.CommandText = "SELECT * FROM Voucher";
+                DbCommand.CommandText = "SELECT * FROM _voucher";
                 OdbcDataAdapter dataAdapter = new OdbcDataAdapter(DbCommand);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
