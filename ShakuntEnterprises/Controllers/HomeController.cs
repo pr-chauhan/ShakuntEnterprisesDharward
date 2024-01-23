@@ -181,6 +181,7 @@ namespace ShakuntEnterprises.Controllers
                 var itemDisplayName = itemName[0].StockItemName;
                 var itemQuantity = itemName[0].BilledQuantity;
 
+
                 //=======================================================================================================
                 //_tallyService.Setup("http://localhost", 9000);
                 //_tallyService.CheckAsync();
