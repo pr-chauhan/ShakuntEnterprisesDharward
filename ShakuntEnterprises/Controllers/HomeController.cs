@@ -48,20 +48,20 @@ namespace ShakuntEnterprises.Controllers
             
             try
             {
-                //Tally tally = new Tally();
-                //Tally tally = new("http://192.168.1.101", 9000);
-                //tally.Setup("http://localhost", 9000);
-                //tally.Setup("http://192.168.1.101", 9000);
-                //tally.Check();
-                //var LicesneData = await tally.GetLicenseInfo();
-                //string ActiveCompany = tally.GetActiveTallyCompany();
-                //string ActiveCompany = tally.GetActiveTallyCompany();
-                //var complist = await tally.GetCompaniesList();
-                //var complistpath = await tally.GetCompaniesListinPath();
-                //tally.ChangeCompany("PRInfosys");
-                //tally.GetBasicVoucherData();
+                //Tally _tallyService = new Tally();
+                //Tally _tallyService = new("http://192.168.1.101", 9000);
+                //_tallyService.Setup("http://localhost", 9000);
+                //_tallyService.Setup("http://192.168.1.101", 9000);
+                //_tallyService.Check();
+                //var LicesneData = await _tallyService.GetLicenseInfo();
+                //string ActiveCompany = _tallyService.GetActiveTallyCompany();
+                //string ActiveCompany = _tallyService.GetActiveTallyCompany();
+                //var complist = await _tallyService.GetCompaniesList();
+                //var complistpath = await _tallyService.GetCompaniesListinPath();
+                //_tallyService.ChangeCompany("PRInfosys");
+                //_tallyService.GetBasicVoucherData();
 
-                //var MasterStatistics = await tally.GetMasterStatistics();
+                //var MasterStatistics = await _tallyService.GetMasterStatistics();
             }
             catch (Exception ex)
             {
@@ -160,70 +160,82 @@ namespace ShakuntEnterprises.Controllers
             try
             {
                  
-                TallyService tally = new("http://localhost", 9000);
-                tally.Setup("http://localhost", 9000);
-                tally.CheckAsync();
-                var LicesneData = await tally.GetLicenseInfoAsync();
-                var company = await tally.GetActiveCompanyAsync();
-                var com= await  tally.GetCompaniesAsync<Company>();
-                var MasterStatistics = await tally.GetMasterStatisticsAsync();
-                var VoucherStatistics = await tally.GetVoucherStatisticsAsync(
-                new()
+                TallyService _tallyService = new("http://localhost", 9000);
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new DateTime(2010, 04, 01),
-                    ToDate = new DateTime(2021, 03, 31)
+                    FromDate = new(2009, 4, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
                 });
-                //VoucherStatistics.Where(c => c.Count > 0)
-                var voucherType = await tally.GetVoucherTypeAsync("Sale");
-                var allVoucher = await tally.GetVouchersAsync();
-                var voucherNumber = allVoucher.First(x => x.MasterId.Equals(7)).MasterId;
-                var sVouchers = await tally.GetVoucherAsync(voucherNumber.ToString(),null);
-                
-                var StockItem = await tally.GetStockItemAsync("Stationary", null);
-                var StockItems = await tally.GetStockItemsAsync();
-                //var StockItem = await tally.GetStockItemAsync(sVouchers.MasterId.ToString(), null);
-               
-               
-                var Ledger = await tally.GetLedgersAsync();
-                var tLedger = await tally.GetLedgerAsync("Sale");
-                var StockCategories = await tally.GetStockCategoriesAsync();
-                var StockGroups = await tally.GetStockGroupsAsync();
-                var Groups = await tally.GetGroupsAsync();
+                string pItemName = "Stationary";
+                string passItemName = pItemName.ToString();
+                string sVoucherNumber;
+                int nVourcherNO = 7;
+                sVoucherNumber = nVourcherNO.ToString();
+                //var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+                var talltItemName = Voucheritemlist[0].InventoryAllocations;
+                var itemName = Voucheritemlist[0].InventoryAllocations.Where(x => x.StockItemName.Equals(passItemName)).ToList();
 
-                TallyResult tallyResult = new TallyResult();
-                var res = tallyResult.Response;
+                var itemDisplayName = itemName[0].StockItemName;
+                var itemQuantity = itemName[0].BilledQuantity;
 
-                TallyQuantity tallyQuantity = new TallyQuantity();
-                var qty = tallyQuantity.Number;
-                 Voucher voucher = new Voucher();
-                voucher.VoucherNumber = "7";
-                var a = voucher.InventoryAllocations;
-                var b = voucher.VoucherEntryMode;
-                var c = voucher.InventoriesOut;
-                var d = voucher.VoucherType;
+                //=======================================================================================================
+                //_tallyService.Setup("http://localhost", 9000);
+                //_tallyService.CheckAsync();
+                //var LicesneData = await _tallyService.GetLicenseInfoAsync();
+                //var company = await _tallyService.GetActiveCompanyAsync();
+                //var com= await  _tallyService.GetCompaniesAsync<Company>();
+                //var MasterStatistics = await _tallyService.GetMasterStatisticsAsync();
+                //var VoucherStatistics = await _tallyService.GetVoucherStatisticsAsync(
+                //new()
+                //{
+                //    FromDate = new DateTime(2010, 04, 01),
+                //    ToDate = new DateTime(2021, 03, 31)
+                //});
+                ////VoucherStatistics.Where(c => c.Count > 0)
+                //var voucherType = await _tallyService.GetVoucherTypeAsync("Sale");
+                //var allVoucher = await _tallyService.GetVouchersAsync();
+                //var voucherNumber = allVoucher.First(x => x.MasterId.Equals(7)).MasterId;
+                //var sVouchers = await _tallyService.GetVoucherAsync(voucherNumber.ToString(),null);
 
-                InventoryEntries inventoryEntries = new InventoryEntries();
-                var qqty = inventoryEntries.ActualQuantity;
-                
-           
-            
+                //var StockItem = await _tallyService.GetStockItemAsync("Stationary", null);
+                //var StockItems = await _tallyService.GetStockItemsAsync();
+                ////var StockItem = await _tallyService.GetStockItemAsync(sVouchers.MasterId.ToString(), null);
 
-                //TallyResult tally = new TallyResult();
 
-                //tally = new TallyResult();
-                //tall tally = new("http://localhost", 9000);
-                //tally.Setup("http://localhost", 9000);
-                // tally.Setup("http://192.168.1.101", 9000);
-                // tally.Check();
-                //var LicesneData = await tally.GetLicenseInfo();
-                //string ActiveCompany = tally.GetActiveTallyCompany();
-                //string ActiveCompany = tally.GetActiveTallyCompany();
-                //var complist =   tally.GetCompaniesList();
-                //var complistpath =   tally.GetCompaniesListinPath();
-                //tally.ChangeCompany("PRInfosys");
-                //tally.GetBasicVoucherData();
+                //var Ledger = await _tallyService.GetLedgersAsync();
+                //var tLedger = await _tallyService.GetLedgerAsync("Sale");
+                //var StockCategories = await _tallyService.GetStockCategoriesAsync();
+                //var StockGroups = await _tallyService.GetStockGroupsAsync();
+                //var Groups = await _tallyService.GetGroupsAsync();
 
-                // var MasterStatistics =   tally.FetchAllTallyData();
+                //TallyResult tallyResult = new TallyResult();
+                //var res = tallyResult.Response;
+
+                //    new select
+                //    InventoryAllocations = x.InventoryAllocations,
+                //    BilledQuantity = x.BilledQuantity)
+                //    where.(sVoucherNumber)).ToList();
+                //);
+
+                //TallyResult _tallyService = new TallyResult();
+
+                //_tallyService = new TallyResult();
+                //tall _tallyService = new("http://localhost", 9000);
+                //_tallyService.Setup("http://localhost", 9000);
+                // _tallyService.Setup("http://192.168.1.101", 9000);
+                // _tallyService.Check();
+                //var LicesneData = await _tallyService.GetLicenseInfo();
+                //string ActiveCompany = _tallyService.GetActiveTallyCompany();
+                //string ActiveCompany = _tallyService.GetActiveTallyCompany();
+                //var complist =   _tallyService.GetCompaniesList();
+                //var complistpath =   _tallyService.GetCompaniesListinPath();
+                //_tallyService.ChangeCompany("PRInfosys");
+                //_tallyService.GetBasicVoucherData();
+
+                // var MasterStatistics =   _tallyService.FetchAllTallyData();
 
 
                 //Voucher objLedger = new Voucher();
@@ -231,7 +243,7 @@ namespace ShakuntEnterprises.Controllers
                 //objLedger. = "Sundry Debtors";
                 //objLedger.OPENINGBALANCE = -100;
                 //oDll.CREATELEDGER_Async(objLedger);
-
+                //============================================================================================================
 
             }
             catch (Exception ex)
