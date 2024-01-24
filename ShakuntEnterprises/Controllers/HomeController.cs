@@ -16,6 +16,8 @@ using System;
 using TallyConnector.Services;
 using NToastNotify.Helpers;
 using TallyConnector.Core.Converters.XMLConverterHelpers;
+using System.Diagnostics.SymbolStore;
+using TallyConnector.Core.Models.Masters.Inventory;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -25,6 +27,8 @@ namespace ShakuntEnterprises.Controllers
         private readonly ShakuntEnterprisesContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
+        private object select;
+
         public HomeController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration)
         {
             _logger = logger;
@@ -156,7 +160,7 @@ namespace ShakuntEnterprises.Controllers
             }
         }
 
-        public async Task<IActionResult> Tally()
+        public async Task<IActionResult> homeTally()
         {
             try
             {
@@ -176,11 +180,19 @@ namespace ShakuntEnterprises.Controllers
                 sVoucherNumber = nVourcherNO.ToString();
                 //var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
                 var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
-                var talltItemName = Voucheritemlist[0].InventoryAllocations;
-                var itemName = Voucheritemlist[0].InventoryAllocations.Where(x => x.StockItemName.Equals(passItemName)).ToList();
 
-                var itemDisplayName = itemName[0].StockItemName;
-                var itemQuantity = itemName[0].BilledQuantity;
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+                    g=> new { tallyStockItem = g.StockItemName,tallyBilledQuantity = g.BilledQuantity}
+                    ).ToList();
+ 
+                            
+                     
+
+                    
+                   
+
+                //var itemDisplayName = itemName[0].StockItemName;
+                //var itemQuantity = itemName[0].BilledQuantity;
 
 
                 //=======================================================================================================

@@ -13,6 +13,7 @@ using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Drawing;
 using NToastNotify;
+using TallyConnector.Services;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -48,15 +49,42 @@ namespace ShakuntEnterprises.Controllers
 
             var testCertificateRecordModel = new TestCertificateRecordModel();
             var lstTestCertificateRecord = await _context.TestCertificateRecords.Where(x => x.CertificateType.Equals("System")).ToListAsync();
-            //foreach (var lst in lstTestCertificateRecord)
-            //{
-            //    testCertificateRecordModel.Id = lst.Id;
-            //    testCertificateRecordModel.CertificateNo = lst.CertificateNo;
-            //}
+           
             return View(lstTestCertificateRecord);
         }
 
-        // GET: TestCertificateRecordController/Details/5
+        public JsonResult getTallyData(int sInvoiceNumber)
+        {
+            try
+            {
+
+                TallyService _tallyService = new("http://localhost", 9000);
+                var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(2009, 4, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
+                });
+                string sVoucherNumber;
+                int nVourcherNO = sInvoiceNumber;
+                sVoucherNumber = nVourcherNO.ToString();
+                var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+                    g => new { tallyStockItem = g.StockItemName, tallyBilledQuantity = g.BilledQuantity }
+                    ).ToList();
+
+
+                return Json(talltItemName);
+
+            }
+            catch (Exception ex)
+            {
+                return Json(ex);
+            }
+           
+        }  // GET: TestCertificateRecordController/Details/5
         public async Task<IActionResult> Details(int id)
         {
             if (HttpContext.Session.GetString("lid") == null)

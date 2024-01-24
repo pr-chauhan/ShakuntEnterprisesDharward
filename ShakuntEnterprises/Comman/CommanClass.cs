@@ -253,7 +253,7 @@
             DataTable dataTable = new DataTable();
             try
             {
-                string sqlLString = "EXEC sp_get_applicatioin_date "+ appName;
+                string sqlLString = "EXEC sp_get_applicatioin_date_shakuntEnterprises " + appName;
                 SqlCommand llCommand = new SqlCommand();
                 llCommand.CommandText = sqlLString;
                 llCommand.Connection = sqlConnectionerp;
