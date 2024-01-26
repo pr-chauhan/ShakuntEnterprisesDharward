@@ -17,6 +17,8 @@
     using MessagePack;
     using System.Data.SqlClient;
     using Microsoft.Net.Http.Headers;
+    using TallyConnector.Core.Models;
+    using TallyConnector.Services;
 
     public class CommanClass
     {
@@ -282,8 +284,8 @@
 
             return lRetVal;
         }
-
     }
+}
 
     public class Batch_Number
     {
@@ -367,4 +369,3 @@
 
 
     }
-}

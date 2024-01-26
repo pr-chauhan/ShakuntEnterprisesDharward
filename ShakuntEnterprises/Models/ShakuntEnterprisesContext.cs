@@ -499,6 +499,10 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.Specification).HasMaxLength(50);
 
+                entity.Property(e => e.TallyItemName)
+                    .HasMaxLength(1000)
+                    .HasColumnName("Tally_ItemName");
+
                 entity.Property(e => e.TestCondition)
                     .HasMaxLength(50)
                     .HasColumnName("Test_Condition");
@@ -1061,7 +1065,7 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
 
-                entity.Property(e => e.GradeType).HasMaxLength(10);
+                entity.Property(e => e.GradeType).HasMaxLength(50);
 
                 entity.Property(e => e.ModifiedBy)
                     .HasMaxLength(20)

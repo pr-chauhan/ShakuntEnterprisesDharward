@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.Drawing;
 using NToastNotify;
 using TallyConnector.Services;
+using System.Text.Json;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -52,7 +53,19 @@ namespace ShakuntEnterprises.Controllers
            
             return View(lstTestCertificateRecord);
         }
+        [HttpGet]
+        public JsonResult GetTallyItemList(int ModuleId)
+        {
 
+            var UniqueMenus = _context.MainNavigationBars.Where(x => x.ModuleId == ModuleId && x.UserId == (HttpContext.Session.GetString("lid")) && x.SubMenuId == null).OrderBy(x => x.MenuId).ToList()
+                .Select(x => new
+                {
+                    x.MenuId,
+                    x.MenuName
+                }).Distinct().ToList();
+            var jsondata = JsonSerializer.Serialize(UniqueMenus);
+            return Json(jsondata);
+        }
         public JsonResult getTallyData(int sInvoiceNumber)
         {
             try
@@ -100,9 +113,11 @@ namespace ShakuntEnterprises.Controllers
             var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
             if (testCertificateRecord != null)
             {
+                ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
+                Data.TallyItemName = testCertificateRecord.TallyItemName;
                 Data.Quanity = testCertificateRecord.Quanity;
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
@@ -219,6 +234,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.IssueDate = testCertificateRecord.IssueDate;
                     Data.Quanity = testCertificateRecord.Quanity;
                     Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                    Data.TallyItemName = testCertificateRecord.TallyItemName;
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                     Data.Size = testCertificateRecord.Size;
                     Data.BatchDate = testCertificateRecord.BatchDate;
@@ -328,11 +344,13 @@ namespace ShakuntEnterprises.Controllers
             var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
             if (testCertificateRecord != null)
             {
+                ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
                 Data.Quanity = testCertificateRecord.Quanity;
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                Data.TallyItemName = testCertificateRecord.TallyItemName;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
@@ -446,6 +464,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.IssueDate = testCertificateRecord.IssueDate;
                         Data.Quanity = testCertificateRecord.Quanity;
                         Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                        Data.TallyItemName = testCertificateRecord.TallyItemName;
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                         Data.Size = testCertificateRecord.Size;
                         Data.BatchDate = testCertificateRecord.BatchDate;
@@ -816,5 +835,66 @@ namespace ShakuntEnterprises.Controllers
             return Json(data);
         }
 
+        public async Task<JsonResult> GetTallyItemName(int invoiceNo)
+        {
+            try
+            {
+
+                TallyService _tallyService = new("http://localhost", 9000);
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(2023, 4, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
+                });
+                string sVoucherNumber;
+                sVoucherNumber = invoiceNo.ToString();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+                    g => new {  g.StockItemName }
+                    ).ToList();
+                var jsondata = JsonSerializer.Serialize(talltItemName);
+                return Json(jsondata);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.ToString();
+                return View(ViewBag.Error);
+            }
+            return Json(null);
+        }
+        public async Task<JsonResult> GetTallyItemQuantity(int invoiceNo,string pItemName)
+        {
+            try
+            {
+
+                TallyService _tallyService = new("http://localhost", 9000);
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(2023, 4, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
+                });
+                string sVoucherNumber;
+                sVoucherNumber = invoiceNo.ToString();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.Where(x=> x.StockItemName.Equals(pItemName)).ToList().Select(
+                    g => new {g.BilledQuantity }
+                    ).ToList();
+
+                var jsondata = JsonSerializer.Serialize(talltItemName[0].BilledQuantity.ToString());
+                return Json(jsondata);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.ToString();
+                return View(ViewBag.Error);
+            }
+            return Json(null);
+        }
     }
 }

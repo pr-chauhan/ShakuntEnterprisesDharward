@@ -146,5 +146,7 @@ namespace ShakuntEnterprises.ViewModels
         public DateTime? ApprovedDate { get; set; }
         [DisplayName("Show CE Logo")]
         public string? IsShowCelogo { get; set; }
+        [DisplayName("Tally Item Name")]
+        public string? TallyItemName { get; set; }
     }
 }
