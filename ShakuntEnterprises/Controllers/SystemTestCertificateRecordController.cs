@@ -835,21 +835,25 @@ namespace ShakuntEnterprises.Controllers
             return Json(data);
         }
 
-        public async Task<JsonResult> GetTallyItemName(int invoiceNo)
+        public  JsonResult GetTallyItemName(int invoiceNo)
         {
             try
             {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
-                {
-                    FromDate = new(2023, 4, 1),
-                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
-                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
-
-                });
+                //TallyService _tallyService = new("http://localhost", 9000);
+                //TallyService _tallyService = new("http://localhost", 10001);
+                TallyService _tallyService = new("http://192.168.1.101", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
+
+                var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(2024, 1, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter}
+
+                }).Result.Where(x=> x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+             
                 var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
 
                 var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
@@ -870,16 +874,20 @@ namespace ShakuntEnterprises.Controllers
             try
             {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                //TallyService _tallyService = new("http://localhost", 9000);
+                //TallyService _tallyService = new("http://localhost", 10001);
+                TallyService _tallyService = new("http://192.168.1.101", 10001);
+                string sVoucherNumber;
+                sVoucherNumber = invoiceNo.ToString();
+
+                var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2023, 4, 1),
+                    FromDate = new(2024, 1, 1),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
-                });
-                string sVoucherNumber;
-                sVoucherNumber = invoiceNo.ToString();
+                }).Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+                
                 var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
 
                 var talltItemName = Voucheritemlist[0].InventoryAllocations.Where(x=> x.StockItemName.Equals(pItemName)).ToList().Select(
