@@ -489,7 +489,7 @@
             var counter = 0;
             $("#InvoiceNo").change(function(){
                 var invoiceNo = $("#InvoiceNo").val();
-                $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo }, function (data) {
+                $.getJSON("/SystemTestCertificateRecord/GetTallyItem", { invoiceNo: invoiceNo }, function (data) {
                     $("#TallyItemName").empty();
                     $("#TallyItemName").append('<option>select-item</option>');
                     var jData = JSON.parse(data);

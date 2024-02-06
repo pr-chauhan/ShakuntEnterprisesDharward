@@ -66,13 +66,47 @@ namespace ShakuntEnterprises.Controllers
             var jsondata = JsonSerializer.Serialize(UniqueMenus);
             return Json(jsondata);
         }
-        public JsonResult getTallyData(int sInvoiceNumber)
+        public JsonResult GetTallyItem(int invoiceNo)
         {
             try
             {
 
                 TallyService _tallyService = new("http://localhost", 9000);
                 var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(2009, 4, 1),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
+                });
+                string sVoucherNumber;
+                int nVourcherNO = invoiceNo;
+                sVoucherNumber = nVourcherNO.ToString();
+                var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+                    g => new { tallyStockItem = g.StockItemName }
+                    ).ToList();
+
+
+                return Json(talltItemName);
+
+            }
+            catch (Exception ex)
+            {
+                return Json(ex);
+            }
+           
+        }
+
+
+        public JsonResult GetTallyItemQuantity(int sInvoiceNumber)
+        {
+            try
+            {
+
+                TallyService _tallyService = new("http://localhost", 9000);
+                var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
                     FromDate = new(2009, 4, 1),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
@@ -96,8 +130,10 @@ namespace ShakuntEnterprises.Controllers
             {
                 return Json(ex);
             }
-           
-        }  // GET: TestCertificateRecordController/Details/5
+
+        }
+
+        // GET: TestCertificateRecordController/Details/5
         public async Task<IActionResult> Details(int id)
         {
             if (HttpContext.Session.GetString("lid") == null)
