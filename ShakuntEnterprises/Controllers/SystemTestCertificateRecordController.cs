@@ -40,7 +40,8 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.Menus = commanClass.getModlueMenuList(HttpContext.Session.GetString("lid"));
             ViewBag.CDT = DateTime.Now.ToString();
             ViewBag.SIZE = commanClass.getAllSizeList();
-            ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x => new { TradeDesignation = x.TradeDesignation, TradeDesignationGradeType = x.TradeDesignation +"-"+ x.GradeType }).Distinct();
+            ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x => new { TradeDesignation = x.TradeDesignation}).Distinct();
+            ViewBag.GRADE = commanClass.getAllGradeMasterList(string.Empty).Select(x => new { TradeDesignation = x.TradeDesignation, TradeDesignationGradeType = x.TradeDesignation + "-" + x.GradeType }).Distinct();
         }
         // GET: TestCertificateRecordController
         public async Task<IActionResult> Index()
@@ -852,11 +853,18 @@ namespace ShakuntEnterprises.Controllers
         //=====================
         public JsonResult GetTradeDesignationDataMaster( string  TradeDesignation)
         {
-            var data = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).ToList();
+            var data = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).Distinct().ToList();
 
             return Json(data);
         }
-
+        //
+        //=====================
+        public JsonResult GetGradeTypeMaster(string TradeDesignation)
+        {
+            var data  = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).Distinct().ToList();
+            //var jsondata = JsonSerializer.Serialize(data);
+            return Json(data);
+        }
         public JsonResult GetSizeDataMaster(string Size)
         {
             var data = _context.SizeMasters.Where(x => x.Size == Size).ToList();

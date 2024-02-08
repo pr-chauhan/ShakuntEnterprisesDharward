@@ -148,5 +148,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? IsShowCelogo { get; set; }
         [DisplayName("Tally Item Name")]
         public string? TallyItemName { get; set; }
+        [DisplayName("Grade Type")]
+        public string? GradeType { get; set; }
     }
 }

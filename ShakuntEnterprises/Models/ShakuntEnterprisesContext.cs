@@ -439,6 +439,8 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
 
+                entity.Property(e => e.GradeType).HasMaxLength(50);
+
                 entity.Property(e => e.HelixActualValue)
                     .HasMaxLength(50)
                     .HasColumnName("Helix_ActualValue");

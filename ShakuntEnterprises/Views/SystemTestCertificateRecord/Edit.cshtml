@@ -54,26 +54,36 @@
             <h4>Welding Material</h4>
             <hr />
             <div class="row">
-                <div class="form-group" style="width:23%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
-                    <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignationGradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                    <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignation"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:12%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="GradeType" class="control-label"></label>
+                    <select asp-for="GradeType" asp-items="@(new SelectList(ViewBag.GRADE,"GradeType","GradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select</option>
+                    </select>
+                    <span asp-validation-for="GradeType" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
                    <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
-                  <div class="form-group" style="width:15%;display: inline-block;">
+              </div>
+              <div class="row">
+                  <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="BatchDate" class="control-label"></label>
                     <input asp-for="BatchDate" class="form-control" />
                     <span asp-validation-for="BatchDate" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:10%;display: inline-block;">
+               
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="BatchNo" class="control-label"></label>
                     <input asp-for="BatchNo" class="form-control" />
                     <span asp-validation-for="BatchNo" class="text-danger"></span>
@@ -83,7 +93,7 @@
                     <input asp-for="ManufecturingDate" class="form-control" type="date" />
                     <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="Specification" class="control-label"></label>
                     <input asp-for="Specification" class="form-control" />
                     <span asp-validation-for="Specification" class="text-danger"></span>
@@ -533,47 +543,62 @@
             $("#TradeDesignation").change(function () {
 
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();
+               
                 $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
-                    { TradeDesignation: TradeDesignation }, function (data) {
+                    { TradeDesignation: TradeDesignation }, function (tData) {
                         debugger
-                        $("#WeldingProcess").val(data[0].weldingProcess);
-                        $("#ShieldingGas").val(data[0].shieldingGas);
-                        $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
-                        $("#Specification").val(data[0].specification);
-                        $("#Type").val(data[0].type);
-                        $("#FlowRate").val(data[0].flowRate);
-                        $("#CurrentPolarity").val(data[0].currentPolarity);
-                        $("#BaseMetal").val(data[0].baseMetal);
-                        $("#ElementMinC").val(data[0].elementMinC);
-                        $("#ElementMinSi").val(data[0].elementMinSi);
-                        $("#ElementMinMn").val(data[0].elementMinMn);
-                        $("#ElementMinP").val(data[0].elementMinP);
-                        $("#ElementMinS").val(data[0].elementMinS);
-                        $("#ElementMinNi").val(data[0].elementMinNi);
-                        $("#ElementMinCr").val(data[0].elementMinCr);
-                        $("#ElementMinMo").val(data[0].elementMinMo);
-                        $("#ElementMinCu").val(data[0].elementMinCu);
-                        $("#ElementMaxC").val(data[0].elementMaxC);
-                        $("#ElementMaxSi").val(data[0].elementMaxSi);
-                        $("#ElementMaxMn").val(data[0].elementMaxMn);
-                        $("#ElementMaxP").val(data[0].elementMaxP);
-                        $("#ElementMaxS").val(data[0].elementMaxS);
-                        $("#ElementMaxNi").val(data[0].elementMaxNi);
-                        $("#ElementMaxCr").val(data[0].elementMaxCr);
-                        $("#ElementMaxMo").val(data[0].elementMaxMo);
-                        $("#ElementMaxCu").val(data[0].elementMaxCu);
-                        $("#TestMinUts").val(data[0].testMinUts);
-                        $("#TestMinYs").val(data[0].testMinYs);
-                        $("#TestMinElongation").val(data[0].testMinElongation);
-                        $("#TestMaxUts").val(data[0].testMaxUts);
-                        $("#TestMaxYs").val(data[0].testMaxYs);
-                        $("#TestMaxElongation").val(data[0].testMaxElongation);
-                        $("#TestTemp").val(data[0].testTemp);
-                        $("#TestImpectValue").val(data[0].testImpectValue);
-                        $("#TestCondition").val(data[0].testCondition);
-                        $("#OtherTestRadioSpecs").val(data[0].otherTestRadioSpecs);
-                        $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
-                        $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
+                        $.getJSON("/SystemTestCertificateRecord/GetGradeTypeMaster", { TradeDesignation: TradeDesignation }, function (data) {
+                            $("#WeldingProcess").val(data[0].weldingProcess);
+                            $("#ShieldingGas").val(data[0].shieldingGas);
+                            $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
+                            $("#Specification").val(data[0].specification);
+                            $("#Type").val(data[0].type);
+                            $("#FlowRate").val(data[0].flowRate);
+                            $("#CurrentPolarity").val(data[0].currentPolarity);
+                            $("#BaseMetal").val(data[0].baseMetal);
+                            $("#ElementMinC").val(data[0].elementMinC);
+                            $("#ElementMinSi").val(data[0].elementMinSi);
+                            $("#ElementMinMn").val(data[0].elementMinMn);
+                            $("#ElementMinP").val(data[0].elementMinP);
+                            $("#ElementMinS").val(data[0].elementMinS);
+                            $("#ElementMinNi").val(data[0].elementMinNi);
+                            $("#ElementMinCr").val(data[0].elementMinCr);
+                            $("#ElementMinMo").val(data[0].elementMinMo);
+                            $("#ElementMinCu").val(data[0].elementMinCu);
+                            $("#ElementMaxC").val(data[0].elementMaxC);
+                            $("#ElementMaxSi").val(data[0].elementMaxSi);
+                            $("#ElementMaxMn").val(data[0].elementMaxMn);
+                            $("#ElementMaxP").val(data[0].elementMaxP);
+                            $("#ElementMaxS").val(data[0].elementMaxS);
+                            $("#ElementMaxNi").val(data[0].elementMaxNi);
+                            $("#ElementMaxCr").val(data[0].elementMaxCr);
+                            $("#ElementMaxMo").val(data[0].elementMaxMo);
+                            $("#ElementMaxCu").val(data[0].elementMaxCu);
+                            $("#TestMinUts").val(data[0].testMinUts);
+                            $("#TestMinYs").val(data[0].testMinYs);
+                            $("#TestMinElongation").val(data[0].testMinElongation);
+                            $("#TestMaxUts").val(data[0].testMaxUts);
+                            $("#TestMaxYs").val(data[0].testMaxYs);
+                            $("#TestMaxElongation").val(data[0].testMaxElongation);
+                            $("#TestTemp").val(data[0].testTemp);
+                            $("#TestImpectValue").val(data[0].testImpectValue);
+                            $("#TestCondition").val(data[0].testCondition);
+                            $("#OtherTestRadioSpecs").val(data[0].otherTestRadioSpecs);
+                            $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
+                            $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
+                           
+                            $("#GradeType").empty();
+                            $("#GradeType").append('<option>select-item</option>');
+                            
+                            //var jData = JSON.parse(data);
+                            for(i=0;i <= data.count;i++)
+                            {
+                                alert(data[i].GradeType);
+                            }
+                            $.each(jData, function (key, value) {
+                                $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                            });
+                        });
 
                     })
             })

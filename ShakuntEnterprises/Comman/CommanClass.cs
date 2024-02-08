@@ -186,6 +186,12 @@
 
             return result;
         }
+        public List<TradeDesignationMaster> getAllGradeMasterList(string tradeDesignation)
+        {
+            List<TradeDesignationMaster> result = _context.TradeDesignationMasters.Where(x=> x.TradeDesignation.Equals(tradeDesignation)).ToList();
+
+            return result;
+        }
         public  DataTable GetDataTable(string sqlstring)
         {
             dataTable = new DataTable();

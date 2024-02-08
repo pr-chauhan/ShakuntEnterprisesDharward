@@ -54,20 +54,29 @@
             <h4>Welding Material</h4>
             <hr />
             <div class="row">
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="TradeDesignation" class="control-label"></label>
-                    <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignationGradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                    <select asp-for="TradeDesignation" asp-items="@(new SelectList(ViewBag.TRADE,"TradeDesignation","TradeDesignation"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:13%;display: inline-block;">
+                <div class="form-group" style="width:20%;display: inline-block;">
+                    <label asp-for="GradeType" class="control-label"></label>
+                    <select asp-for="GradeType" asp-items="@(new SelectList(ViewBag.GRADE,"GradeType","GradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select</option>
+                    </select>
+                    <span asp-validation-for="GradeType" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="width:20%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
                      <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
+              </div>
+              <div class="row">
                   <div class="form-group" style="width:15%;display: inline-block;">
                     <label asp-for="BatchDate" class="control-label"></label>
                     <input asp-for="BatchDate" class="form-control" />
@@ -85,12 +94,12 @@
                     </div>
                 </div>
                 
-                <div class="form-group" style="width:17%;display: inline-block;">
+                <div class="form-group" style="width:15%;display: inline-block;">
                     <label asp-for="ManufecturingDate" class="control-label"></label>
                     <input asp-for="ManufecturingDate" class="form-control" type="date" />
                     <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:15%;display: inline-block;">
                     <label asp-for="Specification" class="control-label"></label>
                     <input asp-for="Specification" class="form-control" />
                     <span asp-validation-for="Specification" class="text-danger"></span>
@@ -511,9 +520,11 @@
             $("#TradeDesignation").change(function () {
 
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();
+             
                 $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
                     { TradeDesignation: TradeDesignation }, function (data) {
-                        debugger
+                        
+                      
                         $("#WeldingProcess").val(data[0].weldingProcess);
                         $("#ShieldingGas").val(data[0].shieldingGas);
                         $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
@@ -552,6 +563,15 @@
                         $("#OtherTestRadioSpecs").val(data[0].otherTestRadioSpecs);
                         $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
                         $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
+                        debugger
+                        $.getJSON("/SystemTestCertificateRecord/GetGradeTypeMaster", { TradeDesignation: TradeDesignation }, function (gData) {
+                            $("#GradeType").empty();
+                            $("#GradeType").append('<option>select-item</option>');
+                            var jData = JSON.parse(gData);
+                            $.each(jData, function (key, value) {
+                                $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                            });
+                        });
 
                     })
             })

@@ -80,5 +80,6 @@ namespace ShakuntEnterprises.Models
         public DateTime? ApprovedDate { get; set; }
         public string? IsShowCelogo { get; set; }
         public string? TallyItemName { get; set; }
+        public string? GradeType { get; set; }
     }
 }
