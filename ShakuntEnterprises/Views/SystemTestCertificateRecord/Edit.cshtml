@@ -520,7 +520,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            var TradeDesignation = $("#TradeDesignation  option:selected").val();
+            //var TradeDesignation = $("#TradeDesignation  option:selected").val();
             //$.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
             //    { TradeDesignation: TradeDesignation }, function (data) {
             //        $("#GradeType").empty();
@@ -561,7 +561,7 @@
                         $("#GradeType").append('<option>select-item</option>');
                         var jData = JSON.parse(data);
                         $.each(jData, function (key, value) {
-                            $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                            $("#GradeType").append('<option value=' +'"'+ value.GradeType + '"' + '>' + value.GradeType + '</option>');
                         });
                 });
 

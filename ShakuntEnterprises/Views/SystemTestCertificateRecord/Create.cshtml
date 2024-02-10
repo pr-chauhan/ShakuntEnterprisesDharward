@@ -529,7 +529,7 @@
                         $("#GradeType").append('<option>select-item</option>');
                         var jData = JSON.parse(data);
                         $.each(jData, function (key, value) {
-                            $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                            $("#GradeType").append('<option value=' +'"'+ value.GradeType + '"' + '>' + value.GradeType + '</option>');
                         });
                 });
 
@@ -537,6 +537,7 @@
             $("#GradeType").change(function () {
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();
                 var GradeType = $("#GradeType  option:selected").val();
+               
                 $.getJSON("/SystemTestCertificateRecord/GetGradeTypeMaster",
                     { TradeDesignation: TradeDesignation, GradeType: GradeType }, function (data) {
 
