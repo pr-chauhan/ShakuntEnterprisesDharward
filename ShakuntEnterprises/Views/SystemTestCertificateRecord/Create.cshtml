@@ -61,14 +61,14 @@
                     </select>
                     <span asp-validation-for="TradeDesignation" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="GradeType" class="control-label"></label>
                     <select asp-for="GradeType" asp-items="@(new SelectList(ViewBag.GRADE,"GradeType","GradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
                     </select>
                     <span asp-validation-for="GradeType" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:20%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="Size" class="control-label"></label>
                      <select asp-for="Size" asp-items="@(new SelectList(ViewBag.SIZE,"Size","Size"))" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select</option>
@@ -77,29 +77,32 @@
                 </div>
               </div>
               <div class="row">
-                  <div class="form-group" style="width:15%;display: inline-block;">
+                  <div class="form-group" style="width:18%;display: inline-block;">
                     <label asp-for="BatchDate" class="control-label"></label>
                     <input asp-for="BatchDate" class="form-control" />
                     <span asp-validation-for="BatchDate" class="text-danger"></span>
                 </div>
-                <div class="form-group" style="width:15%;display: inline-block;">
+               
+                 <div class="form-group" style="width:18%;display: inline-block;">
                     <div style="float:left;">
                         <label asp-for="BatchNo" class="control-label"></label>
                         <input asp-for="BatchNo" class="form-control" style="width:100px;" />
                         <span asp-validation-for="BatchNo" class="text-danger"></span>
                     </div>
                     <div style="float:left;">
-                        <br /> <br />
-                        <input type="button" id="addBatch" value="Add" style="background-color:#678;color:#fff;height:33px;" />
+                        <br />
+                        <br />
+                        <input type="button" id="addBatch" value="Add" style="background-color:#678;color:#fff;height:35px;" />
                     </div>
                 </div>
-                
-                <div class="form-group" style="width:15%;display: inline-block;">
+                <div class="form-group" style="width:18%;display: inline-block;">
                     <label asp-for="ManufecturingDate" class="control-label"></label>
                     <input asp-for="ManufecturingDate" class="form-control" type="date" />
                     <span asp-validation-for="ManufecturingDate" class="text-danger"></span>
+                
+                   
                 </div>
-                <div class="form-group" style="width:15%;display: inline-block;">
+                <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="Specification" class="control-label"></label>
                     <input asp-for="Specification" class="form-control" />
                     <span asp-validation-for="Specification" class="text-danger"></span>
@@ -496,35 +499,47 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var counter = 0;
-            $("#InvoiceNo").change(function(){
-                var invoiceNo = $("#InvoiceNo").val();
-                $.getJSON("/SystemTestCertificateRecord/GetTallyItem", { invoiceNo: invoiceNo }, function (data) {
-                    $("#TallyItemName").empty();
-                    $("#TallyItemName").append('<option>select-item</option>');
-                    var jData = JSON.parse(data);
-                    $.each(jData, function (key, value) {
-                        $("#TallyItemName").append('<option value=' + value.StockItemName + '>' + value.StockItemName + '</option>');
-                    });
+            //$("#InvoiceNo").change(function () {
+            //    var invoiceNo = $("#InvoiceNo").val();
+            //    $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo }, function (data) {
+            //        $("#TallyItemName").empty();
+            //        $("#TallyItemName").append('<option>select-item</option>');
+            //        var jData = JSON.parse(data);
+            //        $.each(jData, function (key, value) {
+            //            $("#TallyItemName").append('<option value=' + value.StockItemName + '>' + value.StockItemName + '</option>');
+            //        });
 
-                });
-            });
-            $("#TallyItemName").change(function () {
-                var pItemName = $("#TallyItemName  option:selected").val();
-                var invoiceNo = $("#InvoiceNo").val();
-                $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, pItemName: pItemName }, function (data) {
-                    $("#Quanity").val("");
-                    $("#Quanity").val(data);
-                });
-            });
+            //    });
+            //});
+            //$("#TallyItemName").change(function () {
+            //    debugger
+            //    var pItemName = $("#TallyItemName  option:selected").val();
+            //    var invoiceNo = $("#InvoiceNo").val();
+            //    $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, pItemName: pItemName }, function (data) {
+            //        $("#Quanity").val("");
+            //        $("#Quanity").val(data);
+            //    });
+            //});
 
             $("#TradeDesignation").change(function () {
-
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();
-             
                 $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
                     { TradeDesignation: TradeDesignation }, function (data) {
-                        
-                      
+                        $("#GradeType").empty();
+                        $("#GradeType").append('<option>select-item</option>');
+                        var jData = JSON.parse(data);
+                        $.each(jData, function (key, value) {
+                            $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                        });
+                });
+
+            });
+            $("#GradeType").change(function () {
+                var TradeDesignation = $("#TradeDesignation  option:selected").val();
+                var GradeType = $("#GradeType  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetGradeTypeMaster",
+                    { TradeDesignation: TradeDesignation, GradeType: GradeType }, function (data) {
+
                         $("#WeldingProcess").val(data[0].weldingProcess);
                         $("#ShieldingGas").val(data[0].shieldingGas);
                         $("#PreHeatInerpassTemp").val(data[0].preHeatInerpassTemp);
@@ -563,17 +578,9 @@
                         $("#OtherTestRadioSpecs").val(data[0].otherTestRadioSpecs);
                         $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
                         $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
-                        debugger
-                        $.getJSON("/SystemTestCertificateRecord/GetGradeTypeMaster", { TradeDesignation: TradeDesignation }, function (gData) {
-                            $("#GradeType").empty();
-                            $("#GradeType").append('<option>select-item</option>');
-                            var jData = JSON.parse(gData);
-                            $.each(jData, function (key, value) {
-                                $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
-                            });
-                        });
 
-                    })
+                    });
+
             })
 
             $("#Size").change(function () {

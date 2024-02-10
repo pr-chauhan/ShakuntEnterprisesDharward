@@ -75,7 +75,7 @@ namespace ShakuntEnterprises.Controllers
                 TallyService _tallyService = new("http://localhost", 9000);
                 var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2009, 4, 1),
+                    FromDate = new(2023, 1, 1),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
@@ -89,7 +89,7 @@ namespace ShakuntEnterprises.Controllers
                     g => new { tallyStockItem = g.StockItemName }
                     ).ToList();
 
-
+                //var jsondata = JsonSerializer.Serialize(talltItemName);
                 return Json(talltItemName);
 
             }
@@ -109,7 +109,7 @@ namespace ShakuntEnterprises.Controllers
                 TallyService _tallyService = new("http://localhost", 9000);
                 var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2009, 4, 1),
+                    FromDate = new(2023, 1, 1),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
@@ -120,7 +120,7 @@ namespace ShakuntEnterprises.Controllers
                 var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
 
                 var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
-                    g => new { tallyStockItem = g.StockItemName, tallyBilledQuantity = g.BilledQuantity }
+                    g => new {  tallyBilledQuantity = g.BilledQuantity }
                     ).ToList();
 
 
@@ -151,6 +151,7 @@ namespace ShakuntEnterprises.Controllers
             if (testCertificateRecord != null)
             {
                 ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
+                ViewBag.GTYPE = testCertificateRecord.GradeType;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
@@ -273,6 +274,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                     Data.TallyItemName = testCertificateRecord.TallyItemName;
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                    Data.GradeType = testCertificateRecord.GradeType;
                     Data.Size = testCertificateRecord.Size;
                     Data.BatchDate = testCertificateRecord.BatchDate;
                     Data.BatchNo = testCertificateRecord.BatchNo;
@@ -382,6 +384,7 @@ namespace ShakuntEnterprises.Controllers
             if (testCertificateRecord != null)
             {
                 ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
+                ViewBag.GTYPE = testCertificateRecord.GradeType;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
@@ -389,6 +392,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TallyItemName = testCertificateRecord.TallyItemName;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                Data.GradeType = testCertificateRecord.GradeType;
                 Data.Size = testCertificateRecord.Size;
                 Data.BatchDate = testCertificateRecord.BatchDate;
                 Data.BatchNo = testCertificateRecord.BatchNo;
@@ -503,6 +507,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                         Data.TallyItemName = testCertificateRecord.TallyItemName;
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                        Data.GradeType = testCertificateRecord.GradeType;
                         Data.Size = testCertificateRecord.Size;
                         Data.BatchDate = testCertificateRecord.BatchDate;
                         Data.BatchNo = testCertificateRecord.BatchNo;
@@ -854,15 +859,14 @@ namespace ShakuntEnterprises.Controllers
         public JsonResult GetTradeDesignationDataMaster( string  TradeDesignation)
         {
             var data = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).Distinct().ToList();
-
-            return Json(data);
+            var jsondata = JsonSerializer.Serialize(data);
+            return Json(jsondata);
         }
         //
         //=====================
-        public JsonResult GetGradeTypeMaster(string TradeDesignation)
+        public JsonResult GetGradeTypeMaster(string TradeDesignation, string GradeType)
         {
-            var data  = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation).Distinct().ToList();
-            //var jsondata = JsonSerializer.Serialize(data);
+            var data  = _context.TradeDesignationMasters.Where(x => x.TradeDesignation == TradeDesignation && x.GradeType == GradeType).Distinct().ToList();
             return Json(data);
         }
         public JsonResult GetSizeDataMaster(string Size)
@@ -912,7 +916,7 @@ namespace ShakuntEnterprises.Controllers
             }
             return Json(null);
         }
-        public async Task<JsonResult> GetTallyItemQuantity(int invoiceNo,string pItemName)
+        public async Task<JsonResult> GetTallyItemQuantity(string invoiceNo,string pItemName)
         {
             try
             {
