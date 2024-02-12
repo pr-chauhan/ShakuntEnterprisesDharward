@@ -81,5 +81,8 @@ namespace ShakuntEnterprises.Models
         public string? IsShowCelogo { get; set; }
         public string? TallyItemName { get; set; }
         public string? GradeType { get; set; }
+        public string? IsShowMig { get; set; }
+        public string? IsShowFlux { get; set; }
+        public string? IsShowNone { get; set; }
     }
 }

@@ -231,6 +231,9 @@ namespace ShakuntEnterprises.Controllers
                 //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
                 Data.Remarks = testCertificateRecord.Remarks;
                 Data.HideSection = testCertificateRecord.HideSection;
+                Data.IsShowMig = testCertificateRecord.IsShowMig;
+                Data.IsShowFlux = testCertificateRecord.IsShowFlux;
+                Data.IsShowNone = testCertificateRecord.IsShowNone;
                 Data.CertificateType = "System";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -348,6 +351,9 @@ namespace ShakuntEnterprises.Controllers
                     Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                     Data.Remarks = testCertificateRecord.Remarks?? "-----";
                     Data.HideSection = testCertificateRecord.HideSection;
+                    Data.IsShowMig = testCertificateRecord.IsShowMig;
+                    Data.IsShowFlux = testCertificateRecord.IsShowFlux;
+                    Data.IsShowNone = testCertificateRecord.IsShowNone;
                     Data.CertificateType = "System";
                     Data.CreatedDate = testCertificateRecord.CreatedDate;
                     Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -466,6 +472,9 @@ namespace ShakuntEnterprises.Controllers
                 Data.Remarks = testCertificateRecord.Remarks ?? "-----";
                 Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                 Data.HideSection = testCertificateRecord.HideSection;
+                Data.IsShowMig = testCertificateRecord.IsShowMig;
+                Data.IsShowFlux = testCertificateRecord.IsShowFlux;
+                Data.IsShowNone = testCertificateRecord.IsShowNone;
                 Data.CertificateType = "System";
                 Data.CreatedDate = testCertificateRecord.CreatedDate;
                 Data.CreatedBy = testCertificateRecord.CreatedBy;
@@ -579,6 +588,9 @@ namespace ShakuntEnterprises.Controllers
                         //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs;
                         //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
                         Data.HideSection = testCertificateRecord.HideSection;
+                        Data.IsShowMig = testCertificateRecord.IsShowMig;
+                        Data.IsShowFlux = testCertificateRecord.IsShowFlux;
+                        Data.IsShowNone = testCertificateRecord.IsShowNone;
                         Data.IsShowCelogo = testCertificateRecord.IsShowCelogo;
                         Data.Remarks = testCertificateRecord.Remarks;
                         Data.CertificateType = "System";

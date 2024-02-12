@@ -150,5 +150,11 @@ namespace ShakuntEnterprises.ViewModels
         public string? TallyItemName { get; set; }
         [DisplayName("Grade Type")]
         public string? GradeType { get; set; }
+        [DisplayName("Show Mig")]
+        public string? IsShowMig { get; set; }
+        [DisplayName("Show Flux")]
+        public string? IsShowFlux { get; set; }
+        [DisplayName("Show None")]
+        public string? IsShowNone { get; set; }
     }
 }

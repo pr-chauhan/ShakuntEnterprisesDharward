@@ -457,6 +457,12 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(3)
                     .HasColumnName("IsShowCELogo");
 
+                entity.Property(e => e.IsShowFlux).HasMaxLength(3);
+
+                entity.Property(e => e.IsShowMig).HasMaxLength(3);
+
+                entity.Property(e => e.IsShowNone).HasMaxLength(3);
+
                 entity.Property(e => e.IssueDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ManufecturingDate).HasColumnType("datetime");
