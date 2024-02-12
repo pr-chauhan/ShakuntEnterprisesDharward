@@ -101,6 +101,11 @@
       <DependentUpon>Shakunt.edmx</DependentUpon>
     </Compile>
     <Compile Include="ShakuntEnterprisesContext.cs" />
+    <Compile Include="ShakuntEnterprisesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShakuntEnterprisesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TestCertificateRecord.cs">
       <DependentUpon>Shakunt.tt</DependentUpon>
@@ -143,6 +148,17 @@
     </EntityDeploy>
     <None Include="Shakunt.edmx.diagram">
       <DependentUpon>Shakunt.edmx</DependentUpon>
+    </None>
+    <None Include="ShakuntEnterprisesDataSet.xsc">
+      <DependentUpon>ShakuntEnterprisesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShakuntEnterprisesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShakuntEnterprisesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShakuntEnterprisesDataSet.xss">
+      <DependentUpon>ShakuntEnterprisesDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

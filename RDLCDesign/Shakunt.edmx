@@ -83,6 +83,11 @@
           <Property Name="Approved_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Approved_Date" Type="datetime" />
           <Property Name="IsShowCELogo" Type="nvarchar" MaxLength="3" />
+          <Property Name="Tally_ItemName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GradeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsShowMig" Type="nvarchar" MaxLength="3" />
+          <Property Name="IsShowFlux" Type="nvarchar" MaxLength="3" />
+          <Property Name="IsShowNone" Type="nvarchar" MaxLength="3" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -123,6 +128,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" />
           <Property Name="TradeDesignation" Type="nvarchar" MaxLength="100" />
+          <Property Name="GradeType" Type="nvarchar" MaxLength="50" />
           <Property Name="Specification" Type="nvarchar" MaxLength="200" />
           <Property Name="WeldingProcess" Type="nvarchar" MaxLength="50" />
           <Property Name="ShieldingGas" Type="nvarchar" MaxLength="50" />
@@ -265,6 +271,7 @@
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TestCertificateRecord">
           <Key>
@@ -344,6 +351,11 @@
           <Property Name="Approved_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Approved_Date" Type="DateTime" Precision="3" />
           <Property Name="IsShowCELogo" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Tally_ItemName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="GradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowMig" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowFlux" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="IsShowNone" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -387,6 +399,7 @@
           <EntitySetMapping Name="TradeDesignationMasters">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TradeDesignationMaster">
               <MappingFragment StoreEntitySet="TradeDesignationMaster">
+                <ScalarProperty Name="GradeType" ColumnName="GradeType" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
                 <ScalarProperty Name="Created_By" ColumnName="Created_By" />
@@ -440,6 +453,11 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="IsShowNone" ColumnName="IsShowNone" />
+                <ScalarProperty Name="IsShowFlux" ColumnName="IsShowFlux" />
+                <ScalarProperty Name="IsShowMig" ColumnName="IsShowMig" />
+                <ScalarProperty Name="GradeType" ColumnName="GradeType" />
+                <ScalarProperty Name="Tally_ItemName" ColumnName="Tally_ItemName" />
                 <ScalarProperty Name="IsShowCELogo" ColumnName="IsShowCELogo" />
                 <ScalarProperty Name="Approved_Date" ColumnName="Approved_Date" />
                 <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />

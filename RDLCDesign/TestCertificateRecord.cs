@@ -88,5 +88,10 @@ namespace RDLCDesign
         public string Approved_By { get; set; }
         public Nullable<System.DateTime> Approved_Date { get; set; }
         public string IsShowCELogo { get; set; }
+        public string Tally_ItemName { get; set; }
+        public string GradeType { get; set; }
+        public string IsShowMig { get; set; }
+        public string IsShowFlux { get; set; }
+        public string IsShowNone { get; set; }
     }
 }
