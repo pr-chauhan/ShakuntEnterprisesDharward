@@ -265,8 +265,8 @@
           <DataField>Specification</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TallyItemName">
-          <DataField>TallyItemName</DataField>
+        <Field Name="Tally_ItemName">
+          <DataField>Tally_ItemName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Test_Condition">
@@ -563,6 +563,10 @@
           <DataField>FlowRate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="GradeType">
+          <DataField>GradeType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -733,10 +737,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.03in</Top>
+            <Top>0.01611in</Top>
             <Left>2.36015in</Left>
             <Height>0.89222in</Height>
-            <Width>4.42029in</Width>
+            <Width>4.23696in</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -6801,7 +6805,7 @@
             <Value>ISIMIG</Value>
             <Sizing>Fit</Sizing>
             <Top>0.08in</Top>
-            <Left>6.8675in</Left>
+            <Left>6.7925in</Left>
             <Height>0.70417in</Height>
             <Width>0.81845in</Width>
             <ZIndex>27</ZIndex>
@@ -6810,7 +6814,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
             </Style>
           </Image>
@@ -6818,17 +6822,17 @@
             <Source>Embedded</Source>
             <Value>ISIFLUX</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.1175in</Top>
-            <Left>6.85414in</Left>
-            <Height>0.66667in</Height>
-            <Width>0.83181in</Width>
+            <Top>0.08in</Top>
+            <Left>6.7925in</Left>
+            <Height>0.70417in</Height>
+            <Width>0.81845in</Width>
             <ZIndex>28</ZIndex>
             <Visibility>
               <Hidden>=IIF((First(Fields!IsShowFlux.Value, "TestCertificate")).ToLower().ToString().ToLower().Equals("yes"), false, true)</Hidden>
             </Visibility>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
             </Style>
           </Image>
@@ -6836,8 +6840,8 @@
             <Source>Embedded</Source>
             <Value>ISINONE</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.08in</Top>
-            <Left>6.82167in</Left>
+            <Top>0.03417in</Top>
+            <Left>6.72569in</Left>
             <Height>0.75in</Height>
             <Width>0.94014in</Width>
             <ZIndex>29</ZIndex>
