@@ -15,6 +15,7 @@ using System.Drawing;
 using NToastNotify;
 using TallyConnector.Services;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace ShakuntEnterprises.Controllers
 {
@@ -672,9 +673,13 @@ namespace ShakuntEnterprises.Controllers
                 return NotFound();
             }
             var Data = new TestCertificateRecordModel();
+            var CData = _context.TestCertificateRecords.FirstOrDefault(x => x.Id == id).CertificateNo;
+            ViewBag.ResultRecords = _context.TestCertificateResultRecords.Where(x => x.CertificateNo.Equals(CData)).ToList();
             var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
             if (testCertificateRecord != null)
             {
+                ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
+                ViewBag.GTYPE = testCertificateRecord.GradeType;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;

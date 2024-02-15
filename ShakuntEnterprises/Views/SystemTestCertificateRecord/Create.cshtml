@@ -1147,7 +1147,7 @@
                     BatchDate = row.find("td:eq(18) input[type='text']").val();
                     BatchNo = row.find("td:eq(19) input[type='text']").val();
                     Size = row.find("td:eq(20) input[type='text']").val();
-                    alert(BatchNo);
+                    //alert(BatchNo);
                     $.post("/SystemTestCertificateRecord/SaveCertificateResultData", {
                         BatchDate:BatchDate,BatchNo: BatchNo, Size: Size, CertificateNo: CertificateNo,
                          ElementResultC:ElementResultC,ElementResultSi:ElementResultSi, ElementResultMn:ElementResultMn,
