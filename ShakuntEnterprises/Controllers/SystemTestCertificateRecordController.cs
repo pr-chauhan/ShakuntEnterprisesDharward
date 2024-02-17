@@ -68,72 +68,72 @@ namespace ShakuntEnterprises.Controllers
             var jsondata = JsonSerializer.Serialize(UniqueMenus);
             return Json(jsondata);
         }
-        public JsonResult GetTallyItem(int invoiceNo)
-        {
-            try
-            {
+        //public JsonResult GetTallyItem(int invoiceNo)
+        //{
+        //    try
+        //    {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
-                {
-                    FromDate = new(2023, 1, 1),
-                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
-                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+        //        TallyService _tallyService = new("http://localhost", 9000);
+        //        var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+        //        {
+        //            FromDate = new(2023, 1, 1),
+        //            FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+        //            Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
-                });
-                string sVoucherNumber;
-                int nVourcherNO = invoiceNo;
-                sVoucherNumber = nVourcherNO.ToString();
-                var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+        //        });
+        //        string sVoucherNumber;
+        //        int nVourcherNO = invoiceNo;
+        //        sVoucherNumber = nVourcherNO.ToString();
+        //        var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
 
-                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
-                    g => new { tallyStockItem = g.StockItemName }
-                    ).ToList();
+        //        var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+        //            g => new { tallyStockItem = g.StockItemName }
+        //            ).ToList();
 
-                //var jsondata = JsonSerializer.Serialize(talltItemName);
-                return Json(talltItemName);
+        //        //var jsondata = JsonSerializer.Serialize(talltItemName);
+        //        return Json(talltItemName);
 
-            }
-            catch (Exception ex)
-            {
-                return Json(ex);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Json(ex);
+        //    }
            
-        }
+        //}
 
 
-        public JsonResult GetTallyItemQuantity(int sInvoiceNumber)
-        {
-            try
-            {
+        //public JsonResult GetTallyItemQuantity(int sInvoiceNumber)
+        //{
+        //    try
+        //    {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
-                {
-                    FromDate = new(2023, 1, 1),
-                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
-                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+        //        TallyService _tallyService = new("http://localhost", 9000);
+        //        var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+        //        {
+        //            FromDate = new(2023, 1, 1),
+        //            FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+        //            Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
-                });
-                string sVoucherNumber;
-                int nVourcherNO = sInvoiceNumber;
-                sVoucherNumber = nVourcherNO.ToString();
-                var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+        //        });
+        //        string sVoucherNumber;
+        //        int nVourcherNO = sInvoiceNumber;
+        //        sVoucherNumber = nVourcherNO.ToString();
+        //        var Voucheritemlist = lVouchers.Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
 
-                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
-                    g => new {  tallyBilledQuantity = g.BilledQuantity }
-                    ).ToList();
+        //        var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+        //            g => new {  tallyBilledQuantity = g.BilledQuantity }
+        //            ).ToList();
 
 
-                return Json(talltItemName);
+        //        return Json(talltItemName);
 
-            }
-            catch (Exception ex)
-            {
-                return Json(ex);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Json(ex);
+        //    }
 
-        }
+        //}
 
         // GET: TestCertificateRecordController/Details/5
         public async Task<IActionResult> Details(int id)
@@ -158,6 +158,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.IssueDate = testCertificateRecord.IssueDate;
                 Data.TallyItemName = testCertificateRecord.TallyItemName;
                 Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceDate = testCertificateRecord.InvoiceDate;
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
@@ -275,6 +276,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.CustomerName = testCertificateRecord.CustomerName;
                     Data.IssueDate = testCertificateRecord.IssueDate;
                     Data.Quanity = testCertificateRecord.Quanity;
+                    Data.InvoiceDate = testCertificateRecord.InvoiceDate;
                     Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                     Data.TallyItemName = testCertificateRecord.TallyItemName;
                     Data.TradeDesignation = testCertificateRecord.TradeDesignation;
@@ -414,6 +416,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
                 Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceDate = testCertificateRecord.InvoiceDate;
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TallyItemName = testCertificateRecord.TallyItemName;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
@@ -532,6 +535,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.CustomerName = testCertificateRecord.CustomerName;
                         Data.IssueDate = testCertificateRecord.IssueDate;
                         Data.Quanity = testCertificateRecord.Quanity;
+                        Data.InvoiceDate = testCertificateRecord.InvoiceDate;
                         Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                         Data.TallyItemName = testCertificateRecord.TallyItemName;
                         Data.TradeDesignation = testCertificateRecord.TradeDesignation;
@@ -684,6 +688,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
                 Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceDate = testCertificateRecord.InvoiceDate;
                 Data.InvoiceNo = testCertificateRecord.InvoiceNo;
                 Data.TradeDesignation = testCertificateRecord.TradeDesignation;
                 Data.Size = testCertificateRecord.Size;
@@ -929,17 +934,20 @@ namespace ShakuntEnterprises.Controllers
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
 
-                var lVouchers =  _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2023, 1, 1),
-                    ToDate = new(2024, 1, 31),
+                    FromDate = new(2024, 2, 16),
+                    ToDate = new(2024, 2, 28),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
-                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter}
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
-                }).Result.Where(x=> x.VoucherNumber.Equals(sVoucherNumber)).ToList();
-             
-                var talltItemName = lVouchers[0].InventoryAllocations.ToList().Select(
-                    g => new {  g.StockItemName }
+                });
+                 
+                sVoucherNumber = invoiceNo.ToString();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.ToList().Select(
+                    g => new { g.StockItemName }
                     ).ToList();
                 var jsondata = JsonSerializer.Serialize(talltItemName);
                 return Json(jsondata);
@@ -951,7 +959,7 @@ namespace ShakuntEnterprises.Controllers
             }
             return Json(null);
         }
-        public async Task<JsonResult> GetTallyItemQuantity(string invoiceNo,string pItemName)
+        public async Task<JsonResult> GetTallyItemQuantity(string invoiceNo, string pItemName)
         {
             try
             {
@@ -962,17 +970,18 @@ namespace ShakuntEnterprises.Controllers
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
 
-                var lVouchers = _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2023, 1, 1),
-                    ToDate = new(2024, 1, 31),
+                    FromDate = new(2024, 2, 16),
+                    ToDate = new(2024, 2, 28),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
-                }).Result.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
-                
-                var talltItemName = lVouchers[0].InventoryAllocations.Where(x=> x.StockItemName.Equals(pItemName)).ToList().Select(
-                    g => new {g.BilledQuantity }
+                });
+                sVoucherNumber = invoiceNo.ToString();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+                var talltItemName = Voucheritemlist[0].InventoryAllocations.Where(x => x.StockItemName.Equals(pItemName)).ToList().Select(
+                    g => new { g.BilledQuantity }
                     ).ToList();
 
                 var jsondata = JsonSerializer.Serialize(talltItemName[0].BilledQuantity.ToString());

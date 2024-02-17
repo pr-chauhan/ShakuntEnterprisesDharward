@@ -32,12 +32,17 @@
            <hr />
            <h4>Tally Data</h4>
            <hr/>
-             <div class="form-group" style="width:20%;display: inline-block;">
+              <div class="form-group" style="width:15%;display: inline-block;">
+                        <label asp-for="InvoiceDate" class="control-label"></label>
+                        <input asp-for="InvoiceDate" class="form-control" type="date"/>
+                        <span asp-validation-for="InvoiceDate" class="text-danger"></span>
+              </div>
+             <div class="form-group" style="width:15%;display: inline-block;">
                         <label asp-for="InvoiceNo" class="control-label"></label>
                         <input asp-for="InvoiceNo" class="form-control" />
                         <span asp-validation-for="InvoiceNo" class="text-danger"></span>
                     </div>
-            <div class="form-group" style="width:50%;display: inline-block;">
+            <div class="form-group" style="width:40%;display: inline-block;">
                 <label asp-for="TallyItemName" class="control-label"></label>
                 <select asp-for="TallyItemName"  class="dropdown-item" style="border:1px solid #b8bee6;">
                     <option value="">Select Item</option>
@@ -544,38 +549,39 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            //var TradeDesignation = $("#TradeDesignation  option:selected").val();
-            //$.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
-            //    { TradeDesignation: TradeDesignation }, function (data) {
-            //        $("#GradeType").empty();
-            //        $("#GradeType").append('<option>select-item</option>');
-            //        var jData = JSON.parse(data);
-            //        $.each(jData, function (key, value) {
-            //            $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
-            //        });
-            //    });
+            var TradeDesignation = $("#TradeDesignation  option:selected").val();
+            $.getJSON("/SystemTestCertificateRecord/GetTradeDesignationDataMaster",
+                { TradeDesignation: TradeDesignation }, function (data) {
+                    $("#GradeType").empty();
+                    $("#GradeType").append('<option>select-item</option>');
+                    var jData = JSON.parse(data);
+                    $.each(jData, function (key, value) {
+                        $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                    });
+                });
 
-            //$("#InvoiceNo").change(function () {
-            //    var invoiceNo = $("#InvoiceNo").val();
-            //    $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo }, function (data) {
-            //        $("#TallyItemName").empty();
-            //        $("#TallyItemName").append('<option>select-item</option>');
-            //        var jData = JSON.parse(data);
-            //        $.each(jData, function (key, value) {
-            //            $("#TallyItemName").append('<option value=' + value.StockItemName + '>' + value.StockItemName + '</option>');
-            //        });
+            $("#InvoiceNo").change(function () {
+                var invoiceNo = $("#InvoiceNo").val();
+                $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo }, function (data) {
+                    $("#TallyItemName").empty();
+                    $("#TallyItemName").append('<option>select-item</option>');
+                    var jData = JSON.parse(data);
+                    $.each(jData, function (key, value) {
+                        $("#TallyItemName").append('<option value=' + value.StockItemName + '>' + value.StockItemName + '</option>');
+                    });
 
-            //    });
-            //});
-            //$("#TallyItemName").change(function () {
-            //    var pItemName = $("#TallyItemName  option:selected").val();
-            //    var invoiceNo = $("#InvoiceNo").val();
-            //    $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, pItemName: pItemName }, function (data) {
-            //        $("#Quanity").val("");
-            //        $("#Quanity").val(data);
-            //    });
-            //});
+                });
+            });
 
+            $("#TallyItemName").change(function () {
+               var invoiceNo = $("#InvoiceNo").val();
+               var pItemName = $("#TallyItemName  option:selected").val();
+                $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, pItemName: pItemName }, function (data) {
+                    $("#Quanity").val("");
+                    $("#Quanity").val(data);
+                });
+            });
+         
 
             $("#TradeDesignation").change(function () {
                 var TradeDesignation = $("#TradeDesignation  option:selected").val();

@@ -451,6 +451,8 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.HideSection).HasMaxLength(5);
 
+                entity.Property(e => e.InvoiceDate).HasColumnType("datetime");
+
                 entity.Property(e => e.InvoiceNo).HasMaxLength(50);
 
                 entity.Property(e => e.IsShowCelogo)

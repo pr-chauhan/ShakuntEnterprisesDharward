@@ -268,7 +268,7 @@ namespace ShakuntEnterprises.Controllers
             return View();
         }
 
-                public IActionResult Privacy()
+        public IActionResult Privacy()
         {
             try
             {
@@ -282,7 +282,7 @@ namespace ShakuntEnterprises.Controllers
                 //DbCommand.CommandText = "SELECT * FROM ledger WHERE $Name LIKE '%sale%'";
                 DbCommand.CommandText = "SELECT * FROM ODBCTables";
                 //DbCommand.CommandText = "SELECT $Name FROM ListofLedgers";
-                DbCommand.CommandText = "SELECT * FROM _voucher";
+                DbCommand.CommandText = "SELECT * FROM Voucher";
                 OdbcDataAdapter dataAdapter = new OdbcDataAdapter(DbCommand);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);

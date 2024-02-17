@@ -156,5 +156,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? IsShowFlux { get; set; }
         [DisplayName("Show None")]
         public string? IsShowNone { get; set; }
+        [DisplayName("Invoice Date")]
+        public DateTime? InvoiceDate { get; set; }
     }
 }
