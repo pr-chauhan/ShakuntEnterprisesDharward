@@ -923,21 +923,24 @@ namespace ShakuntEnterprises.Controllers
             return Json(data);
         }
 
-        public async Task<JsonResult> GetTallyItemName(int invoiceNo)
+        public async Task<JsonResult> GetTallyItemName(int invoiceNo, string invoiceDate)
         {
             try
             {
-
                 TallyService _tallyService = new("http://localhost", 9000);
                 //TallyService _tallyService = new("http://localhost", 10001);
                 //TallyService _tallyService = new("http://192.168.1.101", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
+                DateTime dateTime = Convert.ToDateTime(invoiceDate);
+                int nYyear = dateTime.Year;
+                int nMonth = dateTime.Month;
+                int nDate = dateTime.Day;
 
                 var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2024, 2, 16),
-                    ToDate = new(2024, 2, 28),
+                    FromDate = new(nYyear, nMonth, nDate),
+                    ToDate = new(nYyear, nMonth, nDate),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
@@ -959,7 +962,7 @@ namespace ShakuntEnterprises.Controllers
             }
             return Json(null);
         }
-        public async Task<JsonResult> GetTallyItemQuantity(string invoiceNo, string pItemName)
+        public async Task<JsonResult> GetTallyCustomerName(string invoiceNo, string invoiceDate, string pItemName)
         {
             try
             {
@@ -969,11 +972,52 @@ namespace ShakuntEnterprises.Controllers
                 //TallyService _tallyService = new("http://192.168.1.101", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
+                DateTime dateTime = Convert.ToDateTime(invoiceDate);
+                int nYyear = dateTime.Year;
+                int nMonth = dateTime.Month;
+                int nDate = dateTime.Day;
 
                 var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
                 {
-                    FromDate = new(2024, 2, 16),
-                    ToDate = new(2024, 2, 28),
+                    FromDate = new(nYyear, nMonth, nDate),
+                    ToDate = new(nYyear, nMonth, nDate),
+                    FetchList = Constants.Voucher.InvoiceViewFetchList.All,
+                    Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
+
+                });
+                sVoucherNumber = invoiceNo.ToString();
+                var Voucheritemlist = lVouchers.Where(x => x.VoucherNumber.Equals(sVoucherNumber)).ToList();
+                var talltItemName = Voucheritemlist[0].PartyName;                     
+
+                var jsondata = JsonSerializer.Serialize(talltItemName.ToString());
+                return Json(talltItemName);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.ToString();
+                return View(ViewBag.Error);
+            }
+            return Json(null);
+        }
+        public async Task<JsonResult> GetTallyItemQuantity(string invoiceNo,string invoiceDate, string pItemName)
+        {
+            try
+            {
+
+                TallyService _tallyService = new("http://localhost", 9000);
+                //TallyService _tallyService = new("http://localhost", 10001);
+                //TallyService _tallyService = new("http://192.168.1.101", 10001);
+                string sVoucherNumber;
+                sVoucherNumber = invoiceNo.ToString();
+                DateTime dateTime = Convert.ToDateTime(invoiceDate);
+                int nYyear = dateTime.Year;
+                int nMonth = dateTime.Month;
+                int nDate = dateTime.Day;
+
+                var lVouchers = await _tallyService.GetVouchersAsync<Voucher>(new RequestOptions()
+                {
+                    FromDate = new(nYyear, nMonth, nDate),
+                    ToDate = new(nYyear, nMonth, nDate),
                     FetchList = Constants.Voucher.InvoiceViewFetchList.All,
                     Filters = new List<Filter>() { Constants.Voucher.Filters.ViewTypeFilters.InvoiceVoucherFilter }
 
