@@ -59,8 +59,12 @@ if (!app.Environment.IsDevelopment())
 app.UseCors(builder =>
         builder
         .WithOrigins("http://localhost:8080", "http://192.168.1.101:8080")
+        .AllowAnyOrigin()
         .AllowAnyMethod()
-        .AllowAnyHeader());
+        .AllowAnyHeader()
+        .AllowCredentials() 
+
+        );
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
