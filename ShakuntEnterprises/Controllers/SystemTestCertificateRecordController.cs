@@ -923,7 +923,7 @@ namespace ShakuntEnterprises.Controllers
             return Json(data);
         }
 
-        public async Task<JsonResult> GetTallyItemName(int invoiceNo, string invoiceDate)
+        public async Task<JsonResult> GetTallyItemName(string invoiceNo, string invoiceDate)
         {
             try
             {

@@ -563,7 +563,7 @@
             $("#InvoiceNo").change(function () {
                 var invoiceNo = $("#InvoiceNo").val();
                 var invoiceDate = $("#InvoiceDate").val();
-                  
+                
                 $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo ,invoiceDate:invoiceDate}, function (data) {
                     $("#TallyItemName").empty();
                     $("#TallyItemName").append('<option>select-item</option>');

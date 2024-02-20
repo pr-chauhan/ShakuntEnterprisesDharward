@@ -61,6 +61,7 @@ app.UseCors(builder =>
         .WithOrigins("http://localhost:8080", "http://192.168.1.101:8080")
         .AllowAnyMethod()
         .AllowAnyHeader());
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
