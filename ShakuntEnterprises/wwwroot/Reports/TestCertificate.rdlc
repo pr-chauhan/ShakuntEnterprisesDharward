@@ -5088,7 +5088,7 @@
                   <Width>1.03049in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.0673in</Width>
+                  <Width>2.05394in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -5376,7 +5376,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>CombineMFGDate</rd:DefaultName>
@@ -5391,7 +5393,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -5453,7 +5454,7 @@
             <Top>2.32167in</Top>
             <Left>0.04479in</Left>
             <Height>0.36167in</Height>
-            <Width>7.76702in</Width>
+            <Width>7.75366in</Width>
             <ZIndex>19</ZIndex>
             <Style>
               <Border>
@@ -6972,7 +6973,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>7.82166in</Width>
+      <Width>7.81181in</Width>
       <Page>
         <LeftMargin>0.2in</LeftMargin>
         <RightMargin>0.2in</RightMargin>

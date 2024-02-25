@@ -567,14 +567,12 @@
                 var date = ('0' + dateObj.getDate()).slice(-2);
                 var year = dateObj.getFullYear();
                 var currentDate = year + '-' + month + '-' + date;
-                alert(currentDate);
-
                 var calDate = $("#IssueDate").val();
-                
-                alert(calDate);
-                if (calDate.replace('-', '') > currentDate.replace('-', ''))
+                var CDT = new Date(currentDate);
+                var CLDT = new Date(calDate);
+                if (CLDT > CDT){
                     alert("Issue Date can not be greater than current date.");
-                    $("#IssueDate").val(shortDate);
+                    $("#IssueDate").val(null);
                 }
             })
 

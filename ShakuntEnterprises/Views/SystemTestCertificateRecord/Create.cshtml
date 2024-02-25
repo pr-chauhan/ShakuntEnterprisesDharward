@@ -528,14 +528,19 @@
         $(document).ready(function () {
             var counter = 0;
 
-            $("#IssueDate").change(function(){
-             var date1 = new Date();
-             var calDate = $("#IssueDate").val();
-             if(calDate > date1)
-             {
-                 alert("Issue Date can not be greater than current date.");
-                 $("#IssueDate").val(date1);
-             }
+            $("#IssueDate").change(function () {
+                var dateObj = new Date();
+                var month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
+                var date = ('0' + dateObj.getDate()).slice(-2);
+                var year = dateObj.getFullYear();
+                var currentDate = year + '-' + month + '-' + date;
+                var calDate = $("#IssueDate").val();
+                var CDT = new Date(currentDate);
+                var CLDT = new Date(calDate);
+                if (CLDT > CDT) {
+                    alert("Issue Date can not be greater than current date.");
+                    $("#IssueDate").val(null);
+                }
             })
 
             $("#InvoiceNo").change(function () {
