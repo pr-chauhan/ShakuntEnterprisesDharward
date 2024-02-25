@@ -353,6 +353,10 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.CombineBatchNo).HasMaxLength(100);
 
+                entity.Property(e => e.CombineMfgdate)
+                    .HasMaxLength(100)
+                    .HasColumnName("CombineMFGDate");
+
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)
                     .HasColumnName("Created_By");
@@ -868,6 +872,10 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.BatchNo).HasMaxLength(50);
 
                 entity.Property(e => e.CertificateNo).HasMaxLength(50);
+
+                entity.Property(e => e.CombineMfgdate)
+                    .HasMaxLength(100)
+                    .HasColumnName("CombineMFGDate");
 
                 entity.Property(e => e.CreatedBy)
                     .HasMaxLength(20)

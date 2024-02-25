@@ -69,6 +69,10 @@
           <DataField>CombineBatchNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CombineMFGDate">
+          <DataField>CombineMFGDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Created_By">
           <DataField>Created_By</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -180,6 +184,10 @@
         <Field Name="Id">
           <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceDate">
+          <DataField>InvoiceDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="InvoiceNo">
           <DataField>InvoiceNo</DataField>
@@ -678,10 +686,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Shakunt Enterprises (P) Ltd.</Value>
+                    <Value>Shakunt Enterprises Private Limited</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>22pt</FontSize>
+                      <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -743,7 +751,7 @@
             <Width>4.23696in</Width>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -5355,14 +5363,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ManufecturingDate">
+                        <Textbox Name="CombineMFGDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=CDate(Fields!ManufecturingDate.Value).ToString("MM-yyyy")</Value>
+                                  <Value>=Fields!CombineMFGDate.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -5371,7 +5379,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ManufecturingDate</rd:DefaultName>
+                          <rd:DefaultName>CombineMFGDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -5383,6 +5391,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -6717,14 +6726,14 @@
             <Source>Embedded</Source>
             <Value>LogoForTC</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.03in</Top>
+            <Top>0.01611in</Top>
             <Left>0.04479in</Left>
             <Height>0.89222in</Height>
             <Width>2.24592in</Width>
             <ZIndex>22</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Image>
@@ -6804,7 +6813,7 @@
             <Source>Embedded</Source>
             <Value>ISIMIG</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.08in</Top>
+            <Top>0.01611in</Top>
             <Left>6.7925in</Left>
             <Height>0.70417in</Height>
             <Width>0.81845in</Width>
@@ -6822,7 +6831,7 @@
             <Source>Embedded</Source>
             <Value>ISIFLUX</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.08in</Top>
+            <Top>0.01611in</Top>
             <Left>6.7925in</Left>
             <Height>0.70417in</Height>
             <Width>0.81845in</Width>
@@ -6840,7 +6849,7 @@
             <Source>Embedded</Source>
             <Value>ISINONE</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.03417in</Top>
+            <Top>0.01611in</Top>
             <Left>6.72569in</Left>
             <Height>0.75in</Height>
             <Width>0.94014in</Width>
@@ -6854,6 +6863,107 @@
               </Border>
             </Style>
           </Image>
+          <Textbox Name="Textbox120">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Prepared By</Value>
+                    <Style>
+                      <FontFamily>times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox117</rd:DefaultName>
+            <Top>8.78834in</Top>
+            <Left>0.78833in</Left>
+            <Height>0.25in</Height>
+            <Width>1.5in</Width>
+            <ZIndex>30</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Created_By">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Created_By.Value, "TestCertificate")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Created_By</rd:DefaultName>
+            <Top>8.61333in</Top>
+            <Left>0.78833in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>31</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Left>2.32583in</Left>
+            <Height>0.90833in</Height>
+            <Width>0in</Width>
+            <ZIndex>32</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line2">
+            <Left>6.66083in</Left>
+            <Height>0.90833in</Height>
+            <Width>0in</Width>
+            <ZIndex>33</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line3">
+            <Top>0.925in</Top>
+            <Height>0in</Height>
+            <Width>7.81181in</Width>
+            <ZIndex>34</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <Height>9.08833in</Height>
         <Style>

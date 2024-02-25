@@ -88,6 +88,8 @@
           <Property Name="IsShowMig" Type="nvarchar" MaxLength="3" />
           <Property Name="IsShowFlux" Type="nvarchar" MaxLength="3" />
           <Property Name="IsShowNone" Type="nvarchar" MaxLength="3" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="CombineMFGDate" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -356,6 +358,8 @@
           <Property Name="IsShowMig" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="IsShowFlux" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="IsShowNone" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="CombineMFGDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -453,6 +457,8 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="CombineMFGDate" ColumnName="CombineMFGDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="IsShowNone" ColumnName="IsShowNone" />
                 <ScalarProperty Name="IsShowFlux" ColumnName="IsShowFlux" />
                 <ScalarProperty Name="IsShowMig" ColumnName="IsShowMig" />

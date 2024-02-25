@@ -85,5 +85,6 @@ namespace ShakuntEnterprises.Models
         public string? IsShowFlux { get; set; }
         public string? IsShowNone { get; set; }
         public DateTime? InvoiceDate { get; set; }
+        public string? CombineMfgdate { get; set; }
     }
 }

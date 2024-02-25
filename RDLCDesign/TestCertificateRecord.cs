@@ -93,5 +93,7 @@ namespace RDLCDesign
         public string IsShowMig { get; set; }
         public string IsShowFlux { get; set; }
         public string IsShowNone { get; set; }
+        public Nullable<System.DateTime> InvoiceDate { get; set; }
+        public string CombineMFGDate { get; set; }
     }
 }

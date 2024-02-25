@@ -158,5 +158,6 @@ namespace ShakuntEnterprises.ViewModels
         public string? IsShowNone { get; set; }
         [DisplayName("Invoice Date")]
         public DateTime? InvoiceDate { get; set; }
+        public string? CombineMfgdate { get; set; }
     }
 }

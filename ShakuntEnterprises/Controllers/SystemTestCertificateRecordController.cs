@@ -255,7 +255,7 @@ namespace ShakuntEnterprises.Controllers
             if (HttpContext.Session.GetString("lid") == null)
                 return RedirectToAction("Login","Home");
 
-            ViewBag.CERTINO = commanClass.GenerateNumberSeries("CERTIFICATE");
+            ViewBag.CERTINO = commanClass.GetNumberSeries("CERTIFICATE");
             return View();
         }
 
@@ -269,10 +269,11 @@ namespace ShakuntEnterprises.Controllers
 
             try
             {
+                //var CertificateNo= commanClass.GenerateNumberSeries("CERTIFICATE");
                 if (ModelState.IsValid)
                 {
                     var Data = new TestCertificateRecord();
-                    Data.CertificateNo = testCertificateRecord.CertificateNo;
+                    Data.CertificateNo = testCertificateRecord.CertificateNo; 
                     Data.CustomerName = testCertificateRecord.CustomerName;
                     Data.IssueDate = testCertificateRecord.IssueDate;
                     Data.Quanity = testCertificateRecord.Quanity;
@@ -366,18 +367,24 @@ namespace ShakuntEnterprises.Controllers
                     await _context.SaveChangesAsync();
 
                     var combineBatchNo = string.Empty;
+                    var combineMFGDate = string.Empty;
                     var batchoNo = _context.TestCertificateResultRecords.Where(x => x.CertificateNo == testCertificateRecord.CertificateNo).ToList();
                     foreach (var batcho in batchoNo)
                     {
                         if (combineBatchNo.Length > 0)
                             combineBatchNo = combineBatchNo + Environment.NewLine;
-                        combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                            combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                        if (combineMFGDate.Length > 0)
+                            combineMFGDate = combineMFGDate + Environment.NewLine;
+                            combineMFGDate +=  batcho.CombineMfgdate;
+
                     }
 
                     var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == testCertificateRecord.CertificateNo);
                     if (CetrificateRecord != null)
                     {
                         CetrificateRecord.CombineBatchNo = combineBatchNo;
+                        CetrificateRecord.CombineMfgdate = combineMFGDate;
                         _context.TestCertificateRecords.Update(CetrificateRecord);
                         _context.SaveChanges();
                     }
@@ -626,21 +633,28 @@ namespace ShakuntEnterprises.Controllers
                     await _context.SaveChangesAsync();
 
                     var combineBatchNo = string.Empty;
+                    var combineMFGDate = string.Empty;
                     var batchoNo = _context.TestCertificateResultRecords.Where(x => x.CertificateNo == testCertificateRecord.CertificateNo).ToList();
                     foreach (var batcho in batchoNo)
                     {
-                        if(combineBatchNo.Length>0)
-                            combineBatchNo= combineBatchNo+ Environment.NewLine;
-                        combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                        if (combineBatchNo.Length > 0)
+                            combineBatchNo = combineBatchNo + Environment.NewLine;
+                            combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                        if (combineMFGDate.Length > 0)
+                            combineMFGDate = combineMFGDate + Environment.NewLine;
+                            combineMFGDate += batcho.CombineMfgdate;
+
                     }
 
                     var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == testCertificateRecord.CertificateNo);
                     if (CetrificateRecord != null)
                     {
                         CetrificateRecord.CombineBatchNo = combineBatchNo;
+                        CetrificateRecord.CombineMfgdate = combineMFGDate;
                         _context.TestCertificateRecords.Update(CetrificateRecord);
                         _context.SaveChanges();
                     }
+
                     _toastNotification.AddSuccessToastMessage(testCertificateRecord.CertificateNo + " Updated successfully!");
                 }
                 catch (DbUpdateConcurrencyException)
@@ -776,7 +790,7 @@ namespace ShakuntEnterprises.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveCertificateResultData(string BatchDate, string BatchNo, string Size, string CertificateNo, 
+        public JsonResult SaveCertificateResultData(string BatchDate, string BatchNo, string Size, string CombineMFGDate, string CertificateNo, 
             string ElementResultC, string ElementResultSi, string ElementResultMn, string ElementResultP, 
             string ElementResultS,string ElementResultNi,string ElementResultCr,string ElementResultMo,
             string ElementResultCu,string TestResultUts,string TestResultYs,string TestResultElongation,
@@ -811,27 +825,35 @@ namespace ShakuntEnterprises.Controllers
                 OtherTestResultFilledSpecs = OtherTestResultFilledSpecs ?? "-----",
                 CreatedBy = HttpContext.Session.GetString("lid"),
                 CreatedDate = DateTime.Now,
+                CombineMfgdate = Convert.ToDateTime(CombineMFGDate).ToString("MMM-yyyy"),
 
             };
             _context.TestCertificateResultRecords.Add(testCertificateResultRecord);
             _context.SaveChanges();
-          
+
             var combineBatchNo = string.Empty;
-            var batchoNo = _context.TestCertificateResultRecords.Where(x=> x.CertificateNo == CertificateNo).ToList();
-            foreach(var batcho in batchoNo)
+            var combineMFGDate = string.Empty;
+            var batchoNo = _context.TestCertificateResultRecords.Where(x => x.CertificateNo == testCertificateResultRecord.CertificateNo).ToList();
+            foreach (var batcho in batchoNo)
             {
                 if (combineBatchNo.Length > 0)
                     combineBatchNo = combineBatchNo + Environment.NewLine;
-                combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                    combineBatchNo += batcho.BatchDate + batcho.BatchNo;
+                if (combineMFGDate.Length > 0)
+                    combineMFGDate = combineMFGDate + Environment.NewLine;
+                    combineMFGDate += batcho.CombineMfgdate;
+
             }
 
-            var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == CertificateNo);
-            if(CetrificateRecord!=null)
+            var CetrificateRecord = _context.TestCertificateRecords.FirstOrDefault(x => x.CertificateNo == testCertificateResultRecord.CertificateNo);
+            if (CetrificateRecord != null)
             {
                 CetrificateRecord.CombineBatchNo = combineBatchNo;
+                CetrificateRecord.CombineMfgdate = combineMFGDate;
                 _context.TestCertificateRecords.Update(CetrificateRecord);
                 _context.SaveChanges();
             }
+
             _toastNotification.AddSuccessToastMessage(CertificateNo + " Saved successfully!");
 
             return Json(CertificateNo);

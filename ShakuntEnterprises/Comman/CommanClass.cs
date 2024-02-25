@@ -250,7 +250,20 @@
             return result;
              
         }
+        public int GetNumberSeries(string? SeriesId)
+        {
+            var data = _context.NumberSeries.FirstOrDefault(x => x.SeriesId == SeriesId);
+            var result = (int)_context.NumberSeries.Where(x => x.SeriesId == SeriesId).Max(x => x.SeriesNumber)+1;
+            if (data != null)
+            {
+                data.SeriesNumber = result;
+                _context.Update(data);
+                _context.SaveChanges();
+            }
 
+            return result;
+
+        }
         public bool CheckLicenseDate(string appName)
         {
             bool lRetVal = false;

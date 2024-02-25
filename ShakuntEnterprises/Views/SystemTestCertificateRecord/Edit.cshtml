@@ -560,6 +560,24 @@
                     });
                 });
 
+
+            $("#IssueDate").change(function () {
+                var dateObj = new Date();
+                var month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
+                var date = ('0' + dateObj.getDate()).slice(-2);
+                var year = dateObj.getFullYear();
+                var currentDate = year + '-' + month + '-' + date;
+                alert(currentDate);
+
+                var calDate = $("#IssueDate").val();
+                
+                alert(calDate);
+                if (calDate.replace('-', '') > currentDate.replace('-', ''))
+                    alert("Issue Date can not be greater than current date.");
+                    $("#IssueDate").val(shortDate);
+                }
+            })
+
             $("#InvoiceNo").change(function () {
                 var invoiceNo = $("#InvoiceNo").val();
                 var invoiceDate = $("#InvoiceDate").val();
