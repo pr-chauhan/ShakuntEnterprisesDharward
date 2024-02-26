@@ -115,6 +115,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs;
                 Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs;
                 Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs;
+                Data.Remarks = tradeDesignationMaster.Remarks;
                 Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                 Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                 Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -192,6 +193,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs ?? "-----";
                     Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs ?? "-----";
                     Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs ?? "-----";
+                    Data.Remarks = tradeDesignationMaster.Remarks ?? "-----";
                     Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                     Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                     Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -267,6 +269,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs ?? "-----";
                 Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs ?? "-----";
                 Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs ?? "-----";
+                Data.Remarks = tradeDesignationMaster.Remarks;
                 Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                 Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                 Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;
@@ -344,6 +347,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.OtherTestRadioSpecs = tradeDesignationMaster.OtherTestRadioSpecs ?? "-----";
                         Data.OtherTestFaceBendSpecs = tradeDesignationMaster.OtherTestFaceBendSpecs ?? "-----";
                         Data.OtherTestFilledSpecs = tradeDesignationMaster.OtherTestFilledSpecs ?? "-----";
+                        Data.Remarks = tradeDesignationMaster.Remarks ?? "-----";
                         Data.CreatedDate = tradeDesignationMaster.CreatedDate;
                         Data.CreatedBy = tradeDesignationMaster.CreatedBy;
                         Data.ModifiedDate = tradeDesignationMaster.ModifiedDate;

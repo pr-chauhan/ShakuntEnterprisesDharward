@@ -1107,6 +1107,8 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.PreHeatInerpassTemp).HasMaxLength(50);
 
+                entity.Property(e => e.Remarks).HasMaxLength(500);
+
                 entity.Property(e => e.ShieldingGas).HasMaxLength(50);
 
                 entity.Property(e => e.Size).HasMaxLength(50);
