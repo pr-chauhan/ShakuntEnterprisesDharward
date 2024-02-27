@@ -86,5 +86,10 @@ namespace ShakuntEnterprises.Models
         public string? IsShowNone { get; set; }
         public DateTime? InvoiceDate { get; set; }
         public string? CombineMfgdate { get; set; }
+        public int? IsCancel { get; set; }
+        public string? CancelBy { get; set; }
+        public DateTime? CancelDate { get; set; }
+        public string? ElementMinNicrmo { get; set; }
+        public string? ElementMaxNicrmo { get; set; }
     }
 }

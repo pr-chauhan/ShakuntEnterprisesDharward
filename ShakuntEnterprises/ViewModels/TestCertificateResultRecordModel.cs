@@ -34,5 +34,6 @@ namespace ShakuntEnterprises.Models
         public string? ModifiedBy { get; set; }
 
         public DateTime? CombineMfgdate { get; set; }
+        public string? ElementResultNicrmo { get; set; }
     }
 }

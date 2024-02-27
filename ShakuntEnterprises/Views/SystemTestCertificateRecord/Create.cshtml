@@ -218,6 +218,12 @@
                     <input asp-for="ElementMinCu" class="form-control" />
                     <span asp-validation-for="ElementMinCu" class="text-danger"></span>
                 </div>
+                  <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMinNicrmo" class="control-label"></label>
+                    <input asp-for="ElementMinNicrmo" class="form-control" />
+                    <span asp-validation-for="ElementMinNicrmo" class="text-danger"></span>
+                </div>
+
             </div>
               <div class="row">
                 <div class="form-group" style="width:11%;display: inline-block;">
@@ -265,6 +271,11 @@
                     <input asp-for="ElementMaxCu" class="form-control" />
                     <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
                 </div>
+                  <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMaxNicrmo" class="control-label"></label>
+                    <input asp-for="ElementMaxNicrmo" class="form-control" />
+                    <span asp-validation-for="ElementMaxNicrmo" class="text-danger"></span>
+                </div>
             </div>
             <div class="row">
                 <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
@@ -279,6 +290,7 @@
                             <th width="11%">ResultCr</th>
                             <th width="11%">ResultMo</th>
                             <th width="11%">ResultCu</th>
+                            <th width="11%">ResultNiCrMo</th>
                         @*    <th width="20%">ResultUts</th>
                             <th width="20%">ResultYs</th>
                             <th width="20%">ResultElongation</th>
@@ -628,6 +640,62 @@
 
                     });
 
+
+
+                var ElementMinNi = 0;
+                var ElementMinCr = 0;
+                var ElementMinMo = 0;
+                var ElementMinNicrmo = 0;
+                $("#ElementMinNi").change(function () {
+
+                    ElementMinNi = $("#ElementMinNi").val();
+
+                    ElementMinNicrmo = parseFloat(ElementMinNi) + parseFloat(ElementMinMo) + parseFloat(ElementMinCr);
+                    $("#ElementMinNicrmo").val(ElementMinNicrmo);
+
+
+                })
+
+                $("#ElementMinMo").change(function () {
+
+                    ElementMinMo = $("#ElementMinMo").val();
+
+                    ElementMinNicrmo = parseFloat(ElementMinNi) + parseFloat(ElementMinMo) + parseFloat(ElementMinCr);
+                    $("#ElementMinNicrmo").val(ElementMinNicrmo);
+
+                })
+                $("#ElementMinCr").change(function () {
+
+                    ElementMinCr = $("#ElementMinCr").val();
+                    ElementMinNicrmo = parseFloat(ElementMinNi) + parseFloat(ElementMinMo) + parseFloat(ElementMinCr);
+                    $("#ElementMinNicrmo").val(ElementMinNicrmo);
+                })
+
+                var ElementMaxNi = 0;
+                var ElementMaxCr = 0;
+                var ElementMaxMo = 0;
+                var ElementMaxNicrmo = 0;
+                $("#ElementMaxNi").change(function () {
+
+                    ElementMaxNi = $("#ElementMaxNi").val();
+                    ElementMaxNicrmo = parseFloat(ElementMaxNi) + parseFloat(ElementMaxMo) + parseFloat(ElementMaxCr);
+                    $("#ElementMaxNicrmo").val(ElementMaxNicrmo);
+                })
+
+                $("#ElementMaxMo").change(function () {
+
+                    ElementMaxMo = $("#ElementMaxMo").val();
+                    ElementMaxNicrmo = parseFloat(ElementMaxNi) + parseFloat(ElementMaxMo) + parseFloat(ElementMaxCr);
+                    $("#ElementMaxNicrmo").val(ElementMaxNicrmo);
+
+                })
+                $("#ElementMaxCr").change(function () {
+
+                    ElementMaxCr = $("#ElementMaxCr").val();
+                    ElementMaxNicrmo = parseFloat(ElementMaxNi) + parseFloat(ElementMaxMo) + parseFloat(ElementMaxCr);
+                    $("#ElementMaxNicrmo").val(ElementMaxNicrmo);
+                })
+
             })
 
             $("#Size").change(function () {
@@ -654,6 +722,7 @@
                     })
             })
 
+             
             $("#addBatch").click(function () {
                 if ($("#BatchDate").val() == "")
                 {
@@ -1068,6 +1137,9 @@
                             '<td style="display:none;">' +
                             '<input type="text" class="form-control" id="CombineMFGDate[' + counter + ']" value="' + CombineMFGDate + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:175px;"/>' +
                             '</td>' +
+                            '<td>' +
+                            '<input type="text" class="form-control" id="testResultNiCrMo[' + counter + ']" value="' + data[0].testResultNiCrMo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
                             //'<td>' +
                             //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
                             //'</td>' +
@@ -1091,6 +1163,7 @@
                         '<td>' +
                         '<input type="text" class="form-control" id="testResultCondition[' + counter + ']" value="' + data[0].testResultCondition + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:100px;"/>' +
                         '</td>' +
+
                         //'<td>' +
                         //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +
                         //'</td>' +
@@ -1147,6 +1220,7 @@
                 var OtherTestResultRadioSpecs = "";
                 var OtherTestResultFaceBendSpecs = "";
                 var OtherTestResultFilledSpecs = "";
+                var ElementMaxNicrmo = "";
                 Size = $("#Size option:selected").text();
                 CertificateNo = $("#CertificateNo").val();
              
@@ -1174,6 +1248,7 @@
                     BatchNo = row.find("td:eq(19) input[type='text']").val();
                     Size = row.find("td:eq(20) input[type='text']").val();
                     CombineMFGDate = row.find("td:eq(21) input[type='text']").val();
+                    ElementResultNicrmo = row.find("td:eq(22) input[type='text']").val();
                     //alert(BatchNo);
                     $.post("/SystemTestCertificateRecord/SaveCertificateResultData", {
                         BatchDate: BatchDate, BatchNo: BatchNo, Size: Size, CombineMFGDate: CombineMFGDate, CertificateNo: CertificateNo,
@@ -1183,7 +1258,7 @@
                          TestResultUts:TestResultUts,TestResultYs:TestResultYs,TestResultElongation:TestResultElongation,
                          TestResultTemp:TestResultTemp,TestResultImpectValue:TestResultImpectValue,TestResultCondition:TestResultCondition,
                          OtherTestResultRadioSpecs:OtherTestResultRadioSpecs,OtherTestResultFaceBendSpecs:OtherTestResultFaceBendSpecs,
-                         OtherTestResultFilledSpecs: OtherTestResultFilledSpecs
+                        OtherTestResultFilledSpecs: OtherTestResultFilledSpecs, ElementResultNicrmo: ElementResultNicrmo
                 },function(data){
                     // alert("Data saved successfully..!!" + "  Requisition No.: "+ data);
                 });

@@ -210,6 +210,11 @@
                     <input asp-for="ElementMinCu" class="form-control" />
                     <span asp-validation-for="ElementMinCu" class="text-danger"></span>
                 </div>
+                 <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMinNicrmo" class="control-label"></label>
+                    <input asp-for="ElementMinNicrmo" class="form-control" />
+                    <span asp-validation-for="ElementMinNicrmo" class="text-danger"></span>
+                </div>
             </div>
               <div class="row">
                 <div class="form-group" style="width:11%;display: inline-block;">
@@ -257,6 +262,11 @@
                     <input asp-for="ElementMaxCu" class="form-control" />
                     <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
                 </div>
+                <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMaxNicrmo" class="control-label"></label>
+                    <input asp-for="ElementMaxNicrmo" class="form-control" />
+                    <span asp-validation-for="ElementMaxNicrmo" class="text-danger"></span>
+                </div>
             </div>
             <div class="row">
                 <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
@@ -272,6 +282,7 @@
                             <th width="10%">ResultCr</th>
                             <th width="10%">ResultMo</th>
                             <th width="10%">ResultCu</th>
+                            <th width="10%">ResultNiCrMo</t
                        
                         </tr>
                     </thead>
@@ -289,6 +300,7 @@
                                 <td><input type="text" id="ElementResultCr" class="form-control" value="@item.ElementResultCr" readonly /> </td>
                                 <td><input type="text" id="ElementResultMo" class="form-control" value="@item.ElementResultMo" readonly /> </td>
                                 <td><input type="text" id="ElementResultCu" class="form-control" value="@item.ElementResultCu" readonly /> </td>
+                                <td><input type="text" id="ElementResultCu" class="form-control" value="@item.ElementResultNicrmo" readonly /> </td>
                             </tr>
                         }
                     </tbody>

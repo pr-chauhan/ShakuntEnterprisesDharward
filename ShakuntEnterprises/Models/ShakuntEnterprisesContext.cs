@@ -123,6 +123,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Test_Result_ImpectValue");
 
+                entity.Property(e => e.TestResultNiCrMo)
+                    .HasMaxLength(50)
+                    .HasColumnName("Test_Result_NI_CR_MO");
+
                 entity.Property(e => e.TestResultTemp)
                     .HasMaxLength(50)
                     .HasColumnName("Test_Result_Temp");
@@ -329,6 +333,10 @@ namespace ShakuntEnterprises.Models
 
                 entity.Property(e => e.BatchNo).HasMaxLength(50);
 
+                entity.Property(e => e.CancelBy).HasMaxLength(20);
+
+                entity.Property(e => e.CancelDate).HasColumnType("datetime");
+
                 entity.Property(e => e.CastDiaActualValue)
                     .HasMaxLength(50)
                     .HasColumnName("CastDia_ActualValue");
@@ -393,6 +401,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Element_MAX_NI");
 
+                entity.Property(e => e.ElementMaxNicrmo)
+                    .HasMaxLength(50)
+                    .HasColumnName("ElementMAX_NICRMO");
+
                 entity.Property(e => e.ElementMaxP)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MAX_P");
@@ -428,6 +440,10 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.ElementMinNi)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MIN_NI");
+
+                entity.Property(e => e.ElementMinNicrmo)
+                    .HasMaxLength(50)
+                    .HasColumnName("ElementMIN_NICRMO");
 
                 entity.Property(e => e.ElementMinP)
                     .HasMaxLength(50)
@@ -908,6 +924,10 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.ElementResultNi)
                     .HasMaxLength(50)
                     .HasColumnName("Element_Result_NI");
+
+                entity.Property(e => e.ElementResultNicrmo)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_Result_NICRMO");
 
                 entity.Property(e => e.ElementResultP)
                     .HasMaxLength(50)

@@ -96,6 +96,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.CreatedBy = batchMaster.CreatedBy;
                 Data.ModifiedDate = batchMaster.ModifiedDate;
                 Data.ModifiedBy = batchMaster.ModifiedBy;
+                Data.TestResultNiCrMo = batchMaster.TestResultNiCrMo ?? "-----"; 
             }
             if (Data == null)
             {
@@ -147,6 +148,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.CreatedBy = batchMaster.CreatedBy;
                     Data.ModifiedDate = batchMaster.ModifiedDate;
                     Data.ModifiedBy = batchMaster.ModifiedBy;
+                    Data.TestResultNiCrMo = batchMaster.TestResultNiCrMo ?? "-----";
                     _context.Add(Data);
                     await _context.SaveChangesAsync();
                     _toastNotification.AddSuccessToastMessage(batchMaster.BatchNo + " Created successfully!");
@@ -199,6 +201,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.CreatedBy = batchMaster.CreatedBy;
                 Data.ModifiedDate = batchMaster.ModifiedDate;
                 Data.ModifiedBy = batchMaster.ModifiedBy;
+                Data.TestResultNiCrMo = batchMaster.TestResultNiCrMo ?? "-----";
             }
             if (Data == null)
             {
@@ -252,6 +255,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.CreatedBy = batchMaster.CreatedBy;
                         Data.ModifiedDate = batchMaster.ModifiedDate;
                         Data.ModifiedBy = batchMaster.ModifiedBy;
+                        Data.TestResultNiCrMo = batchMaster.TestResultNiCrMo ?? "-----";
                     }
                     _context.Update(Data);
                     await _context.SaveChangesAsync();

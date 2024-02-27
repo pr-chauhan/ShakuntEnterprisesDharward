@@ -55,11 +55,15 @@
                 </td>
 
                 <td>
-                    @if (item.IsApproved!=1)
+                    @if (item.IsCancel == 1 && item.IsApproved != 1)
                     {
-                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>  
-                        
-                       @* <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                        <label class="btn btn-danger">Canceled</label>
+                    }
+                    @if (item.IsApproved != 1 && item.IsCancel != 1)
+                    {
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                        <a class="btn btn-danger" asp-action="Cancel" asp-route-id="@item.Id">Cancel</a>
                     }
                     @if (item.IsApproved==1)
                     {

@@ -185,6 +185,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMinCr = testCertificateRecord.ElementMinCr;
                 Data.ElementMinMo = testCertificateRecord.ElementMinMo;
                 Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo;
                 Data.ElementMaxC = testCertificateRecord.ElementMaxC;
                 Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
                 Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
@@ -194,6 +195,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
                 //Data.ElementResultC = testCertificateRecord.ElementResultC;
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -306,6 +308,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ElementMinCr = testCertificateRecord.ElementMinCr ?? "-----";
                     Data.ElementMinMo = testCertificateRecord.ElementMinMo ?? "-----";
                     Data.ElementMinCu = testCertificateRecord.ElementMinCu ?? "-----";
+                    Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo ?? "-----";
                     Data.ElementMaxC = testCertificateRecord.ElementMaxC ?? "-----";
                     Data.ElementMaxSi = testCertificateRecord.ElementMaxSi ?? "-----";
                     Data.ElementMaxMn = testCertificateRecord.ElementMaxMn ?? "-----";
@@ -315,6 +318,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ElementMaxCr = testCertificateRecord.ElementMaxCr ?? "-----";
                     Data.ElementMaxMo = testCertificateRecord.ElementMaxMo ?? "-----";
                     Data.ElementMaxCu = testCertificateRecord.ElementMaxCu ?? "-----";
+                    Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo ?? "-----";
                     //Data.ElementResultC = testCertificateRecord.ElementResultC;
                     //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                     //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -452,6 +456,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMinCr = testCertificateRecord.ElementMinCr ?? "-----";
                 Data.ElementMinMo = testCertificateRecord.ElementMinMo ?? "-----";
                 Data.ElementMinCu = testCertificateRecord.ElementMinCu ?? "-----";
+                Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo ?? "-----";
                 Data.ElementMaxC = testCertificateRecord.ElementMaxC ?? "-----";
                 Data.ElementMaxSi = testCertificateRecord.ElementMaxSi ?? "-----";
                 Data.ElementMaxMn = testCertificateRecord.ElementMaxMn ?? "-----";
@@ -461,6 +466,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxCr = testCertificateRecord.ElementMaxCr ?? "-----";
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo ?? "-----";
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu ?? "-----";
+                Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo ?? "-----";
                 //Data.ElementResultC = testCertificateRecord.ElementResultC ?? "-----";
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi ?? "-----";
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn ?? "-----";
@@ -571,6 +577,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.ElementMinCr = testCertificateRecord.ElementMinCr;
                         Data.ElementMinMo = testCertificateRecord.ElementMinMo;
                         Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                        Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo;
                         Data.ElementMaxC = testCertificateRecord.ElementMaxC;
                         Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
                         Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
@@ -580,6 +587,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
                         Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                         Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                        Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
                         //Data.ElementResultC = testCertificateRecord.ElementResultC;
                         //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                         //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -729,6 +737,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMinCr = testCertificateRecord.ElementMinCr;
                 Data.ElementMinMo = testCertificateRecord.ElementMinMo;
                 Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo;
                 Data.ElementMaxC = testCertificateRecord.ElementMaxC;
                 Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
                 Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
@@ -738,6 +747,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
                 //Data.ElementResultC = testCertificateRecord.ElementResultC;
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -795,7 +805,8 @@ namespace ShakuntEnterprises.Controllers
             string ElementResultS,string ElementResultNi,string ElementResultCr,string ElementResultMo,
             string ElementResultCu,string TestResultUts,string TestResultYs,string TestResultElongation,
             string TestResultTemp, string TestResultImpectValue, string TestResultCondition,
-            string OtherTestResultRadioSpecs,string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs
+            string OtherTestResultRadioSpecs,string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs,
+            string ElementResultNicrmo
             )
         {
             
@@ -814,6 +825,7 @@ namespace ShakuntEnterprises.Controllers
                 ElementResultCr = ElementResultCr ?? "-----",
                 ElementResultMo = ElementResultMo ?? "-----",
                 ElementResultCu = ElementResultCu ?? "-----",
+                ElementResultNicrmo = ElementResultNicrmo ?? "-----",
                 TestResultUts = TestResultUts ?? "-----",
                 TestResultYs = TestResultYs ?? "-----",
                 TestResultElongation = TestResultElongation ?? "-----",
@@ -875,7 +887,7 @@ namespace ShakuntEnterprises.Controllers
 
                 _context.Update(Data);
                 await _context.SaveChangesAsync();
-                _toastNotification.AddSuccessToastMessage(id.ToString() + " Appproved successfully!");
+                _toastNotification.AddSuccessToastMessage(testCertificateRecord1.CertificateNo + " Appproved successfully!");
             }
             if (Data == null)
             {
@@ -910,6 +922,142 @@ namespace ShakuntEnterprises.Controllers
             {
                 return View();
             }
+        }
+
+        public async Task<IActionResult> Cancel(int id)
+        {
+            if (HttpContext.Session.GetString("lid") == null)
+                return RedirectToAction("Login", "Home");
+
+            if (id == null || _context.TestCertificateRecords == null)
+            {
+                return NotFound();
+            }
+            var Data = new TestCertificateRecordModel();
+            var CData = _context.TestCertificateRecords.FirstOrDefault(x => x.Id == id).CertificateNo;
+            ViewBag.ResultRecords = _context.TestCertificateResultRecords.Where(x => x.CertificateNo.Equals(CData)).ToList();
+            var testCertificateRecord = await _context.TestCertificateRecords.FindAsync(id);
+            if (testCertificateRecord != null)
+            {
+                ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
+                ViewBag.GTYPE = testCertificateRecord.GradeType;
+                Data.CertificateNo = testCertificateRecord.CertificateNo;
+                Data.CustomerName = testCertificateRecord.CustomerName;
+                Data.IssueDate = testCertificateRecord.IssueDate;
+                Data.Quanity = testCertificateRecord.Quanity;
+                Data.InvoiceDate = testCertificateRecord.InvoiceDate;
+                Data.InvoiceNo = testCertificateRecord.InvoiceNo;
+                Data.TradeDesignation = testCertificateRecord.TradeDesignation;
+                Data.Size = testCertificateRecord.Size;
+                Data.BatchDate = testCertificateRecord.BatchDate;
+                Data.BatchNo = testCertificateRecord.BatchNo;
+                Data.ManufecturingDate = testCertificateRecord.ManufecturingDate;
+                Data.Specification = testCertificateRecord.Specification;
+                Data.WeldingProcess = testCertificateRecord.WeldingProcess;
+                Data.ShieldingGas = testCertificateRecord.ShieldingGas;
+                Data.PreHeatInerpassTemp = testCertificateRecord.PreHeatInerpassTemp;
+                Data.Type = testCertificateRecord.Type;
+                Data.Apms = testCertificateRecord.Apms;
+                Data.FlowRate = testCertificateRecord.FlowRate;
+                Data.CurrentPolarity = testCertificateRecord.CurrentPolarity;
+                Data.Volts = testCertificateRecord.Volts;
+                Data.TravelSpeed = testCertificateRecord.TravelSpeed;
+                Data.BaseMetal = testCertificateRecord.BaseMetal;
+                Data.ElementMinC = testCertificateRecord.ElementMinC;
+                Data.ElementMinSi = testCertificateRecord.ElementMinSi;
+                Data.ElementMinMn = testCertificateRecord.ElementMinMn;
+                Data.ElementMinP = testCertificateRecord.ElementMinP;
+                Data.ElementMinS = testCertificateRecord.ElementMinS;
+                Data.ElementMinNi = testCertificateRecord.ElementMinNi;
+                Data.ElementMinCr = testCertificateRecord.ElementMinCr;
+                Data.ElementMinMo = testCertificateRecord.ElementMinMo;
+                Data.ElementMinCu = testCertificateRecord.ElementMinCu;
+                Data.ElementMinNicrmo = testCertificateRecord.ElementMinNicrmo;
+                Data.ElementMaxC = testCertificateRecord.ElementMaxC;
+                Data.ElementMaxSi = testCertificateRecord.ElementMaxSi;
+                Data.ElementMaxMn = testCertificateRecord.ElementMaxMn;
+                Data.ElementMaxP = testCertificateRecord.ElementMaxP;
+                Data.ElementMaxS = testCertificateRecord.ElementMaxS;
+                Data.ElementMaxNi = testCertificateRecord.ElementMaxNi;
+                Data.ElementMaxCr = testCertificateRecord.ElementMaxCr;
+                Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
+                Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
+                Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
+                //Data.ElementResultC = testCertificateRecord.ElementResultC;
+                //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
+                //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
+                //Data.ElementResultP = testCertificateRecord.ElementResultP;
+                //Data.ElementResultS = testCertificateRecord.ElementResultS;
+                //Data.ElementResultNi = testCertificateRecord.ElementResultNi;
+                //Data.ElementResultCr = testCertificateRecord.ElementResultCr;
+                //Data.ElementResultMo = testCertificateRecord.ElementResultMo;
+                //Data.ElementResultCu = testCertificateRecord.ElementResultCu;
+                Data.TestMinUts = testCertificateRecord.TestMinUts;
+                Data.TestMinYs = testCertificateRecord.TestMinYs;
+                Data.TestMinElongation = testCertificateRecord.TestMinElongation;
+                Data.TestMaxUts = testCertificateRecord.TestMaxUts;
+                Data.TestMaxYs = testCertificateRecord.TestMaxYs;
+                Data.TestMaxElongation = testCertificateRecord.TestMaxElongation;
+                //Data.TestResultUts = testCertificateRecord.TestResultUts;
+                //Data.TestResultYs = testCertificateRecord.TestResultYs;
+                //Data.TestResultElongation = testCertificateRecord.TestResultElongation;
+                Data.TestTemp = testCertificateRecord.TestTemp;
+                Data.TestImpectValue = testCertificateRecord.TestImpectValue;
+                Data.TestCondition = testCertificateRecord.TestCondition;
+                Data.SizeStandardValue = testCertificateRecord.SizeStandardValue;
+                Data.SizeActualValue = testCertificateRecord.SizeActualValue;
+                Data.CoatingStandardValue = testCertificateRecord.CoatingStandardValue;
+                Data.CoatingActualValue = testCertificateRecord.CoatingActualValue;
+                Data.UtswireStandardValue = testCertificateRecord.UtswireStandardValue;
+                Data.UtswireActualValue = testCertificateRecord.UtswireActualValue;
+                Data.CastDiaStandardValue = testCertificateRecord.CastDiaStandardValue;
+                Data.CastDiaActualValue = testCertificateRecord.CastDiaActualValue;
+                Data.HelixStandardValue = testCertificateRecord.HelixStandardValue;
+                Data.HelixActualValue = testCertificateRecord.HelixActualValue;
+                Data.OtherTestRadioSpecs = testCertificateRecord.OtherTestRadioSpecs;
+                Data.OtherTestFaceBendSpecs = testCertificateRecord.OtherTestFaceBendSpecs;
+                Data.OtherTestFilledSpecs = testCertificateRecord.OtherTestFilledSpecs;
+                //Data.OtherTestResultRadioSpecs = testCertificateRecord.OtherTestResultRadioSpecs;
+                //Data.OtherTestResultFaceBendSpecs = testCertificateRecord.OtherTestResultFaceBendSpecs;
+                //Data.OtherTestResultFilledSpecs = testCertificateRecord.OtherTestResultFilledSpecs;
+                Data.Remarks = testCertificateRecord.Remarks;
+                Data.CertificateType = "System";
+                Data.CreatedDate = testCertificateRecord.CreatedDate;
+                Data.CreatedBy = testCertificateRecord.CreatedBy;
+                Data.ModifiedDate = testCertificateRecord.ModifiedDate;
+                Data.ModifiedBy = testCertificateRecord.ModifiedBy;
+            }
+            if (Data == null)
+            {
+                return NotFound();
+            }
+            return View(Data);
+        }
+
+        // POST: TestCertificateRecordController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Cancel(int id, TestCertificateRecordModel testCertificateRecord1)
+        {
+
+            var Data = await _context.TestCertificateRecords.FindAsync(id);
+            if (Data != null)
+            {
+                Data.IsCancel = 1;
+                Data.CancelBy = HttpContext.Session.GetString("lid");
+                Data.CancelDate = DateTime.Now;
+                Data.ModifiedDate = DateTime.Now;
+                Data.ModifiedBy = HttpContext.Session.GetString("lid");
+
+                _context.Update(Data);
+                await _context.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage(testCertificateRecord1.CertificateNo + " Canceled successfully!");
+            }
+            if (Data == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Index");
         }
         private bool TestCertificateRecordExists(int id)
         {
