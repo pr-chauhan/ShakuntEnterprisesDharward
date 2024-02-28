@@ -95,5 +95,11 @@ namespace RDLCDesign
         public string IsShowNone { get; set; }
         public Nullable<System.DateTime> InvoiceDate { get; set; }
         public string CombineMFGDate { get; set; }
+        public Nullable<int> IsCancel { get; set; }
+        public string CancelBy { get; set; }
+        public Nullable<System.DateTime> CancelDate { get; set; }
+        public string ElementMIN_NICRMO { get; set; }
+        public string ElementMAX_NICRMO { get; set; }
+        public string isShowElementNiCrMo { get; set; }
     }
 }

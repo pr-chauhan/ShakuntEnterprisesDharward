@@ -479,6 +479,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(3)
                     .HasColumnName("IsShowCELogo");
 
+                entity.Property(e => e.IsShowElementNiCrMo)
+                    .HasMaxLength(5)
+                    .HasColumnName("isShowElementNiCrMo");
+
                 entity.Property(e => e.IsShowFlux).HasMaxLength(3);
 
                 entity.Property(e => e.IsShowMig).HasMaxLength(3);

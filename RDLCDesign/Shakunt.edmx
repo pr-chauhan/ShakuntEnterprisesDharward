@@ -90,6 +90,12 @@
           <Property Name="IsShowNone" Type="nvarchar" MaxLength="3" />
           <Property Name="InvoiceDate" Type="datetime" />
           <Property Name="CombineMFGDate" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsCancel" Type="int" />
+          <Property Name="CancelBy" Type="nvarchar" MaxLength="20" />
+          <Property Name="CancelDate" Type="datetime" />
+          <Property Name="ElementMIN_NICRMO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElementMAX_NICRMO" Type="nvarchar" MaxLength="50" />
+          <Property Name="isShowElementNiCrMo" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -122,6 +128,8 @@
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="CombineMFGDate" Type="nvarchar" MaxLength="100" />
+          <Property Name="Element_Result_NICRMO" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TradeDesignationMaster">
           <Key>
@@ -175,6 +183,7 @@
           <Property Name="Created_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityContainer Name="ShakuntEnterprisesModelStoreContainer">
           <EntitySet Name="TestCertificateRecord" EntityType="Self.TestCertificateRecord" Schema="dbo" store:Type="Tables" />
@@ -221,6 +230,8 @@
           <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CombineMFGDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TradeDesignationMaster">
           <Key>
@@ -274,6 +285,7 @@
           <Property Name="Modified_Date" Type="DateTime" Precision="3" />
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="GradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TestCertificateRecord">
           <Key>
@@ -360,6 +372,12 @@
           <Property Name="IsShowNone" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
           <Property Name="CombineMFGDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsCancel" Type="Int32" />
+          <Property Name="CancelBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CancelDate" Type="DateTime" Precision="3" />
+          <Property Name="ElementMIN_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElementMAX_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isShowElementNiCrMo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -370,6 +388,8 @@
           <EntitySetMapping Name="TestCertificateResultRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateResultRecord">
               <MappingFragment StoreEntitySet="TestCertificateResultRecord">
+                <ScalarProperty Name="Element_Result_NICRMO" ColumnName="Element_Result_NICRMO" />
+                <ScalarProperty Name="CombineMFGDate" ColumnName="CombineMFGDate" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
                 <ScalarProperty Name="Created_By" ColumnName="Created_By" />
@@ -403,6 +423,7 @@
           <EntitySetMapping Name="TradeDesignationMasters">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TradeDesignationMaster">
               <MappingFragment StoreEntitySet="TradeDesignationMaster">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="GradeType" ColumnName="GradeType" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
                 <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
@@ -457,6 +478,12 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="isShowElementNiCrMo" ColumnName="isShowElementNiCrMo" />
+                <ScalarProperty Name="ElementMAX_NICRMO" ColumnName="ElementMAX_NICRMO" />
+                <ScalarProperty Name="ElementMIN_NICRMO" ColumnName="ElementMIN_NICRMO" />
+                <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
+                <ScalarProperty Name="CancelBy" ColumnName="CancelBy" />
+                <ScalarProperty Name="IsCancel" ColumnName="IsCancel" />
                 <ScalarProperty Name="CombineMFGDate" ColumnName="CombineMFGDate" />
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
                 <ScalarProperty Name="IsShowNone" ColumnName="IsShowNone" />

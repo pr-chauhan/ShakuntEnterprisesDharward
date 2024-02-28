@@ -62,5 +62,6 @@ namespace RDLCDesign
         public Nullable<System.DateTime> Modified_Date { get; set; }
         public string Modified_By { get; set; }
         public string GradeType { get; set; }
+        public string Remarks { get; set; }
     }
 }

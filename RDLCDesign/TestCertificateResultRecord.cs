@@ -41,5 +41,7 @@ namespace RDLCDesign
         public string Created_By { get; set; }
         public Nullable<System.DateTime> Modified_Date { get; set; }
         public string Modified_By { get; set; }
+        public string CombineMFGDate { get; set; }
+        public string Element_Result_NICRMO { get; set; }
     }
 }

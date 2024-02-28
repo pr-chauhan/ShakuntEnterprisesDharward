@@ -171,6 +171,14 @@
             </div>
             <hr />
             <h4>Chemical Composition (Wire)</h4>
+             <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="IsShowElementNiCrMo" class="control-label"></label>
+                    <select asp-for="IsShowElementNiCrMo"  class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                    <span asp-validation-for="IsShowElementNiCrMo" class="text-danger"></span>
+                </div>
             <hr />
             <div class="row">
                 <div class="form-group" style="width:11%;display: inline-block;">
@@ -223,6 +231,7 @@
                     <input asp-for="ElementMinNicrmo" class="form-control" />
                     <span asp-validation-for="ElementMinNicrmo" class="text-danger"></span>
                 </div>
+                
 
             </div>
               <div class="row">
@@ -276,6 +285,7 @@
                     <input asp-for="ElementMaxNicrmo" class="form-control" />
                     <span asp-validation-for="ElementMaxNicrmo" class="text-danger"></span>
                 </div>
+                 
             </div>
             <div class="row">
                 <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
@@ -637,7 +647,11 @@
                         $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
                         $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
                         $("#Remarks").val(data[0].remarks);
-
+                        var ElementMinNiCrMo = parseFloat(data[0].elementMinNi) + parseFloat(data[0].elementMinCr) + parseFloat(data[0].elementMinMo);
+                        $("#ElementMinNicrmo").val(ElementMinNiCrMo);
+                        var ElementMaxNiCrMo = parseFloat(data[0].elementMaxNi) + parseFloat(data[0].elementMaxCr) + parseFloat(data[0].elementMaxMo);
+                        $("#ElementMaxNicrmo").val(ElementMaxNiCrMo);
+                       
                     });
 
 

@@ -196,6 +196,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
                 Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
+                Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo;
                 //Data.ElementResultC = testCertificateRecord.ElementResultC;
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -588,6 +589,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                         Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
                         Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
+                        Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo;
                         //Data.ElementResultC = testCertificateRecord.ElementResultC;
                         //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                         //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -748,6 +750,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
                 Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
+                Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo;
                 //Data.ElementResultC = testCertificateRecord.ElementResultC;
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -983,6 +986,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxMo = testCertificateRecord.ElementMaxMo;
                 Data.ElementMaxCu = testCertificateRecord.ElementMaxCu;
                 Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo;
+                Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo;
                 //Data.ElementResultC = testCertificateRecord.ElementResultC;
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
