@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\Reports\TestCertificate.rdlc" />
+    <Content Remove="wwwroot\Reports\TestCertificateCombineColumn.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -117,6 +118,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\Reports\TestCertificate.rdlc" />
+    <EmbeddedResource Include="wwwroot\Reports\TestCertificateCombineColumn.rdlc" />
   </ItemGroup>
 
   <ItemGroup>

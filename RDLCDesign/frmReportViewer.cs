@@ -26,6 +26,10 @@ namespace RDLCDesign
             var certificateResultData = db.TestCertificateResultRecords.Where(x => x.CertificateNo == certificateno).ToList();
             var tradeDesignation = certificateData[0].TradeDesignation.ToString();
             var tradeDesignationMaster = db.TradeDesignationMasters.Where(x => x.TradeDesignation == tradeDesignation).ToList();
+            if(certificateData.Count>0 && certificateData[0].isShowElementNiCrMo.ToLower()=="yes")
+            {
+                this.reportViewer1.LocalReport.ReportPath = @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprises\RDLCDesign\Reports\TestCertificateCombineColumn.rdlc";
+            }
             
             ReportDataSource TestCertificate = new ReportDataSource();
             TestCertificate.Name = "TestCertificate";

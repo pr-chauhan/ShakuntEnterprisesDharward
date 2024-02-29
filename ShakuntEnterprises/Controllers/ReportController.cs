@@ -55,13 +55,18 @@ namespace ShakuntEnterprises.Controllers
                 int OrderN = int.Parse(Id);
                 string mimtype = string.Empty;
                 int extension = 1;
-                var path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\TestCertificate.rdlc";
+                string path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\TestCertificate.rdlc";
 
                 //var certificateRecords = _context.TestCertificateRecords.Where(x => x.Id == OrderN).ToList();
                 var certificateRecords = commanClass.getTestCertificateRecordList(Id);
                 var certificateResultData = commanClass.getTestCertificateResultRecordList(Id);
                 var tradeDesignation = certificateRecords.Rows[0]["TradeDesignation"].ToString();
                 var tradeDesignationMaster = commanClass.getTradeDesignationMasterRecord(tradeDesignation);
+
+                if(certificateRecords.Rows.Count>0 && certificateResultData.Rows[0]["isShowElementNiCrMo"].ToString().ToLower() == "yes")
+                {
+                    path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\TestCertificateCombineColumn.rdlc";
+                }
 
                 LocalReport localReport = new LocalReport(path);
                 localReport.AddDataSource("TestCertificate", certificateRecords);

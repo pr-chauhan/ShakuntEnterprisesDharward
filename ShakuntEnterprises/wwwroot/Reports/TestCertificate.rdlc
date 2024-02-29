@@ -41,6 +41,14 @@
           <DataField>BatchNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CancelBy">
+          <DataField>CancelBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CancelDate">
+          <DataField>CancelDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="CastDia_ActualValue">
           <DataField>CastDia_ActualValue</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -161,6 +169,14 @@
           <DataField>Element_MIN_SI</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ElementMAX_NICRMO">
+          <DataField>ElementMAX_NICRMO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ElementMIN_NICRMO">
+          <DataField>ElementMIN_NICRMO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FlowRate">
           <DataField>FlowRate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -197,8 +213,16 @@
           <DataField>IsApproved</DataField>
           <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="IsCancel">
+          <DataField>IsCancel</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="IsShowCELogo">
           <DataField>IsShowCELogo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="isShowElementNiCrMo">
+          <DataField>isShowElementNiCrMo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="IsShowFlux">
@@ -366,6 +390,10 @@
           <DataField>CertificateNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CombineMFGDate">
+          <DataField>CombineMFGDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Created_By">
           <DataField>Created_By</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -396,6 +424,10 @@
         </Field>
         <Field Name="Element_Result_NI">
           <DataField>Element_Result_NI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Element_Result_NICRMO">
+          <DataField>Element_Result_NICRMO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Element_Result_P">
@@ -601,6 +633,10 @@
         </Field>
         <Field Name="PreHeatInerpassTemp">
           <DataField>PreHeatInerpassTemp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="ShieldingGas">
@@ -6761,7 +6797,7 @@
             <Value>AHD</Value>
             <Sizing>Fit</Sizing>
             <Top>8.37094in</Top>
-            <Left>6.2935in</Left>
+            <Left>6.28044in</Left>
             <Height>0.5in</Height>
             <Width>0.5in</Width>
             <ZIndex>24</ZIndex>
@@ -6779,7 +6815,7 @@
             <Value>HD</Value>
             <Sizing>Fit</Sizing>
             <Top>8.34316in</Top>
-            <Left>6.34906in</Left>
+            <Left>6.30444in</Left>
             <Height>0.5in</Height>
             <Width>0.5in</Width>
             <ZIndex>25</ZIndex>
@@ -6966,7 +7002,7 @@
             </Style>
           </Line>
         </ReportItems>
-        <Height>9.08833in</Height>
+        <Height>9.17167in</Height>
         <Style>
           <Border>
             <Style>Solid</Style>
