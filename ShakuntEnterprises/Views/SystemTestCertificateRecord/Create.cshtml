@@ -648,13 +648,23 @@
                         $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
                         $("#Remarks").val(data[0].remarks);
                         var ElementMinNiCrMo = parseFloat(data[0].elementMinNi) + parseFloat(data[0].elementMinCr) + parseFloat(data[0].elementMinMo);
-                        $("#ElementMinNicrmo").val(ElementMinNiCrMo);
+                        if(parseFloat(ElementMinNiCrMo).toFixed(3) > 0)
+                        {
+                            $("#ElementMinNicrmo").val(parseFloat(ElementMinNiCrMo).toFixed(3));
+                        }
+                        else{
+                             $("#ElementMinNicrmo").val("-----");
+                        }
                         var ElementMaxNiCrMo = parseFloat(data[0].elementMaxNi) + parseFloat(data[0].elementMaxCr) + parseFloat(data[0].elementMaxMo);
-                        $("#ElementMaxNicrmo").val(ElementMaxNiCrMo);
+
+                        if (parseFloat(ElementMaxNiCrMo).toFixed(3) > 0) {
+                            $("#ElementMaxNicrmo").val(parseFloat(ElementMaxNiCrMo).toFixed(3));
+                        }
+                        else {
+                            $("#ElementMaxNicrmo").val("-----");
+                        }
                        
-                    });
-
-
+                   });
 
                 var ElementMinNi = 0;
                 var ElementMinCr = 0;

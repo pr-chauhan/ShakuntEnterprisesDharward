@@ -63,7 +63,7 @@ namespace ShakuntEnterprises.Controllers
                 var tradeDesignation = certificateRecords.Rows[0]["TradeDesignation"].ToString();
                 var tradeDesignationMaster = commanClass.getTradeDesignationMasterRecord(tradeDesignation);
 
-                if(certificateRecords.Rows.Count>0 && certificateResultData.Rows[0]["isShowElementNiCrMo"].ToString().ToLower() == "yes")
+                if(certificateRecords.Rows.Count>0 && certificateRecords.Rows[0]["isShowElementNiCrMo"].ToString().ToLower() == "yes")
                 {
                     path = $"{this._webHostEnvironment.WebRootPath}\\Reports\\TestCertificateCombineColumn.rdlc";
                 }
