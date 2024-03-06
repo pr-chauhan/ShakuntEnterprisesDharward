@@ -737,10 +737,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>B-XXIX 595/5, Campa Cola Road</Value>
+                    <Value>B-XXIX 595/5, Campa Cola Road,Dhandari Kalan</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -752,10 +752,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Dhandari Kalan, Industrial Area-C, Ludhiana-10</Value>
+                    <Value>Industrial Area-C, Ludhiana-10, CIN No.– U29219PB1981PTC004629</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>

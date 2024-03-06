@@ -2,16 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using ShakuntEnterprises.Models;
 using NToastNotify;
-using Microsoft.AspNetCore.Authentication.Negotiate;
 
 //=========================================================
 
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-   .AddNegotiate();
-
 //==========toaster===========
 builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
 {
@@ -62,7 +58,7 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseCors(builder =>
         builder
-        //.WithOrigins("http://localhost:8080", "http://192.168.1.101:8080")
+        .WithOrigins("http://localhost:8080", "http://192.168.1.101:8080")
         .AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader()
