@@ -566,8 +566,9 @@
             })
 
             $("#InvoiceNo").change(function () {
+                var invoiceDate = $("#InvoiceDate").val();
                 var invoiceNo = $("#InvoiceNo").val();
-                $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo }, function (data) {
+                $.getJSON("/SystemTestCertificateRecord/GetTallyItemName", { invoiceNo: invoiceNo, invoiceDate: invoiceDate }, function (data) {
                     $("#TallyItemName").empty();
                     $("#TallyItemName").append('<option>select-item</option>');
                     var jData = JSON.parse(data);
@@ -579,10 +580,14 @@
             });
             $("#TallyItemName").change(function () {
                 debugger
+                var invoiceDate = $("#InvoiceDate").val();
                 var invoiceNo = $("#InvoiceNo").val();
                 var pItemName = $("#TallyItemName  option:selected").val();
-               
-                $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, pItemName: pItemName }, function (data) {
+                $.getJSON("/SystemTestCertificateRecord/GetTallyCustomerName", { invoiceNo: invoiceNo, invoiceDate: invoiceDate, pItemName: pItemName }, function (data) {
+                    $("#CustomerName").val("");
+                    $("#CustomerName").val(data);
+                });
+                $.getJSON("/SystemTestCertificateRecord/GetTallyItemQuantity", { invoiceNo: invoiceNo, invoiceDate: invoiceDate, pItemName: pItemName }, function (data) {
                     $("#Quanity").val("");
                     $("#Quanity").val(data);
                 });
