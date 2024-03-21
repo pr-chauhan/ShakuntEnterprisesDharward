@@ -1101,9 +1101,9 @@ namespace ShakuntEnterprises.Controllers
         {
             try
             {
-                TallyService _tallyService = new("http://localhost", 9000);
-                //TallyService _tallyService = new("http://localhost", 10001);
-                //TallyService _tallyService = new("http://192.168.1.101", 10001);
+                //TallyService _tallyService = new("http://localhost", 9000);
+                TallyService _tallyService = new("http://localhost", 9999);
+                //TallyService _tallyService = new("http://SEPLSERVER", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
                 DateTime dateTime = Convert.ToDateTime(invoiceDate);
@@ -1141,9 +1141,9 @@ namespace ShakuntEnterprises.Controllers
             try
             {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                //TallyService _tallyService = new("http://localhost", 10001);
-                //TallyService _tallyService = new("http://192.168.1.101", 10001);
+                //TallyService _tallyService = new("http://localhost", 9000);
+                TallyService _tallyService = new("http://localhost", 9999);
+                //TallyService _tallyService = new("http://SEPLSERVER", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
                 DateTime dateTime = Convert.ToDateTime(invoiceDate);
@@ -1178,9 +1178,9 @@ namespace ShakuntEnterprises.Controllers
             try
             {
 
-                TallyService _tallyService = new("http://localhost", 9000);
-                //TallyService _tallyService = new("http://localhost", 10001);
-                //TallyService _tallyService = new("http://192.168.1.101", 10001);
+                //TallyService _tallyService = new("http://localhost", 9000);
+                TallyService _tallyService = new("http://localhost", 9999);
+                //TallyService _tallyService = new("http://SEPLSERVER", 10001);
                 string sVoucherNumber;
                 sVoucherNumber = invoiceNo.ToString();
                 DateTime dateTime = Convert.ToDateTime(invoiceDate);
