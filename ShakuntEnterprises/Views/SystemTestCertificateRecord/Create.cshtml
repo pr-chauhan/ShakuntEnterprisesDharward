@@ -231,7 +231,11 @@
                     <input asp-for="ElementMinNicrmo" class="form-control" />
                     <span asp-validation-for="ElementMinNicrmo" class="text-danger"></span>
                 </div>
-                
+                <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMinV" class="control-label"></label>
+                    <input asp-for="ElementMinV" class="form-control" />
+                    <span asp-validation-for="ElementMinV" class="text-danger"></span>
+                </div>
 
             </div>
               <div class="row">
@@ -285,7 +289,11 @@
                     <input asp-for="ElementMaxNicrmo" class="form-control" />
                     <span asp-validation-for="ElementMaxNicrmo" class="text-danger"></span>
                 </div>
-                 
+                <div class="form-group" style="width:11%;display: inline-block;">
+                    <label asp-for="ElementMaxV" class="control-label"></label>
+                    <input asp-for="ElementMaxV" class="form-control" />
+                    <span asp-validation-for="ElementMaxV" class="text-danger"></span>
+                </div>
             </div>
             <div class="row">
                 <table id="ChemicalCompositionTable" class="display expandable-table dataTable no-footer">
@@ -301,6 +309,7 @@
                             <th width="11%">ResultMo</th>
                             <th width="11%">ResultCu</th>
                             <th width="11%">ResultNiCrMo</th>
+                            <th width="11%">ResultV</th>
                         @*    <th width="20%">ResultUts</th>
                             <th width="20%">ResultYs</th>
                             <th width="20%">ResultElongation</th>
@@ -652,6 +661,8 @@
                         $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
                         $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
                         $("#Remarks").val(data[0].remarks);
+                        $("#ElementMinV").val(data[0].elementMinV);
+                        $("#ElementMaxV").val(data[0].elementMaxV);
                         var ElementMinNiCrMo = parseFloat(data[0].elementMinNi) + parseFloat(data[0].elementMinCr) + parseFloat(data[0].elementMinMo);
                         if(parseFloat(ElementMinNiCrMo).toFixed(3) > 0)
                         {
@@ -674,6 +685,7 @@
                 var ElementMinNi = 0;
                 var ElementMinCr = 0;
                 var ElementMinMo = 0;
+                var ElementMinV = 0;
                 var ElementMinNicrmo = 0;
                 $("#ElementMinNi").change(function () {
 
@@ -699,10 +711,17 @@
                     ElementMinNicrmo = parseFloat(ElementMinNi) + parseFloat(ElementMinMo) + parseFloat(ElementMinCr);
                     $("#ElementMinNicrmo").val(ElementMinNicrmo);
                 })
+                $("#ElementMinV").change(function () {
+
+                    ElementMinV = $("#ElementMinV").val();
+                    ElementMinNicrmo = parseFloat(ElementMinNi) + parseFloat(ElementMinMo) + parseFloat(ElementMinCr) + parseFloat(ElementMinV);
+                    $("#ElementMinNicrmo").val(ElementMinNicrmo);
+                })
 
                 var ElementMaxNi = 0;
                 var ElementMaxCr = 0;
                 var ElementMaxMo = 0;
+                var ElementMaxV = 0;
                 var ElementMaxNicrmo = 0;
                 $("#ElementMaxNi").change(function () {
 
@@ -724,7 +743,12 @@
                     ElementMaxNicrmo = parseFloat(ElementMaxNi) + parseFloat(ElementMaxMo) + parseFloat(ElementMaxCr);
                     $("#ElementMaxNicrmo").val(ElementMaxNicrmo);
                 })
+                $("#ElementMaxV").change(function () {
 
+                    ElementMaxV = $("#ElementMaxV").val();
+                    ElementMaxNicrmo = parseFloat(ElementMaxNi) + parseFloat(ElementMaxMo) + parseFloat(ElementMaxCr) + parseFloat(ElementMaxV);
+                    $("#ElementMaxNicrmo").val(ElementMaxNicrmo);
+                })
             })
 
             $("#Size").change(function () {
@@ -1168,6 +1192,9 @@
                             '</td>' +
                             '<td>' +
                             '<input type="text" class="form-control" id="testResultNiCrMo[' + counter + ']" value="' + data[0].testResultNiCrMo + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
+                            '</td>' +
+                            '<td>' +
+                            '<input type="text" class="form-control" id="testResultV[' + counter + ']" value="' + data[0].elementResultV + '" required="required"  readonly=readonly  style = "background-color:#ffeb504d;width:75px;"/>' +
                             '</td>' +
                             //'<td>' +
                             //'<button type="button" id="DeleteRow' + counter + '" class="btn btn-danger" onclick="removeTr(' + counter + ');">Delete</button>' +

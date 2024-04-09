@@ -6583,10 +6583,10 @@
             <Source>Embedded</Source>
             <Value>ABG</Value>
             <Sizing>Fit</Sizing>
-            <Top>8.34316in</Top>
-            <Left>6.33819in</Left>
-            <Height>0.5in</Height>
-            <Width>0.5in</Width>
+            <Top>8.18066in</Top>
+            <Left>6.36319in</Left>
+            <Height>0.625in</Height>
+            <Width>0.76334in</Width>
             <ZIndex>23</ZIndex>
             <Visibility>
               <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().Equals("abhilekh"), false, true)</Hidden>
@@ -6601,10 +6601,10 @@
             <Source>Embedded</Source>
             <Value>AHD</Value>
             <Sizing>Fit</Sizing>
-            <Top>8.37094in</Top>
-            <Left>6.28044in</Left>
-            <Height>0.5in</Height>
-            <Width>0.5in</Width>
+            <Top>8.20844in</Top>
+            <Left>6.30544in</Left>
+            <Height>0.625in</Height>
+            <Width>0.76334in</Width>
             <ZIndex>24</ZIndex>
             <Visibility>
               <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().Equals("nipun"), false, true)</Hidden>
@@ -6619,10 +6619,10 @@
             <Source>Embedded</Source>
             <Value>HD</Value>
             <Sizing>Fit</Sizing>
-            <Top>8.34316in</Top>
-            <Left>6.30444in</Left>
-            <Height>0.5in</Height>
-            <Width>0.5in</Width>
+            <Top>8.18066in</Top>
+            <Left>6.32944in</Left>
+            <Height>0.625in</Height>
+            <Width>0.76334in</Width>
             <ZIndex>25</ZIndex>
             <Visibility>
               <Hidden>=IIF((First(Fields!Approved_By.Value, "TestCertificate")).ToLower().ToString().ToLower().Equals("gopal"), false, true)</Hidden>
@@ -6655,7 +6655,7 @@
             <Source>Embedded</Source>
             <Value>ISIMIG</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.01611in</Top>
+            <Top>0.07861in</Top>
             <Left>6.7925in</Left>
             <Height>0.70417in</Height>
             <Width>0.81845in</Width>
@@ -6673,7 +6673,7 @@
             <Source>Embedded</Source>
             <Value>ISIFLUX</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.01611in</Top>
+            <Top>0.07861in</Top>
             <Left>6.7925in</Left>
             <Height>0.70417in</Height>
             <Width>0.81845in</Width>
@@ -6691,7 +6691,7 @@
             <Source>Embedded</Source>
             <Value>ISINONE</Value>
             <Sizing>Fit</Sizing>
-            <Top>0.01611in</Top>
+            <Top>0.07861in</Top>
             <Left>6.72569in</Left>
             <Height>0.75in</Height>
             <Width>0.94014in</Width>
@@ -6749,7 +6749,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!Created_By.Value, "TestCertificate")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -6761,7 +6763,7 @@
             <Top>8.61333in</Top>
             <Left>0.78833in</Left>
             <Height>0.25in</Height>
-            <Width>1in</Width>
+            <Width>1.97917in</Width>
             <ZIndex>31</ZIndex>
             <Style>
               <Border>

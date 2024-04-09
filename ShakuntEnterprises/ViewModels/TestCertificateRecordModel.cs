@@ -165,5 +165,7 @@ namespace ShakuntEnterprises.ViewModels
         public string? ElementMinNicrmo { get; set; }
         public string? ElementMaxNicrmo { get; set; }
         public string? IsShowElementNiCrMo { get; set; }
+        public string? ElementMinV { get; set; }
+        public string? ElementMaxV { get; set; }
     }
 }

@@ -417,6 +417,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Element_MAX_SI");
 
+                entity.Property(e => e.ElementMaxV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_MAX_V");
+
                 entity.Property(e => e.ElementMinC)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MIN_C");
@@ -456,6 +460,10 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.ElementMinSi)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MIN_SI");
+
+                entity.Property(e => e.ElementMinV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_MIN_V");
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
 
@@ -945,6 +953,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Element_Result_SI");
 
+                entity.Property(e => e.ElementResultV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_Result_V");
+
                 entity.Property(e => e.ModifiedBy)
                     .HasMaxLength(20)
                     .HasColumnName("Modified_By");
@@ -1069,6 +1081,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Element_MAX_SI");
 
+                entity.Property(e => e.ElementMaxV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_MAX_V");
+
                 entity.Property(e => e.ElementMinC)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MIN_C");
@@ -1104,6 +1120,10 @@ namespace ShakuntEnterprises.Models
                 entity.Property(e => e.ElementMinSi)
                     .HasMaxLength(50)
                     .HasColumnName("Element_MIN_SI");
+
+                entity.Property(e => e.ElementMinV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_MIN_V");
 
                 entity.Property(e => e.FlowRate).HasMaxLength(50);
 

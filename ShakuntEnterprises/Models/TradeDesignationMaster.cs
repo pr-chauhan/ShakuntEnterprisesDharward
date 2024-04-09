@@ -54,5 +54,7 @@ namespace ShakuntEnterprises.Models
         public DateTime? ModifiedDate { get; set; }
         public string? ModifiedBy { get; set; }
         public string? Remarks { get; set; }
+        public string? ElementMinV { get; set; }
+        public string? ElementMaxV { get; set; }
     }
 }

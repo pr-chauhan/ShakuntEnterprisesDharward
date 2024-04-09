@@ -101,6 +101,8 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxCr = tradeDesignationMaster.ElementMaxCr;
                 Data.ElementMaxMo = tradeDesignationMaster.ElementMaxMo;
                 Data.ElementMaxCu = tradeDesignationMaster.ElementMaxCu;
+                Data.ElementMinV = tradeDesignationMaster.ElementMinV;
+                Data.ElementMaxV = tradeDesignationMaster.ElementMaxV;
                 Data.TestMinUts = tradeDesignationMaster.TestMinUts;
                 Data.TestMinYs = tradeDesignationMaster.TestMinYs;
                 Data.TestMinElongation = tradeDesignationMaster.TestMinElongation;
@@ -179,6 +181,8 @@ namespace ShakuntEnterprises.Controllers
                     Data.ElementMaxCr = tradeDesignationMaster.ElementMaxCr ?? "-----";
                     Data.ElementMaxMo = tradeDesignationMaster.ElementMaxMo ?? "-----";
                     Data.ElementMaxCu = tradeDesignationMaster.ElementMaxCu ?? "-----";
+                    Data.ElementMinV = tradeDesignationMaster.ElementMinV ?? "-----";
+                    Data.ElementMaxV = tradeDesignationMaster.ElementMaxV ?? "-----";
                     Data.TestMinUts = tradeDesignationMaster.TestMinUts ?? "-----";
                     Data.TestMinYs = tradeDesignationMaster.TestMinYs ?? "-----";
                     Data.TestMinElongation = tradeDesignationMaster.TestMinElongation ?? "-----";
@@ -255,6 +259,8 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMaxCr = tradeDesignationMaster.ElementMaxCr ?? "-----";
                 Data.ElementMaxMo = tradeDesignationMaster.ElementMaxMo ?? "-----";
                 Data.ElementMaxCu = tradeDesignationMaster.ElementMaxCu ?? "-----";
+                Data.ElementMinV = tradeDesignationMaster.ElementMinV ?? "-----";
+                Data.ElementMaxV = tradeDesignationMaster.ElementMaxV ?? "-----";
                 Data.TestMinUts = tradeDesignationMaster.TestMinUts ?? "-----";
                 Data.TestMinYs = tradeDesignationMaster.TestMinYs ?? "-----";
                 Data.TestMinElongation = tradeDesignationMaster.TestMinElongation ?? "-----";
@@ -333,6 +339,8 @@ namespace ShakuntEnterprises.Controllers
                         Data.ElementMaxCr = tradeDesignationMaster.ElementMaxCr ?? "-----";
                         Data.ElementMaxMo = tradeDesignationMaster.ElementMaxMo ?? "-----";
                         Data.ElementMaxCu = tradeDesignationMaster.ElementMaxCu ?? "-----";
+                        Data.ElementMinV = tradeDesignationMaster.ElementMinV ?? "-----";
+                        Data.ElementMaxV = tradeDesignationMaster.ElementMaxV ?? "-----";
                         Data.TestMinUts = tradeDesignationMaster.TestMinUts ?? "-----";
                         Data.TestMinYs = tradeDesignationMaster.TestMinYs ?? "-----";
                         Data.TestMinElongation = tradeDesignationMaster.TestMinElongation ?? "-----";
