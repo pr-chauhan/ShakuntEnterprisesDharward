@@ -83,6 +83,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementResultCr = batchMaster.ElementResultCr ?? "-----";
                 Data.ElementResultMo = batchMaster.ElementResultMo ?? "-----";
                 Data.ElementResultCu = batchMaster.ElementResultCu ?? "-----";
+                Data.ElementResultV = batchMaster.ElementResultV ?? "-----";
                 Data.TestResultUts = batchMaster.TestResultUts ?? "-----";
                 Data.TestResultYs = batchMaster.TestResultYs ?? "-----";
                 Data.TestResultElongation = batchMaster.TestResultElongation ?? "-----";
@@ -135,6 +136,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ElementResultCr = batchMaster.ElementResultCr ?? "-----";
                     Data.ElementResultMo = batchMaster.ElementResultMo ?? "-----";
                     Data.ElementResultCu = batchMaster.ElementResultCu ?? "-----";
+                    Data.ElementResultV = batchMaster.ElementResultV ?? "-----";
                     Data.TestResultUts = batchMaster.TestResultUts ?? "-----";
                     Data.TestResultYs = batchMaster.TestResultYs ?? "-----";
                     Data.TestResultElongation = batchMaster.TestResultElongation ?? "-----";
@@ -188,6 +190,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementResultCr = batchMaster.ElementResultCr ?? "-----";
                 Data.ElementResultMo = batchMaster.ElementResultMo ?? "-----";
                 Data.ElementResultCu = batchMaster.ElementResultCu ?? "-----";
+                Data.ElementResultV = batchMaster.ElementResultV ?? "-----";
                 Data.TestResultUts = batchMaster.TestResultUts ?? "-----";
                 Data.TestResultYs = batchMaster.TestResultYs ?? "-----";
                 Data.TestResultElongation = batchMaster.TestResultElongation ?? "-----";
@@ -242,6 +245,7 @@ namespace ShakuntEnterprises.Controllers
                         Data.ElementResultCr = batchMaster.ElementResultCr ?? "-----";
                         Data.ElementResultMo = batchMaster.ElementResultMo ?? "-----";
                         Data.ElementResultCu = batchMaster.ElementResultCu ?? "-----";
+                        Data.ElementResultV = batchMaster.ElementResultV ?? "-----";
                         Data.TestResultUts = batchMaster.TestResultUts ?? "-----";
                         Data.TestResultYs = batchMaster.TestResultYs ?? "-----";
                         Data.TestResultElongation = batchMaster.TestResultElongation ?? "-----";

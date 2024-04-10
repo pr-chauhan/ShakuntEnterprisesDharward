@@ -42,7 +42,8 @@ namespace ShakuntEnterprises.Controllers
             ViewBag.CDT = DateTime.Now.ToString();
             ViewBag.SIZE = commanClass.getAllSizeList();
             ViewBag.TRADE = commanClass.getAllTradeDesignationMasterList().Select(x => new { TradeDesignation = x.TradeDesignation}).Distinct();
-            ViewBag.GRADE = commanClass.getAllGradeMasterList(string.Empty).Select(x => new { TradeDesignation = x.TradeDesignation, TradeDesignationGradeType = x.TradeDesignation + "-" + x.GradeType }).Distinct();
+            //ViewBag.GRADE = commanClass.getAllGradeMasterList(string.Empty).Select(x => new { TradeDesignation = x.TradeDesignation, TradeDesignationGradeType = x.TradeDesignation + "-" + x.GradeType }).Distinct();
+            ViewBag.GRADE = commanClass.getAllTradeDesignationMasterList();
         }
         // GET: TestCertificateRecordController
         public async Task<IActionResult> Index()
@@ -427,7 +428,7 @@ namespace ShakuntEnterprises.Controllers
             if (testCertificateRecord != null)
             {
                 ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
-                ViewBag.GTYPE = testCertificateRecord.GradeType;
+                ViewBag.GTYPEV = testCertificateRecord.GradeType;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
@@ -715,7 +716,7 @@ namespace ShakuntEnterprises.Controllers
             if (testCertificateRecord != null)
             {
                 ViewBag.TALLYITEM = testCertificateRecord.TallyItemName;
-                ViewBag.GTYPE = testCertificateRecord.GradeType;
+                ViewBag.GTYPEV = testCertificateRecord.GradeType;
                 Data.CertificateNo = testCertificateRecord.CertificateNo;
                 Data.CustomerName = testCertificateRecord.CustomerName;
                 Data.IssueDate = testCertificateRecord.IssueDate;
@@ -819,7 +820,7 @@ namespace ShakuntEnterprises.Controllers
             string ElementResultCu,string TestResultUts,string TestResultYs,string TestResultElongation,
             string TestResultTemp, string TestResultImpectValue, string TestResultCondition,
             string OtherTestResultRadioSpecs,string OtherTestResultFaceBendSpecs,string OtherTestResultFilledSpecs,
-            string ElementResultNicrmo
+            string ElementResultNicrmo,string ElementResultV
             )
         {
             
@@ -838,7 +839,7 @@ namespace ShakuntEnterprises.Controllers
                 ElementResultCr = ElementResultCr ?? "-----",
                 ElementResultMo = ElementResultMo ?? "-----",
                 ElementResultCu = ElementResultCu ?? "-----",
-                ElementResultV = ElementResultCu ?? "-----",
+                ElementResultV = ElementResultV ?? "-----",
                 ElementResultNicrmo = ElementResultNicrmo ?? "-----",
                 TestResultUts = TestResultUts ?? "-----",
                 TestResultYs = TestResultYs ?? "-----",

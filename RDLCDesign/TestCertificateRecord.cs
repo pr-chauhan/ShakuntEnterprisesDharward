@@ -101,5 +101,7 @@ namespace RDLCDesign
         public string ElementMIN_NICRMO { get; set; }
         public string ElementMAX_NICRMO { get; set; }
         public string isShowElementNiCrMo { get; set; }
+        public string Element_MIN_V { get; set; }
+        public string Element_MAX_V { get; set; }
     }
 }

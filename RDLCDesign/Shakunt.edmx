@@ -96,6 +96,8 @@
           <Property Name="ElementMIN_NICRMO" Type="nvarchar" MaxLength="50" />
           <Property Name="ElementMAX_NICRMO" Type="nvarchar" MaxLength="50" />
           <Property Name="isShowElementNiCrMo" Type="nvarchar" MaxLength="5" />
+          <Property Name="Element_MIN_V" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_V" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TestCertificateResultRecord">
           <Key>
@@ -130,6 +132,7 @@
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
           <Property Name="CombineMFGDate" Type="nvarchar" MaxLength="100" />
           <Property Name="Element_Result_NICRMO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_Result_V" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TradeDesignationMaster">
           <Key>
@@ -184,6 +187,8 @@
           <Property Name="Modified_Date" Type="datetime" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="20" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="Element_MIN_V" Type="nvarchar" MaxLength="50" />
+          <Property Name="Element_MAX_V" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="ShakuntEnterprisesModelStoreContainer">
           <EntitySet Name="TestCertificateRecord" EntityType="Self.TestCertificateRecord" Schema="dbo" store:Type="Tables" />
@@ -232,6 +237,7 @@
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CombineMFGDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Element_Result_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_Result_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TradeDesignationMaster">
           <Key>
@@ -286,6 +292,8 @@
           <Property Name="Modified_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="GradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TestCertificateRecord">
           <Key>
@@ -378,6 +386,8 @@
           <Property Name="ElementMIN_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ElementMAX_NICRMO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isShowElementNiCrMo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MIN_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Element_MAX_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -388,6 +398,7 @@
           <EntitySetMapping Name="TestCertificateResultRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateResultRecord">
               <MappingFragment StoreEntitySet="TestCertificateResultRecord">
+                <ScalarProperty Name="Element_Result_V" ColumnName="Element_Result_V" />
                 <ScalarProperty Name="Element_Result_NICRMO" ColumnName="Element_Result_NICRMO" />
                 <ScalarProperty Name="CombineMFGDate" ColumnName="CombineMFGDate" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
@@ -423,6 +434,8 @@
           <EntitySetMapping Name="TradeDesignationMasters">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TradeDesignationMaster">
               <MappingFragment StoreEntitySet="TradeDesignationMaster">
+                <ScalarProperty Name="Element_MAX_V" ColumnName="Element_MAX_V" />
+                <ScalarProperty Name="Element_MIN_V" ColumnName="Element_MIN_V" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="GradeType" ColumnName="GradeType" />
                 <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
@@ -478,6 +491,8 @@
           <EntitySetMapping Name="TestCertificateRecords">
             <EntityTypeMapping TypeName="ShakuntEnterprisesModel.TestCertificateRecord">
               <MappingFragment StoreEntitySet="TestCertificateRecord">
+                <ScalarProperty Name="Element_MAX_V" ColumnName="Element_MAX_V" />
+                <ScalarProperty Name="Element_MIN_V" ColumnName="Element_MIN_V" />
                 <ScalarProperty Name="isShowElementNiCrMo" ColumnName="isShowElementNiCrMo" />
                 <ScalarProperty Name="ElementMAX_NICRMO" ColumnName="ElementMAX_NICRMO" />
                 <ScalarProperty Name="ElementMIN_NICRMO" ColumnName="ElementMIN_NICRMO" />

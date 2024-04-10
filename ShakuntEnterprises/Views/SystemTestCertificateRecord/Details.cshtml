@@ -72,6 +72,14 @@
                     </select>
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
+                <div class="form-group" style="width:30%;display: inline-block;">
+                    <label asp-for="GradeType" class="control-label"></label>
+                    <select asp-for="GradeType" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select Grade Type</option>
+                        <option value=@ViewBag.GTYPE>@ViewBag.GTYPE</option>
+                    </select>
+                    <span asp-validation-for="GradeType" class="text-danger"></span>
+                </div>
                   <div class="form-group" style="width:15%;display: inline-block;">
                     <label asp-for="BatchDate" class="control-label"></label>
                     <input asp-for="BatchDate" class="form-control" />

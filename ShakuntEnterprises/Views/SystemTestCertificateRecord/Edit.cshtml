@@ -68,9 +68,12 @@
                 </div>
                 <div class="form-group" style="width:30%;display: inline-block;">
                     <label asp-for="GradeType" class="control-label"></label>
-                    <select asp-for="GradeType" class="dropdown-item" style="border:1px solid #b8bee6;">
+                  @*   <select asp-for="GradeType" class="dropdown-item" style="border:1px solid #b8bee6;">
                         <option value="">Select Grade Type</option>
-                        <option value=@ViewBag.GTYPE>@ViewBag.GTYPE</option>
+                        <option value=@ViewBag.GTYPEV>@ViewBag.GTYPEV</option>
+                    </select> *@
+                    <select asp-for="GradeType" asp-items="@(new SelectList(ViewBag.GRADE,"GradeType","GradeType"))" class="dropdown-item" style="border:1px solid #b8bee6;">
+                        <option value="">Select</option>
                     </select>
                     <span asp-validation-for="GradeType" class="text-danger"></span>
                 </div>
@@ -589,7 +592,7 @@
                     $("#GradeType").append('<option>select-item</option>');
                     var jData = JSON.parse(data);
                     $.each(jData, function (key, value) {
-                        $("#GradeType").append('<option value=' + value.GradeType + '>' + value.GradeType + '</option>');
+                        $("#GradeType").append('<option value=' + '"' + value.GradeType + '"' + '>' + value.GradeType + '</option>');
                     });
                 });
             });
@@ -697,6 +700,8 @@
                             $("#OtherTestFaceBendSpecs").val(data[0].otherTestFaceBendSpecs);
                             $("#OtherTestFilledSpecs").val(data[0].otherTestFilledSpecs);
                             $("#Remarks").val(data[0].remarks);
+                            $("#ElementMinV").val(data[0].elementMinV);
+                            $("#ElementMaxV").val(data[0].elementMaxV);
                             var ElementMinNiCrMo = parseFloat(data[0].elementMinNi) + parseFloat(data[0].elementMinCr) + parseFloat(data[0].elementMinMo);
                             if (parseFloat(ElementMinNiCrMo).toFixed(3) > 0) {
                                 $("#ElementMinNicrmo").val(parseFloat(ElementMinNiCrMo).toFixed(3));
@@ -752,6 +757,7 @@
                         $("#ElementResultCr").val(data[0].elementResultCr);
                         $("#ElementResultMo").val(data[0].elementResultMo);
                         $("#ElementResultCu").val(data[0].elementResultCu);
+                        $("#ElementResultV").val(data[0].elementResultV);
                         $("#TestResultUts").val(data[0].testResultUts);
                         $("#TestResultYs").val(data[0].testResultYs);
                         $("#TestResultElongation").val(data[0].testResultElongation);

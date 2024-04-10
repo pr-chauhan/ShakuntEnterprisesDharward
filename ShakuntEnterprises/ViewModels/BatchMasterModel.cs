@@ -31,5 +31,6 @@ namespace ShakuntEnterprises.ViewModels
         public DateTime? ModifiedDate { get; set; }
         public string? ModifiedBy { get; set; }
         public string? TestResultNiCrMo { get; set; }
+        public string? ElementResultV { get; set; }
     }
 }

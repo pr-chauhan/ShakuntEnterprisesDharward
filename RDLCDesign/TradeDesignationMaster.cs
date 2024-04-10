@@ -63,5 +63,7 @@ namespace RDLCDesign
         public string Modified_By { get; set; }
         public string GradeType { get; set; }
         public string Remarks { get; set; }
+        public string Element_MIN_V { get; set; }
+        public string Element_MAX_V { get; set; }
     }
 }

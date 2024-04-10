@@ -55,6 +55,14 @@
                         </select>
                         <span asp-validation-for="Size" class="text-danger"></span>
                     </div>
+                    <div class="form-group" style="width:30%;display: inline-block;">
+                        <label asp-for="GradeType" class="control-label"></label>
+                        <select asp-for="GradeType" class="dropdown-item" style="border:1px solid #b8bee6;">
+                            <option value="">Select Grade Type</option>
+                            <option value=@ViewBag.GTYPEV>@ViewBag.GTYPEV</option>
+                        </select>
+                        <span asp-validation-for="GradeType" class="text-danger"></span>
+                    </div>
                     <div class="form-group" style="width:15%;display: inline-block;">
                         <label asp-for="BatchDate" class="control-label"></label>
                         <input asp-for="BatchDate" class="form-control" />
@@ -178,6 +186,11 @@
                         <input asp-for="ElementMinCu" class="form-control" />
                         <span asp-validation-for="ElementMinCu" class="text-danger"></span>
                     </div>
+                    <div class="form-group" style="width:10%;display: inline-block;">
+                        <label asp-for="ElementMinV" class="control-label"></label>
+                        <input asp-for="ElementMinV" class="form-control" />
+                        <span asp-validation-for="ElementMinV" class="text-danger"></span>
+                    </div>
                       <div class="form-group" style="width:11%;display: inline-block;">
                     <label asp-for="ElementMinNicrmo" class="control-label"></label>
                     <input asp-for="ElementMinNicrmo" class="form-control" />
@@ -229,6 +242,11 @@
                         <label asp-for="ElementMaxCu" class="control-label"></label>
                         <input asp-for="ElementMaxCu" class="form-control" />
                         <span asp-validation-for="ElementMaxCu" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="width:10%;display: inline-block;">
+                        <label asp-for="ElementMaxV" class="control-label"></label>
+                        <input asp-for="ElementMaxV" class="form-control" />
+                        <span asp-validation-for="ElementMaxV" class="text-danger"></span>
                     </div>
                     <div class="form-group" style="width:11%;display: inline-block;">
                         <label asp-for="ElementMaxNicrmo" class="control-label"></label>

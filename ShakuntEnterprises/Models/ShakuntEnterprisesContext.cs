@@ -89,6 +89,10 @@ namespace ShakuntEnterprises.Models
                     .HasMaxLength(50)
                     .HasColumnName("Element_Result_SI");
 
+                entity.Property(e => e.ElementResultV)
+                    .HasMaxLength(50)
+                    .HasColumnName("Element_Result_V");
+
                 entity.Property(e => e.ModifiedBy)
                     .HasMaxLength(20)
                     .HasColumnName("Modified_By");

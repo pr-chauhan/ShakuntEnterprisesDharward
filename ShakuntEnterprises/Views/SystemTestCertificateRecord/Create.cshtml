@@ -1305,6 +1305,7 @@
                     Size = row.find("td:eq(20) input[type='text']").val();
                     CombineMFGDate = row.find("td:eq(21) input[type='text']").val();
                     ElementResultNicrmo = row.find("td:eq(22) input[type='text']").val();
+                    ElementResultV = row.find("td:eq(23) input[type='text']").val();
                     //alert(BatchNo);
                     $.post("/SystemTestCertificateRecord/SaveCertificateResultData", {
                         BatchDate: BatchDate, BatchNo: BatchNo, Size: Size, CombineMFGDate: CombineMFGDate, CertificateNo: CertificateNo,
@@ -1314,7 +1315,7 @@
                          TestResultUts:TestResultUts,TestResultYs:TestResultYs,TestResultElongation:TestResultElongation,
                          TestResultTemp:TestResultTemp,TestResultImpectValue:TestResultImpectValue,TestResultCondition:TestResultCondition,
                          OtherTestResultRadioSpecs:OtherTestResultRadioSpecs,OtherTestResultFaceBendSpecs:OtherTestResultFaceBendSpecs,
-                        OtherTestResultFilledSpecs: OtherTestResultFilledSpecs, ElementResultNicrmo: ElementResultNicrmo
+                        OtherTestResultFilledSpecs: OtherTestResultFilledSpecs, ElementResultNicrmo: ElementResultNicrmo, ElementResultV
                 },function(data){
                     // alert("Data saved successfully..!!" + "  Requisition No.: "+ data);
                 });

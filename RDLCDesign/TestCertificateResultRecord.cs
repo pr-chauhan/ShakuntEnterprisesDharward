@@ -43,5 +43,6 @@ namespace RDLCDesign
         public string Modified_By { get; set; }
         public string CombineMFGDate { get; set; }
         public string Element_Result_NICRMO { get; set; }
+        public string Element_Result_V { get; set; }
     }
 }
