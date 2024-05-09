@@ -325,6 +325,7 @@ namespace ShakuntEnterprises.Controllers
                     Data.ElementMinV = testCertificateRecord.ElementMinV ?? "-----";
                     Data.ElementMaxV = testCertificateRecord.ElementMaxV ?? "-----";
                     Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo ?? "-----";
+                    Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo ?? "No";
                     //Data.ElementResultC = testCertificateRecord.ElementResultC;
                     //Data.ElementResultSi = testCertificateRecord.ElementResultSi;
                     //Data.ElementResultMn = testCertificateRecord.ElementResultMn;
@@ -475,6 +476,7 @@ namespace ShakuntEnterprises.Controllers
                 Data.ElementMinV = testCertificateRecord.ElementMinV ?? "-----";
                 Data.ElementMaxV = testCertificateRecord.ElementMaxV ?? "-----";
                 Data.ElementMaxNicrmo = testCertificateRecord.ElementMaxNicrmo ?? "-----";
+                Data.IsShowElementNiCrMo = testCertificateRecord.IsShowElementNiCrMo ?? "No";
                 //Data.ElementResultC = testCertificateRecord.ElementResultC ?? "-----";
                 //Data.ElementResultSi = testCertificateRecord.ElementResultSi ?? "-----";
                 //Data.ElementResultMn = testCertificateRecord.ElementResultMn ?? "-----";

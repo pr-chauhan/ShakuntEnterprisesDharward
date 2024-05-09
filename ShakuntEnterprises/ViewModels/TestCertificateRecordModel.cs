@@ -164,7 +164,7 @@ namespace ShakuntEnterprises.ViewModels
         public DateTime? CancelDate { get; set; }
         public string? ElementMinNicrmo { get; set; }
         public string? ElementMaxNicrmo { get; set; }
-        [DisplayName("IsShowElementNiCrMoV")]
+        [DisplayName("Show Combine")]
         public string? IsShowElementNiCrMo { get; set; }
         public string? ElementMinV { get; set; }
         public string? ElementMaxV { get; set; }
