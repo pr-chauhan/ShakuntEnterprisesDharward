@@ -5,9 +5,9 @@ using System.Data.Entity;
 
 namespace RDLCDesign
 {
-    public partial class ShakuntEnterprisesContext : DbContext
+    public partial class ShakuntEnterprisesDharwardContext : DbContext
     {
-        public ShakuntEnterprisesContext()
+        public ShakuntEnterprisesDharwardContext()
              : base("name=ShakuntEnterprisesEntities")
         {
         }

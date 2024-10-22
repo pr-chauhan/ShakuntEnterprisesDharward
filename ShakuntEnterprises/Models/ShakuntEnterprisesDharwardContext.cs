@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ShakuntEnterprises.Models
+namespace ShakuntEnterprisesDharward.Models
 {
-    public partial class ShakuntEnterprisesContext : DbContext
+    public partial class ShakuntEnterprisesDharwardContext : DbContext
     {
-        public ShakuntEnterprisesContext()
+        public ShakuntEnterprisesDharwardContext()
         {
         }
 
-        public ShakuntEnterprisesContext(DbContextOptions<ShakuntEnterprisesContext> options)
+        public ShakuntEnterprisesDharwardContext(DbContextOptions<ShakuntEnterprisesDharwardContext> options)
             : base(options)
         {
         }

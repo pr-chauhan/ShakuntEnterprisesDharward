@@ -1,5 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ namespace RDLCDesign
 {
     public partial class frmReportViewer : Form
     {
-        ShakuntEnterprisesContext db = new ShakuntEnterprisesContext();
+        ShakuntEnterprisesDharwardContext db = new ShakuntEnterprisesDharwardContext();
         public frmReportViewer()
         {
             InitializeComponent();

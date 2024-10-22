@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -14,11 +14,11 @@ namespace ShakuntEnterprises.Controllers
 {
     public class UserMasterController : Controller
     {
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
         private IConfiguration configuration;
         private CommanClass commanClass;
         private readonly IToastNotification _toastNotification;
-        public UserMasterController(ShakuntEnterprisesContext context, IConfiguration _configuration, IToastNotification toastNotification)
+        public UserMasterController(ShakuntEnterprisesDharwardContext context, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _context = context;
             configuration = _configuration;

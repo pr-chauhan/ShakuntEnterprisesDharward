@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Diagnostics;
@@ -24,10 +24,10 @@ namespace ShakuntEnterprises.Controllers
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
         private CommanClass commanClass;
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
         private readonly IConfiguration  configuration;
 
-        public ReportController(IWebHostEnvironment webHostEnvironment, ShakuntEnterprisesContext context, IConfiguration _configuration)
+        public ReportController(IWebHostEnvironment webHostEnvironment, ShakuntEnterprisesDharwardContext context, IConfiguration _configuration)
         {
             _context = context;
             this.configuration = _configuration;

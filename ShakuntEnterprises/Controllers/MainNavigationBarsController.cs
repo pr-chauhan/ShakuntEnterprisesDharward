@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Text.Json;
@@ -15,11 +15,11 @@ namespace ShakuntEnterprises.Controllers
 {
     public class MainNavigationBarsController : Controller
     {
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
         private readonly IToastNotification _toastNotification;
-        public MainNavigationBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration, IToastNotification toastNotification)
+        public MainNavigationBarsController(ShakuntEnterprisesDharwardContext context, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _context = context;
             configuration = _configuration;
@@ -98,7 +98,7 @@ namespace ShakuntEnterprises.Controllers
 
             return _context.MainNavigationBars != null ? 
                           View(await _context.MainNavigationBars.ToListAsync()) :
-                          Problem("Entity set 'ShakuntEnterprisesContext.MainNavigationBars'  is null.");
+                          Problem("Entity set 'ShakuntEnterprisesDharwardContext.MainNavigationBars'  is null.");
         }
 
         // GET: MainNavigationBars/Details/5
@@ -240,7 +240,7 @@ namespace ShakuntEnterprises.Controllers
 
             if (_context.MainNavigationBars == null)
             {
-                return Problem("Entity set 'ShakuntEnterprisesContext.MainNavigationBars'  is null.");
+                return Problem("Entity set 'ShakuntEnterprisesDharwardContext.MainNavigationBars'  is null.");
             }
             var mainNavigationBar = await _context.MainNavigationBars.FindAsync(id);
             if (mainNavigationBar != null)

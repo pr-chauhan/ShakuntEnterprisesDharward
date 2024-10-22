@@ -1,6 +1,6 @@
 ﻿namespace ShakuntEnterprises.Comman
 {
-    using ShakuntEnterprises.Models;
+    using ShakuntEnterprisesDharward.Models;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
@@ -19,17 +19,18 @@
     using Microsoft.Net.Http.Headers;
     using TallyConnector.Core.Models;
     using TallyConnector.Services;
+    using ShakuntEnterprisesDharward.Models;
 
     public class CommanClass
     {
-        private readonly  ShakuntEnterprisesContext _context;
+        private readonly  ShakuntEnterprisesDharwardContext _context;
         private DataTable dataTable;
         private SqlConnection sqlConnection;
         private SqlConnection sqlConnectionerp;
         private SqlDataAdapter sqlDataAdapter;
         private readonly IConfiguration configuration;
 
-        public CommanClass(ShakuntEnterprisesContext context, IConfiguration _configuration)
+        public CommanClass(ShakuntEnterprisesDharwardContext context, IConfiguration _configuration)
         {
             _context = context;
             this.configuration = _configuration;

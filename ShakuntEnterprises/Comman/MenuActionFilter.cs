@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,13 +9,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ShakuntEnterprises.Comman;
+
 namespace ShakuntEnterprises.Comman
 {
     public class MenuActionFilter : ActionFilterAttribute
     {
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
 
-        public MenuActionFilter(ShakuntEnterprisesContext dBContext)
+        public MenuActionFilter(ShakuntEnterprisesDharwardContext dBContext)
         {
             _context = dBContext;
         }

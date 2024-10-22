@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ShakuntEnterprises.Models
+namespace ShakuntEnterprisesDharward.Models
 {
     public partial class ModuleList
     {

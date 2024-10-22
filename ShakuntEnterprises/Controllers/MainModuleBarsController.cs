@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
 using NToastNotify;
@@ -14,11 +14,11 @@ namespace ShakuntEnterprises.Controllers
 {
     public class MainModuleBarsController : Controller
     {
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
         private readonly IToastNotification _toastNotification;
-        public MainModuleBarsController(ShakuntEnterprisesContext context, IConfiguration _configuration)
+        public MainModuleBarsController(ShakuntEnterprisesDharwardContext context, IConfiguration _configuration)
         {
             _context = context;
             configuration = _configuration;
@@ -43,7 +43,7 @@ namespace ShakuntEnterprises.Controllers
 
             return _context.MainModuleBars != null ? 
                           View(await _context.MainModuleBars.ToListAsync()) :
-                          Problem("Entity set 'ShakuntEnterprisesContext.MainModuleBars'  is null.");
+                          Problem("Entity set 'ShakuntEnterprisesDharwardContext.MainModuleBars'  is null.");
         }
 
         // GET: MainModuleBars/Details/5
@@ -183,7 +183,7 @@ namespace ShakuntEnterprises.Controllers
 
             if (_context.MainModuleBars == null)
             {
-                return Problem("Entity set 'ShakuntEnterprisesContext.MainModuleBars'  is null.");
+                return Problem("Entity set 'ShakuntEnterprisesDharwardContext.MainModuleBars'  is null.");
             }
             var mainModuleBar = await _context.MainModuleBars.FindAsync(id);
             if (mainModuleBar != null)

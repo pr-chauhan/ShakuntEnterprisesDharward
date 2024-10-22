@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using NToastNotify;
 
 //=========================================================
@@ -17,7 +17,7 @@ builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
 //==========toaster===========
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //builder.Services.AddDbContext<crmDBContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<ShakuntEnterprisesContext>(options => options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptionAction =>
+builder.Services.AddDbContext<ShakuntEnterprisesDharwardContext>(options => options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptionAction =>
 {
     sqlOptionAction.EnableRetryOnFailure();
 }

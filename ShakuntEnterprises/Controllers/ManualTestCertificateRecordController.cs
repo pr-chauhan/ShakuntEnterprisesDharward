@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using System.Diagnostics;
 using System.Data.Odbc;
 using System.Data.Common;
 using TallyConnector.Core.Models;
 using TallyConnector;
 using System.Data;
-using ShakuntEnterprises.Models;
+using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
@@ -18,11 +18,11 @@ namespace ShakuntEnterprises.Controllers
     public class ManualTestCertificateRecordController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ShakuntEnterprisesContext _context;
+        private readonly ShakuntEnterprisesDharwardContext _context;
         private CommanClass commanClass;
         private IConfiguration configuration;
         private readonly IToastNotification _toastNotification;
-        public ManualTestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesContext enterprisesContext, IConfiguration _configuration, IToastNotification toastNotification)
+        public ManualTestCertificateRecordController(ILogger<HomeController> logger, ShakuntEnterprisesDharwardContext enterprisesContext, IConfiguration _configuration, IToastNotification toastNotification)
         {
             _logger = logger;
             _context = enterprisesContext;
