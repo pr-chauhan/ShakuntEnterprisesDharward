@@ -100,7 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Shakunt.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ShakuntEnterprisesLudhianaContext.cs" />
+    <Compile Include="ShakuntEnterprisesDharwardContext.cs" />
     <Compile Include="ShakuntEnterprisesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

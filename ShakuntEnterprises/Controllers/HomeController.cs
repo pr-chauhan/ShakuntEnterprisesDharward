@@ -2,22 +2,11 @@
 using ShakuntEnterprisesDharward.Models;
 using System.Diagnostics;
 using System.Data.Odbc;
-using System.Data.Common;
 using TallyConnector.Core.Models;
-using TallyConnector;
 using System.Data;
-using ShakuntEnterprisesDharward.Models;
-using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
-using TallyConnector.Core.Models.Masters;
-using NuGet.Protocol;
-using System;
 using TallyConnector.Services;
-using NToastNotify.Helpers;
-using TallyConnector.Core.Converters.XMLConverterHelpers;
-using System.Diagnostics.SymbolStore;
-using TallyConnector.Core.Models.Masters.Inventory;
 
 namespace ShakuntEnterprises.Controllers
 {

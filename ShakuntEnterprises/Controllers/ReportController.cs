@@ -1,21 +1,9 @@
 ﻿using AspNetCore.Reporting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
 using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Diagnostics;
-using Microsoft.Reporting.WebForms;
 using LocalReport = AspNetCore.Reporting.LocalReport;
-using AspNetCore.ReportingServices.ReportProcessing.ReportObjectModel;
 using System.Data;
 
 namespace ShakuntEnterprises.Controllers

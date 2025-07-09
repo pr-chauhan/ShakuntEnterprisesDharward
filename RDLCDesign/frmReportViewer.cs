@@ -1,14 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
-using ShakuntEnterprisesDharward.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RDLCDesign
@@ -19,16 +11,16 @@ namespace RDLCDesign
         public frmReportViewer()
         {
             InitializeComponent();
-            string certificateno = "199";
+            string certificateno = "12";
             //this.reportViewer1.LocalReport.ReportPath = AppDomain.CurrentDomain.BaseDirectory + @"\Reports\TestCertificate.rdlc";
-            this.reportViewer1.LocalReport.ReportPath =  @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprises\RDLCDesign\Reports\TestCertificate.rdlc";
+            this.reportViewer1.LocalReport.ReportPath =  @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprisesDharward\RDLCDesign\Reports\TestCertificate.rdlc";
             var certificateData = db.TestCertificateRecords.Where(x => x.CertificateNo == certificateno).ToList();
             var certificateResultData = db.TestCertificateResultRecords.Where(x => x.CertificateNo == certificateno).ToList();
             var tradeDesignation = certificateData[0].TradeDesignation.ToString();
             var tradeDesignationMaster = db.TradeDesignationMasters.Where(x => x.TradeDesignation == tradeDesignation).ToList();
             if(certificateData.Count>0 && certificateData[0].isShowElementNiCrMo.ToLower()=="yes")
             {
-                this.reportViewer1.LocalReport.ReportPath = @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprises\RDLCDesign\Reports\TestCertificateCombineColumn.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = @"D:\DotNetPlateFormWorkingEnvironment\ShakuntEnterprisesDharward\RDLCDesign\Reports\TestCertificateCombineColumn.rdlc";
             }
             
             ReportDataSource TestCertificate = new ReportDataSource();

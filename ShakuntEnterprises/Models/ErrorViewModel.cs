@@ -1,4 +1,4 @@
-namespace ShakuntEnterprises.Models
+namespace ShakuntEnterprisesDharward.Models
 {
     public class ErrorViewModel
     {

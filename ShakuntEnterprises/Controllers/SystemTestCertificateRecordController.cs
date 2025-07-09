@@ -1,21 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShakuntEnterprisesDharward.Models;
-using System.Diagnostics;
-using System.Data.Odbc;
-using System.Data.Common;
 using TallyConnector.Core.Models;
-using TallyConnector;
 using System.Data;
-using ShakuntEnterprisesDharward.Models;
 using ShakuntEnterprises.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using ShakuntEnterprises.Comman;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Drawing;
 using NToastNotify;
 using TallyConnector.Services;
 using System.Text.Json;
-using System.Xml.Linq;
 
 namespace ShakuntEnterprises.Controllers
 {
